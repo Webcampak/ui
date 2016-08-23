@@ -100,7 +100,7 @@ Ext.define('WPAKD.controller.desktop.authentication.ChangePassword', {
             );
             */
             var scope = this;
-            if (document.location.protocol == 'http:') {
+            if (document.location.protocol == 'https:') {
                 var formOldPassword = this.getDesktopauthenticationchangepasswordoldpassword().getValue();
                 var formNewPassword = this.getDesktopauthenticationchangepasswordnewpassword().getValue();
                 if (formOldPassword.length < 4 || formNewPassword.length < 4) {

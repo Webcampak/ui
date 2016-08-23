@@ -140,7 +140,7 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
     , doFormLogin: function() {
         this.consoleLog('doFormLogin()');
         var scope = this;
-        if (document.location.protocol == 'http:') {
+        if (document.location.protocol == 'https:') {
             var formUsername = this.getDesktopauthenticationusername().getValue();
             var formPassword = this.getDesktopauthenticationpassword().getValue();
             var formRememberMe = this.getDesktopauthenticationrememberme().getValue();
@@ -210,7 +210,7 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
         } else {
             Ext.MessageBox.show({
                 title: i18n.gettext('Unsecured connection')
-                , msg: i18n.gettext('You connection is not encrypted, please use HTTPS')
+                , msg: i18n.gettext('Your connection is not encrypted, please use HTTPS')
                 , buttons: Ext.MessageBox.OK
                 , icon: Ext.MessageBox.WARNING
             });
