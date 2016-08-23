@@ -127,7 +127,6 @@ Ext.define('WPAKD.controller.desktop.authentication.ChangePassword', {
                         success: function(response){
                             scope.fireEvent('WPAKD.controller.desktop.BackgroundActivities.endAjaxLoading');
                             scope.fireEvent('WPAKD.controller.desktop.loading.Mask.endLoading', scope.getDesktopauthenticationchangepasswordmain());
-                            console.log(response);
                             var serverResponse = Ext.decode(response.responseText, true);
                             if (serverResponse !== null) {
                                 if (serverResponse.status == "SUCCESS") {
@@ -166,7 +165,7 @@ Ext.define('WPAKD.controller.desktop.authentication.ChangePassword', {
             } else {
                 Ext.MessageBox.show({
                     title: i18n.gettext('Unsecured connections'),
-                    msg: i18n.gettext('You connection is not encrypted, transmitting your credentials in clear-text'),
+                    msg: i18n.gettext('Your connection is not encrypted, transmitting your credentials in clear-text'),
                     buttons: Ext.MessageBox.OK,
                     icon: Ext.MessageBox.WARNING
                 });

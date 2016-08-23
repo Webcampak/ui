@@ -91,7 +91,7 @@ Ext.define('WPAKT.controller.core.authentication.ChangePassword', {
         this.consoleLog('savePassword()');
         if (this.getCoreauthenticationchangepasswordnewpassword().getValue() == this.getCoreauthenticationchangepasswordnewpasswordconfirmation().getValue()) {
             var scope = this;
-            if (document.location.protocol == 'http:') {
+            if (document.location.protocol == 'https:') {
                 var formOldPassword = this.getCoreauthenticationchangepasswordcurrentpassword().getValue();
                 var formNewPassword = this.getCoreauthenticationchangepasswordnewpassword().getValue();
                 if (formOldPassword.length < 4 || formNewPassword.length < 4) {

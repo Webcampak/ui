@@ -157,7 +157,7 @@ Ext.define('WPAKT.controller.core.authentication.Authentication', {
     , doFormLogin: function() {
         this.consoleLog('doFormLogin()');
         var scope = this;
-        if (document.location.protocol == 'http:') {
+        if (document.location.protocol == 'https:') {
             var formUsername = this.getCoreauthenticationloginusername().getValue();
             var formPassword = this.getCoreauthenticationloginpassword().getValue();
             var formRememberMe = this.getCoreauthenticationloginrememberme().getValue();
