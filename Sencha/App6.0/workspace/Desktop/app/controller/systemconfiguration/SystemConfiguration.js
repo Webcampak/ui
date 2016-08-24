@@ -164,11 +164,15 @@ Ext.define('WPAKD.controller.systemconfiguration.SystemConfiguration', {
                         }
                         , failure: function(response, opts) {
                             scope.fireEvent('WPAKD.controller.desktop.BackgroundActivities.endAjaxLoading');
+                            // This is a bad hack.
+                            // Reboot happen as soon as requested, so the return call will fail.
+                            // A better solution would be to wait a couple of seconds before reboot to give the server
+                            // enough time to return the current AJAX call.
                             Ext.MessageBox.show({
-                                 title: i18n.gettext('Unable to perform reboot'),
-                                 msg: i18n.gettext('Unable to call the server and request reboot'),
+                                 title: i18n.gettext('Reboot'),
+                                 msg: i18n.gettext('Reboot is in progress, please wait for 1mn before refreshing the page'),
                                  buttons: Ext.MessageBox.OK,
-                                 icon: Ext.MessageBox.ERROR
+                                 icon: Ext.MessageBox.INFO
                              });
                         }
                     });
