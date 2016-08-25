@@ -24,6 +24,8 @@ Ext.define('WPAKD.view.pictures.display.Main', {
             xtype: 'picturesdisplaynextbutton'
         }, {
             xtype: 'picturesdisplaylastbutton'
+        }, {
+            xtype: 'picturesdisplayrefreshbutton'
         }]
     }]
     , layout: {type: 'vbox', pack: 'start', align: 'stretch'}
