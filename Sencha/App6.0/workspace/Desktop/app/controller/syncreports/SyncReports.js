@@ -578,7 +578,7 @@ Ext.define('WPAKD.controller.syncreports.SyncReports', {
 
     closeSyncReports: function(key) {
         this.consoleLog('closeSyncReports()');
-        this.getDesktoptoolbartoptaskbar().getComponent('tbsyncReports').setVisible(false);
+        this.getDesktoptoolbartoptaskbar().getComponent('tbsyncreports').setVisible(false);
     }
 
 });
