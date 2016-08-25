@@ -17,6 +17,7 @@ Ext.define('WPAKD.controller.pictures.Pictures', {
         , 'pictures.display.CurrentPictureDate'
         , 'pictures.display.EmailButton'
         , 'pictures.display.LastButton'
+        , 'pictures.display.RefreshButton'
         , 'pictures.display.NextButton'
         , 'pictures.display.PreviousButton'
         , 'pictures.display.SensorsButton'
@@ -70,6 +71,7 @@ Ext.define('WPAKD.controller.pictures.Pictures', {
         , {ref: 'picturesdisplaydownloadbutton',        selector: 'picturesdisplaydownloadbutton'       }
         , {ref: 'picturesdisplayemailbutton',           selector: 'picturesdisplayemailbutton'          }
         , {ref: 'picturesdisplaylastbutton',            selector: 'picturesdisplaylastbutton'           }
+        , {ref: 'picturesdisplayrefreshbutton',         selector: 'picturesdisplayrefreshbutton'        }
         , {ref: 'picturesdisplaynextbutton',            selector: 'picturesdisplaynextbutton'           }
         , {ref: 'picturesdisplaypreviousbutton',        selector: 'picturesdisplaypreviousbutton'       }
         , {ref: 'picturesdisplaysensorsbutton',         selector: 'picturesdisplaysensorsbutton'        }
@@ -102,6 +104,7 @@ Ext.define('WPAKD.controller.pictures.Pictures', {
             , 'picturesdisplaynextbutton':              {click:             this.onClickNext        }
             , 'picturesdisplaypreviousbutton':          {click:             this.onClickPrevious    }
             , 'picturesdisplaylastbutton':              {click:             this.onClickLast        }
+            , 'picturesdisplayrefreshbutton':           {click:             this.onClickRefresh     }
             , 'picturesdisplaydownloadbutton':          {click:             this.downloadPicture    }
             , 'picturesdisplayemailbutton':             {click:             this.openSendEmail      }
             , 'picturesdisplaythumbnails': 		{'navaction' :      this.clickThumbnail,    scope : this}
@@ -236,6 +239,12 @@ Ext.define('WPAKD.controller.pictures.Pictures', {
         this.consoleLog('onClickLast()');
         var lastPicture = this.getPicturesPictureStore().last().get('LAST');
         this.loadNewPicture(lastPicture);
+    }
+
+    , onClickRefresh: function() {
+        this.consoleLog('onClickRefresh()');
+        var currentSource = this.getPicturessourceslist().getValue();
+        this.onSourceSelected(this.getPicturessourceslist(), currentSource);
     }
 
     , loadNewPicture: function(pictureToLoad) {
