@@ -8,7 +8,7 @@ Ext.define('WPAKD.view.stats.system.Range', {
     , fieldLabel: i18n.gettext('Range')
     , flex: 1
     , mode: 'local'
-    , value: 'day'
+    , value: 'recent'
     , triggerAction: 'all'
     , queryMode: 'local'
     , forceSelection: true
@@ -18,9 +18,10 @@ Ext.define('WPAKD.view.stats.system.Range', {
     , store: Ext.create('Ext.data.Store', {
             fields : ['name', 'value']
             , data : [
-                {name : i18n.gettext('Day'),        value: 'day'    }
-                , {name : i18n.gettext('Month'),    value: 'month'  }
-                , {name : i18n.gettext('Year'),     value: 'year'   }
+                {name : i18n.gettext('Most Recent'),    value: 'recent' }
+                , {name : i18n.gettext('Hours'),        value: 'hours'  }
+                , {name : i18n.gettext('Days'),         value: 'days'   }
+                , {name : i18n.gettext('Months'),       value: 'months' }
             ]
         })
 });

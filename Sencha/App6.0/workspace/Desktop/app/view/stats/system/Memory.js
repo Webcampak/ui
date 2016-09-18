@@ -29,7 +29,7 @@ Ext.define('WPAKD.view.stats.system.Memory', {
     }, {
         type: 'time'
         , position: 'bottom'
-        , fields: ['DATE']
+        , fields: ['date']
         , dateFormat: 'd M'
         , label: {font: '10px Arial'}
         , grid: true
@@ -38,7 +38,7 @@ Ext.define('WPAKD.view.stats.system.Memory', {
         type: 'area'
         , highlight: false
         , axis: 'left'
-        , xField: 'DATE'
+        , xField: 'date'
         , yField: ['MemoryUsagePercent']
         , style: {
             opacity: 0.93

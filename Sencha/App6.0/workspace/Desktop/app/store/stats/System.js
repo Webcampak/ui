@@ -11,7 +11,7 @@ Ext.define('WPAKD.store.stats.System', {
     proxy:{
         type: 'direct',
         extraParams: {
-            RANGE: 'day'
+            RANGE: 'recent'
         },
         writer: {
             writeAllFields:true

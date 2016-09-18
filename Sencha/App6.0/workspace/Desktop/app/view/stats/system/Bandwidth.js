@@ -32,7 +32,7 @@ Ext.define('WPAKD.view.stats.system.Bandwidth', {
     }, {
         type: 'time'
         , position: 'bottom'
-        , fields: ['DATE']
+        , fields: ['date']
         , dateFormat: 'd M'
         , label: {font: '10px Arial'}
         , grid: true

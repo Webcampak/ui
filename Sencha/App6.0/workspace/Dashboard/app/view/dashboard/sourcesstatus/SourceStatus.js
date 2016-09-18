@@ -154,23 +154,23 @@ Ext.define('WPAKT.view.dashboard.sourcesstatus.SourceStatus', {
                         , position: 'left'        
                     }],
                     series: [{
-                            type: 'line'
-                            , colors: [
-                                'rgba(238, 146, 156, 0.6)'
-                            ]
-                            , useDarkerStrokeColor: false
-                            , xField: 'DATE'
-                            , yField: [
-                                'SIZE'
-                            ]
-                            , fill: true
-                            , smooth: true
-                            , tooltip: {
-                                trackMouse: true,
-                                renderer: function (tooltip, record, item) {
-                                    tooltip.setHtml(Ext.util.Format.fileSize(record.get('SIZE')) + ' ' + i18n.gettext('on') + ' ' + Ext.util.Format.dateRenderer('M d, Y')(record.get('DATE')));
-                                }
-                            }            
+                        type: 'line'
+                        , colors: [
+                            'rgba(238, 146, 156, 0.6)'
+                        ]
+                        , useDarkerStrokeColor: false
+                        , xField: 'DATE'
+                        , yField: [
+                            'SIZE'
+                        ]
+                        , fill: true
+                        , smooth: true
+                        , tooltip: {
+                            trackMouse: true,
+                            renderer: function (tooltip, record, item) {
+                                tooltip.setHtml(Ext.util.Format.fileSize(record.get('SIZE')) + ' ' + i18n.gettext('on') + ' ' + Ext.util.Format.dateRenderer('M d, Y')(record.get('DATE')));
+                            }
+                        }
                     }]
                     , interactions: [{
                         type: 'panzoom'

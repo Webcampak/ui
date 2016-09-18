@@ -30,7 +30,7 @@ Ext.define('WPAKD.view.stats.system.Cpu', {
     }, {
         type: 'time'
         , position: 'bottom'
-        , fields: ['DATE']
+        , fields: ['date']
         , dateFormat: 'd M'
         , label: {font: '10px Arial'}
         , grid: true
@@ -39,7 +39,7 @@ Ext.define('WPAKD.view.stats.system.Cpu', {
         type: 'area'
         , highlight: false
         , axis: 'left'
-        , xField: 'DATE'
+        , xField: 'date'
         , yField: ['CPUUsagePercent']
         , style: {
             opacity: 0.93

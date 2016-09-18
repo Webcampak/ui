@@ -5,8 +5,7 @@ Ext.define('WPAKD.model.stats.System', {
     extend: 'Ext.data.Model',
 
     fields: [
-        {name: 'Timestamp',             type: 'int'}
-        , {name: 'DATE',                type: 'date'}
+        {name: 'date',                type: 'date'}
         , {name: 'BandwidthIn',         type: 'int'}
         , {name: 'BandwidthOut',        type: 'int'}
         , {name: 'BandwidthTotal',      type: 'int'}

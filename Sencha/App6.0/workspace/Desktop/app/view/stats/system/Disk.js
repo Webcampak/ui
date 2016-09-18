@@ -15,7 +15,7 @@ Ext.define('WPAKD.view.stats.system.Disk', {
     , shadow: true
 
     , axes: [{
-        title: i18n.gettext('Hard Disk (MB)')
+        title: i18n.gettext('Hard Disk')
         , type: 'numeric'
         , position: 'left'
         , fields: ['DiskUsageUsed', 'DiskUsageFree']
@@ -29,10 +29,14 @@ Ext.define('WPAKD.view.stats.system.Disk', {
             }
         }
         , label: {font: '10px Arial'}
+        , renderer: function (axis, label, layoutContext, lastlabel) {
+            if (parseInt(label) <= 1) {return Math.round(label);}
+            else {return Ext.util.Format.fileSize(label);}
+        }
     }, {
         type: 'time'
         , position: 'bottom'
-        , fields: ['DATE']
+        , fields: ['date']
         , dateFormat: 'd M'
         , label: {font: '10px Arial'}
         , grid: true
@@ -41,7 +45,7 @@ Ext.define('WPAKD.view.stats.system.Disk', {
         type: 'area'
         , highlight: false
         , axis: 'left'
-        , xField: 'DATE'
+        , xField: 'date'
         , yField: ['DiskUsageUsed', 'DiskUsageFree']
         , style: {
             opacity: 0.93
