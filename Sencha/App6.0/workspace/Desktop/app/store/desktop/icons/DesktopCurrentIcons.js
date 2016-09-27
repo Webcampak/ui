@@ -6,6 +6,7 @@ Ext.define('WPAKD.store.desktop.icons.DesktopCurrentIcons', {
 
     model: 'WPAKD.model.desktop.icons.DesktopCurrentIcons',
 
+    autoLoad: true,
 //    autoSync: true,
 
     proxy:{

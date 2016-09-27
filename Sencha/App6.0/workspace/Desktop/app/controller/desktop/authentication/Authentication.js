@@ -125,7 +125,12 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
             //this.fireEvent('WPAKD.controller.desktop.icons.Icons.hideIcons');
         } else {
             this.getDesktopauthenticationmain().hide();
+            var scope = this;
             this.fireEvent('WPAKD.controller.desktop.authentication.UserSettings.loadUserSettingsStore');
+            setTimeout(function() {
+                console.log('ABCD');
+                scope.fireEvent('WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch');
+            },500);
             /*
             Ext.MessageBox.show({
                 title: i18n.gettext('USER AUTHENTICATED'),

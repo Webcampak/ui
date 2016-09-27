@@ -188,11 +188,11 @@ Ext.define('WPAKD.controller.desktop.icons.Icons', {
             if (currentIconWidget) {
                 var record = scope.getDesktopIconsDesktopCurrentIconsStore().findRecord('CODE', currentCode, 0, false, false, true);
                 if (record && record.get('ICON_VISIBLE_FLAG') == 'Y') {
-                        if (record.get('ICON_X_COORDINATE') !== 0 && record.get('ICON_Y_COORDINATE') !== 0 ) {
-                            scope.arrangeIcon(currentIconWidget, record.get('ICON_X_COORDINATE'), record.get('ICON_Y_COORDINATE'));
-                        }
-                        else { scope.arrangeIcon(currentIconWidget, currentIconDefaultX, currentIconDefaultY);}
-                        scope.consoleLog('reloadDesktopIcons(): Showing Icon: ' + currentCode);
+                    if (record.get('ICON_X_COORDINATE') !== 0 && record.get('ICON_Y_COORDINATE') !== 0 ) {
+                        scope.arrangeIcon(currentIconWidget, record.get('ICON_X_COORDINATE'), record.get('ICON_Y_COORDINATE'));
+                    }
+                    else { scope.arrangeIcon(currentIconWidget, currentIconDefaultX, currentIconDefaultY);}
+                    scope.consoleLog('reloadDesktopIcons(): Showing Icon: ' + currentCode);
                 } else {
                     if (currentIconWidget) {
                         scope.consoleLog('reloadDesktopIcons(): Hiding Icon: ' + currentCode);
