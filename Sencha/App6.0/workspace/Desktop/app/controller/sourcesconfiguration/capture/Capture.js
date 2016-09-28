@@ -22,6 +22,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , 'sourcesconfiguration.capture.source.Cfgemailerroractivate'
         , 'sourcesconfiguration.capture.source.Cfgsourcedebug'
         , 'sourcesconfiguration.capture.source.Cfgnocapture'
+        , 'sourcesconfiguration.capture.source.Cfgphidgetactivate'
         //, 'sourcesconfiguration.capture.source.Cfgenablexfer'
 
         , 'sourcesconfiguration.capture.calendar.Main'
@@ -129,6 +130,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , {ref: 'sourcesconfigurationcapturesourcecfgemailerroractivate',       selector: 'sourcesconfigurationcapturesourcecfgemailerroractivate'      }
         , {ref: 'sourcesconfigurationcapturesourcecfgsourcedebug',              selector: 'sourcesconfigurationcapturesourcecfgsourcedebug'             }
         , {ref: 'sourcesconfigurationcapturesourcecfgnocapture',                selector: 'sourcesconfigurationcapturesourcecfgnocapture'               }
+        , {ref: 'sourcesconfigurationcapturesourcecfgphidgetactivate',          selector: 'sourcesconfigurationcapturesourcecfgphidgetactivate'         }
         //, {ref: 'sourcesconfigurationcapturesourcecfgenablexfer',               selector: 'sourcesconfigurationcapturesourcecfgenablexfer'              }
 
         , {ref: 'sourcesconfigurationcapturecalendarmain',                      selector: 'sourcesconfigurationcapturecalendarmain'                     }
@@ -356,6 +358,9 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
 
             if(configObj.hasOwnProperty('cfgnocapture')){this.getSourcesconfigurationcapturesourcecfgnocapture().setValue(configObj['cfgnocapture']);
             } else {this.getSourcesconfigurationcapturesourcecfgnocapture().setVisible(false);}
+
+            if(configObj.hasOwnProperty('cfgphidgetactivate')){this.getSourcesconfigurationcapturesourcecfgphidgetactivate().setValue(configObj['cfgphidgetactivate']);
+            } else {this.getSourcesconfigurationcapturesourcecfgphidgetactivate().setVisible(false);}
 
             //if(configObj.hasOwnProperty('cfgenablexfer')){this.getSourcesconfigurationcapturesourcecfgenablexfer().setValue(configObj['cfgenablexfer']);
             //} else {this.getSourcesconfigurationcapturesourcecfgenablexfer().setVisible(false);}

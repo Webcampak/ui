@@ -88,14 +88,14 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.source.Main', {
         xtype: 'container',
         layout: {type:'hbox',	align: 'stretch', pack: 'start'},
         items   : [{
-            xtype: 'sourcesconfigurationcapturesourcecfgemailerroractivate',
+            xtype: 'sourcesconfigurationcapturesourcecfgprocessraw',
             labelWidth: 105,
             flex: 1
         }, {
             xtype: 'container',
             width: 10
         }, {
-            xtype: 'sourcesconfigurationcapturesourcecfgsourcedebug',
+            xtype: 'sourcesconfigurationcapturesourcecfgphidgetactivate',
             labelWidth: 105,
             flex: 1
         }]
@@ -103,7 +103,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.source.Main', {
         xtype: 'container',
         layout: {type:'hbox',	align: 'stretch', pack: 'start'},
         items   : [{
-            xtype: 'sourcesconfigurationcapturesourcecfgprocessraw',
+            xtype: 'sourcesconfigurationcapturesourcecfgemailerroractivate',
             labelWidth: 105,
             flex: 1
         }, {
@@ -113,7 +113,15 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.source.Main', {
             xtype: 'sourcesconfigurationcapturesourcecfgnocapture',
             labelWidth: 105,
             flex: 1
-        }]              
+        }]
+    }, {
+        xtype: 'container',
+        layout: {type:'hbox',	align: 'stretch', pack: 'start'},
+        items   : [{
+            xtype: 'sourcesconfigurationcapturesourcecfgsourcedebug',
+            labelWidth: 105,
+            flex: 1
+        }]
     }]
 });
 
