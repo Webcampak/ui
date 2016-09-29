@@ -24,7 +24,6 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.source.Cfgsourcetype', {
                 , {name : i18n.gettext('IP Camera (FTP)'),                              value: 'ipcam'          }
                 , {name : i18n.gettext('Internet Picture (HTTP ou FTP)'),               value: 'webfile'        }
                 , {name : i18n.gettext('Video Streaming (RTSP)'),                       value: 'rtsp'           }
-                , {name : i18n.gettext('Sensor (Phidget)'),                             value: 'sensor'         }
                 , {name : i18n.gettext('Test Picture'),                                 value: 'testpicture'    }
             ]
         })
