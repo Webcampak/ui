@@ -14,13 +14,15 @@ Ext.define('WPAKD.controller.desktop.authentication.UserSettings', {
     views: [
         'desktop.toolbar.bottom.LogoffButton'
         , 'desktop.toolbar.bottom.Build'
+        , 'desktop.Main'
 
 
     ],
 
     refs: [
-        {ref: 'desktoptoolbarbottomlogoffbutton',  selector: 'desktoptoolbarbottomlogoffbutton'     }
-        , {ref: 'desktoptoolbarbottombuild',            selector: 'desktoptoolbarbottombuild'              }
+        {ref: 'desktoptoolbarbottomlogoffbutton',   selector: 'desktoptoolbarbottomlogoffbutton'    }
+        , {ref: 'desktoptoolbarbottombuild',        selector: 'desktoptoolbarbottombuild'           }
+        , {ref: 'desktopmain',                      selector: 'desktopmain'                         }
 
     ],
 
@@ -69,5 +71,27 @@ Ext.define('WPAKD.controller.desktop.authentication.UserSettings', {
 
         this.fireEvent('WPAKD.controller.desktop.tiles.AvailableApplications.displayApplications');
         Ext.getBody().unmask();
+
+        var styleBgColor = this.getDesktopAuthenticationUserSettingsStore().findRecord('CODE', 'STYLE_BG_COLOR', 0, false, false, true);
+        if (styleBgColor) {
+            styleBgColor = styleBgColor.get('VALUE');
+        }
+        var styleBgLogo = this.getDesktopAuthenticationUserSettingsStore().findRecord('CODE', 'STYLE_BG_LOGO', 0, false, false, true);
+        if (styleBgLogo) {
+            styleBgLogo = styleBgLogo.get('VALUE');
+        }
+        if (styleBgColor === null && styleBgLogo !== null) {
+            this.getDesktopmain().setStyle({
+                background: '#74ce98 url(/watermark/' + styleBgLogo + ') no-repeat center center fixed'
+            });
+        } else if (styleBgColor !== null && styleBgLogo === null) {
+            this.getDesktopmain().setStyle({
+                background: styleBgColor + ' url(/resources/images/webcampak-logo.png) no-repeat center center fixed'
+            });
+        } else if (styleBgColor !== null && styleBgLogo !== null) {
+            this.getDesktopmain().setStyle({
+                background: styleBgColor + ' url(/watermark/' + styleBgLogo + ') no-repeat center center fixed'
+            });
+        }
     }
 });

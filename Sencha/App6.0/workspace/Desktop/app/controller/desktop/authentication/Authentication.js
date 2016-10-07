@@ -128,7 +128,6 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
             var scope = this;
             this.fireEvent('WPAKD.controller.desktop.authentication.UserSettings.loadUserSettingsStore');
             setTimeout(function() {
-                console.log('ABCD');
                 scope.fireEvent('WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch');
             },500);
             /*
