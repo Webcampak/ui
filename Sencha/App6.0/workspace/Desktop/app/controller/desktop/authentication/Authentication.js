@@ -127,9 +127,11 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
             this.getDesktopauthenticationmain().hide();
             var scope = this;
             this.fireEvent('WPAKD.controller.desktop.authentication.UserSettings.loadUserSettingsStore');
+            /*
             setTimeout(function() {
                 scope.fireEvent('WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch');
             },500);
+            */
             /*
             Ext.MessageBox.show({
                 title: i18n.gettext('USER AUTHENTICATED'),
@@ -183,7 +185,7 @@ Ext.define('WPAKD.controller.desktop.authentication.Authentication', {
                                 currentUser.set('USERNAME', serverResponse.USERNAME);
                                 currentUser.set('AUTHENTICATED', 'Y');
                                 scope.displayLoginWindow();
-                                scope.fireEvent('WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch');
+                                //scope.fireEvent('WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch');
                                 scope.fireEvent('WPAKD.controller.desktop.menu.Menu.reloadMenus');
                             } else {
                                 currentUser.set('USERNAME', '');

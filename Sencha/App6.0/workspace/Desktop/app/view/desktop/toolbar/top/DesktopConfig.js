@@ -13,14 +13,14 @@ Ext.define("WPAKD.view.desktop.toolbar.top.DesktopConfig", {
             style: { overflow: 'visible' },
             itemId: 'menu',
             items: [{
-                text: i18n.gettext('Manage Desktop Icons')
+/*                text: i18n.gettext('Manage Desktop Icons')
                 , itemId: 'openDesktopIconsSettings'
                 , glyph:0xf108 // desktop
             }, {
                 text: i18n.gettext('Save Icons Locations')
                 , itemId: 'saveDesktopIcons'
                 , glyph:0xf0c7
-            },'-', {
+            },'-', {*/
                 text: i18n.gettext('Change Password')
                 , itemId: 'openChangePassword'
                 , glyph:0xf084 // key

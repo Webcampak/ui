@@ -10,13 +10,14 @@ Ext.define('WPAKD.Application', {
 
     views: [
         'WPAKD.view.Viewport'
-        , 'WPAKD.view.desktop.icons.Main'
+        //, 'WPAKD.view.desktop.icons.Main'
     ],
 
     controllers: [
         'desktop.ServerAvailability'
 
-        , 'desktop.icons.Icons'
+        // Disabling desktop icons, which are not critical for now
+        //, 'desktop.icons.Icons'
 
         , 'desktop.BackgroundActivities'
         , 'desktop.authentication.Authentication'
