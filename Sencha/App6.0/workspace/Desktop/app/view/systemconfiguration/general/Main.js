@@ -18,6 +18,8 @@ Ext.define('WPAKD.view.systemconfiguration.general.Main', {
             xtype: 'systemconfigurationgeneralcfgnetif'
         }, {
             xtype: 'systemconfigurationgeneralcfgxferthreads'            
+        }, {
+            xtype: 'systemconfigurationgeneralcfgxfermaxfilesperthread'
         }]
     }, {
         xtype: 'fieldset'

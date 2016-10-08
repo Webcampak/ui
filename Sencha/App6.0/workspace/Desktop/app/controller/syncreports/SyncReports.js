@@ -160,7 +160,7 @@ Ext.define('WPAKD.controller.syncreports.SyncReports', {
         } else if (seletedReport) {            
             Ext.Msg.show({
                 title: i18n.gettext('Re-run and Sync Files'),
-                msg: i18n.gettext('You are about to re-run a report and sync its files, transferring files might take time ?'),                
+                msg: i18n.gettext('You are about to re-run a report and sync its files. <br />Transfer will be queued and progress can be tracked via Xfer Reports. <br />Continue ?'),
                 buttons: Ext.Msg.YESNO,
                 icon: Ext.Msg.QUESTION,
                 fn: function(btn){

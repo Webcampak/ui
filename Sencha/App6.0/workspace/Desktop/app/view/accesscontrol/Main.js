@@ -49,10 +49,5 @@ Ext.define("WPAKD.view.accesscontrol.Main", {
             itemID: 'sourcesTab',
             xtype: 'accesscontrolsourcesmain'
         }]
-    }],
-    tools:[{
-        type:'gear',
-        tooltip: i18n.gettext('Reset Preferences'),
-        action: 'resetPreferences'
     }]
 });

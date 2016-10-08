@@ -22,6 +22,7 @@ Ext.define('WPAKD.controller.systemconfiguration.SystemConfiguration', {
         , 'systemconfiguration.general.Cfgservertimezone'
         , 'systemconfiguration.general.Cfgstatsactivate'
         , 'systemconfiguration.general.Cfgxferthreads'
+        , 'systemconfiguration.general.Cfgxfermaxfilesperthread'
         , 'systemconfiguration.reboot.Main'
         , 'systemconfiguration.reboot.ButtonReboot'
 
@@ -52,6 +53,7 @@ Ext.define('WPAKD.controller.systemconfiguration.SystemConfiguration', {
         , {ref: 'systemconfigurationgeneralmain',                       selector: 'systemconfigurationgeneralmain'                      }
         , {ref: 'systemconfigurationgeneralcfgnetif',                   selector: 'systemconfigurationgeneralcfgnetif'                  }
         , {ref: 'systemconfigurationgeneralcfgxferthreads',             selector: 'systemconfigurationgeneralcfgxferthreads'            }
+        , {ref: 'systemconfigurationgeneralcfgxfermaxfilesperthread',   selector: 'systemconfigurationgeneralcfgxfermaxfilesperthread'  }
         , {ref: 'systemconfigurationgeneralcfgftpresourcespassword',    selector: 'systemconfigurationgeneralcfgftpresourcespassword'   }
         , {ref: 'systemconfigurationgeneralcfgftpresourcesusername',    selector: 'systemconfigurationgeneralcfgftpresourcesusername'   }
         , {ref: 'systemconfigurationgeneralcfggphotoports',             selector: 'systemconfigurationgeneralcfggphotoports'            }
@@ -289,6 +291,9 @@ Ext.define('WPAKD.controller.systemconfiguration.SystemConfiguration', {
 
         if(configObj.hasOwnProperty('cfgxferthreads')){this.getSystemconfigurationgeneralcfgxferthreads().setValue(configObj['cfgxferthreads']);
         } else {this.getSystemconfigurationgeneralcfgxferthreads().setVisible(false);}
+
+        if(configObj.hasOwnProperty('cfgxfermaxfilesperthread')){this.getSystemconfigurationgeneralcfgxfermaxfilesperthread().setValue(configObj['cfgxfermaxfilesperthread']);
+        } else {this.getSystemconfigurationgeneralcfgxfermaxfilesperthread().setVisible(false);}
 
         if(configObj.hasOwnProperty('cfgftpresourcespassword')){this.getSystemconfigurationgeneralcfgftpresourcespassword().setValue(configObj['cfgftpresourcespassword']);
         } else {this.getSystemconfigurationgeneralcfgftpresourcespassword().setVisible(false);}

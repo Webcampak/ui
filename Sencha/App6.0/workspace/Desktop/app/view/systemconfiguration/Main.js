@@ -7,8 +7,8 @@ Ext.define('WPAKD.view.systemconfiguration.Main', {
 
     , title: i18n.gettext('System Configuration')
 
-    , width: 500
-    , height: 600
+    , width: 600
+    , height: 650
 
     , stateful: true
     , stateId: 'systemconfigurationmain'
