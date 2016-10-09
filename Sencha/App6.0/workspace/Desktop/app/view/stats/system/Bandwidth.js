@@ -15,7 +15,7 @@ Ext.define('WPAKD.view.stats.system.Bandwidth', {
     , shadow: true
 
     , axes: [{
-        title: i18n.gettext('Bandwidth (Kb/s)')
+        title: i18n.gettext('Bandwidth (/s)')
         , type: 'numeric'
         , position: 'left'
         , fields: ['BandwidthIn', 'BandwidthOut']
@@ -29,11 +29,15 @@ Ext.define('WPAKD.view.stats.system.Bandwidth', {
             }
         }
         , label: {font: '10px Arial'}
+        , renderer: function (axis, label, layoutContext, lastlabel) {
+            if (parseInt(label) <= 1) {return Math.round(label);}
+            else {return Ext.util.Format.fileSize(label);}
+        }
     }, {
         type: 'time'
         , position: 'bottom'
         , fields: ['date']
-        , dateFormat: 'd M'
+        , dateFormat: 'd M H:i'
         , label: {font: '10px Arial'}
         , grid: true
     }],

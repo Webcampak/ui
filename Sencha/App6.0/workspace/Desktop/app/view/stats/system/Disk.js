@@ -37,7 +37,7 @@ Ext.define('WPAKD.view.stats.system.Disk', {
         type: 'time'
         , position: 'bottom'
         , fields: ['date']
-        , dateFormat: 'd M'
+        , dateFormat: 'd M H:i'
         , label: {font: '10px Arial'}
         , grid: true
     }],
