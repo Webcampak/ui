@@ -113,7 +113,7 @@ Ext.define('WPAKD.controller.desktop.toolbar.Menu', {
         this.consoleLog('reloadMenus()');
         var requiredStores = [];
 
-        requiredStores.push({store: this.getSharedCurrentApplicationsStore(),   action: 'REFRESH'});
+        requiredStores.push({store: this.getSharedCurrentApplicationsStore(),   action: 'LOAD'});
 
         this.fireEvent('WPAKD.controller.desktop.loading.Stores.beginLoading'
             , 'LOAD_MENUS'
