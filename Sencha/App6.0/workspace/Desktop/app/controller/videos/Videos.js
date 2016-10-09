@@ -94,13 +94,13 @@ Ext.define('WPAKD.controller.videos.Videos', {
         this.consoleLog('onVideoSelected()');
 
         if (selectedVideo !== null) {
-            this.getVideosdisplaycurrentvideoname().setHtml('<center><b>' + selectedVideo.get('FILENAME') + '</b></center>');
+            this.getVideosdisplaycurrentvideoname().setHtml('<center><b>' + selectedVideo[0].get('FILENAME') + '</b></center>');
 
             //Get window size. For Height, 30px adjustement is to keep name below picture on screen
             var currentWindowWidth = this.getVideosdisplayvideo().getWidth();
             var currentWindowHeight = this.getVideosdisplayvideo() - 30;
-            var previewJpgWidth = selectedVideo.get('JPGWIDTH');
-            var previewJpgHeight = selectedVideo.get('JPGHEIGHT');
+            var previewJpgWidth = selectedVideo[0].get('JPGWIDTH');
+            var previewJpgHeight = selectedVideo[0].get('JPGHEIGHT');
 
             this.consoleLog('onVideoSelected(): Window Size:' + currentWindowWidth + 'x' + currentWindowHeight);
             this.consoleLog('onVideoSelected(): Picture Size:' + previewJpgWidth + 'x' + previewJpgHeight);
@@ -115,12 +115,12 @@ Ext.define('WPAKD.controller.videos.Videos', {
             }
 
             //Launching Flowplayer
-            this.consoleLog('onVideoSelected(): Preview Video File:' + selectedVideo.get('MP4'));
+            this.consoleLog('onVideoSelected(): Preview Video File:' + selectedVideo[0].get('MP4'));
 
             var currentSourceId = this.getVideosVideosListStore().getProxy().extraParams.SOURCEID;
             var currentURL = '/' + symfonyEnv + '/dl/source' + currentSourceId + '/videos/';
-            var currentPreviewMp4 = currentURL + selectedVideo.get('MP4');
-            var currentPreviewJpg = currentURL + selectedVideo.get('JPG');
+            var currentPreviewMp4 = currentURL + selectedVideo[0].get('MP4');
+            var currentPreviewJpg = currentURL + selectedVideo[0].get('JPG');
 
             var insertPlayer = '<div class="flowplayer">';
             var insertPlayer = insertPlayer + '<video>';
