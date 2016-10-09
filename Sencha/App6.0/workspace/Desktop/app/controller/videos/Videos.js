@@ -123,7 +123,7 @@ Ext.define('WPAKD.controller.videos.Videos', {
             var currentPreviewJpg = currentURL + selectedVideo[0].get('JPG');
 
             var insertPlayer = '<div class="flowplayer">';
-            var insertPlayer = insertPlayer + '<video>';
+            var insertPlayer = insertPlayer + '<video controls>';
             var insertPlayer = insertPlayer + '<source type="video/mp4"  src="' + currentPreviewMp4 + '">';
             var insertPlayer = insertPlayer + '</video>';
             var insertPlayer = insertPlayer + '</div>';
