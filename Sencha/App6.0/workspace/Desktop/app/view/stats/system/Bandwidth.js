@@ -41,7 +41,7 @@ Ext.define('WPAKD.view.stats.system.Bandwidth', {
         type: 'area'
         , highlight: false
         , axis: 'left'
-        , xField: 'DATE'
+        , xField: 'date'
         , yField: ['BandwidthIn', 'BandwidthOut']
         , style: {
             opacity: 0.93
