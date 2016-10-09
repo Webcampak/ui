@@ -407,13 +407,14 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setValue(configObj['cfgcustomendtimestampdate']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setValue(configObj['cfgcustomendminute']);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setVisible(false);
             }
+            if(configObj.hasOwnProperty('cfgcustomendhour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
+            } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setVisible(false);}
+            if(configObj.hasOwnProperty('cfgcustomendminute')){this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setValue(configObj['cfgcustomendminute']);
+            } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setVisible(false);}
+
             if(configObj.hasOwnProperty('cfgcustomkeependhour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomkeependhour().setValue(configObj['cfgcustomkeependhour']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeependhour().setVisible(false);}
             if(configObj.hasOwnProperty('cfgcustomkeependminute')){this.getSourcesconfigurationcustomvideoscreatecfgcustomkeependminute().setValue(configObj['cfgcustomkeependminute']);
@@ -424,13 +425,14 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setVisible(false);}
             if(configObj.hasOwnProperty('cfgcustomstartday')){
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setValue(configObj['cfgcustomstarttimestampdate']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setValue(configObj['cfgcustomstartminute']);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setVisible(false);
             }
+            if(configObj.hasOwnProperty('cfgcustomstarthour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
+            } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setVisible(false);}
+            if(configObj.hasOwnProperty('cfgcustomstartminute')){this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setValue(configObj['cfgcustomstartminute']);
+            } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setVisible(false);}
+
             if(configObj.hasOwnProperty('cfgcustomvidname')){this.getSourcesconfigurationcustomvideoscreatecfgcustomvidname().setValue(configObj['cfgcustomvidname']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomvidname().setVisible(false);}
             if(configObj.hasOwnProperty('cfgemailmovieactivate')){this.getSourcesconfigurationcustomvideoscreatecfgemailmovieactivate().setValue(configObj['cfgemailmovieactivate']);
