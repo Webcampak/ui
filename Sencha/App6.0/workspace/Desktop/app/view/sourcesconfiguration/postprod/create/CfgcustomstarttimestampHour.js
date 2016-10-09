@@ -3,7 +3,7 @@ console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesco
 //</debug>
 Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.CfgcustomstarttimestampHour', {
     extend: 'Ext.form.field.Number'
-    , alias: 'widget.sourcesconfigurationpostprodcreatecfgcustomstarttimestamphour'
+    , alias: 'widget.sourcesconfigurationpostprodcreatecfgcustomstarthour'
 
     , allowBlank: false
     , minValue:0

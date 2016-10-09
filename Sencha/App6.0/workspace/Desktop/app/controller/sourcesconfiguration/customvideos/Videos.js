@@ -84,15 +84,15 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
         , 'sourcesconfiguration.customvideos.create.Main'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomactive'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomendtimestampdate'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomendtimestamphour'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomendtimestampminute'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomendhour'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomendminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeependhour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeependminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeepstarthour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeepstartminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomstarttimestampdate'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomstarttimestamphour'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomstarttimestampminute'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomstarthour'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomstartminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomvidname'
         , 'sourcesconfiguration.customvideos.create.Cfgemailmovieactivate'
         , 'sourcesconfiguration.customvideos.create.Cfgvidmininterval'
@@ -196,15 +196,15 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
         , {ref: 'sourcesconfigurationcustomvideoscreatemain',                           selector: 'sourcesconfigurationcustomvideoscreatemain'                          }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomactive',                selector: 'sourcesconfigurationcustomvideoscreatecfgcustomactive'               }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate',      selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate'     }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestamphour',      selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestamphour'     }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampminute',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampminute'   }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour',      selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour'     }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute'   }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependhour',           selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependhour'          }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependminute',         selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependminute'        }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour',         selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour'        }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute',       selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute'      }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate'   }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestamphour',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestamphour'   }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampminute',  selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampminute' }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour'   }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute',  selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute' }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomvidname',               selector: 'sourcesconfigurationcustomvideoscreatecfgcustomvidname'              }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgemailmovieactivate',          selector: 'sourcesconfigurationcustomvideoscreatecfgemailmovieactivate'         }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgvidmininterval',              selector: 'sourcesconfigurationcustomvideoscreatecfgvidmininterval'             }
@@ -407,12 +407,12 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setValue(configObj['cfgcustomendtimestampdate']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestamphour().setValue(configObj['cfgcustomendtimestamphour']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampminute().setValue(configObj['cfgcustomendtimestampminute']);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setValue(configObj['cfgcustomendminute']);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestamphour().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampminute().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomendminute().setVisible(false);
             }
             if(configObj.hasOwnProperty('cfgcustomkeependhour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomkeependhour().setValue(configObj['cfgcustomkeependhour']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeependhour().setVisible(false);}
@@ -424,12 +424,12 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setVisible(false);}
             if(configObj.hasOwnProperty('cfgcustomstartday')){
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setValue(configObj['cfgcustomstarttimestampdate']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestamphour().setValue(configObj['cfgcustomstarttimestamphour']);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampminute().setValue(configObj['cfgcustomstarttimestampminute']);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setValue(configObj['cfgcustomstartminute']);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestamphour().setVisible(false);
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampminute().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartminute().setVisible(false);
             }
             if(configObj.hasOwnProperty('cfgcustomvidname')){this.getSourcesconfigurationcustomvideoscreatecfgcustomvidname().setValue(configObj['cfgcustomvidname']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomvidname().setVisible(false);}

@@ -19,9 +19,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.create.Main', {
                 //{flex: 1,       xtype: 'label',	html: i18n.gettext('From')                                     }
                 {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
-                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestamphour'     }
+                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
-                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampminute'   }
+                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute'   }
             ]
 	}, {
             xtype: 'container'
@@ -29,9 +29,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.create.Main', {
             , items   : [
                 {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
-                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestamphour'     }
+                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
-                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampminute'   }
+                , {width: 50,   xtype: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute'   }
             ]
 	}, {
             xtype: 'container'

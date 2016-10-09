@@ -18,9 +18,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.Main', {
             , items   : [
                 {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
-                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestamphour'     }
+                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarthour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
-                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampminute'   }
+                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomstartminute'   }
             ]
 	}, {
             xtype: 'container'
@@ -28,9 +28,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.Main', {
             , items   : [
                 {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
-                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomendtimestamphour'     }
+                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomendhour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
-                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampminute'   }
+                , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomendminute'   }
             ]
 	}, {
             xtype: 'container'

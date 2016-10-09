@@ -3,7 +3,7 @@ console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesco
 //</debug>
 Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.CfgcustomendtimestampMinute', {
     extend: 'Ext.form.field.Number'
-    , alias: 'widget.sourcesconfigurationpostprodcreatecfgcustomendtimestampminute'
+    , alias: 'widget.sourcesconfigurationpostprodcreatecfgcustomendminute'
 
     , allowBlank: false
     , minValue:0

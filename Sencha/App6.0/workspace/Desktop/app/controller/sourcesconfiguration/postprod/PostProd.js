@@ -108,15 +108,15 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
         , {ref: 'sourcesconfigurationpostprodcreatemain',                           selector: 'sourcesconfigurationpostprodcreatemain'                          }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomactive',                selector: 'sourcesconfigurationpostprodcreatecfgcustomactive'               }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate',      selector: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate'     }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendtimestamphour',      selector: 'sourcesconfigurationpostprodcreatecfgcustomendtimestamphour'     }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampminute',    selector: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampminute'   }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendhour',      selector: 'sourcesconfigurationpostprodcreatecfgcustomendhour'     }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendminute',    selector: 'sourcesconfigurationpostprodcreatecfgcustomendminute'   }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeependhour',           selector: 'sourcesconfigurationpostprodcreatecfgcustomkeependhour'          }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeependminute',         selector: 'sourcesconfigurationpostprodcreatecfgcustomkeependminute'        }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeepstarthour',         selector: 'sourcesconfigurationpostprodcreatecfgcustomkeepstarthour'        }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeepstartminute',       selector: 'sourcesconfigurationpostprodcreatecfgcustomkeepstartminute'      }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate',    selector: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate'   }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestamphour',    selector: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestamphour'   }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampminute',  selector: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampminute' }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarthour',    selector: 'sourcesconfigurationpostprodcreatecfgcustomstarthour'   }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstartminute',  selector: 'sourcesconfigurationpostprodcreatecfgcustomstartminute' }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomvidname',               selector: 'sourcesconfigurationpostprodcreatecfgcustomvidname'              }
         , {ref: 'sourcesconfigurationpostprodcreatecfgemailmovieactivate',          selector: 'sourcesconfigurationpostprodcreatecfgemailmovieactivate'         }
         , {ref: 'sourcesconfigurationpostprodcreatecfgmovefilestosource',           selector: 'sourcesconfigurationpostprodcreatecfgmovefilestosource'          }
@@ -245,12 +245,12 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
                 this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampdate().setValue(configObj['cfgcustomendtimestampdate']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestamphour().setValue(configObj['cfgcustomendtimestamphour']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampminute().setValue(configObj['cfgcustomendtimestampminute']);
+                this.getSourcesconfigurationpostprodcreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
+                this.getSourcesconfigurationpostprodcreatecfgcustomendminute().setValue(configObj['cfgcustomendminute']);
             } else {
                 this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampdate().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestamphour().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampminute().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomendhour().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomendminute().setVisible(false);
             }
 
             if(configObj.hasOwnProperty('cfgcustomkeependhour')){this.getSourcesconfigurationpostprodcreatecfgcustomkeependhour().setValue(configObj['cfgcustomkeependhour']);
@@ -264,12 +264,12 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
 
             if(configObj.hasOwnProperty('cfgcustomstartday')){
                 this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampdate().setValue(configObj['cfgcustomstarttimestampdate']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestamphour().setValue(configObj['cfgcustomstarttimestamphour']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampminute().setValue(configObj['cfgcustomstarttimestampminute']);
+                this.getSourcesconfigurationpostprodcreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
+                this.getSourcesconfigurationpostprodcreatecfgcustomstartminute().setValue(configObj['cfgcustomstartminute']);
             } else {
                 this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampdate().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestamphour().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampminute().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomstarthour().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomstartminute().setVisible(false);
             }
 
             if(configObj.hasOwnProperty('cfgcustomvidname')){this.getSourcesconfigurationpostprodcreatecfgcustomvidname().setValue(configObj['cfgcustomvidname']);
