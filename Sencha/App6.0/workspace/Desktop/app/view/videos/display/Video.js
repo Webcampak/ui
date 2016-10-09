@@ -5,7 +5,7 @@ Ext.define('WPAKD.view.videos.display.Video', {
     extend: 'Ext.container.Container'
     , alias: 'widget.videosdisplayvideo'
 
-    , html: 'test'
+    , html: ''
 
 });
 
