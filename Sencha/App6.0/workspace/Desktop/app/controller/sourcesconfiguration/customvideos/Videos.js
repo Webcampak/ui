@@ -83,14 +83,14 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
 
         , 'sourcesconfiguration.customvideos.create.Main'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomactive'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomendtimestampdate'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomenddate'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomendhour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomendminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeependhour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeependminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeepstarthour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomkeepstartminute'
-        , 'sourcesconfiguration.customvideos.create.Cfgcustomstarttimestampdate'
+        , 'sourcesconfiguration.customvideos.create.Cfgcustomstartdate'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomstarthour'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomstartminute'
         , 'sourcesconfiguration.customvideos.create.Cfgcustomvidname'
@@ -195,16 +195,16 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
 
         , {ref: 'sourcesconfigurationcustomvideoscreatemain',                           selector: 'sourcesconfigurationcustomvideoscreatemain'                          }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomactive',                selector: 'sourcesconfigurationcustomvideoscreatecfgcustomactive'               }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate',      selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate'     }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour',      selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour'     }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute'   }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomenddate',               selector: 'sourcesconfigurationcustomvideoscreatecfgcustomenddate'              }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour',               selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendhour'              }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute',             selector: 'sourcesconfigurationcustomvideoscreatecfgcustomendminute'            }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependhour',           selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependhour'          }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependminute',         selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeependminute'        }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour',         selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour'        }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute',       selector: 'sourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute'      }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate'   }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour',    selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour'   }
-        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute',  selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute' }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstartdate',             selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstartdate'            }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour',             selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstarthour'            }
+        , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute',           selector: 'sourcesconfigurationcustomvideoscreatecfgcustomstartminute'          }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgcustomvidname',               selector: 'sourcesconfigurationcustomvideoscreatecfgcustomvidname'              }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgemailmovieactivate',          selector: 'sourcesconfigurationcustomvideoscreatecfgemailmovieactivate'         }
         , {ref: 'sourcesconfigurationcustomvideoscreatecfgvidmininterval',              selector: 'sourcesconfigurationcustomvideoscreatecfgvidmininterval'             }
@@ -217,6 +217,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
         this.control({
             '*': {
                 'WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue': this.updateStoreValue
+                , 'WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateDate': this.updateDate
             }
         });
         this.listen({
@@ -251,6 +252,38 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
         }
     }
+
+    , updateDate: function(newValue, oldValue, dateType) {
+        //Date Type is either end or start
+        var configRecordDay = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'day', 0, false, false, true);
+        var configRecordMonth = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'month', 0, false, false, true);
+        var configRecordYear = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'year', 0, false, false, true);
+        if (configRecordDay !== undefined && configRecordDay !== null && configRecordMonth !== undefined && configRecordMonth !== null && configRecordYear !== undefined && configRecordYear !== null) {
+            var fieldMonth = newValue.getMonth() + 1;
+            var fieldYear = newValue.getFullYear();
+            var fieldDay = newValue.getDate() + 1;
+            if (fieldMonth < 10) {fieldMonth = '0' + fieldMonth;}
+            if (fieldDay < 10) {fieldDay = '0' + fieldDay;}
+            if (configRecordDay.get('VALUE') != fieldDay) {
+                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'day' + ' from: ' + configRecordDay.get('VALUE') + ' to: ' + fieldDay, 'info');
+                configRecordDay.set('VALUE', fieldDay);
+                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+            }
+            if (configRecordMonth.get('VALUE') != fieldMonth) {
+                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'month' + ' from: ' + configRecordMonth.get('VALUE') + ' to: ' + fieldMonth, 'info');
+                configRecordMonth.set('VALUE', fieldMonth);
+                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+            }
+            if (configRecordYear.get('VALUE') != fieldYear) {
+                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'year' + ' from: ' + configRecordYear.get('VALUE') + ' to: ' + fieldYear, 'info');
+                configRecordYear.set('VALUE', fieldYear);
+                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+            }
+        } else {
+            this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
+        }
+    }
+
 
     , loadSettings: function() {
         this.consoleLog('loadSettings()');
@@ -406,9 +439,10 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomactive().setVisible(false);}
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setValue(configObj['cfgcustomendtimestampdate']);
+                var currentEndDate = configObj['cfgcustomendmonth'] + '/' + configObj['cfgcustomendday'] + '/' + configObj['cfgcustomendyear'];
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomenddate().setValue(currentEndDate);
             } else {
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomendtimestampdate().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomenddate().setVisible(false);
             }
             if(configObj.hasOwnProperty('cfgcustomendhour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomendhour().setVisible(false);}
@@ -424,9 +458,10 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             if(configObj.hasOwnProperty('cfgcustomkeepstartminute')){this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setValue(configObj['cfgcustomkeepstartminute']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setVisible(false);}
             if(configObj.hasOwnProperty('cfgcustomstartday')){
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setValue(configObj['cfgcustomstarttimestampdate']);
+                var currentStartDate = configObj['cfgcustomstartmonth'] + '/' + configObj['cfgcustomstartday'] + '/' + configObj['cfgcustomstartyear'];
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartdate().setValue(currentStartDate);
             } else {
-                this.getSourcesconfigurationcustomvideoscreatecfgcustomstarttimestampdate().setVisible(false);
+                this.getSourcesconfigurationcustomvideoscreatecfgcustomstartdate().setVisible(false);
             }
             if(configObj.hasOwnProperty('cfgcustomstarthour')){this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomstarthour().setVisible(false);}
