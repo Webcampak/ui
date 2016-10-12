@@ -9,16 +9,16 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
 
         , 'sourcesconfiguration.postprod.create.Main'
         , 'sourcesconfiguration.postprod.create.Cfgcustomactive'
-        , 'sourcesconfiguration.postprod.create.CfgcustomendtimestampDate'
-        , 'sourcesconfiguration.postprod.create.CfgcustomendtimestampHour'
-        , 'sourcesconfiguration.postprod.create.CfgcustomendtimestampMinute'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomenddate'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomendhour'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomendminute'
         , 'sourcesconfiguration.postprod.create.Cfgcustomkeependhour'
         , 'sourcesconfiguration.postprod.create.Cfgcustomkeependminute'
         , 'sourcesconfiguration.postprod.create.Cfgcustomkeepstarthour'
         , 'sourcesconfiguration.postprod.create.Cfgcustomkeepstartminute'
-        , 'sourcesconfiguration.postprod.create.CfgcustomstarttimestampDate'
-        , 'sourcesconfiguration.postprod.create.CfgcustomstarttimestampHour'
-        , 'sourcesconfiguration.postprod.create.CfgcustomstarttimestampMinute'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomstartdate'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomstarthour'
+        , 'sourcesconfiguration.postprod.create.Cfgcustomstartminute'
         , 'sourcesconfiguration.postprod.create.Cfgcustomvidname'
         , 'sourcesconfiguration.postprod.create.Cfgemailmovieactivate'
         , 'sourcesconfiguration.postprod.create.Cfgmovefilestosource'
@@ -107,16 +107,16 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
 
         , {ref: 'sourcesconfigurationpostprodcreatemain',                           selector: 'sourcesconfigurationpostprodcreatemain'                          }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomactive',                selector: 'sourcesconfigurationpostprodcreatecfgcustomactive'               }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate',      selector: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate'     }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendhour',      selector: 'sourcesconfigurationpostprodcreatecfgcustomendhour'     }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendminute',    selector: 'sourcesconfigurationpostprodcreatecfgcustomendminute'   }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomenddate',               selector: 'sourcesconfigurationpostprodcreatecfgcustomenddate'              }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendhour',               selector: 'sourcesconfigurationpostprodcreatecfgcustomendhour'              }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomendminute',             selector: 'sourcesconfigurationpostprodcreatecfgcustomendminute'            }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeependhour',           selector: 'sourcesconfigurationpostprodcreatecfgcustomkeependhour'          }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeependminute',         selector: 'sourcesconfigurationpostprodcreatecfgcustomkeependminute'        }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeepstarthour',         selector: 'sourcesconfigurationpostprodcreatecfgcustomkeepstarthour'        }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomkeepstartminute',       selector: 'sourcesconfigurationpostprodcreatecfgcustomkeepstartminute'      }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate',    selector: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate'   }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarthour',    selector: 'sourcesconfigurationpostprodcreatecfgcustomstarthour'   }
-        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstartminute',  selector: 'sourcesconfigurationpostprodcreatecfgcustomstartminute' }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstartdate',             selector: 'sourcesconfigurationpostprodcreatecfgcustomstartdate'            }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstarthour',             selector: 'sourcesconfigurationpostprodcreatecfgcustomstarthour'            }
+        , {ref: 'sourcesconfigurationpostprodcreatecfgcustomstartminute',           selector: 'sourcesconfigurationpostprodcreatecfgcustomstartminute'          }
         , {ref: 'sourcesconfigurationpostprodcreatecfgcustomvidname',               selector: 'sourcesconfigurationpostprodcreatecfgcustomvidname'              }
         , {ref: 'sourcesconfigurationpostprodcreatecfgemailmovieactivate',          selector: 'sourcesconfigurationpostprodcreatecfgemailmovieactivate'         }
         , {ref: 'sourcesconfigurationpostprodcreatecfgmovefilestosource',           selector: 'sourcesconfigurationpostprodcreatecfgmovefilestosource'          }
@@ -224,6 +224,47 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
         }
     }
 
+    , updateDate: function(newValue, oldValue, dateType) {
+        //Date Type is either end or start
+        if (newValue !== null) {
+            var configRecordDay = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'day', 0, false, false, true);
+            if (configRecordDay !== undefined && configRecordDay !== null) {
+                var fieldDay = newValue.getDate();
+                if (fieldDay < 10) {
+                    fieldDay = '0' + fieldDay;
+                }
+                if (configRecordDay.get('VALUE') != fieldDay) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'day' + ' from: ' + configRecordDay.get('VALUE') + ' to: ' + fieldDay, 'info');
+                    configRecordDay.set('VALUE', fieldDay);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
+            }
+            var configRecordMonth = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'month', 0, false, false, true);
+            if (configRecordMonth !== undefined && configRecordMonth !== null) {
+                var fieldMonth = newValue.getMonth() + 1;
+                if (fieldMonth < 10) {
+                    fieldMonth = '0' + fieldMonth;
+                }
+                if (configRecordMonth.get('VALUE') != fieldMonth) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'month' + ' from: ' + configRecordMonth.get('VALUE') + ' to: ' + fieldMonth, 'info');
+                    configRecordMonth.set('VALUE', fieldMonth);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
+            }
+            var configRecordYear = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'year', 0, false, false, true);
+            if (configRecordYear !== undefined && configRecordYear !== null) {
+                var fieldYear = newValue.getFullYear();
+                if (configRecordYear.get('VALUE') != fieldYear) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'year' + ' from: ' + configRecordYear.get('VALUE') + ' to: ' + fieldYear, 'info');
+                    configRecordYear.set('VALUE', fieldYear);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
+            } else {
+                this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
+            }
+        }
+    }
+
     , loadSettings: function() {
         this.consoleLog('loadSettings()');
         var isVisible = this.getSourcesconfigurationConfigurationTabsStore().findRecord('NAME', 'config-source-videopost', 0, false, false, true);
@@ -244,13 +285,10 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
             } else {this.getSourcesconfigurationpostprodcreatecfgcustomactive().setVisible(false);}
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampdate().setValue(configObj['cfgcustomendtimestampdate']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendhour().setValue(configObj['cfgcustomendhour']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendminute().setValue(configObj['cfgcustomendminute']);
+                var currentEndDate = configObj['cfgcustomendday'] + '/' + configObj['cfgcustomendmonth'] + '/' + configObj['cfgcustomendyear'];
+                this.getSourcesconfigurationpostprodcreatecfgcustomenddate().setValue(currentEndDate);
             } else {
-                this.getSourcesconfigurationpostprodcreatecfgcustomendtimestampdate().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendhour().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomendminute().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomenddate().setVisible(false);
             }
 
             if(configObj.hasOwnProperty('cfgcustomkeependhour')){this.getSourcesconfigurationpostprodcreatecfgcustomkeependhour().setValue(configObj['cfgcustomkeependhour']);
@@ -263,13 +301,10 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
             } else {this.getSourcesconfigurationpostprodcreatecfgcustomkeepstartminute().setVisible(false);}
 
             if(configObj.hasOwnProperty('cfgcustomstartday')){
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampdate().setValue(configObj['cfgcustomstarttimestampdate']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarthour().setValue(configObj['cfgcustomstarthour']);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstartminute().setValue(configObj['cfgcustomstartminute']);
+                var currentStartDate = configObj['cfgcustomstartday'] + '/' + configObj['cfgcustomstartmonth'] + '/' + configObj['cfgcustomstartyear'];
+                this.getSourcesconfigurationpostprodcreatecfgcustomstartdate().setValue(currentStartDate);
             } else {
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarttimestampdate().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstarthour().setVisible(false);
-                this.getSourcesconfigurationpostprodcreatecfgcustomstartminute().setVisible(false);
+                this.getSourcesconfigurationpostprodcreatecfgcustomstartdate().setVisible(false);
             }
 
             if(configObj.hasOwnProperty('cfgcustomvidname')){this.getSourcesconfigurationpostprodcreatecfgcustomvidname().setValue(configObj['cfgcustomvidname']);

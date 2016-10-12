@@ -5,7 +5,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.phidget.Main', {
     extend: 'Ext.form.FieldSet'
     , alias: 'widget.sourcesconfigurationcapturephidgetmain'
 
-    , title: i18n.gettext('Phidgets sensors configuration"')
+    , title: i18n.gettext('Phidgets sensors configuration')
     , collapsible: false
     , collapsed: false
 

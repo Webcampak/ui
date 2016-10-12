@@ -574,38 +574,27 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         this.consoleLog('collapseOnSourceType()');
         if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'gphoto'){
             this.getSourcesconfigurationcapturegphotomain().expand();
-            this.getSourcesconfigurationcapturephidgetmain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
         } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'wpak') {
             this.getSourcesconfigurationcapturegphotomain().collapse();
-            this.getSourcesconfigurationcapturephidgetmain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().expand();
         } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'webcam') {
             this.getSourcesconfigurationcapturegphotomain().collapse();
-            this.getSourcesconfigurationcapturephidgetmain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
         } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'ipcam') {
             this.getSourcesconfigurationcapturegphotomain().collapse();
-            this.getSourcesconfigurationcapturephidgetmain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().expand();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
         } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'webfile' || this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'rtsp') {
             this.getSourcesconfigurationcapturegphotomain().collapse();
-            this.getSourcesconfigurationcapturephidgetmain().collapse();
             this.getSourcesconfigurationcapturelinkmain().expand();
-            this.getSourcesconfigurationcaptureipcameramain().collapse();
-            this.getSourcesconfigurationcapturewebcampakmain().collapse();
-        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == 'sensor') {
-            this.getSourcesconfigurationcapturegphotomain().collapse();
-            this.getSourcesconfigurationcapturephidgetmain().expand();
-            this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
         }

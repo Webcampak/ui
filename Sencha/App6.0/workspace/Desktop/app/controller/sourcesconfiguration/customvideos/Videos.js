@@ -255,32 +255,42 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
 
     , updateDate: function(newValue, oldValue, dateType) {
         //Date Type is either end or start
-        var configRecordDay = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'day', 0, false, false, true);
-        var configRecordMonth = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'month', 0, false, false, true);
-        var configRecordYear = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'year', 0, false, false, true);
-        if (configRecordDay !== undefined && configRecordDay !== null && configRecordMonth !== undefined && configRecordMonth !== null && configRecordYear !== undefined && configRecordYear !== null) {
-            var fieldMonth = newValue.getMonth() + 1;
-            var fieldYear = newValue.getFullYear();
-            var fieldDay = newValue.getDate() + 1;
-            if (fieldMonth < 10) {fieldMonth = '0' + fieldMonth;}
-            if (fieldDay < 10) {fieldDay = '0' + fieldDay;}
-            if (configRecordDay.get('VALUE') != fieldDay) {
-                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'day' + ' from: ' + configRecordDay.get('VALUE') + ' to: ' + fieldDay, 'info');
-                configRecordDay.set('VALUE', fieldDay);
-                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+        if (newValue !== null) {
+            var configRecordDay = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'day', 0, false, false, true);
+            if (configRecordDay !== undefined && configRecordDay !== null) {
+                var fieldDay = newValue.getDate();
+                if (fieldDay < 10) {
+                    fieldDay = '0' + fieldDay;
+                }
+                if (configRecordDay.get('VALUE') != fieldDay) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'day' + ' from: ' + configRecordDay.get('VALUE') + ' to: ' + fieldDay, 'info');
+                    configRecordDay.set('VALUE', fieldDay);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
             }
-            if (configRecordMonth.get('VALUE') != fieldMonth) {
-                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'month' + ' from: ' + configRecordMonth.get('VALUE') + ' to: ' + fieldMonth, 'info');
-                configRecordMonth.set('VALUE', fieldMonth);
-                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+            var configRecordMonth = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'month', 0, false, false, true);
+            if (configRecordMonth !== undefined && configRecordMonth !== null) {
+                var fieldMonth = newValue.getMonth() + 1;
+                if (fieldMonth < 10) {
+                    fieldMonth = '0' + fieldMonth;
+                }
+                if (configRecordMonth.get('VALUE') != fieldMonth) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'month' + ' from: ' + configRecordMonth.get('VALUE') + ' to: ' + fieldMonth, 'info');
+                    configRecordMonth.set('VALUE', fieldMonth);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
             }
-            if (configRecordYear.get('VALUE') != fieldYear) {
-                this.consoleLog('updateStoreValue(): update config: ' + 'cfgcustom' + dateType + 'year' + ' from: ' + configRecordYear.get('VALUE') + ' to: ' + fieldYear, 'info');
-                configRecordYear.set('VALUE', fieldYear);
-                this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+            var configRecordYear = this.getSourcesconfigurationVideoCustomStore().findRecord('NAME', 'cfgcustom' + dateType + 'year', 0, false, false, true);
+            if (configRecordYear !== undefined && configRecordYear !== null) {
+                var fieldYear = newValue.getFullYear();
+                if (configRecordYear.get('VALUE') != fieldYear) {
+                    this.consoleLog('updateDate(): update config: ' + 'cfgcustom' + dateType + 'year' + ' from: ' + configRecordYear.get('VALUE') + ' to: ' + fieldYear, 'info');
+                    configRecordYear.set('VALUE', fieldYear);
+                    this.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
+                }
+            } else {
+                this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
             }
-        } else {
-            this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
         }
     }
 
@@ -439,7 +449,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomactive().setVisible(false);}
 
             if(configObj.hasOwnProperty('cfgcustomendday')){
-                var currentEndDate = configObj['cfgcustomendmonth'] + '/' + configObj['cfgcustomendday'] + '/' + configObj['cfgcustomendyear'];
+                var currentEndDate = configObj['cfgcustomendday'] + '/' + configObj['cfgcustomendmonth'] + '/' + configObj['cfgcustomendyear'];
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomenddate().setValue(currentEndDate);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomenddate().setVisible(false);
@@ -458,7 +468,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.customvideos.Videos', {
             if(configObj.hasOwnProperty('cfgcustomkeepstartminute')){this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setValue(configObj['cfgcustomkeepstartminute']);
             } else {this.getSourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute().setVisible(false);}
             if(configObj.hasOwnProperty('cfgcustomstartday')){
-                var currentStartDate = configObj['cfgcustomstartmonth'] + '/' + configObj['cfgcustomstartday'] + '/' + configObj['cfgcustomstartyear'];
+                var currentStartDate = configObj['cfgcustomstartday'] + '/' + configObj['cfgcustomstartmonth'] + '/' + configObj['cfgcustomstartyear'];
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstartdate().setValue(currentStartDate);
             } else {
                 this.getSourcesconfigurationcustomvideoscreatecfgcustomstartdate().setVisible(false);

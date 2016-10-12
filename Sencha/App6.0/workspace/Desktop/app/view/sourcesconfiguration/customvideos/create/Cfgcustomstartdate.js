@@ -9,7 +9,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.create.Cfgcustomstartda
     , fieldLabel: i18n.gettext('From')
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            if (scope.isValid()) {
+            if (scope.isValid() && oldValue !== null) {
                 this.fireEvent('WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateDate', newValue, oldValue, 'start');
             }
         }

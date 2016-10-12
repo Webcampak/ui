@@ -16,7 +16,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.Main', {
             xtype: 'container'
             , layout: {type:'hbox', align: 'stretch', pack: 'start'}
             , items   : [
-                {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarttimestampdate'     }
+                {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomstartdate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
                 , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomstarthour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
@@ -26,7 +26,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.create.Main', {
             xtype: 'container'
             , layout: {type:'hbox', align: 'stretch', pack: 'start'}
             , items   : [
-                {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomendtimestampdate'     }
+                {flex: 1,labelWidth: 250, xtype: 'sourcesconfigurationpostprodcreatecfgcustomenddate'     }
                 , {width: 10,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('at'), labelSeparator: '', padding: '0 5 0 5'  }
                 , {width: 50,   xtype: 'sourcesconfigurationpostprodcreatecfgcustomendhour'     }
                 , {width: 10,   xtype: 'label',	html: ':',                  padding: 2                         }
