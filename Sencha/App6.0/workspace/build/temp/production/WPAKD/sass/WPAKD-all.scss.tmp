@@ -1837,6 +1837,7 @@ $include-wpakd-view-videos-sourcename: dynamic(true);;
 $include-wpakd-view-videos-sourceslist: dynamic(true);;
 $include-wpakd-view-videos-display-currentvideoname: dynamic(true);;
 $include-wpakd-view-videos-display-main: dynamic(true);;
+$include-wpakd-view-videos-display-refreshbutton: dynamic(true);;
 $include-wpakd-view-videos-display-video: dynamic(true);;
 $include-wpakd-view-videos-selection-dayslist: dynamic(true);;
 $include-wpakd-view-videos-selection-main: dynamic(true);;

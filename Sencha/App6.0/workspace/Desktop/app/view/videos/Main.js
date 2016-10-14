@@ -36,7 +36,9 @@ Ext.define('WPAKD.view.videos.Main', {
         }, '->', {
             xtype: 'videossourcename'
             , flex: 1
-        }, '->']
+        }, '->', {
+            xtype: 'videosdisplayrefreshbutton'
+        }]
     }]
     , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
     , defaults: {frame: true}

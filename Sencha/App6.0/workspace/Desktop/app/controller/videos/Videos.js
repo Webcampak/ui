@@ -14,6 +14,7 @@ Ext.define('WPAKD.controller.videos.Videos', {
 
         , 'videos.display.Main'
         , 'videos.display.Video'
+        , 'videos.display.RefreshButton'
         , 'videos.display.CurrentVideoName'
 
         , 'videos.selection.Main'
@@ -48,6 +49,7 @@ Ext.define('WPAKD.controller.videos.Videos', {
 
         , {ref: 'videosdisplaymain',                selector: 'videosdisplaymain'               }
         , {ref: 'videosdisplayvideo',               selector: 'videosdisplayvideo'              }
+        , {ref: 'videosdisplayrefreshbutton',       selector: 'videosdisplayrefreshbutton'      }
         , {ref: 'videosdisplaycurrentvideoname',    selector: 'videosdisplaycurrentvideoname'   }
 
         , {ref: 'videosselectionmain',        selector: 'videosselectionmain'       }
@@ -63,8 +65,9 @@ Ext.define('WPAKD.controller.videos.Videos', {
             , 'videosmain':                               {hide:   this.closeVideos, minimize: this.openVideos    }
             , '#menuOpenWEB_DSP_VIDEOS':                  {click:  this.menuOpenVideos                              }
 
-            , 'videossourceslist':                    {change:            this.onSourceSelected   }
-            , 'videosselectiondayslist':              {select:            this.onDaySelected      }
+            , 'videossourceslist':                    {change:            this.onSourceSelected     }
+            , 'videosselectiondayslist':              {select:            this.onDaySelected        }
+            , 'videosdisplayrefreshbutton':           {click:             this.loadSourceVideos     }
 
             , 'videosselectionvideoslist':            {selectionchange:   this.onVideoSelected}
         });
@@ -88,6 +91,11 @@ Ext.define('WPAKD.controller.videos.Videos', {
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = 'log';}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
+    }
+
+    , reloadVideosForSource: function(scope, selectedVideo, eOpts) {
+        this.consoleLog('reloadVideosForSource()');
+
     }
 
     , onVideoSelected: function(scope, selectedVideo, eOpts) {
@@ -179,15 +187,19 @@ Ext.define('WPAKD.controller.videos.Videos', {
         Ext.getStore('videos.VideosList').getProxy().setExtraParam('SOURCEID', selectedSource.get('SOURCEID'));
         Ext.getStore('videos.DaysList').getProxy().setExtraParam('SOURCEID', selectedSource.get('SOURCEID'));
 
+        this.loadSourceVideos();
+    }
+
+    , loadSourceVideos: function() {
+        this.consoleLog('loadSourceVideos()');
         var requiredStores = [];
-        requiredStores.push({store: this.getVideosVideosListStore(),        action: 'REFRESH'});
+        requiredStores.push({store: this.getVideosVideosListStore(),   action: 'REFRESH'});
         requiredStores.push({store: this.getVideosDaysListStore(),     action: 'REFRESH'});
 
         this.fireEvent('WPAKD.controller.desktop.loading.Stores.beginLoading'
             , 'WEB_DSP_VIDEOS'
             , 'WPAKD.controller.videos.Videos.updateVideoScreen'
             , requiredStores);
-
     }
 
     , updateDaysWidget: function() {
