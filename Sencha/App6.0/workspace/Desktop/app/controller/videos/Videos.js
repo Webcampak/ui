@@ -101,7 +101,7 @@ Ext.define('WPAKD.controller.videos.Videos', {
     , onVideoSelected: function(scope, selectedVideo, eOpts) {
         this.consoleLog('onVideoSelected()');
 
-        if (selectedVideo !== null) {
+        if (selectedVideo !== null && selectedVideo[0]) {
             this.getVideosdisplaycurrentvideoname().setHtml('<center><b>' + selectedVideo[0].get('FILENAME') + '</b></center>');
 
             //Get window size. For Height, 30px adjustement is to keep name below picture on screen
