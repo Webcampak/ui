@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Cfgcustomactive"
         Ext.create('Ext.data.Store', {
             fields : ['name', 'value']
             , data   : [
-                {name : i18n.gettext('Disabled'),               value: 'off'    }
+                {name : i18n.gettext('Disabled'),               value: 'no'    }
                 , {name : i18n.gettext('As Soon As Possible'),  value: 'planon' }
                 , {name : i18n.gettext('At 4:00 am'),           value: 'plan04' }
             ]
