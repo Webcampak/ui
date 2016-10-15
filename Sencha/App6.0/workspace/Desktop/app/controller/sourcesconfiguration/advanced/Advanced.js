@@ -56,10 +56,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.advanced.Advanced', {
         , {ref: 'sourcesconfigurationadvancedemailsmain',                   selector: 'sourcesconfigurationadvancedemailsmain'                      }
         , {ref: 'sourcesconfigurationadvancedemailscfgemailalertfailure',   selector: 'sourcesconfigurationadvancedemailscfgemailalertfailure'      }
         , {ref: 'sourcesconfigurationadvancedemailscfgemailalertreminder',  selector: 'sourcesconfigurationadvancedemailscfgemailalertreminder'     }
-        , {ref: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify',selector: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify'   }
-        , {ref: 'sourcesconfigurationadvancedemailscfgemailreplyto',        selector: 'sourcesconfigurationadvancedemailscfgemailreplyto'           }
-        , {ref: 'sourcesconfigurationadvancedemailscfgemailsendcc',         selector: 'sourcesconfigurationadvancedemailscfgemailsendcc'            }
-        , {ref: 'sourcesconfigurationadvancedemailscfgemailsendto',         selector: 'sourcesconfigurationadvancedemailscfgemailsendto'            }
+        , {ref: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify',   selector: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify'      }
 
         , {ref: 'sourcesconfigurationadvancedphidgetmain',                      selector: 'sourcesconfigurationadvancedphidgetmain'                     }
         , {ref: 'sourcesconfigurationadvancedphidgetcfgftpphidgetserverid',     selector: 'sourcesconfigurationadvancedphidgetcfgftpphidgetserverid'    }
@@ -141,12 +138,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.advanced.Advanced', {
             } else {this.getSourcesconfigurationadvancedemailscfgemailalertreminder().setVisible(false);}
             if(configObj.hasOwnProperty('cfgemailalwaysnotify')){this.getSourcesconfigurationadvancedemailscfgemailalwaysnotify().setValue(configObj['cfgemailalwaysnotify']);
             } else {this.getSourcesconfigurationadvancedemailscfgemailalwaysnotify().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgemailreplyto')){this.getSourcesconfigurationadvancedemailscfgemailreplyto().setValue(configObj['cfgemailreplyto']);
-            } else {this.getSourcesconfigurationadvancedemailscfgemailreplyto().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgemailsendcc')){this.getSourcesconfigurationadvancedemailscfgemailsendcc().setValue(configObj['cfgemailsendcc']);
-            } else {this.getSourcesconfigurationadvancedemailscfgemailsendcc().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgemailsendto')){this.getSourcesconfigurationadvancedemailscfgemailsendto().setValue(configObj['cfgemailsendto']);
-            } else {this.getSourcesconfigurationadvancedemailscfgemailsendto().setVisible(false);}
 
             if(configObj.hasOwnProperty('cfgftpphidgetserverid')){this.getSourcesconfigurationadvancedphidgetcfgftpphidgetserverid().setValue(configObj['cfgftpphidgetserverid']);
             } else {this.getSourcesconfigurationadvancedphidgetcfgftpphidgetserverid().setVisible(false);}
