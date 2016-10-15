@@ -6,6 +6,9 @@
 Ext.require('Ext.chart.axis.Numeric');
 Ext.require('Ext.chart.axis.Time');
 Ext.require('Ext.chart.series.Area');
+Ext.require('Ext.chart.series.Line')
+Ext.require('Ext.chart.interactions.ItemHighlight')
+
 Ext.require('WPAKD.util.ErrorHandling');
 Ext.require('direct.remotingprovider');
 Ext.require('plugin.viewport');

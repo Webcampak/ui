@@ -23,6 +23,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.gphoto.Main', {
             {xtype: 'sourcesconfigurationcapturegphotocfgsourcegphotocameramodel'}
             , {xtype: 'sourcesconfigurationcapturegphotocfgsourcegphotocameraportdetail'}
             , {xtype: 'sourcesconfigurationcapturegphotocfgsourcegphotoowner'}
+            , {xtype: 'sourcesconfigurationcapturesourcecfgsourcedebug'}
         ]
     }]
 });

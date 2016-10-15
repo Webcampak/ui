@@ -18,19 +18,19 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.advanced.Main', {
         , items   : [
             {flex: 1,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('1080p:'), labelSeparator: ''     }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Bitrate:'), labelSeparator: '' }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pbitrate'          }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pbitrate'          }
             , {width: 40, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Size:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pwidth'            }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pwidth'            }
             , {width: 10, xtype: 'label', html: 'x'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pheight'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pheight'           }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Crop:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropwidth'        }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropwidth'        }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropheight'       }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropheight'       }
             , {width: 10, xtype: 'label', html: ':'                                                       }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropx'            }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropx'            }
             , {width: 10, xtype: 'label', html: ':'                                                      }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropy'            }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH2641080pcropy'            }
         ]
     }, {
         xtype: 'container'
@@ -39,19 +39,19 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.advanced.Main', {
         , items   : [
             {flex: 1,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('720p:'), labelSeparator: ''      }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Bitrate:'), labelSeparator: '' }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pbitrate'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pbitrate'           }
             , {width: 40, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Size:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pwidth'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pwidth'             }
             , {width: 10, xtype: 'label', html: 'x'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pheight'            }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pheight'            }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Crop:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropwidth'         }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropwidth'         }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropheight'        }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropheight'        }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropx'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropx'             }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropy'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264720pcropy'             }
         ]
     }, {
         xtype: 'container'
@@ -60,19 +60,19 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.advanced.Main', {
         , items   : [
             {flex: 1,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('480p:'), labelSeparator: ''      }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Bitrate:'), labelSeparator: '' }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pbitrate'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pbitrate'           }
             , {width: 40, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Size:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pwidth'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pwidth'             }
             , {width: 10, xtype: 'label', html: 'x'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pheight'            }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pheight'            }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Crop:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropwidth'         }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropwidth'         }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropheight'        }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropheight'        }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropx'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropx'             }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropy'             }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264480pcropy'             }
         ]
     }, {
         xtype: 'container'
@@ -81,19 +81,19 @@ Ext.define('WPAKD.view.sourcesconfiguration.customvideos.advanced.Main', {
         , items   : [
             {flex: 1,   xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Custom:'), labelSeparator: ''    }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Bitrate:'), labelSeparator: '' }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264custombitrate'         }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264custombitrate'         }
             , {width: 40, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Size:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customwidth'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customwidth'           }
             , {width: 10, xtype: 'label', html: 'x'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customheight'          }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customheight'          }
             , {width: 50, xtype: 'fieldcontainer', fieldLabel: i18n.gettext('Crop:'), labelSeparator: ''    }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropwidth'       }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropwidth'       }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropheight'      }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropheight'      }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropx'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropx'           }
             , {width: 10, xtype: 'label', html: ':'                                                        }
-            , {width: 55, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropy'           }
+            , {width: 75, xtype: 'sourcesconfigurationcustomvideosadvancedcfgvideocodecH264customcropy'           }
         ]
     }]
 });

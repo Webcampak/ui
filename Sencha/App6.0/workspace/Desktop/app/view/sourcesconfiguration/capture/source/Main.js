@@ -114,14 +114,6 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.source.Main', {
             labelWidth: 105,
             flex: 1
         }]
-    }, {
-        xtype: 'container',
-        layout: {type:'hbox',	align: 'stretch', pack: 'start'},
-        items   : [{
-            xtype: 'sourcesconfigurationcapturesourcecfgsourcedebug',
-            labelWidth: 105,
-            flex: 1
-        }]
     }]
 });
 
