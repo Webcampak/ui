@@ -7,7 +7,6 @@ Ext.define('WPAKT.view.pictures.controls.Main', {
 
     , cls: 'quick-graph-panel shadow-panel',
 //    height: 130,
-    layout: 'fit',
     headerPosition: 'top',
     iconCls: 'x-fa fa-gamepad',
     layout: {type: 'hbox',align: 'stretch'},

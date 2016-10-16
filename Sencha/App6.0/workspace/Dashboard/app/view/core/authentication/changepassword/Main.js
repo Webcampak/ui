@@ -6,7 +6,6 @@ Ext.define('WPAKT.view.core.authentication.changepassword.Main', {
     , alias: 'widget.coreauthenticationchangepasswordmain'
 
     , hidden: true
-    , autoComplete: true
     , bodyPadding: '20 20'
     , cls: 'auth-dialog-login'
     , header: false

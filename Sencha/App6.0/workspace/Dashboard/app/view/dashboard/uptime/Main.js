@@ -8,7 +8,6 @@ Ext.define('WPAKT.view.dashboard.uptime.Main', {
     , cls: 'quick-graph-panel shadow-panel'
     , height: 150
 //    , width: 260
-    , layout: 'fit'
     , headerPosition: 'top'
     , iconCls: 'x-fa fa-power-off'
 

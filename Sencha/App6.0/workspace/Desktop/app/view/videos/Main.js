@@ -22,11 +22,7 @@ Ext.define('WPAKD.view.videos.Main', {
 
     , closeAction : 'hide'
     , glyph:0xf03d // video-camera
-    , layout: {
-        type:'hbox'
-        , pack: 'start'
-        , align: 'stretch'
-    }
+    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
     , dockedItems: [{
         xtype: 'toolbar'
         , dock: 'top'
@@ -40,7 +36,6 @@ Ext.define('WPAKD.view.videos.Main', {
             xtype: 'videosdisplayrefreshbutton'
         }]
     }]
-    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
     , defaults: {frame: true}
     , items: [{
         xtype: 'videosselectionmain'

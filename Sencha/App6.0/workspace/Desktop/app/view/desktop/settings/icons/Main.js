@@ -6,8 +6,7 @@ Ext.define("WPAKD.view.desktop.settings.icons.Main", {
     alias: 'widget.desktopsettingsiconsmain',
 
     title: i18n.gettext('Manage Desktop Icons'),
-    layout: 'fit',
-    
+
     width: 800,
     height: 400,
     

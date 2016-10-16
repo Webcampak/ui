@@ -6,7 +6,6 @@ Ext.define('WPAKT.view.core.authentication.login.Main', {
     , alias: 'widget.coreauthenticationloginmain'
 
     //, defaultButton : 'coreauthenticationloginbuttonlogin'
-    , autoComplete: true
     , bodyPadding: '20 20'
     , cls: 'auth-dialog-login'
     , header: false

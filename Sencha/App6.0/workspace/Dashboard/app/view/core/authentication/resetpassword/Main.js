@@ -7,7 +7,6 @@ Ext.define('WPAKT.view.core.authentication.resetpassword.Main', {
 
     , defaultButton : 'coreauthenticationresetpasswordbuttonreset'
     , hidden: true
-    , autoComplete: true
     , bodyPadding: '20 20'
     , cls: 'auth-dialog-resetpassword'
     , header: false

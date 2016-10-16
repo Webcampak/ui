@@ -6,7 +6,6 @@ Ext.define('WPAKT.view.pictures.controls.details.Main', {
     , alias: 'widget.picturescontrolsdetailsmain'
 
     , cls: 'quick-graph-panel shadow-panel'
-    , layout: 'fit'
     , headerPosition: 'top'
     , iconCls: 'x-fa fa-info-circle'
     , title: i18n.gettext('Details')

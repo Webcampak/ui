@@ -10,9 +10,6 @@ Ext.define('WPAKD.view.pictures.Main', {
     , width: 1000
     , height: 700
 
-    , stateful: true
-    , stateId: 'picturesmain'
-
     , scroll: true
     , autoScroll: true
     , maximizable: true
@@ -22,11 +19,7 @@ Ext.define('WPAKD.view.pictures.Main', {
 
     , closeAction : 'hide'
     , glyph:0xf030
-    , layout: {
-        type:'hbox'
-        , pack: 'start'
-        , align: 'stretch'
-    }
+    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
     , dockedItems: [{
         xtype: 'toolbar'
         , dock: 'top'
@@ -38,7 +31,6 @@ Ext.define('WPAKD.view.pictures.Main', {
             , flex: 1
         }, '->']
     }]
-    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
     , defaults: {frame: true}
     , items: [{
         xtype: 'picturesselectionmain'

@@ -6,7 +6,6 @@ Ext.define("WPAKD.view.accesscontrol.users.managesources.Main", {
     alias: 'widget.accesscontrolusersmanagesourcesmain',
 
     title: i18n.gettext('Manage Sources'),
-    layout: 'fit',
 
     width: 800,
     height: 400,
