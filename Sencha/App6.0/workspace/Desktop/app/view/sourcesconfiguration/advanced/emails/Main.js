@@ -10,7 +10,10 @@ Ext.define('WPAKD.view.sourcesconfiguration.advanced.emails.Main', {
     , padding: 5
     , layout: 'fit'
     , defaults: {labelWidth: 250}
-    , items: [{
+    , items: [
+        {xtype: 'sourcesconfigurationadvancedemailscfgemaildirectalert'}
+        , {xtype: 'sourcesconfigurationadvancedemailscfgemailschedulealert'}
+        , {
             xtype: 'container'
             , layout: {type:'hbox', align: 'stretch', pack: 'start'}
             , items   : [

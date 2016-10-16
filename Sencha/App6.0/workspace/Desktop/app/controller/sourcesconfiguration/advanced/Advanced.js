@@ -11,6 +11,8 @@ Ext.define('WPAKD.controller.sourcesconfiguration.advanced.Advanced', {
         , 'sourcesconfiguration.advanced.emails.Cfgemailalertfailure'
         , 'sourcesconfiguration.advanced.emails.Cfgemailalertreminder'
         , 'sourcesconfiguration.advanced.emails.Cfgemailalwaysnotify'
+        , 'sourcesconfiguration.advanced.emails.Cfgemaildirectalert'
+        , 'sourcesconfiguration.advanced.emails.Cfgemailschedulealert'
         , 'sourcesconfiguration.advanced.emails.Cfgemailreplyto'
         , 'sourcesconfiguration.advanced.emails.Cfgemailsendcc'
         , 'sourcesconfiguration.advanced.emails.Cfgemailsendto'
@@ -40,6 +42,8 @@ Ext.define('WPAKD.controller.sourcesconfiguration.advanced.Advanced', {
         , {ref: 'sourcesconfigurationadvancedemailscfgemailalertfailure',   selector: 'sourcesconfigurationadvancedemailscfgemailalertfailure'      }
         , {ref: 'sourcesconfigurationadvancedemailscfgemailalertreminder',  selector: 'sourcesconfigurationadvancedemailscfgemailalertreminder'     }
         , {ref: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify',   selector: 'sourcesconfigurationadvancedemailscfgemailalwaysnotify'      }
+        , {ref: 'sourcesconfigurationadvancedemailscfgemaildirectalert',    selector: 'sourcesconfigurationadvancedemailscfgemaildirectalert'       }
+        , {ref: 'sourcesconfigurationadvancedemailscfgemailschedulealert',  selector: 'sourcesconfigurationadvancedemailscfgemailschedulealert'     }
 
     ]
 
@@ -105,6 +109,12 @@ Ext.define('WPAKD.controller.sourcesconfiguration.advanced.Advanced', {
             } else {this.getSourcesconfigurationadvancedemailscfgemailalertreminder().setVisible(false);}
             if(configObj.hasOwnProperty('cfgemailalwaysnotify')){this.getSourcesconfigurationadvancedemailscfgemailalwaysnotify().setValue(configObj['cfgemailalwaysnotify']);
             } else {this.getSourcesconfigurationadvancedemailscfgemailalwaysnotify().setVisible(false);}
+
+            if(configObj.hasOwnProperty('cfgemaildirectalert')){this.getSourcesconfigurationadvancedemailscfgemaildirectalert().setValue(configObj['cfgemaildirectalert']);
+            } else {this.getSourcesconfigurationadvancedemailscfgemaildirectalert().setVisible(false);}
+            if(configObj.hasOwnProperty('cfgemailschedulealert')){this.getSourcesconfigurationadvancedemailscfgemailschedulealert().setValue(configObj['cfgemailschedulealert']);
+            } else {this.getSourcesconfigurationadvancedemailscfgemailschedulealert().setVisible(false);}
+
 
             var configObj = {};
             this.getSourcesconfigurationSectionCaptureStore().each(function (rec) {
