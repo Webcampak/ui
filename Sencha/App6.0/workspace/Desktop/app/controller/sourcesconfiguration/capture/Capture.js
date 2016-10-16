@@ -80,10 +80,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , 'sourcesconfiguration.capture.link.Main'
         , 'sourcesconfiguration.capture.link.Cfgsourcewebfileurl'
 
-        , 'sourcesconfiguration.capture.phidget.Main'
-        , 'sourcesconfiguration.capture.phidget.PhidgetsPortsList'
-        , 'sourcesconfiguration.capture.phidget.SensorsList'
-
     ],
 
     stores: [
@@ -95,7 +91,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , 'sourcesconfiguration.Capture'
         , 'sourcesconfiguration.SectionCapture'
         , 'sourcesconfiguration.ConfigurationTabs'
-        , 'sourcesconfiguration.PhidgetPorts'
 
     ],
 
@@ -108,7 +103,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , 'sourcesconfiguration.Capture'
         , 'sourcesconfiguration.SectionCapture'
         , 'sourcesconfiguration.ConfigurationTabs'
-        , 'sourcesconfiguration.PhidgetPorts'
 
     ],
 
@@ -188,10 +182,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
         , {ref: 'sourcesconfigurationcapturelinkmain',                  selector: 'sourcesconfigurationcapturelinkmain'                 }
         , {ref: 'sourcesconfigurationcapturelinkcfgsourcewebfileurl',   selector: 'sourcesconfigurationcapturelinkcfgsourcewebfileurl'  }
 
-        , {ref: 'sourcesconfigurationcapturephidgetmain',               selector: 'sourcesconfigurationcapturephidgetmain'              }
-        , {ref: 'sourcesconfigurationcapturephidgetphidgetsportslist',  selector: 'sourcesconfigurationcapturephidgetphidgetsportslist' }
-        , {ref: 'sourcesconfigurationcapturephidgetsensorslist',        selector: 'sourcesconfigurationcapturephidgetsensorslist'       }
-
     ],
 
     init: function() {
@@ -202,7 +192,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
                 , 'WPAKD.controller.sourcesconfiguration.capture.Capture.updateCalendarSchedule': this.updateCalendarSchedule
             }
             , 'sourcesconfigurationcapturesourcecfgsourcetype': {select:  this.collapseOnSourceType   }
-            , 'sourcesconfigurationcapturephidgetsensorslist':  {edit:    this.phidgetSensorsModified }
         });
         this.listen({
             controller: {
@@ -504,26 +493,6 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
             if(configObj.hasOwnProperty('cfgsourcewebfileurl')){this.getSourcesconfigurationcapturelinkcfgsourcewebfileurl().setValue(configObj['cfgsourcewebfileurl']);
             } else {this.getSourcesconfigurationcapturelinkcfgsourcewebfileurl().setVisible(false);}
 
-            // Load phidget configuration into a specific memory store
-            if (configObj.hasOwnProperty('cfgphidgetsensornb')) {
-                var sensorNb = configObj['cfgphidgetsensornb'];
-                for (i = 1; i < sensorNb + 1; i++) {
-                    if (configObj.hasOwnProperty('cfgphidgetsensor' + i)) {
-                        var currentConfig = configObj['cfgphidgetsensor' + i];
-                        var currentConfigArray = currentConfig.split(',');
-                        this.getSourcesconfigurationPhidgetPortsStore().add(
-                            [{
-                                ID:  i
-                                , NAME:  currentConfigArray[0]
-                                , PORT:  currentConfigArray[1]
-                                , LEGEND:currentConfigArray[2]
-                                , COLOR: currentConfigArray[3]
-                            }]
-                        );
-                    }
-                }
-            }
-
             this.collapseOnSourceType();
             if(configObj['cfgcroncalendar'] == 'yes') {
                 this.getSourcesconfigurationcapturecalendarmain().expand();
@@ -542,32 +511,11 @@ Ext.define('WPAKD.controller.sourcesconfiguration.capture.Capture', {
             if(!configObj.hasOwnProperty('gphoto')){this.getSourcesconfigurationcapturegphotomain().setVisible(false);}
             if(!configObj.hasOwnProperty('ipcam')){this.getSourcesconfigurationcaptureipcameramain().setVisible(false);}
             if(!configObj.hasOwnProperty('wpak-source')){this.getSourcesconfigurationcapturewebcampakmain().setVisible(false);}
-            if(!configObj.hasOwnProperty('phidget')){this.getSourcesconfigurationcapturephidgetmain().setVisible(false);}
             if(!configObj.hasOwnProperty('webfile')){this.getSourcesconfigurationcapturelinkmain().setVisible(false);}
 
             this.getSourcesconfigurationcapturemain().setDisabled(false);
             this.getSourcesconfigurationcapturemain().setLoading(false);
         }
-    }
-
-    , phidgetSensorsModified: function() {
-        this.consoleLog('phidgetSensorsModified()');
-        var scope = this;
-        //Build Phidget sensor string based on values in table
-        this.getSourcesconfigurationPhidgetPortsStore().each(function (rec) {
-            var configName = 'cfgphidgetsensor' + rec.get('ID');
-            var newValue = rec.get('NAME') + ',' + rec.get('PORT') + ',' + rec.get('LEGEND') + ',' + rec.get('COLOR');
-            var configRecord = scope.getSourcesconfigurationCaptureStore().findRecord('NAME', configName, 0, false, false, true);
-            if (configRecord !== undefined && configRecord !== null) {
-                if (configRecord.get('VALUE') != newValue) {
-                    scope.consoleLog('phidgetSensorsModified(): update config: ' + configName + ' from: ' + configRecord.get('VALUE') + ' to: ' + newValue, 'info');
-                    configRecord.set('VALUE', newValue);
-                    scope.fireEvent('WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores');
-                }
-            } else {
-                scope.consoleLog('phidgetSensorsModified(): Unable to find: ' + configName, 'warn');
-            }
-        });
     }
 
     , collapseOnSourceType: function() {

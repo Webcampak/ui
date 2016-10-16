@@ -19,7 +19,6 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.Main', {
         , {xtype: 'sourcesconfigurationcapturewebcampakmain'}
         , {xtype: 'sourcesconfigurationcaptureipcameramain'}
         , {xtype: 'sourcesconfigurationcapturelinkmain'}
-        , {xtype: 'sourcesconfigurationcapturephidgetmain'}
     ]
 });
 

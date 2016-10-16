@@ -24,9 +24,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.transition.Main', {
             , fieldLabel: i18n.gettext('Size of the area')
             , layout: {type:'hbox', align: 'stretch', pack: 'start'}
             , items: [
-                {xtype : 'sourcesconfigurationpostprodtransitioncfgtransitioncropsizewidth', width: 60      }
+                {xtype : 'sourcesconfigurationpostprodtransitioncfgtransitioncropsizewidth', width: 85      }
                 , {html: 'x', xtype: 'label', width: 10, padding: 2                         }
-                , {xtype : 'sourcesconfigurationpostprodtransitioncfgtransitioncropsizeheight', width: 60   }
+                , {xtype : 'sourcesconfigurationpostprodtransitioncfgtransitioncropsizeheight', width: 85   }
             ]
         }, {
             xtype: 'fieldcontainer'

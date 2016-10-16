@@ -9,7 +9,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.thumbnail.Cfgthumbnaildstcr
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent('WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue', newValue, oldValue, 'cfgthumbnaildstcropsizewidth')
+            this.fireEvent('WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue', newValue, oldValue, 'cfgthumbnaildstsizewidth')
         }
     }
 });

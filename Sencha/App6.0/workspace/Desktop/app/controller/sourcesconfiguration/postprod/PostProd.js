@@ -373,13 +373,13 @@ Ext.define('WPAKD.controller.sourcesconfiguration.postprod.PostProd', {
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnailactivate().setVisible(false);}
             if(configObj.hasOwnProperty('cfgthumbnailborder')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnailborder().setValue(configObj['cfgthumbnailborder']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnailborder().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgthumbnaildstcropsizeheight')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizeheight().setValue(configObj['cfgthumbnaildstcropsizeheight']);
+            if(configObj.hasOwnProperty('cfgthumbnaildstsizeheight')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizeheight().setValue(configObj['cfgthumbnaildstsizeheight']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizeheight().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgthumbnaildstcropsizewidth')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizewidth().setValue(configObj['cfgthumbnaildstcropsizewidth']);
+            if(configObj.hasOwnProperty('cfgthumbnaildstsizewidth')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizewidth().setValue(configObj['cfgthumbnaildstsizewidth']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropsizewidth().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgthumbnaildstcropxpos')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropxpos().setValue(configObj['cfgthumbnaildstcropxpos']);
+            if(configObj.hasOwnProperty('cfgthumbnaildstxpos')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropxpos().setValue(configObj['cfgthumbnaildstxpos']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropxpos().setVisible(false);}
-            if(configObj.hasOwnProperty('cfgthumbnaildstcropypos')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropypos().setValue(configObj['cfgthumbnaildstcropypos']);
+            if(configObj.hasOwnProperty('cfgthumbnaildstypos')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropypos().setValue(configObj['cfgthumbnaildstypos']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnaildstcropypos().setVisible(false);}
             if(configObj.hasOwnProperty('cfgthumbnailsrccropsizeheight')){this.getSourcesconfigurationpostprodthumbnailcfgthumbnailsrccropsizeheight().setValue(configObj['cfgthumbnailsrccropsizeheight']);
             } else {this.getSourcesconfigurationpostprodthumbnailcfgthumbnailsrccropsizeheight().setVisible(false);}

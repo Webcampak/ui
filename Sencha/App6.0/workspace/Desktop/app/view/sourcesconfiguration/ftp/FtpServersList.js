@@ -7,9 +7,6 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.FtpServersList", {
 
     , store: 'sourcesconfiguration.FTPServers'
 
-    , stateful: true
-    , stateId: 'sourcesconfigurationftpftpserverslist'
-
     , autoScroll: true
     , columns: [
         {text: i18n.gettext('ID'),          dataIndex: 'ID',        align: 'right',     width: 40,  sortable: true,     hidden: true                }
@@ -64,6 +61,6 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.FtpServersList", {
             clicksToEdit: 2
             , pluginId: 'rowediting'
         })
-        , Ext.create('Ext.grid.plugin.BufferedRenderer', {})
+        //, Ext.create('Ext.grid.plugin.BufferedRenderer', {})
     ]
 });

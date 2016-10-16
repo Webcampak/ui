@@ -23,9 +23,9 @@ Ext.define('WPAKD.view.sourcesconfiguration.postprod.crop.Main', {
             , fieldLabel: i18n.gettext('Size of the area')
             , layout: {type:'hbox', align: 'stretch', pack: 'start'}
             , items: [
-                {xtype : 'sourcesconfigurationpostprodcropcfgcropsizewidth', width: 60      }
+                {xtype : 'sourcesconfigurationpostprodcropcfgcropsizewidth', width: 85      }
                 , {html: 'x', xtype: 'label', width: 10, padding: 2                         }
-                , {xtype : 'sourcesconfigurationpostprodcropcfgcropsizeheight', width: 60   }
+                , {xtype : 'sourcesconfigurationpostprodcropcfgcropsizeheight', width: 85   }
             ]
         }, {
             xtype: 'fieldcontainer'

@@ -15,6 +15,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.SourcesConfiguration', {
         , {xtype: 'sourcesconfigurationvideosmain'          }
         , {xtype: 'sourcesconfigurationcustomvideosmain'    }
         , {xtype: 'sourcesconfigurationpostprodmain'        }
+        , {xtype: 'sourcesconfigurationphidgetsmain'        }
         , {xtype: 'sourcesconfigurationadvancedmain'        }
         , {xtype: 'sourcesconfigurationftpmain'             }
     ]

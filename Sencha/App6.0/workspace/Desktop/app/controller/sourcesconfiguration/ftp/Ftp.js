@@ -8,12 +8,18 @@ Ext.define('WPAKD.controller.sourcesconfiguration.ftp.Ftp', {
         'sourcesconfiguration.ftp.Main'
         , 'sourcesconfiguration.ftp.FtpServersList'
 
+        , 'sourcesconfiguration.ftp.local.Main'
+        , 'sourcesconfiguration.ftp.local.Cfglocalftppass'
+        , 'sourcesconfiguration.ftp.local.Cfglocalftpusername'
     ],
 
     stores: [
         'shared.Sources'
         , 'sourcesconfiguration.FTPServers'
         , 'sourcesconfiguration.ConfigurationTabs'
+        , 'sourcesconfiguration.Capture'
+        , 'sourcesconfiguration.SectionCapture'
+
 
     ],
 
@@ -21,12 +27,19 @@ Ext.define('WPAKD.controller.sourcesconfiguration.ftp.Ftp', {
         'shared.Sources'
         , 'sourcesconfiguration.FTPServers'
         , 'sourcesconfiguration.ConfigurationTabs'
+        , 'sourcesconfiguration.Capture'
+        , 'sourcesconfiguration.SectionCapture'
+
 
     ],
 
     refs: [
         {ref: 'sourcesconfigurationftpmain',                selector: 'sourcesconfigurationftpmain'             }
         , {ref: 'sourcesconfigurationftpftpserverslist',    selector: 'sourcesconfigurationftpftpserverslist'   }
+
+        , {ref: 'sourcesconfigurationftplocalmain',                  selector: 'sourcesconfigurationftplocalmain'                 }
+        , {ref: 'sourcesconfigurationftplocalcfglocalftppass',       selector: 'sourcesconfigurationftplocalcfglocalftppass'      }
+        , {ref: 'sourcesconfigurationftplocalcfglocalftpusername',   selector: 'sourcesconfigurationftplocalcfglocalftpusername'  }
 
     ]
 
@@ -81,6 +94,29 @@ Ext.define('WPAKD.controller.sourcesconfiguration.ftp.Ftp', {
     , loadSettings: function() {
         this.consoleLog('loadSettings()');
         console.log(new Date().toLocaleTimeString() + ': Log: Controller->SourcesConfiguration->Ftp: loadSettings: function()');
+
+        var scope = this;
+        //We store the content of the store in a Javascript object
+        var configObj = {};
+        this.getSourcesconfigurationCaptureStore().each(function (rec) {
+            var configValue = rec.get('VALUE');
+            var configName = rec.get('NAME');
+            configObj[configName] = configValue;
+        });
+
+        if(configObj.hasOwnProperty('cfglocalftppass')){
+            this.getSourcesconfigurationftplocalcfglocalftppass().setValue(configObj['cfglocalftppass']);
+            this.getSourcesconfigurationftplocalcfglocalftpusername().setValue('source' + this.getSourcesconfigurationCaptureStore().getProxy().extraParams.SOURCEID);
+        } else {
+            this.getSourcesconfigurationftplocalcfglocalftppass().setVisible(false);
+            this.getSourcesconfigurationftplocalcfglocalftpusername().setVisible(false);
+        }
+        var configObj = {};
+        this.getSourcesconfigurationSectionCaptureStore().each(function (rec) {
+            var configName = rec.get('NAME');
+            configObj[configName] = true;
+        });
+
         var isVisible = this.getSourcesconfigurationConfigurationTabsStore().findRecord('NAME', 'config-source-ftpservers', 0, false, false, true);
         if (isVisible === null) {
             this.getSourcesconfigurationftpmain().setVisible(false);

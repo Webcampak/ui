@@ -14,13 +14,13 @@ Ext.define('WPAKD.controller.sourcesconfiguration.SourcesConfiguration', {
         , 'sourcesconfiguration.ButtonSave'
 
         , 'sourcesconfiguration.advanced.Main'
+        , 'sourcesconfiguration.phidgets.Main'
         , 'sourcesconfiguration.capture.Main'
         , 'sourcesconfiguration.customvideos.Main'
         , 'sourcesconfiguration.ftp.Main'
         , 'sourcesconfiguration.pictures.Main'
         , 'sourcesconfiguration.postprod.Main'
         , 'sourcesconfiguration.videos.Main'
-
     ],
 
     stores: [
@@ -89,6 +89,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.SourcesConfiguration', {
         , {ref: 'sourcesconfigurationbuttonsave',                   selector: 'sourcesconfigurationbuttonsave'                  }
 
         , {ref: 'sourcesconfigurationadvancedmain',     selector: 'sourcesconfigurationadvancedmain'    }
+        , {ref: 'sourcesconfigurationphidgetsmain',     selector: 'sourcesconfigurationphidgetsmain'    }
         , {ref: 'sourcesconfigurationcapturemain',      selector: 'sourcesconfigurationcapturemain'     }
         , {ref: 'sourcesconfigurationcustomvideosmain', selector: 'sourcesconfigurationcustomvideosmain'}
         , {ref: 'sourcesconfigurationftpmain',          selector: 'sourcesconfigurationftpmain'         }
@@ -351,6 +352,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.SourcesConfiguration', {
         this.getSourcesconfigurationbuttoncancel().setDisabled(true);
         this.getSourcesconfigurationbuttonsave().setDisabled(true);
         this.getSourcesconfigurationadvancedmain().setDisabled(true);
+        this.getSourcesconfigurationphidgetsmain().setDisabled(true);
         this.getSourcesconfigurationcapturemain().setDisabled(true);
         this.getSourcesconfigurationcustomvideosmain().setDisabled(true);
         this.getSourcesconfigurationftpmain().setDisabled(true);
@@ -385,6 +387,7 @@ Ext.define('WPAKD.controller.sourcesconfiguration.SourcesConfiguration', {
             this.fireEvent('WPAKD.controller.sourcesconfiguration.customvideos.Videos.loadSettings');
             this.fireEvent('WPAKD.controller.sourcesconfiguration.postprod.PostProd.loadSettings');
             this.fireEvent('WPAKD.controller.sourcesconfiguration.advanced.Advanced.loadSettings');
+            this.fireEvent('WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.loadSettings');
             this.fireEvent('WPAKD.controller.sourcesconfiguration.ftp.Ftp.loadSettings');
         }
 

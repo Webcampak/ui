@@ -46,6 +46,7 @@ Ext.define('WPAKD.Application', {
         , 'sourcesconfiguration.videos.Videos'
         , 'sourcesconfiguration.customvideos.Videos'
         , 'sourcesconfiguration.postprod.PostProd'
+        , 'sourcesconfiguration.phidgets.Phidgets'
         , 'sourcesconfiguration.advanced.Advanced'
         , 'sourcesconfiguration.ftp.Ftp'
 

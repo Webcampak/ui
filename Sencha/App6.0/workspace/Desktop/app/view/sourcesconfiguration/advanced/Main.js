@@ -11,9 +11,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.advanced.Main', {
     , autoScroll: true
     , defaults: {margin: 10}
     , items: [
-        {xtype: 'sourcesconfigurationadvancedftpmain'       }
-        , {xtype: 'sourcesconfigurationadvancedemailsmain'  }
-        , {xtype: 'sourcesconfigurationadvancedphidgetmain' }
+        {xtype: 'sourcesconfigurationadvancedemailsmain'  }
     ]
 });
 
