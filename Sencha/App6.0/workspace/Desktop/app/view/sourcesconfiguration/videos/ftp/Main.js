@@ -17,7 +17,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.videos.ftp.Main', {
         , defaults: {padding: 2}
         , layout: {type:'hbox', align: 'stretch', pack: 'start'}
         , items   : [
-            , {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftpmainserveraviid'    }
+            {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftpmainserveraviid'    }
             , {width: 160,labelWidth: 80, xtype: 'sourcesconfigurationvideosftpcfgftpmainserveraviretry' }
         ]
     }, {
@@ -25,7 +25,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.videos.ftp.Main', {
         , defaults: {padding: 2}
         , layout: {type:'hbox', align: 'stretch', pack: 'start'}
         , items   : [
-            , {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftpmainservermp4id'    }
+            {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftpmainservermp4id'    }
             , {width: 160,labelWidth: 80, xtype: 'sourcesconfigurationvideosftpcfgftpmainservermp4retry' }
         ]
     }, {
@@ -33,7 +33,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.videos.ftp.Main', {
         , defaults: {padding: 2}
         , layout: {type:'hbox', align: 'stretch', pack: 'start'}
         , items   : [
-            , {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkserveraviid'    }
+            {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkserveraviid'    }
             , {width: 160,labelWidth: 80, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkserveraviretry' }
         ]
     }, {
@@ -41,7 +41,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.videos.ftp.Main', {
         , defaults: {padding: 2}
         , layout: {type:'hbox', align: 'stretch', pack: 'start'}
         , items   : [
-            , {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkservermp4id'    }
+            {flex: 1,   labelWidth: 150, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkservermp4id'    }
             , {width: 160,labelWidth: 80, xtype: 'sourcesconfigurationvideosftpcfgftphotlinkservermp4retry' }
         ]
     }]

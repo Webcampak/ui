@@ -156,7 +156,7 @@ Ext.define('WPAKT.controller.core.Email', {
     sendEmail: function() {
         this.consoleLog('sendEmail()');
         var emailsDstString = this.getCoreemailsendto().getValue() + this.getCoreemailsendcc().getValue();
-        if (emailsDstString.length > 5 && this.getCoreemailemailsubject().getValue() != '' && this.getCoreemailemailbody().getValue() != '') {
+        if (emailsDstString.length > 5 && this.getCoreemailemailsubject().getValue() !== '' && this.getCoreemailemailbody().getValue() !== '') {
             //if (this.getSendEvent() !== '') {
             //    this.fireEvent(this.getSendEvent());
             //} else {

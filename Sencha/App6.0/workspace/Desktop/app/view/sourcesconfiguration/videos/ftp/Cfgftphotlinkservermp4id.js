@@ -21,7 +21,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftphotlinkservermp4id"
             scope.getStore().each(function (rec) {
                 if (rec.get('ID') === newValue ) {idFound = true;}
             });
-            if (idFound == false) {newValue = "";}
+            if (idFound === false) {newValue = "";}
             //console.log(scope.getStore()); console.log(scope);console.log(newValue);console.log(oldValue);
             this.fireEvent('WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue', newValue, oldValue, 'cfgftphotlinkservermp4id');
         }

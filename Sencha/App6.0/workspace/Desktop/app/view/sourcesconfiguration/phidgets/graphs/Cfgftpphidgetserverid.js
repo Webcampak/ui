@@ -19,7 +19,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.graphs.Cfgftpphidgetserveri
             scope.getStore().each(function (rec) {
                 if (rec.get('ID') === newValue ) {idFound = true;}
             });
-            if (idFound == false) {newValue = "";}
+            if (idFound === false) {newValue = "";}
             //console.log(scope.getStore()); console.log(scope);console.log(newValue);console.log(oldValue);
             this.fireEvent('WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue', newValue, oldValue, 'cfgftpphidgetserverid');
         }

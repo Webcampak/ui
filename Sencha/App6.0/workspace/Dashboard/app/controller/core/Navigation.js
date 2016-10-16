@@ -81,8 +81,8 @@ Ext.define('WPAKT.controller.core.Navigation', {
             , iconCls: 'x-fa fa-desktop'
             , routeId: 'dashboard'
         }
-        var storePicturesRecord = {};
         if (this.getCoreApplicationsStore().findRecord('CODE', 'WEB_DSP_PICTURES', 0, false, false, true) !== null) {
+            var storePicturesRecord = {};
             var pictureSources = [];
             this.getCoreSourcesStore().each(function (rec) {
                 if (rec.get('REMOTE_HOST') !== "" && rec.get('REMOTE_HOST') !== "127.0.0.1") {
@@ -109,9 +109,11 @@ Ext.define('WPAKT.controller.core.Navigation', {
                     , children: pictureSources                  
                 }
             }
+        } else {
+            var storePicturesRecord = {};
         }
-        var storeVideosRecord = {};        
         if (this.getCoreApplicationsStore().findRecord('CODE', 'WEB_DSP_VIDEOS', 0, false, false, true) !== null) {
+            var storeVideosRecord = {};
             var videoSources = [];
             this.getCoreSourcesStore().each(function (rec) {
                 if (rec.get('REMOTE_HOST') !== "" && rec.get('REMOTE_HOST') !== "127.0.0.1") {
@@ -138,9 +140,11 @@ Ext.define('WPAKT.controller.core.Navigation', {
                     , children: videoSources                  
                 }
             }
-        }  
-        var storeConfigRecord = {};        
+        } else {
+            var storeVideosRecord = {};
+        }
         if (this.getCoreApplicationsStore().findRecord('CODE', 'WEB_CFG_SOURCES', 0, false, false, true) !== null) {
+            var storeConfigRecord = {};
             var configSources = [];
             this.getCoreSourcesStore().each(function (rec) {
                 if (rec.get('REMOTE_HOST') !== "" && rec.get('REMOTE_HOST') !== "127.0.0.1") {
@@ -167,7 +171,9 @@ Ext.define('WPAKT.controller.core.Navigation', {
                     , children: configSources                  
                 }
             }
-        }         
+        } else {
+            var storeConfigRecord = {};
+        }
         
         var storeRecords = {
             expanded: true,
