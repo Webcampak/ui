@@ -1,3 +1,4 @@
+/*global Ext i18n*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.Main');
 //</debug>
@@ -11,39 +12,5 @@ Ext.define('WPAKD.view.desktop.Main', {
     items: [{
       xtype: 'desktopiconsmain'
     }]
-
-    /*
-    layout: {type: 'hbox', align : 'stretch', pack  : 'start'},
-    items: [{
-        xtype: 'container',
-        width: 40
-    }, {
-        xtype: 'container',
-        width: 270,
-        layout: {type: 'vbox', align : 'stretch', pack  : 'start'},
-        items: [{
-            xtype: 'container',
-            height: 40
-        }, {
-            xtype: 'desktoptilesworkorders'
-        }, {
-            xtype: 'container',
-            flex: 1
-        }]
-
-    }, {
-        xtype: 'container',
-        flex: 1
-    }, {
-        xtype: 'container',
-        layout: {type: 'vbox', align : 'stretch', pack  : 'start'},
-        items: [{
-            xtype: 'container',
-            flex: 1
-        }, {
-            xtype: 'container'
-            , html: '<div id="digiclock"></div>'
-        }]
-    }]*/
 });
 
