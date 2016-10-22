@@ -30,7 +30,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.preprocess.Cfgvideoprei
     })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgdateformat")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgdateformat");
         }
     }
 });

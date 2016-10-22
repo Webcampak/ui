@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.relays.Cfgphidgetcameraport
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgphidgetcameraport")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgphidgetcameraport");
         }
     }
 });

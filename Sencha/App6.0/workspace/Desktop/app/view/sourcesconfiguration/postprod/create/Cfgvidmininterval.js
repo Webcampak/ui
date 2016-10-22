@@ -19,7 +19,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgvidmininterval", 
         })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvidmininterval")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvidmininterval");
         }
     }
 });

@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.preprocess.Cfgvideopreimgtext
     , fieldLabel: i18n.gettext("Shadow Coordinates")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextbaseposition")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextbaseposition");
         }
     }
 });

@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Cfgvidmininterva
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvidminintervalvalue")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvidminintervalvalue");
         }
     }
 });

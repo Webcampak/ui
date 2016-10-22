@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.watermark.Cfgwatermarkd
     , maxValue: 100
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgwatermarkdissolve")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgwatermarkdissolve");
         }
     }
 });

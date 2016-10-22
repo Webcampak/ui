@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.text.Cfgimgtext", {
     , fieldLabel: i18n.gettext("Legend")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgimgtext")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgimgtext");
         }
     }
 });

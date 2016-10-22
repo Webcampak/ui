@@ -26,7 +26,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.source.Cfgsourcelanguage", {
         })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcelanguage")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcelanguage");
         }
     }
 });

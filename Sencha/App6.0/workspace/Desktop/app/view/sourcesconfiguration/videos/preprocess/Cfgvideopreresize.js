@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.preprocess.Cfgvideopreresize"
     , inputValue: "on"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreresize")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreresize");
         }
     }
 });

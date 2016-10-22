@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgcustomendminute",
     , maxValue:59
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.Videos.updateStoreValue", newValue, oldValue, "cfgcustomendminute")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.Videos.updateStoreValue", newValue, oldValue, "cfgcustomendminute");
         }
     }
 });

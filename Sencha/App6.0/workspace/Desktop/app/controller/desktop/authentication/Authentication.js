@@ -133,14 +133,6 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
                 scope.fireEvent("WPAKD.controller.desktop.icons.Icons.reloadIconsLaunch");
             },500);
             */
-            /*
-            Ext.MessageBox.show({
-                title: i18n.gettext("USER AUTHENTICATED"),
-                msg: i18n.gettext("TO BE REPLACED BY DESKTOP"),
-                buttons: Ext.MessageBox.OK,
-                icon: Ext.MessageBox.INFO
-            });
-            */
         }
     }
 
@@ -292,45 +284,4 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
         this.consoleLog("openPasswordRecovery()");
         this.getDesktopauthenticationlostpasswordmain().show();
     }
-/*
-    , doReAuthenticate: function() {
-        this.consoleLog("doReAuthenticate()");
-        var scope = this;
-        if (this.fireEvent("WPAKD.controller.desktop.ServerAvailability.isOnline", true)) {
-            this.consoleLog("doReAuthenticate() - Checks ok, sending credentials to server");
-            var currentUser = this.getDesktopAuthenticationUsersStore().first();
-            var serverUrl = window.location.href;
-            var serverUrl = serverUrl.replace("mobile","");
-            var serverUrl = serverUrl + "/../authentication/reauthenticate";
-            this.fireEvent("WPAKD.controller.desktop.BackgroundActivities.startAjaxLoading");
-            Ext.Ajax.request({
-                url: serverUrl
-                , timeout: 10000
-                , params: {
-                    USERNAME: currentUser.get("USERNAME")
-                }
-                , success: function(response){
-                    scope.fireEvent("WPAKD.controller.desktop.BackgroundActivities.endAjaxLoading");
-                    console.log(response);
-                    var serverResponse = Ext.decode(response.responseText, true);
-                    if (serverResponse !== null) {
-                        if (serverResponse.authentication == "SUCCESS") {
-                            currentUser.set("USERNAME", serverResponse.USERNAME);
-                            currentUser.set("AUTHENTICATED", "Y");
-                            scope.displayLoginWindow();
-                        } else if (serverResponse.authentication == "FAILED") {
-                            currentUser.set("USERNAME", "");
-                            currentUser.set("AUTHENTICATED", "N");
-                            scope.displayLoginWindow();
-                        }
-                    }
-                }
-                , failure: function(response, opts) {
-                    scope.fireEvent("WPAKD.controller.desktop.BackgroundActivities.endAjaxLoading");
-                    scope.consoleLog("doReAuthenticate()", "info", response);
-                }
-            });
-        }
-    }
-*/
 });

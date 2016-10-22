@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailsendto", {
     , fieldLabel: i18n.gettext("Send email to")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailsendto")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailsendto");
         }
     }
 });

@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Cfgpicwatermarkpo
     , minValue: 0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkpositiony")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkpositiony");
         }
     }
 });

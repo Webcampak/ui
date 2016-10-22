@@ -24,7 +24,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.source.Cfgcroncaptureinterva
         })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcroncaptureinterval")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcroncaptureinterval");
         }
     }
 });

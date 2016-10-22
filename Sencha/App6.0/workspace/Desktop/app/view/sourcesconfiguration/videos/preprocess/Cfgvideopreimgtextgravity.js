@@ -30,7 +30,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.preprocess.Cfgvideopreimgtext
     })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextgravity")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextgravity");
         }
     }
 });

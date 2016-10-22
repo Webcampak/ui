@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.rotate.Cfgrotateangle", {
     , minValue:-360
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgrotateangle")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgrotateangle");
         }
     }
 });

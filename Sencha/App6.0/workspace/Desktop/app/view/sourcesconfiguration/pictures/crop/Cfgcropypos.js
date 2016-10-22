@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Cfgcropypos", {
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgcropypos")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgcropypos");
         }
     }
 });

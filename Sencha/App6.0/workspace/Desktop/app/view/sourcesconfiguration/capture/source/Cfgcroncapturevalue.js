@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.source.Cfgcroncapturevalue",
 
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcroncapturevalue")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcroncapturevalue");
         }
     }
 });

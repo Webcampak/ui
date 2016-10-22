@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.watermark.Cfgwatermarkpositio
     , minValue: 0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgwatermarkpositionx")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgwatermarkpositionx");
         }
     }
 });

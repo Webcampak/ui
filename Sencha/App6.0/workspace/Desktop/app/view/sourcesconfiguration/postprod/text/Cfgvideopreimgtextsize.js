@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.text.Cfgvideopreimgtextsize
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextsize")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextsize");
         }
     }
 });

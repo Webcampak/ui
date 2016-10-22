@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftpmainservermp4retry"
     , maxValue: 4
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgftpmainservermp4retry")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgftpmainservermp4retry");
         }
     }
 });

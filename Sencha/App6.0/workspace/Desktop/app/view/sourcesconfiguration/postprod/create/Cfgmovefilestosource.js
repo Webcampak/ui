@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgmovefilestosource
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgmovefilestosource")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgmovefilestosource");
         }
     }
 });

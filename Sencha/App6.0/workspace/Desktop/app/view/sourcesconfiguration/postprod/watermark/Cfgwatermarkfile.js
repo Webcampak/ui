@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.watermark.Cfgwatermarkfile"
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgwatermarkfile")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgwatermarkfile");
         }
     }
 });

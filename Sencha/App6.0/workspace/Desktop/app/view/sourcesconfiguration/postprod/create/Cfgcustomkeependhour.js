@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgcustomkeependhour
     , maxValue:23
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgcustomkeependhour")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgcustomkeependhour");
         }
     }
 });

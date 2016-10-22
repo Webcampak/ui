@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.local.Cfglocalftppass", {
     , padding: 5
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.ftp.Ftp.updateStoreValue", newValue, oldValue, "cfglocalftppass")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.ftp.Ftp.updateStoreValue", newValue, oldValue, "cfglocalftppass");
         }
     }
 });

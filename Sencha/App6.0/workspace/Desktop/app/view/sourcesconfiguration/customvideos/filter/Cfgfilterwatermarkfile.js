@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.filter.Cfgfilterwaterma
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgfilterwatermarkfile")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgfilterwatermarkfile");
         }
     }
 });

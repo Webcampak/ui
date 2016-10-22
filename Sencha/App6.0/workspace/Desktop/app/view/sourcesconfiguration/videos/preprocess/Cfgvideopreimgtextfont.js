@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.preprocess.Cfgvideopreimgtext
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextfont")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextfont");
         }
     }
 });

@@ -14,7 +14,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.copy.Cfgcopysecondsourceid"
     , emptyText: i18n.gettext("Disabled")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgcopysecondsourceid")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgcopysecondsourceid");
         }
     }
 });

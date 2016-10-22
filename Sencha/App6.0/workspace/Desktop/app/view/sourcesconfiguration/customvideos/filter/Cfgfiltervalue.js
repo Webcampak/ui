@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.filter.Cfgfiltervalue",
     , fieldLabel: i18n.gettext("Max distance")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgfiltervalue")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgfiltervalue");
         }
     }
 });

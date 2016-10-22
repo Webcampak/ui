@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.text.Cfgvideopreimgtextover
     , fieldLabel: i18n.gettext("Legend Color")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextovercolor")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideopreimgtextovercolor");
         }
     }
 });

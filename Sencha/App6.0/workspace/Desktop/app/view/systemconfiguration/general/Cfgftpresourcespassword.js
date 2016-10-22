@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfgftpresourcespassword", {
     , labelWidth: 200
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfgftpresourcespassword")
+            this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfgftpresourcespassword");
         }
     }
 });

@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.formats.CfgvideocodecH2
     , maxValue: 100
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideocodecH264720pfps")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideocodecH264720pfps");
         }
     }
 });

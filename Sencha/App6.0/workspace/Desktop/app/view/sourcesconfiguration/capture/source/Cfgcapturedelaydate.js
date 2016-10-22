@@ -25,7 +25,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.source.Cfgcapturedelaydate",
         })
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcapturedelaydate")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgcapturedelaydate");
         }
     }
 });

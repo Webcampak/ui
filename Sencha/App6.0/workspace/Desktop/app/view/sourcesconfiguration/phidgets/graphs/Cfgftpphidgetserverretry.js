@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.graphs.Cfgftpphidgetserverr
     , maxValue: 4
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgftpphidgetserverretry")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgftpphidgetserverretry");
         }
     }
 });

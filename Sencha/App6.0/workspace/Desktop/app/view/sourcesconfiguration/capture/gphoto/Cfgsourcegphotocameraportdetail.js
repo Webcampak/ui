@@ -33,7 +33,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.gphoto.Cfgsourcegphotocamera
             delete qe.combo.lastQuery;
         }
         , change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcegphotocameraportdetail")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcegphotocameraportdetail");
         }
     }
 });

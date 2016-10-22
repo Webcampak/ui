@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Cfgpicwatermarkdi
     , maxValue: 100
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkdissolve")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkdissolve");
         }
     }
 });

@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Cfgpicwatermarkfi
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkfile")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkfile");
         }
     }
 });

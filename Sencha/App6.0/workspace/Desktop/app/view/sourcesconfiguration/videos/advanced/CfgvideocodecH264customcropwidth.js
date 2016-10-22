@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.advanced.CfgvideocodecH264cus
     , maxValue: 10000
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideocodecH264customcropwidth")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgvideocodecH264customcropwidth");
         }
     }
 });

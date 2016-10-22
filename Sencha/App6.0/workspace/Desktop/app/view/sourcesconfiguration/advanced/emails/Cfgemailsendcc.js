@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailsendcc", {
     , fieldLabel: i18n.gettext("Send a copy of the emails to (CC)")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailsendcc")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailsendcc");
         }
     }
 });

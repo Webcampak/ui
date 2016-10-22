@@ -14,7 +14,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.gphoto.Cfgsourcegphotocamera
     , queryMode: "local"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcegphotocameramodel")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcegphotocameramodel");
         }
     }
 });

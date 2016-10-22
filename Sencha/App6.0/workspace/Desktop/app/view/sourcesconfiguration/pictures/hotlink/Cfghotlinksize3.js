@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.hotlink.Cfghotlinksize3", {
     , fieldLabel: i18n.gettext("Hotlink 3 size")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfghotlinksize3")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfghotlinksize3");
         }
     }
 });

@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.ftp.Cfgftpmainserverretry",
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgftpmainserverretry")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgftpmainserverretry");
         }
     }
 });

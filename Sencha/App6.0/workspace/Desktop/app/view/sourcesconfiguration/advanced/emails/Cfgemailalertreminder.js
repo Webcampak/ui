@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailalertreminde
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailalertreminder")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailalertreminder");
         }
     }
 });

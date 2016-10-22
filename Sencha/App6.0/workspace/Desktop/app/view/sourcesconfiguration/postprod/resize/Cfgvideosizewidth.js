@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.resize.Cfgvideosizewidth", 
     , minValue:0
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideosizewidth")
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.PostProd.updateStoreValue", newValue, oldValue, "cfgvideosizewidth");
         }
     }
 });
