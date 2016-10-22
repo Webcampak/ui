@@ -70,7 +70,7 @@ Ext.define("WPAKT.Application", {
         window.onbeforeunload = function(e) {return i18n.gettext("You are about to leave the application. You might loose some content. Are you sure ?");};
 
         // custom Vtype for vtype:"username"
-        usernameTest = /^[a-zA-Z0-9\_\-_]+$/,
+        var usernameTest = /^[a-zA-Z0-9\_\-_]+$/;
         Ext.apply(Ext.form.field.VTypes, {
             //  vtype validation function
             username: function(val, field) {
