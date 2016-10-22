@@ -3,6 +3,7 @@
  * calls Ext.application(). This is the ideal place to handle application launch and
  * initialization details.
  */
+/*global Ext i18n*/
 Ext.define("WPAKD.Application", {
     extend: "Ext.app.Application",
 
