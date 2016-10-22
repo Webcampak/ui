@@ -488,7 +488,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
         this.getSyncreportsreportaddsourceftpserverslist().setLoading(false);
     }
     
-    , changeSourceType: function(scope, newValue, oldValue, eOpts) {
+    , changeSourceType: function(scope, newValue, oldValue) {
         this.consoleLog("changeSourceType()");
         if (newValue !== null) {
             if (newValue === "ftp") {
@@ -522,7 +522,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
         this.getSyncreportsreportadddestinationftpserverslist().setLoading(false);
     }   
     
-    , changeDestinationType: function(scope, newValue, oldValue, eOpts) {
+    , changeDestinationType: function(scope, newValue, oldValue) {
         this.consoleLog("changeDestinationType()");
         if (newValue !== null) {
             if(newValue === "ftp") {

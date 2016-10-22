@@ -94,12 +94,12 @@ Ext.define("WPAKD.controller.videos.Videos", {
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
-    , reloadVideosForSource: function(scope, selectedVideo, eOpts) {
+    , reloadVideosForSource: function(scope, selectedVideo) {
         this.consoleLog("reloadVideosForSource()");
 
     }
 
-    , onVideoSelected: function(scope, selectedVideo, eOpts) {
+    , onVideoSelected: function(scope, selectedVideo) {
         this.consoleLog("onVideoSelected()");
 
         if (selectedVideo !== null && selectedVideo[0]) {

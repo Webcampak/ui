@@ -79,7 +79,7 @@ Ext.define("WPAKD.controller.stats.System", {
         this.getStatsSystemStore().load();
     }
 
-    , selectRange: function(scope, record, eOpts) {
+    , selectRange: function(scope, record) {
         this.consoleLog("selectRange()");
         if (record !== null) {
             Ext.getStore("stats.System").getProxy().setExtraParam("RANGE", record.get("value"));

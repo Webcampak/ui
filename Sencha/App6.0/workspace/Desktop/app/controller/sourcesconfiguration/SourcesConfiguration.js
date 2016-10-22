@@ -161,7 +161,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
     /*
      * If old tab is the FTP server configuration, ensure that all servers have been sync"ed up by checking their ID.
      */
-    , changeActiveTab: function(tabPanel, newCard, oldCard, eOpts) {
+    , changeActiveTab: function(tabPanel, newCard, oldCard) {
         this.consoleLog("changeActiveTab()");
         // If old tab is FTP Server, we ensure all FTP servers have been saved
         if (oldCard.alias[0] == "widget.sourcesconfigurationftpmain") {
@@ -221,7 +221,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
      * Before selecting a source in the grid, ensure this source has been saved to database.
      * If not cancel selection and ask user to save configuration.
      */
-    , verifyConfigurationStatusBeforeSelect: function(scope, record, index, eOpts) {
+    , verifyConfigurationStatusBeforeSelect: function(scope, record, index) {
         this.consoleLog("verifyConfigurationStatusBeforeSelect()");
         if (this.getConfigurationSyncStatus() == false) { // Means configuration has been changed
             var scope = this;

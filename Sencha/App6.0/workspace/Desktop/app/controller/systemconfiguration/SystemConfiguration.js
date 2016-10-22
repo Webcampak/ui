@@ -121,7 +121,7 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
     /*
      * If old tab is the FTP server configuration, ensure that all servers have been sync"ed up by checking their ID.
      */
-    , changeActiveTab: function(tabPanel, newCard, oldCard, eOpts) {
+    , changeActiveTab: function(tabPanel, newCard, oldCard) {
         this.consoleLog("changeActiveTab()");
     }
 
