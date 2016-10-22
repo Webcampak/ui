@@ -11,8 +11,8 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.relays.Cfgphidgeterroractiv
     , inputValue: "on"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            if (newValue === true) {newValue = "yes"} else {newValue = "no"}
-            if (oldValue === true) {oldValue = "yes"} else {oldValue = "no"}
+            if (newValue === true) {newValue = "yes";} else {newValue = "no";}
+            if (oldValue === true) {oldValue = "yes";} else {oldValue = "no";}
             this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgphidgeterroractivate")
         }
     }
