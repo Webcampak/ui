@@ -17,7 +17,6 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Main", {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
-                //{flex: 1,       xtype: "label",	html: i18n.gettext("From")                                     }
                 {flex: 1,labelWidth: 250, xtype: "sourcesconfigurationcustomvideoscreatecfgcustomstartdate"     }
                 , {width: 10,   xtype: "fieldcontainer", fieldLabel: i18n.gettext("at"), labelSeparator: "", padding: "0 5 0 5"  }
                 , {width: 50,   xtype: "sourcesconfigurationcustomvideoscreatecfgcustomstarthour"     }
@@ -27,7 +26,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Main", {
 	}, {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
-            , items   : [
+            , items: [
                 {flex: 1,labelWidth: 250, xtype: "sourcesconfigurationcustomvideoscreatecfgcustomenddate"     }
                 , {width: 10,   xtype: "fieldcontainer", fieldLabel: i18n.gettext("at"), labelSeparator: "", padding: "0 5 0 5"  }
                 , {width: 50,   xtype: "sourcesconfigurationcustomvideoscreatecfgcustomendhour"     }
@@ -37,8 +36,8 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Main", {
 	}, {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
-            , items   : [
-                , {width: 310, labelWidth: 250, xtype : "sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour"   }
+            , items: [
+                {width: 310, labelWidth: 250, xtype : "sourcesconfigurationcustomvideoscreatecfgcustomkeepstarthour"   }
                 , {width: 10,	xtype: "label",	html: ":",                  padding: 2                   }
                 , {width: 50,	xtype : "sourcesconfigurationcustomvideoscreatecfgcustomkeepstartminute" }
                 , {width: 30,   xtype: "fieldcontainer", fieldLabel: i18n.gettext("and"), labelSeparator: "", padding: "0 5 0 5"  }
@@ -50,7 +49,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Main", {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
-                , {width: 310, labelWidth: 250, xtype: "sourcesconfigurationcustomvideoscreatecfgvidminintervalvalue"       }
+                {width: 310, labelWidth: 250, xtype: "sourcesconfigurationcustomvideoscreatecfgvidminintervalvalue"       }
                 , {width: 100,   xtype: "sourcesconfigurationcustomvideoscreatecfgvidmininterval"            }
             ]
 	}

@@ -81,76 +81,17 @@ Ext.define("WPAKT.controller.core.Skeleton", {
         this.getCoreskeletoncardmain().removeAll();
         this.getCoreskeletoncardmain().add(scope.getDashboardmain());  
         scope.getDashboardmain().show();
-        /*
-        var hashTag = "dashboard";
-        var currentNode = this.getDashboardNavigationTreeStore().findNode("routeId", hashTag);
-        var view = currentNode ? node.get("view") : null,
-                
-        hashTag = (hashTag || "").toLowerCase();
-
-        var me = this,
-            refs = me.getReferences(),
-            viewModel = me.getViewModel(),
-            vmData = viewModel.getData(),
-            store = navigationList.getStore(),
-            node = store.findNode("routeId", hashTag),
-            view = node ? node.get("view") : null,
-            lastView = vmData.currentView,
-            existingItem = this.this.getCoreskeletoncardmain().child("component[routeId=" + hashTag + "]"),
-            newView;
-
-        // Kill any previously routed window
-        if (lastView && lastView.isWindow) {
-            lastView.destroy();
-        }
-
-        lastView = this.this.getCoreskeletoncardmain().getLayout().getActiveItem();
-
-        if (!existingItem) {
-            newView = Ext.create("Admin.view." + (view || "pages.Error404Window"), {
-                    hideMode: "offsets",
-                    routeId: hashTag
-                });
-        }
-
-        if (!newView || !newView.isWindow) {
-            // !newView means we have an existing view, but if the newView isWindow
-            // we don"t add it to the card layout.
-            if (existingItem) {
-                // We don"t have a newView, so activate the existing view.
-                if (existingItem !== lastView) {
-                    this.this.getCoreskeletoncardmain().getLayout().setActiveItem(existingItem);
-                }
-                newView = existingItem;
-            }
-            else {
-                // newView is set (did not exist already), so add it and make it the
-                // activeItem.
-                Ext.suspendLayouts();
-                this.this.getCoreskeletoncardmain().getLayout().setActiveItem(this.this.getCoreskeletoncardmain().add(newView));
-                Ext.resumeLayouts(true);
-            }
-        }
-
-        this.getCoreskeletontreemain().setSelection(currentNode);
-
-        if (newView.isFocusable(true)) {
-            newView.focus();
-        }
-
-        vmData.currentView = newView;
-        */
     }
 
     , onToggleNavigationSize: function () {
         var scope = this;
         var collapsing = !this.getCoreskeletontreemain().getMicro();
-        var new_width = collapsing ? 64 : 250;
+        var newWidth = collapsing ? 64 : 250;
 
         if (Ext.isIE9m || !Ext.os.is.Desktop) {
             Ext.suspendLayouts();
-            this.getCoretoolbarlogo().setWidth(new_width);
-            this.getCoreskeletontreemain().setWidth(new_width);
+            this.getCoretoolbarlogo().setWidth(newWidth);
+            this.getCoreskeletontreemain().setWidth(newWidth);
             this.getCoreskeletontreemain().setMicro(collapsing);
             Ext.resumeLayouts(); // do not flush the layout here...
             // No animation for IE9 or lower...
@@ -164,12 +105,12 @@ Ext.define("WPAKT.controller.core.Skeleton", {
                 this.getCoreskeletontreemain().setMicro(false);
             }
             // Start this layout first since it does not require a layout
-            this.getCoretoolbarlogo().animate({dynamic: true, to: {width: new_width}});
+            this.getCoretoolbarlogo().animate({dynamic: true, to: {width: newWidth}});
 
             // Directly adjust the width config and then run the main wrap skeleton layout
             // as the root layout (it and its chidren). This will cause the adjusted size to
             // be flushed to the element and animate to that new size.
-            this.getCoreskeletontreemain().width = new_width;
+            this.getCoreskeletontreemain().width = newWidth;
             this.getCoreskeletonmain().updateLayout({isRoot: true});
 
             // We need to switch to micro mode on the navlist *after* the animation (this

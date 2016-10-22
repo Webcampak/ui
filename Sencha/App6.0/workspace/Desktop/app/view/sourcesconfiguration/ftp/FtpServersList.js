@@ -16,35 +16,35 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.FtpServersList", {
         , {text: i18n.gettext("Username"),  dataIndex: "USERNAME",  align: "left",      flex: 1,    sortable: true,     field: {xtype: "textfield", allowBlank: false} }
         , {text: i18n.gettext("Password"),  dataIndex: "PASSWORD",  align: "left",      flex: 1,    sortable: true,     field: {xtype: "textfield", allowBlank: false} }
         , {text: i18n.gettext("Directory"), dataIndex: "DIRECTORY", align: "left",      flex: 1.5,  sortable: true,     field: {xtype: "textfield", allowBlank: false} }
-        , {text: i18n.gettext("Active"),    dataIndex: "ACTIVE",    align: "left",      flex: 1,    sortable: true,
-            field: {
-                xtype: "combobox",
-                store: Ext.create("Ext.data.Store", {
-                    fields: [{name: "name", type: "string"}, { name: "id", type: "int"}, { name: "ACTIVE", type: "string"}],
-                    data : [{name : "YES", id: 1, ACTIVE: "yes"},{name : "NO", id: 0, ACTIVE: "no"}]
-                }),
-                displayField: "name",
-                valueField: "ACTIVE",
-                allowBlank: false
-            },
-            renderer: function(value) {
+        , {text: i18n.gettext("Active"),    dataIndex: "ACTIVE",    align: "left",      flex: 1,    sortable: true
+            , field: {
+                xtype: "combobox"
+                , store: Ext.create("Ext.data.Store", {
+                    fields: [{name: "name", type: "string"}, { name: "id", type: "int"}, { name: "ACTIVE", type: "string"}]
+                    , data: [{name : "YES", id: 1, ACTIVE: "yes"},{name : "NO", id: 0, ACTIVE: "no"}]
+                })
+                , displayField: "name"
+                , valueField: "ACTIVE"
+                , allowBlank: false
+            }
+            , renderer: function(value) {
                 if (value == "yes") {return "YES";}
                 else {return "NO";}
             }
         }
         , {
             text: i18n.gettext("Xfer")
-            , columns: [            
-                , {text: i18n.gettext("Enable"),    dataIndex: "XFERENABLE",    align: "left",      flex: 1,    sortable: true,
-                    field: {
-                        xtype: "combobox",
-                        store: Ext.create("Ext.data.Store", {
-                            fields: [{name: "name", type: "string"}, { name: "id", type: "int"}, { name: "ACTIVE", type: "string"}],
-                            data : [{name : "YES", id: 1, ACTIVE: "yes"},{name : "NO", id: 0, ACTIVE: "no"}]
-                        }),
-                        displayField: "name",
-                        valueField: "ACTIVE",
-                        allowBlank: false
+            , columns: [
+                {text: i18n.gettext("Enable"),    dataIndex: "XFERENABLE",    align: "left",      flex: 1,    sortable: true
+                    , field: {
+                        xtype: "combobox"
+                        , store: Ext.create("Ext.data.Store", {
+                            fields: [{name: "name", type: "string"}, { name: "id", type: "int"}, { name: "ACTIVE", type: "string"}]
+                            , data : [{name : "YES", id: 1, ACTIVE: "yes"},{name : "NO", id: 0, ACTIVE: "no"}]
+                        })
+                        , displayField: "name"
+                        , valueField: "ACTIVE"
+                        , allowBlank: false
                     },
                     renderer: function(value) {
                         if (value == "yes") {return "YES";}

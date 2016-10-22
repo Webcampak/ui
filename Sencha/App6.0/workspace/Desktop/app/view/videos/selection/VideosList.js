@@ -20,7 +20,9 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
         if (value > 0) {
             var sizes = ["Bytes", "KB", "MB", "GB", "TB"];
             var posttxt = 0;
-            if (value == 0) return "n/a";
+            if (value == 0) {
+                return "n/a";
+            }
             while( value >= 1024 ) {
                 posttxt++;
                 value = value / 1024;
