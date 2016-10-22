@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.preprocess.Cfgvideoprer
 
     , fieldLabel: i18n.gettext("Picture size (1920x1080)")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreresizeres");
         }
     }

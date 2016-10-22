@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.watermark.Cfgwatermarkfile", 
     , displayField: "NAME"
     , queryMode: "local"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgwatermarkfile");
         }
     }

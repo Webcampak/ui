@@ -151,7 +151,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     }    
 
     // When user click on a grid cell, change its value
-    , onMinuteSelected: function(viewScope, td, cellIndex, record, tr, rowIndex, e, eOpts ) {
+    , onMinuteSelected: function(viewScope, td, cellIndex, record, tr, rowIndex, e) {
         this.consoleLog("onMinuteSelected()");
         var columnName = viewScope.panel.headerCt.getHeaderAtIndex(cellIndex).text;
         this.consoleLog("onMinuteSelected() - Click on Minute: " + columnName);
@@ -355,7 +355,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     }
 
     // When a source is selected, load its corresponding content
-    , onSourceSelected: function(scope, selected, eOpts ) {
+    , onSourceSelected: function(scope, selected) {
         this.consoleLog("onSourceSelected()");
         var scope = this;
         this.showMask();        

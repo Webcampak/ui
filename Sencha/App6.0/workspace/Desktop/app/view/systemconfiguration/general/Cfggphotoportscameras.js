@@ -26,7 +26,7 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfggphotoportscameras", {
         })
 
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfggphotoportscameras");
         }
     }

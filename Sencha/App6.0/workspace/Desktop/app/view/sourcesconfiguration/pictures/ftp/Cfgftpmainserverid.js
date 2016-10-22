@@ -14,7 +14,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.ftp.Cfgftpmainserverid", {
     , allowBlank: true
     , emptyText: i18n.gettext("Disabled")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             // By Default, Sencha seems to generate a Model ID even when value is blank
             // We loop through the store to find the ID corresponding to newValue
             // If the ID does not exist, newValue becomes blank

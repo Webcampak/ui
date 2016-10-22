@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.relays.Cfgphidgetfailure", 
     , allowBlank: false
     , minValue:0
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgphidgetfailure");
         }
     }

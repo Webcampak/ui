@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailreplyto", {
 
     , fieldLabel: i18n.gettext("Send email from (Reply-To)")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailreplyto");
         }
     }

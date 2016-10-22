@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgcustomstarthour",
     , minValue:0
     , maxValue:23
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.Videos.updateStoreValue", newValue, oldValue, "cfgcustomstarthour");
         }
     }

@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfgnetif", {
     , fieldLabel: i18n.gettext("Main network interface")
     , labelWidth: 200
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfgnetif");
         }
     }

@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcaptureendhour1"
     , maxValue: 23
     , checkChangeEvents: 500
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateCalendarSchedule", 1);
         }
     }

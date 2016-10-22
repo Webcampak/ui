@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.gphoto.Cfgsourcegphotoowner"
 
     , fieldLabel: i18n.gettext("Camera Owner (TAG)")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcegphotoowner");
         }
     }

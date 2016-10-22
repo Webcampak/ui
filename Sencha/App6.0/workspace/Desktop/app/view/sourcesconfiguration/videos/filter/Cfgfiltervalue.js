@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.filter.Cfgfiltervalue", {
 
     , fieldLabel: i18n.gettext("Max distance")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgfiltervalue");
         }
     }

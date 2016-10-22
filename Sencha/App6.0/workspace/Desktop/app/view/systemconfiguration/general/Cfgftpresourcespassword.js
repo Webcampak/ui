@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfgftpresourcespassword", {
     , fieldLabel: i18n.gettext("Password")
     , labelWidth: 200
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfgftpresourcespassword");
         }
     }

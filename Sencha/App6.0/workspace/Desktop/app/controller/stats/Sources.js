@@ -97,7 +97,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
     }
 
 
-    , onSourceSelected: function(combo, newValue, oldValue, eOpts ) {
+    , onSourceSelected: function(combo, newValue, oldValue) {
         this.consoleLog("onSourceSelected()");
         selectedSource = this.getSharedSourcesStore().getById(newValue);
 

@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.graphs.Cfgftpphidgetserverr
     , minValue: 0
     , maxValue: 4
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue", newValue, oldValue, "cfgftpphidgetserverretry");
         }
     }

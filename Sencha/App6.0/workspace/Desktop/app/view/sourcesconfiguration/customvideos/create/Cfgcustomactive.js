@@ -20,7 +20,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Cfgcustomactive"
             ]
         })
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgcustomactive");
         }
     }

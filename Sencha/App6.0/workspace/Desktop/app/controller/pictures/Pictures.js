@@ -288,7 +288,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         }
     }
 
-    , onDaySelected: function(scope, date, eOpts ) {
+    , onDaySelected: function(scope, date) {
         this.consoleLog("onDaySelected()");
         var convertedDate = Ext.Date.format(date, "Ymd");
         this.consoleLog("onDaySelected(): Selected date is: " + date + " converted to: " + convertedDate);
@@ -300,7 +300,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.getPicturesSensorsStore().on("load",this.updateSensorsButton,this,{single:true});
     }
 
-    , onSourceSelected: function(combo, newValue, oldValue, eOpts ) {
+    , onSourceSelected: function(combo, newValue, oldValue) {
         this.consoleLog("onSourceSelected()");
         this.clearWindowContent();
         

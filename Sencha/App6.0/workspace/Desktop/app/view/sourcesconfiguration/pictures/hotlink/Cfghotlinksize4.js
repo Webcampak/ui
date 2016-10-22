@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.hotlink.Cfghotlinksize4", {
 
     , fieldLabel: i18n.gettext("Hotlink 4 size")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfghotlinksize4");
         }
     }

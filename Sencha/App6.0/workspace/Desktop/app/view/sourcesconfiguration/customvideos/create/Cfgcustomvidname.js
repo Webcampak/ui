@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.create.Cfgcustomvidname
     , fieldLabel: i18n.gettext("Filename")
     , vtype: "alphanum"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgcustomvidname");
         }
     }

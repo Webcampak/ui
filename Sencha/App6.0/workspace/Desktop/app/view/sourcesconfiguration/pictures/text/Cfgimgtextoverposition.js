@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.text.Cfgimgtextoverposition
 
     , fieldLabel: i18n.gettext("Legend Coordinates")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgimgtextoverposition");
         }
     }

@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailalwaysnotify
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             if (newValue === true) {newValue = "yes";} else {newValue = "no";}
             if (oldValue === true) {oldValue = "yes";} else {oldValue = "no";}
             this.fireEvent("WPAKD.controller.sourcesconfiguration.advanced.Advanced.updateStoreValue", newValue, oldValue, "cfgemailalwaysnotify");

@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Cfgpicwatermarkpo
     , fieldLabel: i18n.gettext("X")
     , minValue: 0
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgpicwatermarkpositionx");
         }
     }

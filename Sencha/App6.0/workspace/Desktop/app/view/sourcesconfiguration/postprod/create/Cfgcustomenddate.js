@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.create.Cfgcustomenddate", {
     , format: "d/m/Y"
     , fieldLabel: i18n.gettext("To")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             if (scope.isValid() && oldValue !== null) {
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.postprod.Videos.updateDate", newValue, oldValue, "end");
             }

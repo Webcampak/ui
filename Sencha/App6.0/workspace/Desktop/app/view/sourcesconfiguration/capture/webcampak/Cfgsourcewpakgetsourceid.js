@@ -13,7 +13,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.webcampak.Cfgsourcewpakgetso
     , displayField: "NAME"
     , queryMode: "local"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcewpakgetsourceid");
         }
     }

@@ -237,7 +237,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         }
     }
 
-    , onSourceSelected: function(scope, selected, eOpts ) {
+    , onSourceSelected: function(scope, selected) {
         this.consoleLog("onSourceSelected()");
         // Set the active tab back to capture when changing / selecting source
         this.getSourcesconfigurationcapturemain().setLoading(i18n.gettext("Loading Configuration"));

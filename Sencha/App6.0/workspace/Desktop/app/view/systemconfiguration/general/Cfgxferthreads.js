@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfgxferthreads", {
     , minValue: 0
     , allowBlank: false    
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.updateStoreValue", newValue, oldValue, "cfgxferthreads");
         }
     }

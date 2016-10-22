@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.text.Cfgimgtextfont", {
     , displayField: "NAME"
     , queryMode: "local"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgimgtextfont");
         }
     }

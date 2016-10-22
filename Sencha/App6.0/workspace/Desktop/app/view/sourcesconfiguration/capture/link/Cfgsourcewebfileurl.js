@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.link.Cfgsourcewebfileurl", {
 
     , fieldLabel: i18n.gettext("URL File/Stream")
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateStoreValue", newValue, oldValue, "cfgsourcewebfileurl");
         }
     }

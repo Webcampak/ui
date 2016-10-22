@@ -157,7 +157,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         this.onVideoSelected(this.getVideossourceslist(), this.getVideosVideosListStore().first(), null);
     }
 
-    , onDaySelected: function(scope, date, eOpts ) {
+    , onDaySelected: function(scope, date) {
         this.consoleLog("onDaySelected()");
         var convertedDate = Ext.Date.format(date, "Ymd");
         this.consoleLog("onDaySelected(): Selected date is: " + date + " converted to: " + convertedDate);
@@ -176,7 +176,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         });
     }
 
-    , onSourceSelected: function(combo, newValue, oldValue, eOpts ) {
+    , onSourceSelected: function(combo, newValue, oldValue) {
         this.consoleLog("onSourceSelected()");
         selectedSource = this.getSharedSourcesStore().getById(newValue);
 

@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.audio.Cfgvideoaudiofile
     , displayField: "NAME"
     , queryMode: "local"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideoaudiofile");
         }
     }
