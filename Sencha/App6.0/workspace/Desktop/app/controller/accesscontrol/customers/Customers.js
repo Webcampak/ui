@@ -3,32 +3,32 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.accesscontrol.customers.Customers");
 //</debug>
 Ext.define("WPAKD.controller.accesscontrol.customers.Customers", {
-    extend: "Ext.app.Controller",
+    extend: "Ext.app.Controller"
 
-    views: [
+    , views: [
         "accesscontrol.customers.Main"
         , "accesscontrol.customers.CustomersList"
         , "accesscontrol.customers.Search"
         , "accesscontrol.customers.ToolbarRecords"
-    ],
+    ]
 
-    stores: [
+    , stores: [
         "accesscontrol.customers.Customers"
-    ],
+    ]
 
-    models: [
+    , models: [
         "accesscontrol.customers.Customers"
-    ],
+    ]
 
-    refs: [
-        {ref: "accesscontrolcustomersmain",                              selector: "accesscontrolcustomersmain"                    }
-        , {ref: "accesscontrolcustomerscustomerslist",                    selector: "accesscontrolcustomerscustomerslist"            }
-        , {ref: "accesscontrolcustomerssearch",                         selector: "accesscontrolcustomerssearch"                 }
-        , {ref: "accesscontrolcustomerstoolbarrecords",              selector: "accesscontrolcustomerstoolbarrecords"      }
-        , {ref: "accesscontrolcustomerssharedcustomerslist",        selector: "accesscontrolcustomerssharedcustomerslist"}
-    ],
+    , refs: [
+        {ref: "accesscontrolcustomersmain",                     selector: "accesscontrolcustomersmain"                  }
+        , {ref: "accesscontrolcustomerscustomerslist",          selector: "accesscontrolcustomerscustomerslist"         }
+        , {ref: "accesscontrolcustomerssearch",                 selector: "accesscontrolcustomerssearch"                }
+        , {ref: "accesscontrolcustomerstoolbarrecords",         selector: "accesscontrolcustomerstoolbarrecords"        }
+        , {ref: "accesscontrolcustomerssharedcustomerslist",    selector: "accesscontrolcustomerssharedcustomerslist"   }
+    ]
 
-    init: function() {
+    , init: function() {
         this.consoleLog("Controller init()");
         this.control({
             "accesscontrolcustomerscustomerslist button[action=reloadCustomers]":       {click:     this.reloadCustomers    }
@@ -51,9 +51,9 @@ Ext.define("WPAKD.controller.accesscontrol.customers.Customers", {
                 }
             }
         });
-    },
+    }
 
-    onLaunch: function() {
+    , onLaunch: function() {
         this.consoleLog("onLaunch()");
     }
 

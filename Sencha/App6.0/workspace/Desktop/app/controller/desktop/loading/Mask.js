@@ -57,8 +57,8 @@ Ext.define("WPAKD.controller.desktop.loading.Mask", {
         var scope = this;
         Ext.Direct.on("exception", function(event) {
             scope.processException("Ext.Direct Exception: " + event.message);
-            if (event.message) {var errorMsg = event.message;}
-            else {var errorMsg = "Unknown Error";}
+            var errorMsg = "Unknown Error";
+            if (event.message) {errorMsg = event.message;}
             Ext.MessageBox.show({
                 title: "Error",
                 msg: i18n.gettext(errorMsg),
@@ -81,7 +81,7 @@ Ext.define("WPAKD.controller.desktop.loading.Mask", {
             var componentFound = 0;
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
                 if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() == extComponent.getId()) {
-                    var componentFound = 1;
+                    componentFound = 1;
                     this.loadMaskComponents[i].setLoading(loadMessage);
                 }
             }

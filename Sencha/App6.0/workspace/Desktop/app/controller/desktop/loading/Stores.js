@@ -43,9 +43,6 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
     beginLoading: function(sessionCode, successEvent, requiredStores) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: function()");
         var currentContext = this;
-        var sessionCode = sessionCode;
-        var successEvent = successEvent;
-        var requiredStores = requiredStores;
         var nbStoresToLoad = 0;
         Ext.Array.each(requiredStores, function(currentStore) {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: Processing: " + currentStore.store.storeId + " Action: " + currentStore.action);

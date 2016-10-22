@@ -76,8 +76,8 @@ Ext.define("WPAKD.controller.desktop.ServerAvailability", {
         if (this.callInProgress !== true) {
 //                console.log(new Date().toLocaleTimeString() + ": Controller->Desktop->ServerAvailability: onLaunch(): Server Activity check");
             var serverUrl = window.location.href;
-            var serverUrl = serverUrl.replace("mobile","");
-            var serverUrl = serverUrl + "/../onlinestatus";
+            serverUrl = serverUrl.replace("mobile","");
+            serverUrl = serverUrl + "/../onlinestatus";
             var initTimestamp = new Date().getTime()
             this.callInProgress = true;
             var currentStatus = this.getDesktopServerAvailabilityStore().first();

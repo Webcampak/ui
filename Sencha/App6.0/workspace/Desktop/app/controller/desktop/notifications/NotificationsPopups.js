@@ -3,28 +3,25 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.desktop.notifications.NotificationsPopups");
 //</debug>
 Ext.define("WPAKD.controller.desktop.notifications.NotificationsPopups", {
-    extend: "Ext.app.Controller",
+    extend: "Ext.app.Controller"
 
-    stores: [
+    , stores: [
 
-    ],
+    ]
 
-    models: [
+    , models: [
 
-    ],
+    ]
 
-    views: [
-//        "desktop.Main"
-//        , "desktop.toolbar.Main"
-    ],
+    , views: [
 
-    refs: [
-//        {ref: "desktopmain",              selector: "desktopmain"                      }
-//        , {ref: "desktoptoolbarmain",  selector: "desktoptoolbarmain"             }
-//        , {ref: "uxnotification",        selector: "uxnotification",  autoCreate: true,        xtype: "uxnotification"}
-    ],
+    ]
 
-    init: function() {
+    , refs: [
+
+    ]
+
+    , init: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Notifications->NotificationsPopups: Controller init: function()");
         this.control({
 
@@ -32,36 +29,37 @@ Ext.define("WPAKD.controller.desktop.notifications.NotificationsPopups", {
         this.listen({
             controller: {
                   "*": {"WPAKD.controller.desktop.notifications.NotificationsPopups.displayNotification": this.displayNotification}
-            },
-            store: {
+            }
+            , store: {
                   "*": {"WPAKD.controller.desktop.notifications.NotificationsPopups.displayNotification": this.displayNotification}
             }
         });
-    },
+    }
 
-    onLaunch: function() {
+    , onLaunch: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Notifications->NotificationsPopups: onLaunch()");
 
-    },
+    }
 
-    displayNotification: function(popupTitle, popupMessage) {
+    , displayNotification: function(popupTitle, popupMessage) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Notifications->NotificationsPopups: displayNotification()");
         //Ext.customPopup.msg(Ext.String.format(popupTitle), Ext.String.format(popupMessage));
         if (!Date.now) {
              Date.now = function() { return new Date().getTime(); };
         }
         if (this.lastNotificationDate != undefined && this.previousNotification != undefined) {
+            var displayPopup = true;
             if (window.btoa(popupTitle + popupMessage) != this.previousNotification) {
-                var displayPopup = true;
+                displayPopup = true;
             } else {
                 if (Date.now() - this.lastNotificationDate < 3000) { //Time in miliseconds
-                    var displayPopup = false;
+                    displayPopup = false;
                 } else {
-                    var displayPopup = true;
+                    displayPopup = true;
                 }
             }
         } else {
-            var displayPopup = true;
+            displayPopup = true;
         }
         this.lastNotificationDate = Date.now();
         this.previousNotification = window.btoa(popupTitle + popupMessage);

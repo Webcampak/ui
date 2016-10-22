@@ -60,12 +60,12 @@ Ext.define("WPAKD.controller.desktop.authentication.UserSettings", {
             this.fireEvent("WPAKD.controller.desktop.authentication.ChangePassword.changeUserPassword");
         }
 
-        var record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTBUILD", 0, false, false, true);
+        record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTBUILD", 0, false, false, true);
         if (record) {
             this.getDesktoptoolbarbottombuild().setText(i18n.gettext("Build: ") + record.get("VALUE"));
         }
 
-        var record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTUSERNAME", 0, false, false, true);
+        record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTUSERNAME", 0, false, false, true);
         if (record && this.getDesktoptoolbarbottomlogoffbutton()) {
             this.getDesktoptoolbarbottomlogoffbutton().setText("<b>" + record.get("VALUE") + "</b>");
         }
