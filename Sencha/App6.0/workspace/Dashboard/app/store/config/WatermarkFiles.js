@@ -1,28 +1,29 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.store.config.WatermarkFiles');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.store.config.WatermarkFiles");
 //</debug>
-Ext.define('WPAKT.store.config.WatermarkFiles', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKT.store.config.WatermarkFiles", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKT.model.config.WatermarkFiles',
+    model: "WPAKT.model.config.WatermarkFiles",
 
     autoSync: false,
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         extraParams: {
-            SOURCEID: '0'
+            SOURCEID: "0"
         },
         writer: {
             writeAllFields:true
         },
         reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total'
+            type: "json",
+            rootProperty: "results",
+            totalProperty: "total"
         },
         api:{
-            read:      'SCMisc.getWatermarkFiles'
+            read:      "SCMisc.getWatermarkFiles"
         }
     }
 });

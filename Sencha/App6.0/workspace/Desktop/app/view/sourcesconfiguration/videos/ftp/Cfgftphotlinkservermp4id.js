@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftphotlinkservermp4id');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftphotlinkservermp4id");
 //</debug>
 Ext.define("WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftphotlinkservermp4id", {
-    extend: 'Ext.form.ComboBox'
-    , alias : 'widget.sourcesconfigurationvideosftpcfgftphotlinkservermp4id'
+    extend: "Ext.form.ComboBox"
+    , alias : "widget.sourcesconfigurationvideosftpcfgftphotlinkservermp4id"
 
-    , fieldLabel: i18n.gettext('Send hotlink MP4 files to')
-    , store: 'sourcesconfiguration.FTPServers'
-    , valueField: 'ID'
-    , displayField: 'NAME'
-    , queryMode: 'local'
+    , fieldLabel: i18n.gettext("Send hotlink MP4 files to")
+    , store: "sourcesconfiguration.FTPServers"
+    , valueField: "ID"
+    , displayField: "NAME"
+    , queryMode: "local"
     , allowBlank: true
-    , emptyText: i18n.gettext('Disabled')
+    , emptyText: i18n.gettext("Disabled")
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
             // By Default, Sencha seems to generate a Model ID even when value is blank
@@ -19,11 +20,11 @@ Ext.define("WPAKD.view.sourcesconfiguration.videos.ftp.Cfgftphotlinkservermp4id"
             // If the ID does not exist, newValue becomes blank
             var idFound = false;
             scope.getStore().each(function (rec) {
-                if (rec.get('ID') === newValue ) {idFound = true;}
+                if (rec.get("ID") === newValue ) {idFound = true;}
             });
             if (idFound === false) {newValue = "";}
             //console.log(scope.getStore()); console.log(scope);console.log(newValue);console.log(oldValue);
-            this.fireEvent('WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue', newValue, oldValue, 'cfgftphotlinkservermp4id');
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.videos.Videos.updateStoreValue", newValue, oldValue, "cfgftphotlinkservermp4id");
         }
     }
 });

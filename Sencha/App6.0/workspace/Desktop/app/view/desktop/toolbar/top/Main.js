@@ -1,24 +1,25 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.toolbar.top.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.toolbar.top.Main");
 //</debug>
 Ext.define("WPAKD.view.desktop.toolbar.top.Main", {
-    extend: 'Ext.toolbar.Toolbar',
-    alias: 'widget.desktoptoolbartopmain',
+    extend: "Ext.toolbar.Toolbar",
+    alias: "widget.desktoptoolbartopmain",
 
-    dock: 'top',
+    dock: "top",
 
     config: {
-        layout: {type: 'hbox', align : 'stretch', pack  : 'start'},
+        layout: {type: "hbox", align : "stretch", pack  : "start"},
         items: [{
-//            xtype: 'desktoptoolbartopmenu'
+//            xtype: "desktoptoolbartopmenu"
 //        }, {
-            xtype: 'desktoptoolbartopmenumain'
-        }, '-', {
-            xtype: 'desktoptoolbartoptaskbar'
-        }, '->', {
-            xtype: 'desktoptoolbartoponlinestatus'
+            xtype: "desktoptoolbartopmenumain"
+        }, "-", {
+            xtype: "desktoptoolbartoptaskbar"
+        }, "->", {
+            xtype: "desktoptoolbartoponlinestatus"
         }, {
-            xtype: 'desktoptoolbartopdesktopconfig'
+            xtype: "desktoptoolbartopdesktopconfig"
         }]
     }
 });

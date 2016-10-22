@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.core.Skeleton');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.core.Skeleton");
 //</debug>
-Ext.define('WPAKT.controller.core.Skeleton', {
-    extend: 'Ext.app.Controller'
+Ext.define("WPAKT.controller.core.Skeleton", {
+    extend: "Ext.app.Controller"
 
     , stores: [
-        'core.NavigationTree'
+        "core.NavigationTree"
     ]
 
     , models: [
@@ -14,43 +15,43 @@ Ext.define('WPAKT.controller.core.Skeleton', {
 
 
     , views: [
-        'core.Main'
-        , 'core.toolbar.Main'
-        , 'core.toolbar.Logo'
-        , 'core.toolbar.Username'
-        , 'core.toolbar.Navicon'
-        , 'core.skeleton.Main'
-        , 'core.skeleton.tree.Main'
-        , 'core.skeleton.card.Main'
+        "core.Main"
+        , "core.toolbar.Main"
+        , "core.toolbar.Logo"
+        , "core.toolbar.Username"
+        , "core.toolbar.Navicon"
+        , "core.skeleton.Main"
+        , "core.skeleton.tree.Main"
+        , "core.skeleton.card.Main"
         
-        , 'dashboard.Main'
+        , "dashboard.Main"
 
     ]
 
     , refs: [
-        {ref: 'coremain',                  selector: 'coremain',              autoCreate: true,   xtype: 'coremain' }
-        , {ref: 'coretoolbarmain',         selector: 'coretoolbarmain'        }
-        , {ref: 'coretoolbarlogo',         selector: 'coretoolbarlogo'        }
-        , {ref: 'coretoolbarusername',     selector: 'coretoolbarusername'    }
-        , {ref: 'coretoolbarnavicon',      selector: 'coretoolbarnavicon'     }
-        , {ref: 'coreskeletonmain',        selector: 'coreskeletonmain'       }
-        , {ref: 'coreskeletontreemain',    selector: 'coreskeletontreemain'   }
-        , {ref: 'coreskeletoncardmain',    selector: 'coreskeletoncardmain'   }
+        {ref: "coremain",                  selector: "coremain",              autoCreate: true,   xtype: "coremain" }
+        , {ref: "coretoolbarmain",         selector: "coretoolbarmain"        }
+        , {ref: "coretoolbarlogo",         selector: "coretoolbarlogo"        }
+        , {ref: "coretoolbarusername",     selector: "coretoolbarusername"    }
+        , {ref: "coretoolbarnavicon",      selector: "coretoolbarnavicon"     }
+        , {ref: "coreskeletonmain",        selector: "coreskeletonmain"       }
+        , {ref: "coreskeletontreemain",    selector: "coreskeletontreemain"   }
+        , {ref: "coreskeletoncardmain",    selector: "coreskeletoncardmain"   }
         
-        , {ref: 'dashboardmain',           selector: 'dashboardmain',         autoCreate: true,   xtype: 'dashboardmain'}
+        , {ref: "dashboardmain",           selector: "dashboardmain",         autoCreate: true,   xtype: "dashboardmain"}
 
     ]
 
     , init: function() {
-        this.consoleLog('init()');
+        this.consoleLog("init()");
         this.control({
-            'coretoolbarnavicon':  {click:      this.onToggleNavigationSize}
-            , 'coreskeletontreemain':  {selectionchange:      this.onNavigationTreeSelectionChange}
+            "coretoolbarnavicon":  {click:      this.onToggleNavigationSize}
+            , "coreskeletontreemain":  {selectionchange:      this.onNavigationTreeSelectionChange}
         });      
         this.listen({
              controller: {
-                  '*': {
-                    'WPAKT.controller.core.Skeleton.setCurrentView': this.setCurrentView
+                  "*": {
+                    "WPAKT.controller.core.Skeleton.setCurrentView": this.setCurrentView
                   }
              }
         });          
@@ -61,41 +62,41 @@ Ext.define('WPAKT.controller.core.Skeleton', {
     }
     
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Dashboard->Skeleton: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Skeleton: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
     , onNavigationTreeSelectionChange: function (tree, node) {
-        if (node && node.get('view')) {
+        if (node && node.get("view")) {
             this.redirectTo(node.get("routeId"));
         }
     }
 
     , setCurrentView: function(hashTag) {
-        this.consoleLog('setCurrentView()');
+        this.consoleLog("setCurrentView()");
         console.log(this.getDashboardmain());
         var scope = this;
         this.getCoreskeletoncardmain().removeAll();
         this.getCoreskeletoncardmain().add(scope.getDashboardmain());  
         scope.getDashboardmain().show();
         /*
-        var hashTag = 'dashboard';
-        var currentNode = this.getDashboardNavigationTreeStore().findNode('routeId', hashTag);
-        var view = currentNode ? node.get('view') : null,
+        var hashTag = "dashboard";
+        var currentNode = this.getDashboardNavigationTreeStore().findNode("routeId", hashTag);
+        var view = currentNode ? node.get("view") : null,
                 
-        hashTag = (hashTag || '').toLowerCase();
+        hashTag = (hashTag || "").toLowerCase();
 
         var me = this,
             refs = me.getReferences(),
             viewModel = me.getViewModel(),
             vmData = viewModel.getData(),
             store = navigationList.getStore(),
-            node = store.findNode('routeId', hashTag),
-            view = node ? node.get('view') : null,
+            node = store.findNode("routeId", hashTag),
+            view = node ? node.get("view") : null,
             lastView = vmData.currentView,
-            existingItem = this.this.getCoreskeletoncardmain().child('component[routeId=' + hashTag + ']'),
+            existingItem = this.this.getCoreskeletoncardmain().child("component[routeId=" + hashTag + "]"),
             newView;
 
         // Kill any previously routed window
@@ -106,17 +107,17 @@ Ext.define('WPAKT.controller.core.Skeleton', {
         lastView = this.this.getCoreskeletoncardmain().getLayout().getActiveItem();
 
         if (!existingItem) {
-            newView = Ext.create('Admin.view.' + (view || 'pages.Error404Window'), {
-                    hideMode: 'offsets',
+            newView = Ext.create("Admin.view." + (view || "pages.Error404Window"), {
+                    hideMode: "offsets",
                     routeId: hashTag
                 });
         }
 
         if (!newView || !newView.isWindow) {
             // !newView means we have an existing view, but if the newView isWindow
-            // we don't add it to the card layout.
+            // we don"t add it to the card layout.
             if (existingItem) {
-                // We don't have a newView, so activate the existing view.
+                // We don"t have a newView, so activate the existing view.
                 if (existingItem !== lastView) {
                     this.this.getCoreskeletoncardmain().getLayout().setActiveItem(existingItem);
                 }

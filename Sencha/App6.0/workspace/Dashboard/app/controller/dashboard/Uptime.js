@@ -1,59 +1,60 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.dashboard.Uptime');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.dashboard.Uptime");
 //</debug>
-Ext.define('WPAKT.controller.dashboard.Uptime', {
-    extend: 'Ext.app.Controller',
+Ext.define("WPAKT.controller.dashboard.Uptime", {
+    extend: "Ext.app.Controller",
 
     stores: [
-        'dashboard.Status'
+        "dashboard.Status"
     ],
 
     models: [
-        'dashboard.Status'
+        "dashboard.Status"
 
     ],
 
 
     views: [
-        'dashboard.uptime.Main'
-        , 'dashboard.uptime.Years'
-        , 'dashboard.uptime.Days'
-        , 'dashboard.uptime.Hours'
-        , 'dashboard.uptime.Minutes'
-        , 'dashboard.uptime.Seconds'
+        "dashboard.uptime.Main"
+        , "dashboard.uptime.Years"
+        , "dashboard.uptime.Days"
+        , "dashboard.uptime.Hours"
+        , "dashboard.uptime.Minutes"
+        , "dashboard.uptime.Seconds"
     ],
 
     refs: [
-        {ref: 'dashboarduptimemain',       selector: 'dashboarduptimemain'    }
-        , {ref: 'dashboarduptimeyears',    selector: 'dashboarduptimeyears'   }
-        , {ref: 'dashboarduptimedays',     selector: 'dashboarduptimedays'    }
-        , {ref: 'dashboarduptimehours',    selector: 'dashboarduptimehours'   }
-        , {ref: 'dashboarduptimeminutes',  selector: 'dashboarduptimeminutes' }
-        , {ref: 'dashboarduptimeseconds',  selector: 'dashboarduptimeseconds' }
-        , {ref: 'coreauthenticationmain',       selector: 'coreauthenticationmain'      }
+        {ref: "dashboarduptimemain",       selector: "dashboarduptimemain"    }
+        , {ref: "dashboarduptimeyears",    selector: "dashboarduptimeyears"   }
+        , {ref: "dashboarduptimedays",     selector: "dashboarduptimedays"    }
+        , {ref: "dashboarduptimehours",    selector: "dashboarduptimehours"   }
+        , {ref: "dashboarduptimeminutes",  selector: "dashboarduptimeminutes" }
+        , {ref: "dashboarduptimeseconds",  selector: "dashboarduptimeseconds" }
+        , {ref: "coreauthenticationmain",       selector: "coreauthenticationmain"      }
         
     ]
 
     , init: function() {
-        this.consoleLog('init()');
+        this.consoleLog("init()");
         this.listen({
              controller: {
-                  '*': {
-                    'WPAKT.controller.dashboard.Uptime.updateCard': this.updateCard
-                    , 'WPAKT.controller.dashboard.Uptime.initiateRefreshWatcher': this.initiateRefreshWatcher
+                  "*": {
+                    "WPAKT.controller.dashboard.Uptime.updateCard": this.updateCard
+                    , "WPAKT.controller.dashboard.Uptime.initiateRefreshWatcher": this.initiateRefreshWatcher
                   }
              }
         });             
     }
 
     , onLaunch: function() {
-        this.consoleLog('onLaunch()');
+        this.consoleLog("onLaunch()");
         this.initiateRefreshWatcher();
         /*
         var scope = this;
         var currentStatus = this.getDashboardStatusStore().last();
         if (currentStatus === undefined || currentStatus === null || this.getBootDate() === null) {
-            this.consoleLog('onLaunch() - App not initialized yet');
+            this.consoleLog("onLaunch() - App not initialized yet");
             setTimeout(function() {
                 scope.onLaunch();
             },100);            
@@ -66,9 +67,9 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     }
    
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Cards->Uptime: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->Uptime: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
@@ -83,7 +84,7 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     , setWatcherId: function(watcherId) {this.watcherId = watcherId;return this.watcherId;}       
     
     , startRefresh: function() {
-        this.consoleLog('startRefresh()');
+        this.consoleLog("startRefresh()");
         var scope = this;
         this.stopRefresh();
         var intervalId = setInterval(function() {                
@@ -93,13 +94,13 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     }        
     
     , stopRefresh: function() {
-        this.consoleLog('stopRefresh()');
+        this.consoleLog("stopRefresh()");
         var intervalId = this.getRefreshStatus();
         if (intervalId !== false) {
             clearInterval(intervalId);
             this.setRefreshStatus(false);
         } else {
-            this.consoleLog('stopRefresh(): There was no process running');            
+            this.consoleLog("stopRefresh(): There was no process running");
         }        
     } 
     
@@ -107,7 +108,7 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     // If not visible, it will stop the component refresh.
     // If visible, it will check if the component has a refresh job, if not it will start one.
     , initiateRefreshWatcher: function() {
-        this.consoleLog('initiateRefreshWatcher()');
+        this.consoleLog("initiateRefreshWatcher()");
         var scope = this;
         var watcherId = setInterval(function() {              
             if (scope.getDashboarduptimemain() !== undefined && scope.getDashboarduptimemain().isVisible()) {
@@ -124,9 +125,9 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     }
     
     , updateCard: function() {
-        this.consoleLog('updateCard()');
+        this.consoleLog("updateCard()");
         if (this.getDashboarduptimemain() !== undefined && this.getDashboarduptimemain().isVisible()) {
-            var lastStatus = this.getDashboardStatusStore().last().get('STATUS');
+            var lastStatus = this.getDashboardStatusStore().last().get("STATUS");
             var statusObj = Ext.JSON.decode(lastStatus, true);
             if (statusObj !== null && statusObj.bootdate !== undefined) {
                 this.setBootDate(new Date(statusObj.bootdate));
@@ -137,7 +138,7 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     , refreshDisplayedUptime: function() {
         if (this.getDashboarduptimemain() !== undefined && this.getDashboarduptimemain().isVisible() && this.getBootDate() !== false ) {
             var currentDate = new Date();
-            var currentUptime = Ext.Date.diff(this.getBootDate(), new Date(), 's');
+            var currentUptime = Ext.Date.diff(this.getBootDate(), new Date(), "s");
             this.getDashboarduptimeyears().setHtml(this.secondsToYear(currentUptime)); 
             this.getDashboarduptimedays().setHtml(this.secondsToDays(currentUptime)); 
             this.getDashboarduptimehours().setHtml(this.secondsToHours(currentUptime)); 
@@ -147,36 +148,36 @@ Ext.define('WPAKT.controller.dashboard.Uptime', {
     }
     , secondsToYear: function(seconds) {
         var years = Math.floor(seconds / 31536000);
-        if (years === 0) {years = '0';} 
+        if (years === 0) {years = "0";}
         return years;
     } 
     
     , secondsToDays: function(seconds) {
         var days = Math.floor((seconds % 31536000) / 86400); 
-        if (days === 0) {days = '000';} 
-        else if (days < 10) {days = '00' + days;} 
-        else if (days < 100) {days = '0' + days;}
+        if (days === 0) {days = "000";}
+        else if (days < 10) {days = "00" + days;}
+        else if (days < 100) {days = "0" + days;}
         return days;
     } 
     
     , secondsToHours: function(seconds) {
         var hours = Math.floor(((seconds % 31536000) % 86400) / 3600);
-        if (hours === 0) {hours = '00';} 
-        else if (hours < 10) {hours = '0' + hours;} 
+        if (hours === 0) {hours = "00";}
+        else if (hours < 10) {hours = "0" + hours;}
         return hours;
     }  
     
     , secondsToMinutes: function(seconds) {
         var minutes = Math.floor((((seconds % 31536000) % 86400) % 3600) / 60);
-        if (minutes === 0) {minutes = '00';} 
-        else if (minutes < 10) {minutes = '0' + minutes;} 
+        if (minutes === 0) {minutes = "00";}
+        else if (minutes < 10) {minutes = "0" + minutes;}
         return minutes;
     }  
     
     , secondsToSeconds: function(seconds) {
         var seconds = (((seconds % 31536000) % 86400) % 3600) % 60;
-        if (seconds === 0) {seconds = '00';} 
-        else if (seconds < 10) {seconds = '0' + seconds;} 
+        if (seconds === 0) {seconds = "00";}
+        else if (seconds < 10) {seconds = "0" + seconds;}
         return seconds;
     } 
     

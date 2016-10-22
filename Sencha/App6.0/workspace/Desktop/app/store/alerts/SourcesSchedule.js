@@ -1,37 +1,38 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.alerts.SourcesSchedule');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.alerts.SourcesSchedule");
 //</debug>
-Ext.define('WPAKD.store.alerts.SourcesSchedule', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.alerts.SourcesSchedule", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.alerts.SourcesSchedule',
+    model: "WPAKD.model.alerts.SourcesSchedule",
 
     autoSync: true,
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         writer: {
             writeAllFields: true
         },
         reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total'
+            type: "json",
+            rootProperty: "results",
+            totalProperty: "total"
         },
         api:{
-            read: 'SCMisc.getCaptureSchedule'
-            , update: 'SCMisc.saveCaptureSchedule'
+            read: "SCMisc.getCaptureSchedule"
+            , update: "SCMisc.saveCaptureSchedule"
         }
     },
     listeners: {
         datachanged: function(store, operation) {
-            if (store.count() === 0 && this.fireEvent('WPAKD.controller.desktop.Authentication.isAuthenticated') === true) {
+            if (store.count() === 0 && this.fireEvent("WPAKD.controller.desktop.Authentication.isAuthenticated") === true) {
                 Ext.raise({
-                    title: i18n.gettext('Source permission required')
-                    , msg: i18n.gettext('Your currently don\'t have access to any sources.') + '<br/>' + i18n.gettext('Please contact support and restart your browser')
+                    title: i18n.gettext("Source permission required")
+                    , msg: i18n.gettext("Your currently don\"t have access to any sources.") + "<br/>" + i18n.gettext("Please contact support and restart your browser")
                 });
             } else {
-                store.fireEvent('WPAKD.controller.alerts.Alerts.hideMask');
+                store.fireEvent("WPAKD.controller.alerts.Alerts.hideMask");
             }         
         }
     }

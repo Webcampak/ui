@@ -1,31 +1,32 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.config.capture.save.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.config.capture.save.Main");
 //</debug>
-Ext.define('WPAKT.view.config.capture.save.Main', {
-    extend: 'Ext.panel.Panel'
-    , alias: 'widget.configcapturesavemain'
+Ext.define("WPAKT.view.config.capture.save.Main", {
+    extend: "Ext.panel.Panel"
+    , alias: "widget.configcapturesavemain"
 
-    , cls: 'dashboard-main-chart shadow-panel'
+    , cls: "dashboard-main-chart shadow-panel"
 
     , bodyPadding: 15
 
-    , title: ''
+    , title: ""
 
-    , layout: {type:'vbox', align: 'stretch', pack: 'start'}
+    , layout: {type:"vbox", align: "stretch", pack: "start"}
     , items: [{
-        xtype: 'container'
-        , layout: {type:'hbox', align: 'stretch', pack: 'start'}
+        xtype: "container"
+        , layout: {type:"hbox", align: "stretch", pack: "start"}
         , items: [{
-            xtype: 'configcapturesavecancelbutton'
+            xtype: "configcapturesavecancelbutton"
             , width: 100
         }, {
-            xtype: 'container'
+            xtype: "container"
             , flex: 1
         }, {
-            xtype: 'configcapturesavesavebutton'
+            xtype: "configcapturesavesavebutton"
             , width: 100
         }]   
     }, {
-        xtype: 'configcapturesavestatus'
+        xtype: "configcapturesavestatus"
     }]    
 });

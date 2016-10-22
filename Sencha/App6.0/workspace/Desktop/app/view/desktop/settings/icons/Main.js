@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.settings.icons.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.settings.icons.Main");
 //</debug>
 Ext.define("WPAKD.view.desktop.settings.icons.Main", {
-    extend: 'Ext.window.Window', 
-    alias: 'widget.desktopsettingsiconsmain',
+    extend: "Ext.window.Window",
+    alias: "widget.desktopsettingsiconsmain",
 
-    title: i18n.gettext('Manage Desktop Icons'),
+    title: i18n.gettext("Manage Desktop Icons"),
 
     width: 800,
     height: 400,
@@ -13,17 +14,17 @@ Ext.define("WPAKD.view.desktop.settings.icons.Main", {
     modal: true,
 
     layout: {
-        type:'hbox',
-        align: 'stretch',
-        pack: 'start'        
+        type:"hbox",
+        align: "stretch",
+        pack: "start"
     },
     
     items: [{
         flex: 1,
-        xtype: 'desktopsettingsiconsdesktopavailableicons'            
+        xtype: "desktopsettingsiconsdesktopavailableicons"
     }, {
         flex: 1,
-        xtype: 'desktopsettingsiconsdesktopcurrenticons'                    
+        xtype: "desktopsettingsiconsdesktopcurrenticons"
     }]
 
 });

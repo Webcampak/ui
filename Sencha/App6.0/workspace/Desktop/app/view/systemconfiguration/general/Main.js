@@ -1,59 +1,60 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.systemconfiguration.general.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.systemconfiguration.general.Main");
 //</debug>
-Ext.define('WPAKD.view.systemconfiguration.general.Main', {
-    extend: 'Ext.panel.Panel'
-    , alias: 'widget.systemconfigurationgeneralmain'
+Ext.define("WPAKD.view.systemconfiguration.general.Main", {
+    extend: "Ext.panel.Panel"
+    , alias: "widget.systemconfigurationgeneralmain"
 
-    , title: i18n.gettext('General')
-    , scrollable: 'vertical'
-    , bodyPadding:'0 18 0 0'
+    , title: i18n.gettext("General")
+    , scrollable: "vertical"
+    , bodyPadding:"0 18 0 0"
     , defaults: {
         margin: 10
     }
     , items: [{
-        xtype: 'fieldset'
-        , title: i18n.gettext('Network')
+        xtype: "fieldset"
+        , title: i18n.gettext("Network")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfgnetif'
+            xtype: "systemconfigurationgeneralcfgnetif"
         }, {
-            xtype: 'systemconfigurationgeneralcfgxferthreads'            
+            xtype: "systemconfigurationgeneralcfgxferthreads"            
         }, {
-            xtype: 'systemconfigurationgeneralcfgxfermaxfilesperthread'
+            xtype: "systemconfigurationgeneralcfgxfermaxfilesperthread"
         }]
     }, {
-        xtype: 'fieldset'
-        , title: i18n.gettext('Timezone')
+        xtype: "fieldset"
+        , title: i18n.gettext("Timezone")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfgservertimezone'
+            xtype: "systemconfigurationgeneralcfgservertimezone"
         }]
     }, {
-        xtype: 'fieldset'
-        , title: i18n.gettext('Gphoto')
+        xtype: "fieldset"
+        , title: i18n.gettext("Gphoto")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfggphotoports'
+            xtype: "systemconfigurationgeneralcfggphotoports"
         }, {
-            xtype: 'systemconfigurationgeneralcfggphotoportscameras'
+            xtype: "systemconfigurationgeneralcfggphotoportscameras"
         }]
     }, {
-        xtype: 'fieldset'
-        , title: i18n.gettext('Global FTP Account (resources)')
+        xtype: "fieldset"
+        , title: i18n.gettext("Global FTP Account (resources)")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfgftpresourcesusername'
+            xtype: "systemconfigurationgeneralcfgftpresourcesusername"
         }, {
-            xtype: 'systemconfigurationgeneralcfgftpresourcespassword'
+            xtype: "systemconfigurationgeneralcfgftpresourcespassword"
         }]
     }, {
-        xtype: 'fieldset'
-        , title: i18n.gettext('Phidget')
+        xtype: "fieldset"
+        , title: i18n.gettext("Phidget")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfgphidgetactivate'
+            xtype: "systemconfigurationgeneralcfgphidgetactivate"
         }]
     }, {
-        xtype: 'fieldset'
-        , title: i18n.gettext('Statistics')
+        xtype: "fieldset"
+        , title: i18n.gettext("Statistics")
         , items: [{
-            xtype: 'systemconfigurationgeneralcfgstatsactivate'
+            xtype: "systemconfigurationgeneralcfgstatsactivate"
         }]
     }
     ]

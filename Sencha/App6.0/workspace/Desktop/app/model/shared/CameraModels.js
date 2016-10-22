@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.model.shared.CameraModels');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.model.shared.CameraModels");
 //</debug>
-Ext.define('WPAKD.model.shared.CameraModels', {
-    extend: 'Ext.data.Model',
+Ext.define("WPAKD.model.shared.CameraModels", {
+    extend: "Ext.data.Model",
     fields: [
-        {name: 'NAME',    type: 'string'}
+        {name: "NAME",    type: "string"}
     ]
 });

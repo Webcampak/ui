@@ -1,29 +1,30 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.logs.CustomVideos');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.logs.CustomVideos");
 //</debug>
-Ext.define('WPAKD.store.logs.CustomVideos', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.logs.CustomVideos", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.logs.CustomVideos',
+    model: "WPAKD.model.logs.CustomVideos",
 
     autoLoad: false,
     autoSync: false,
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         extraParams: {
-            SOURCEID: '0'
+            SOURCEID: "0"
         },
         writer: {
             writeAllFields:true
         },
         reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total'
+            type: "json",
+            rootProperty: "results",
+            totalProperty: "total"
         },
         api:{
-            read:   'Logs.getCustomVideosLogs'
+            read:   "Logs.getCustomVideosLogs"
         }
     }
 });

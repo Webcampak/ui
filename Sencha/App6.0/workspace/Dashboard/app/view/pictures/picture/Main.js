@@ -1,19 +1,20 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.pictures.picture.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.pictures.picture.Main");
 //</debug>
-Ext.define('WPAKT.view.pictures.picture.Main', {
-    extend: 'Ext.panel.Panel'
-    , alias: 'widget.picturespicturemain'
+Ext.define("WPAKT.view.pictures.picture.Main", {
+    extend: "Ext.panel.Panel"
+    , alias: "widget.picturespicturemain"
 
-    , cls: 'dashboard-main-chart shadow-panel'
+    , cls: "dashboard-main-chart shadow-panel"
 
     , bodyPadding: 15
 
-    , title: ''
-    , layout: {type: 'vbox',align: 'stretch'} 
+    , title: ""
+    , layout: {type: "vbox",align: "stretch"} 
     , items: [
-        {xtype: 'picturespicturepicture', flex: 1}
-        , {xtype: 'container', height: 5}
-        , {xtype: 'picturescontrolsquicknavmain'}
+        {xtype: "picturespicturepicture", flex: 1}
+        , {xtype: "container", height: 5}
+        , {xtype: "picturescontrolsquicknavmain"}
     ]
 });

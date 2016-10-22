@@ -1,70 +1,71 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.dashboard.capturestats.CaptureChart');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.dashboard.capturestats.CaptureChart");
 //</debug>
-Ext.define('WPAKT.view.dashboard.capturestats.CaptureChart', {
-    extend: 'Ext.chart.CartesianChart'
-    , alias: 'widget.dashboardcapturestatscapturechart'
+Ext.define("WPAKT.view.dashboard.capturestats.CaptureChart", {
+    extend: "Ext.chart.CartesianChart"
+    , alias: "widget.dashboardcapturestatscapturechart"
 
     , animation : !Ext.isIE9m && Ext.os.is.Desktop
     //, insetPadding:0
-    , store: 'dashboard.CaptureStats'
+    , store: "dashboard.CaptureStats"
     , axes: [{
-        type: 'category'
+        type: "category"
         , fields: [
-            'xvalue'
+            "xvalue"
         ]
 //        , hidden: true
-        , position: 'bottom'
+        , position: "bottom"
         , grid: true
-        , label: {font: '10px Arial'}
+        , label: {font: "10px Arial"}
         
     }, {
-        type: 'numeric'
+        type: "numeric"
         , fields: [
-            'y1value'
-            , 'y2value'
+            "y1value"
+            , "y2value"
         ]
         , grid: {
             odd: {
-                fill: '#e8e8e8'
+                fill: "#e8e8e8"
             }
         }
         , hidden: true
-        , position: 'left'        
+        , position: "left"
     }],
     series: [{
-            type: 'line'
+            type: "line"
             , colors: [
-                'rgba(103, 144, 199, 0.6)'
+                "rgba(103, 144, 199, 0.6)"
             ]
             , useDarkerStrokeColor: false
-            , xField: 'xvalue'
+            , xField: "xvalue"
             , yField: [
-                'y1value'
+                "y1value"
             ]
             , fill: true
             , smooth: true
             , tooltip: {
                 trackMouse: true,
                 renderer: function (tooltip, record, item) {
-                    tooltip.setHtml(record.get('y1value') + ' ' + i18n.gettext('on') + ' ' + record.get('xvalue'));
+                    tooltip.setHtml(record.get("y1value") + " " + i18n.gettext("on") + " " + record.get("xvalue"));
                 }
             }            
     }, {
-            type: 'line'
+            type: "line"
             , colors: [
-                'rgba(238, 146, 156, 0.6)'
+                "rgba(238, 146, 156, 0.6)"
             ]
             , useDarkerStrokeColor: false
-            , xField: 'xvalue'
+            , xField: "xvalue"
             , yField: [
-                'y2value'
+                "y2value"
             ]
             , fill: true
             , smooth: true
     }]
     , interactions: [{
-        type: 'panzoom'
+        type: "panzoom"
     }]
 });
 

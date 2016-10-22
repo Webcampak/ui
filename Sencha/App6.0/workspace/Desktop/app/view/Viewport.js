@@ -1,50 +1,50 @@
-Ext.define('WPAKD.view.Viewport', {
-    extend: 'Ext.panel.Panel',
+Ext.define("WPAKD.view.Viewport", {
+    extend: "Ext.panel.Panel",
     requires:[
-         'WPAKD.view.desktop.Main'
+         "WPAKD.view.desktop.Main"
     ],
 
     layout: {
-         type: 'fit'
+         type: "fit"
     },
 
     items:[{
-        xtype: 'desktopmain'
+        xtype: "desktopmain"
     }],
     dockedItems: [{
-        xtype: 'desktoptoolbartopmain'
+        xtype: "desktoptoolbartopmain"
     }, {
-        xtype: 'desktoptoolbarbottommain'
+        xtype: "desktoptoolbarbottommain"
     }]
 
 });
 /*
-Ext.define('WPAKD.view.Viewport', {
-    extend: 'Ext.container.Viewport',
+Ext.define("WPAKD.view.Viewport", {
+    extend: "Ext.container.Viewport",
     requires:[
-//          'Ext.layout.container.Fit',
-         'WPAKD.view.desktop.Main'
+//          "Ext.layout.container.Fit",
+         "WPAKD.view.desktop.Main"
     ],
 
     layout: {
-         type: 'fit'
+         type: "fit"
     },
 
     items:[{
-        xtype: 'panel',
+        xtype: "panel",
         border: false,
-        html: '&#160;',
-        layout: 'fit',
+        html: "&#160;",
+        layout: "fit",
 
 //        xTickSize: 1,
 //        yTickSize: 1,
         items:[{
-            xtype: 'desktopmain'
+            xtype: "desktopmain"
         }],
         dockedItems: [{
-            xtype: 'desktoptoolbartopmain'
+            xtype: "desktoptoolbartopmain"
         }, {
-            xtype: 'desktoptoolbarbottommain'
+            xtype: "desktoptoolbarbottommain"
         }]
     }]
 });

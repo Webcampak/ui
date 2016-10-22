@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.config.capture.calendar.Cfgcaptureendminute2');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.config.capture.calendar.Cfgcaptureendminute2");
 //</debug>
-Ext.define('WPAKT.view.config.capture.calendar.Cfgcaptureendminute2', {
-    extend: 'Ext.form.field.Number'
-    , alias: 'widget.configcapturecalendarcfgcaptureendminute2'
+Ext.define("WPAKT.view.config.capture.calendar.Cfgcaptureendminute2", {
+    extend: "Ext.form.field.Number"
+    , alias: "widget.configcapturecalendarcfgcaptureendminute2"
 
     , allowBlank: false
     , minValue: 0
@@ -11,7 +12,7 @@ Ext.define('WPAKT.view.config.capture.calendar.Cfgcaptureendminute2', {
     , checkChangeEvents: 500
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent('WPAKT.controller.config.Config.updateCalendarSchedule', 2);
+            this.fireEvent("WPAKT.controller.config.Config.updateCalendarSchedule", 2);
         }
     }
 });

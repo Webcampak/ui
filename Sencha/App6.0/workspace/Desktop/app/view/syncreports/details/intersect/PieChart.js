@@ -1,22 +1,23 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.syncreports.details.intersect.PieChart');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.syncreports.details.intersect.PieChart");
 //</debug>
 Ext.define("WPAKD.view.syncreports.details.intersect.PieChart", {
-    extend: 'Ext.chart.PolarChart'
-    , alias: 'widget.syncreportsdetailsintersectpiechart'
+    extend: "Ext.chart.PolarChart"
+    , alias: "widget.syncreportsdetailsintersectpiechart"
 
-    , reference: 'chart'
-    , store: 'syncreports.IntersectChart'
+    , reference: "chart"
+    , store: "syncreports.IntersectChart"
     , legend: {
-        docked: 'bottom'
+        docked: "bottom"
         , toggleable: false
     },
-    interactions: ['rotate']      
+    interactions: ["rotate"]
     , series: [{
-        type: 'pie'
-        , angleField: 'VALUE'
+        type: "pie"
+        , angleField: "VALUE"
         , label: {
-            field: 'NAME'
+            field: "NAME"
             , calloutLine: false
         }
         , highlight: true           

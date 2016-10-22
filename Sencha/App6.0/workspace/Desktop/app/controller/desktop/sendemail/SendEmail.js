@@ -1,8 +1,9 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.controller.desktop.sendemail.SendEmail');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.desktop.sendemail.SendEmail");
 //</debug>
-Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
-    extend: 'Ext.app.Controller',
+Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
+    extend: "Ext.app.Controller",
 
     stores: [
 
@@ -13,57 +14,57 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
     ],
 
     views: [
-        'desktop.sendemail.Main'
-        , 'desktop.sendemail.EmailSubject'
-        , 'desktop.sendemail.EmailAttachments'
-        , 'desktop.sendemail.EmailBody'
-        , 'desktop.sendemail.SendFrom'
-        , 'desktop.sendemail.SendTo'
-        , 'desktop.sendemail.SendCC'
-        , 'desktop.sendemail.SendBCC'
-        , 'desktop.sendemail.ButtonCancel'
-        , 'desktop.sendemail.ButtonSend'
+        "desktop.sendemail.Main"
+        , "desktop.sendemail.EmailSubject"
+        , "desktop.sendemail.EmailAttachments"
+        , "desktop.sendemail.EmailBody"
+        , "desktop.sendemail.SendFrom"
+        , "desktop.sendemail.SendTo"
+        , "desktop.sendemail.SendCC"
+        , "desktop.sendemail.SendBCC"
+        , "desktop.sendemail.ButtonCancel"
+        , "desktop.sendemail.ButtonSend"
     ],
 
     refs: [
-        {ref: 'desktopsendemailmain',                  selector: 'desktopsendemailmain',                  autoCreate: true,        xtype: 'desktopsendemailmain'}
-        , {ref: 'desktopsendemailemailsubject',        selector: 'desktopsendemailemailsubject'           }
-        , {ref: 'desktopsendemailemailattachments',    selector: 'desktopsendemailemailattachments'       }
-        , {ref: 'desktopsendemailemailbody',           selector: 'desktopsendemailemailbody'              }
-        , {ref: 'desktopsendemailsendfrom',            selector: 'desktopsendemailsendfrom'               }
-        , {ref: 'desktopsendemailsendto',              selector: 'desktopsendemailsendto'                 }
-        , {ref: 'desktopsendemailsendcc',              selector: 'desktopsendemailsendcc'                 }
-        , {ref: 'desktopsendemailbuttonsend',          selector: 'desktopsendemailbuttonsend'             }
-        , {ref: 'desktopsendemailbuttoncancel',        selector: 'desktopsendemailbuttoncancel'           }
+        {ref: "desktopsendemailmain",                  selector: "desktopsendemailmain",                  autoCreate: true,        xtype: "desktopsendemailmain"}
+        , {ref: "desktopsendemailemailsubject",        selector: "desktopsendemailemailsubject"           }
+        , {ref: "desktopsendemailemailattachments",    selector: "desktopsendemailemailattachments"       }
+        , {ref: "desktopsendemailemailbody",           selector: "desktopsendemailemailbody"              }
+        , {ref: "desktopsendemailsendfrom",            selector: "desktopsendemailsendfrom"               }
+        , {ref: "desktopsendemailsendto",              selector: "desktopsendemailsendto"                 }
+        , {ref: "desktopsendemailsendcc",              selector: "desktopsendemailsendcc"                 }
+        , {ref: "desktopsendemailbuttonsend",          selector: "desktopsendemailbuttonsend"             }
+        , {ref: "desktopsendemailbuttoncancel",        selector: "desktopsendemailbuttoncancel"           }
     ],
 
     init: function() {
-        console.log(new Date().toLocaleTimeString() + ': Log: Controller->Desktop->SendEmail->SendEmail: Controller init: function()');
+        console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->SendEmail->SendEmail: Controller init: function()");
         this.control({
-            '#menuOpenSendEmail':                      {click:  this.menuOpenSendEmail  }
-            , 'desktopsendemailbuttonsend':            {click:  this.sendEmail          }
-            , 'desktopsendemailbuttoncancel':          {click:  this.cancelEmail        }
+            "#menuOpenSendEmail":                      {click:  this.menuOpenSendEmail  }
+            , "desktopsendemailbuttonsend":            {click:  this.sendEmail          }
+            , "desktopsendemailbuttoncancel":          {click:  this.cancelEmail        }
 
         });
 
         this.listen({
              controller: {
-                '*': {
-                    'WPAKD.controller.desktop.sendemail.SendEmail.menuOpenSendEmail': this.menuOpenSendEmail
-                    , 'WPAKD.controller.desktop.sendemail.SendEmail.openSendEmail': this.openSendEmail
+                "*": {
+                    "WPAKD.controller.desktop.sendemail.SendEmail.menuOpenSendEmail": this.menuOpenSendEmail
+                    , "WPAKD.controller.desktop.sendemail.SendEmail.openSendEmail": this.openSendEmail
                 }
              }
         });
     },
 
     onLaunch: function() {
-        this.consoleLog('onLaunch()');
+        this.consoleLog("onLaunch()");
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Desktop->SendEmail: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Desktop->SendEmail: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
@@ -115,7 +116,7 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
     }
 
     , menuOpenSendEmail: function(sendEvent, cancelEvent, emailSubject, emailBody, emailAttachmentName, emailAttachmentSourceId, emailAttachmentPath) {
-        this.consoleLog('menuOpenSendEmail()');
+        this.consoleLog("menuOpenSendEmail()");
         if (sendEvent !== undefined)                {this.setSendEvent(sendEvent);}
         if (cancelEvent !== undefined)              {this.setCancelEvent(cancelEvent);}
         if (emailAttachmentSourceId !== undefined)  {this.setAttachmentSourceId(emailAttachmentSourceId);}
@@ -142,10 +143,10 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
     },
 
     openSendEmail: function() {
-        this.consoleLog('openSendEmail()');
+        this.consoleLog("openSendEmail()");
         Ext.getBody().unmask();
         this.getDesktopsendemailmain().show();
-        if (this.getDesktopsendemailsendfrom().getValue() == '') {
+        if (this.getDesktopsendemailsendfrom().getValue() == "") {
             this.getDesktopsendemailsendfrom().setVisible(false);
         } else {
             this.getDesktopsendemailsendfrom().setVisible(true);
@@ -153,13 +154,13 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
     },
 
     sendEmail: function() {
-        this.consoleLog('sendEmail()');
+        this.consoleLog("sendEmail()");
         var emailsDstString = this.getDesktopsendemailsendto().getValue() + this.getDesktopsendemailsendcc().getValue();
-        if (emailsDstString.length > 5 && this.getDesktopsendemailemailsubject().getValue() != '' && this.getDesktopsendemailemailbody().getValue() != '') {
-            //if (this.getSendEvent() !== '') {
+        if (emailsDstString.length > 5 && this.getDesktopsendemailemailsubject().getValue() != "" && this.getDesktopsendemailemailbody().getValue() != "") {
+            //if (this.getSendEvent() !== "") {
             //    this.fireEvent(this.getSendEvent());
             //} else {
-            var newEmail = Ext.create('WPAKD.model.desktop.emails.SendEmail',
+            var newEmail = Ext.create("WPAKD.model.desktop.emails.SendEmail",
                 {
                     EMAIL_TO:               this.getDesktopsendemailsendto().getValue()
                     , EMAIL_CC:             this.getDesktopsendemailsendcc().getValue()
@@ -169,31 +170,31 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
                     , ATTACHMENT_PATH:      this.getAttachmentPath()
                     , ATTACHMENT_NAME:      this.getAttachmentName()
                     , ATTACHMENT_SOURCEID:  this.getAttachmentSourceId()
-                    , STATUS:               'QUEUED'
+                    , STATUS:               "QUEUED"
                 }
             );
-            this.fireEvent('WPAKD.controller.desktop.loading.Stores.beginLoading', this.getDesktopsendemailmain(), 'Please wait ... Sending Email to server');
+            this.fireEvent("WPAKD.controller.desktop.loading.Stores.beginLoading", this.getDesktopsendemailmain(), "Please wait ... Sending Email to server");
             var scope = this;
             newEmail.save({
                 success: function(record, operation) {
-                    scope.fireEvent('WPAKD.controller.desktop.loading.Stores.endLoading', scope.getDesktopsendemailmain());
+                    scope.fireEvent("WPAKD.controller.desktop.loading.Stores.endLoading", scope.getDesktopsendemailmain());
                     Ext.MessageBox.show({
-                        title: i18n.gettext('Info'),
-                        msg: i18n.gettext('Email successfully added to queue, will be sent shortly'),
+                        title: i18n.gettext("Info"),
+                        msg: i18n.gettext("Email successfully added to queue, will be sent shortly"),
                         buttons: Ext.MessageBox.OK,
                         icon: Ext.MessageBox.INFO
                     });
                     scope.fireEvent(scope.getSendEvent());
                 },
                 failure: function(record, operation) {
-                    scope.fireEvent('WPAKD.controller.desktop.loading.Stores.endLoading', scope.getDesktopsendemailmain());
+                    scope.fireEvent("WPAKD.controller.desktop.loading.Stores.endLoading", scope.getDesktopsendemailmain());
                 }
             });
             //}
         } else {
             Ext.MessageBox.show({
-                title: i18n.gettext('Info'),
-                msg: i18n.gettext('Please ensure required fields have been properly populated. <br /> Required: TO, Subject, Body'),
+                title: i18n.gettext("Info"),
+                msg: i18n.gettext("Please ensure required fields have been properly populated. <br /> Required: TO, Subject, Body"),
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.INFO
             });
@@ -201,12 +202,12 @@ Ext.define('WPAKD.controller.desktop.sendemail.SendEmail', {
     },
 
     cancelEmail: function() {
-        this.consoleLog('cancelEmail()');
+        this.consoleLog("cancelEmail()");
         this.getDesktopsendemailemailsubject().setValue();
         this.getDesktopsendemailemailbody().setValue();
         this.getDesktopsendemailsendto().setValue();
         this.getDesktopsendemailsendcc().setValue();
         this.getDesktopsendemailmain().hide();
-        if (this.getCancelEvent() !== '') {this.fireEvent(this.getCancelEvent());}
+        if (this.getCancelEvent() !== "") {this.fireEvent(this.getCancelEvent());}
     }
 });

@@ -1,16 +1,17 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.accesscontrol.users.shared.Group');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.accesscontrol.users.shared.Group");
 //</debug>
 Ext.define("WPAKD.view.accesscontrol.users.shared.Group", {
-    extend: 'Ext.form.ComboBox',
+    extend: "Ext.form.ComboBox",
 
-    alias : 'widget.accesscontroluserssharedgroup',
+    alias : "widget.accesscontroluserssharedgroup",
 
-    store: 'accesscontrol.groups.Groups',
+    store: "accesscontrol.groups.Groups",
 
-    fieldLabel: i18n.gettext('Group'),
+    fieldLabel: i18n.gettext("Group"),
 
-    valueField: 'GRO_ID',
-    displayField: 'NAME',
-    queryMode: 'local'
+    valueField: "GRO_ID",
+    displayField: "NAME",
+    queryMode: "local"
 });

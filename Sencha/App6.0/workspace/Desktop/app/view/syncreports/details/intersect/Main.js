@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.syncreports.details.intersect.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.syncreports.details.intersect.Main");
 //</debug>
 Ext.define("WPAKD.view.syncreports.details.intersect.Main", {
-    extend: 'Ext.container.Container'
-    , alias: 'widget.syncreportsdetailsintersectmain'
+    extend: "Ext.container.Container"
+    , alias: "widget.syncreportsdetailsintersectmain"
     
     , items: [
-        {xtype: 'syncreportsdetailsintersectpiechart'}
+        {xtype: "syncreportsdetailsintersectpiechart"}
     ]  
 })

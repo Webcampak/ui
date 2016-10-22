@@ -1,30 +1,31 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.core.authentication.profile.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.core.authentication.profile.Main");
 //</debug>
-Ext.define('WPAKT.view.core.authentication.profile.Main', {
-    extend: 'Ext.form.Panel'
-    , alias: 'widget.coreauthenticationprofilemain'
+Ext.define("WPAKT.view.core.authentication.profile.Main", {
+    extend: "Ext.form.Panel"
+    , alias: "widget.coreauthenticationprofilemain"
 
     , hidden: true
-    , bodyPadding: '20 20'
-    , cls: 'auth-dialog-login'
+    , bodyPadding: "20 20"
+    , cls: "auth-dialog-login"
     , header: false
     , width: 415
-    , layout: {type: 'vbox', align: 'stretch'}
+    , layout: {type: "vbox", align: "stretch"}
 
-    , defaults : {margin : '5 0'}
+    , defaults : {margin : "5 0"}
 
     , items: [
-        {xtype: 'coreauthenticationprofilelabel'}
-        , {xtype: 'coreauthenticationprofilebuttonchangepassword'}
-        , {xtype: 'coreauthenticationprofilebuttonlogout'}
-        , {xtype: 'coreauthenticationprofilebuttoncancel'}
+        {xtype: "coreauthenticationprofilelabel"}
+        , {xtype: "coreauthenticationprofilebuttonchangepassword"}
+        , {xtype: "coreauthenticationprofilebuttonlogout"}
+        , {xtype: "coreauthenticationprofilebuttoncancel"}
     ]
 
     /*
      * Seek out the first enabled, focusable, empty textfield when the form is focused
      */
-    , defaultFocus: 'textfield:focusable:not([hidden]):not([disabled]):not([value])'
+    , defaultFocus: "textfield:focusable:not([hidden]):not([disabled]):not([value])"
 
     /**
      * @cfg {Boolean} [autoComplete=false]
@@ -42,23 +43,23 @@ Ext.define('WPAKT.view.core.authentication.profile.Main', {
             me.autoEl = Ext.applyIf(
                 me.autoEl || {},
                 {
-                    tag: 'form',
-                    name: 'authdialog',
-                    method: 'post'
+                    tag: "form",
+                    name: "authdialog",
+                    method: "post"
                 });
         }
 
-        me.addCls('auth-dialog');
+        me.addCls("auth-dialog");
         me.callParent();
 
         if (me.autoComplete) {
             listen = {
-                afterrender : 'doAutoComplete',
+                afterrender : "doAutoComplete",
                 scope : me,
                 single : true
             };
 
-            Ext.each(me.query('textfield'), function (field) {
+            Ext.each(me.query("textfield"), function (field) {
                 field.on(listen);
             });
         }
@@ -66,7 +67,7 @@ Ext.define('WPAKT.view.core.authentication.profile.Main', {
 
     , doAutoComplete : function(target) {
         if (target.inputEl && target.autoComplete !== false) {
-            target.inputEl.set({ autocomplete: 'on' });
+            target.inputEl.set({ autocomplete: "on" });
         }
     }    
 

@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.util.ErrorHandling');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.util.ErrorHandling");
 //</debug>
-Ext.define('WPAKD.util.ErrorHandling', {
-     override: 'Ext.data.proxy.Server',
-     alias : 'state.errorhandling',
+Ext.define("WPAKD.util.ErrorHandling", {
+     override: "Ext.data.proxy.Server",
+     alias : "state.errorhandling",
 
      processResponse: function(success, operation, request, response) {
         var me = this,
@@ -15,13 +16,13 @@ Ext.define('WPAKD.util.ErrorHandling', {
         // Bracketing the processing with this event gives owning stores the ability
         // to fire their own beginupdate/endupdate events which can be used by interested
         // views to suspend layouts.
-        me.fireEvent('beginprocessresponse', me, response, operation);
+        me.fireEvent("beginprocessresponse", me, response, operation);
 
         if (response.result.success === false) {
             if (response.result.title != "") {var msgTitle = response.result.title;}
-            else {var msgTitle = i18n.gettext('Server error');}
+            else {var msgTitle = i18n.gettext("Server error");}
             if (response.result.message != "") {var msgText = response.result.message;}
-            else {var msgText = i18n.gettext('There is an error with your request, please contact support');}            
+            else {var msgText = i18n.gettext("There is an error with your request, please contact support");}
             Ext.raise({
                 title: msgTitle
                 , msg: msgText
@@ -34,7 +35,7 @@ Ext.define('WPAKD.util.ErrorHandling', {
                 resultSet = reader.getNullResultSet();
             } else {
                 resultSet = reader.read(me.extractResponseData(response), {
-                    // If we're doing an update, we want to construct the models ourselves.
+                    // If we"re doing an update, we want to construct the models ourselves.
                     recordCreator: operation.getRecordCreator()
                 });
             }
@@ -45,13 +46,13 @@ Ext.define('WPAKD.util.ErrorHandling', {
             exception = true;
         }
         if (exception) {
-            me.fireEvent('exception', me, response, operation);
+            me.fireEvent("exception", me, response, operation);
         }
         me.afterRequest(request, success);
         // Tell owning store processing has finished.
         // It will fire its endupdate event which will cause interested views to 
         // resume layouts.
-        me.fireEvent('endprocessresponse', me, response, operation);
+        me.fireEvent("endprocessresponse", me, response, operation);
     }
 });
 

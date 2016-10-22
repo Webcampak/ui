@@ -1,12 +1,13 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.toolbar.bottom.exceptions.Exceptions');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.toolbar.bottom.exceptions.Exceptions");
 //</debug>
 Ext.define("WPAKD.view.desktop.toolbar.bottom.exceptions.Exceptions", {
-    extend: 'Ext.form.field.TextArea',
+    extend: "Ext.form.field.TextArea",
 
-    alias : 'widget.desktoptoolbarbottomexceptionsexceptions',
+    alias : "widget.desktoptoolbarbottomexceptionsexceptions",
 
     hideLabel: true,
 
-    emptyText: i18n.gettext('Exception Message')
+    emptyText: i18n.gettext("Exception Message")
 });

@@ -1,16 +1,17 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.dashboard.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.dashboard.Main");
 //</debug>
-Ext.define('WPAKT.view.dashboard.Main', {
-    extend: 'Ext.container.Container'
-    , alias: 'widget.dashboardmain'
+Ext.define("WPAKT.view.dashboard.Main", {
+    extend: "Ext.container.Container"
+    , alias: "widget.dashboardmain"
 
     , requires: [
-        'Ext.ux.layout.ResponsiveColumn'
+        "Ext.ux.layout.ResponsiveColumn"
     ]
-    , id: 'dashboard'
+    , id: "dashboard"
     , layout: {
-         type: 'responsivecolumn',
+         type: "responsivecolumn",
          states: {
              small: 1300,
              medium: 1400,
@@ -19,16 +20,16 @@ Ext.define('WPAKT.view.dashboard.Main', {
     }  
         
     , items: [{
-        xtype: 'dashboardsourcesstatusmain'
-        , responsiveCls: 'big-60 small-100'         
+        xtype: "dashboardsourcesstatusmain"
+        , responsiveCls: "big-60 small-100"
     }, {
-        xtype: 'dashboardcamerasmain'
-        , responsiveCls: 'big-20 small-50'   
+        xtype: "dashboardcamerasmain"
+        , responsiveCls: "big-20 small-50"
     }, {
-        xtype: 'dashboarddiskmain'
-        , responsiveCls: 'big-20 small-50'            
+        xtype: "dashboarddiskmain"
+        , responsiveCls: "big-20 small-50"
     }, {
-        xtype: 'dashboarduptimemain'
-        , responsiveCls: 'big-40 small-50'
+        xtype: "dashboarduptimemain"
+        , responsiveCls: "big-40 small-50"
     }]
 });

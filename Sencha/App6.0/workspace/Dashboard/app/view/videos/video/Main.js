@@ -1,19 +1,20 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.videos.video.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.videos.video.Main");
 //</debug>
-Ext.define('WPAKT.view.videos.video.Main', {
-    extend: 'Ext.panel.Panel'
-    , alias: 'widget.videosvideomain'
+Ext.define("WPAKT.view.videos.video.Main", {
+    extend: "Ext.panel.Panel"
+    , alias: "widget.videosvideomain"
 
-    , cls: 'dashboard-main-chart shadow-panel'
+    , cls: "dashboard-main-chart shadow-panel"
 
     , bodyPadding: 15
 
-    , title: ''
-    , layout: {type: 'vbox',align: 'stretch'} 
+    , title: ""
+    , layout: {type: "vbox",align: "stretch"} 
     , items: [
-        {xtype: 'videosvideovideo', flex: 1}
-        , {xtype: 'container', height: 5}
-        , {xtype: 'videoscontrolsvideoslist'}
+        {xtype: "videosvideovideo", flex: 1}
+        , {xtype: "container", height: 5}
+        , {xtype: "videoscontrolsvideoslist"}
     ]
 });

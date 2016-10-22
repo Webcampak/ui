@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.store.core.loading.Stores');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.store.core.loading.Stores");
 //</debug>
-Ext.define('WPAKT.store.core.loading.Stores', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKT.store.core.loading.Stores", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKT.model.core.loading.Stores',
+    model: "WPAKT.model.core.loading.Stores",
 
     autosync: true,
 
     proxy: {
-        type: 'memory'
+        type: "memory"
     }
 });

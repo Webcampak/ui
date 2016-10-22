@@ -1,136 +1,137 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.store.core.NavigationTree');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.store.core.NavigationTree");
 //</debug>
-Ext.define('WPAKT.store.core.NavigationTree', {
-   extend: 'Ext.data.TreeStore',
+Ext.define("WPAKT.store.core.NavigationTree", {
+   extend: "Ext.data.TreeStore",
 
-    storeId: 'NavigationTree',
+    storeId: "NavigationTree",
     root: {
         expanded: true,
         children: [
             {
-                text:   'Dashboard',
-                view:   'dashboard.Dashboard',
+                text:   "Dashboard",
+                view:   "dashboard.Dashboard",
                 leaf:   true,
-                iconCls: 'right-icon new-icon x-fa fa-desktop',
-                routeId: 'dashboard'
+                iconCls: "right-icon new-icon x-fa fa-desktop",
+                routeId: "dashboard"
             },
             {
-                text:   'Email',
-                view:   'email.Email',
-                iconCls: 'right-icon hot-icon x-fa fa-send ',
+                text:   "Email",
+                view:   "email.Email",
+                iconCls: "right-icon hot-icon x-fa fa-send ",
                 leaf:   true,
-                routeId: 'email'
+                routeId: "email"
 
             },
             {
-                text:   'Profile',
-                view:   'profile.UserProfile',
+                text:   "Profile",
+                view:   "profile.UserProfile",
                 leaf:   true,
-                iconCls: 'x-fa fa-user',
-                routeId:'profile'
+                iconCls: "x-fa fa-user",
+                routeId:"profile"
             },
             {
-                text:   'Search results',
-                view:   'search.Results',
+                text:   "Search results",
+                view:   "search.Results",
                 leaf:   true,
-                iconCls: 'x-fa fa-search',
-                routeId:'search'
+                iconCls: "x-fa fa-search",
+                routeId:"search"
             },
             {
-                text: 'FAQ',
-                view: 'pages.FAQ',
+                text: "FAQ",
+                view: "pages.FAQ",
                 leaf: true,
-                iconCls: 'x-fa fa-question',
-                routeId:'faq'
+                iconCls: "x-fa fa-question",
+                routeId:"faq"
             },
             {
-                text: 'Pages',
+                text: "Pages",
                 expanded: false,
                 selectable: false,
-                iconCls: 'x-fa fa-leanpub',
-                routeId : 'pages-parent',
-                id:       'pages-parent',
+                iconCls: "x-fa fa-leanpub",
+                routeId : "pages-parent",
+                id:       "pages-parent",
                 children: [
                     {
-                        text: 'Blank Page',
-                        view: 'pages.BlankPage',
+                        text: "Blank Page",
+                        view: "pages.BlankPage",
                         leaf: true,
-                        iconCls: 'x-fa fa-file-o',
-                        routeId:'pages.blank'
+                        iconCls: "x-fa fa-file-o",
+                        routeId:"pages.blank"
                     },
 
                     {
-                        text: '404 Error',
-                        view: 'pages.Error404Window',
+                        text: "404 Error",
+                        view: "pages.Error404Window",
                         leaf: true,
-                        iconCls: 'x-fa fa-exclamation-triangle',
-                        routeId:'pages.404'
+                        iconCls: "x-fa fa-exclamation-triangle",
+                        routeId:"pages.404"
                     },
                     {
-                        text: '500 Error',
-                        view: 'pages.Error500Window',
+                        text: "500 Error",
+                        view: "pages.Error500Window",
                         leaf: true,
-                        iconCls: 'x-fa fa-times-circle',
-                        routeId:'pages.500'
+                        iconCls: "x-fa fa-times-circle",
+                        routeId:"pages.500"
                     },
                     {
-                        text: 'Lock Screen',
-                        view: 'authentication.LockScreen',
+                        text: "Lock Screen",
+                        view: "authentication.LockScreen",
                         leaf: true,
-                        iconCls: 'x-fa fa-lock',
-                        routeId:'authentication.lockscreen'
+                        iconCls: "x-fa fa-lock",
+                        routeId:"authentication.lockscreen"
                     },
 
                     {
-                        text: 'Login',
-                        view: 'authentication.Login',
+                        text: "Login",
+                        view: "authentication.Login",
                         leaf: true,
-                        iconCls: 'x-fa fa-check',
-                        routeId:'authentication.login'
+                        iconCls: "x-fa fa-check",
+                        routeId:"authentication.login"
                     },
                     {
-                        text: 'Register',
-                        view: 'authentication.Register',
+                        text: "Register",
+                        view: "authentication.Register",
                         leaf: true,
-                        iconCls: 'x-fa fa-pencil-square-o',
-                        routeId:'authentication.register'
+                        iconCls: "x-fa fa-pencil-square-o",
+                        routeId:"authentication.register"
                     },
                     {
-                        text: 'Password Reset',
-                        view: 'authentication.PasswordReset',
+                        text: "Password Reset",
+                        view: "authentication.PasswordReset",
                         leaf: true,
-                        iconCls: 'x-fa fa-lightbulb-o',
-                        routeId:'authentication.passwordreset'
+                        iconCls: "x-fa fa-lightbulb-o",
+                        routeId:"authentication.passwordreset"
                     }
                 ]
             },
             {
-                text:   'Widgets',
-                view:   'widgets.Widgets',
+                text:   "Widgets",
+                view:   "widgets.Widgets",
                 leaf:   true,
-                iconCls: 'x-fa fa-flask',
-                routeId:'widgets'
+                iconCls: "x-fa fa-flask",
+                routeId:"widgets"
             },
             {
-                text:   'Forms',
-                view:   'forms.Wizards',
+                text:   "Forms",
+                view:   "forms.Wizards",
                 leaf:   true,
-                iconCls: 'x-fa fa-edit',
-                routeId:'forms'
+                iconCls: "x-fa fa-edit",
+                routeId:"forms"
             },
             {
-                text: 'Charts',
-                view: 'charts.Charts',
-                iconCls: 'x-fa fa-pie-chart',
+                text: "Charts",
+                view: "charts.Charts",
+                iconCls: "x-fa fa-pie-chart",
                 leaf:   true,
-                routeId:'charts'
+                routeId:"charts"
             }
         ]
     },
     fields: [
         {
-            name: 'text'
+            name: "text"
         }
     ]
 

@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.videos.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.videos.Main");
 //</debug>
-Ext.define('WPAKD.view.videos.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.videosmain'
+Ext.define("WPAKD.view.videos.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.videosmain"
 
-    , title: i18n.gettext('Webcampak Videos')
+    , title: i18n.gettext("Webcampak Videos")
 
     , width: 1000
     , height: 700
 
     , stateful: true
-    , stateId: 'videosmain'
+    , stateId: "videosmain"
 
     , scroll: true
     , autoScroll: true
@@ -20,28 +21,28 @@ Ext.define('WPAKD.view.videos.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf03d // video-camera
-    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
+    , layout: {type: "hbox", pack: "start", align: "stretch"}
     , dockedItems: [{
-        xtype: 'toolbar'
-        , dock: 'top'
+        xtype: "toolbar"
+        , dock: "top"
         , items: [{
-            xtype: 'videossourceslist'
+            xtype: "videossourceslist"
             , width: 335
-        }, '->', {
-            xtype: 'videossourcename'
+        }, "->", {
+            xtype: "videossourcename"
             , flex: 1
-        }, '->', {
-            xtype: 'videosdisplayrefreshbutton'
+        }, "->", {
+            xtype: "videosdisplayrefreshbutton"
         }]
     }]
     , defaults: {frame: true}
     , items: [{
-        xtype: 'videosselectionmain'
+        xtype: "videosselectionmain"
         , width: 250
     }, {
-        xtype: 'videosdisplaymain'
+        xtype: "videosdisplaymain"
         , flex: 1
     }]
 });

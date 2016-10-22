@@ -1,52 +1,53 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.pictures.display.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.display.Main");
 //</debug>
-Ext.define('WPAKD.view.pictures.display.Main', {
-    extend: 'Ext.panel.Panel'
-    , alias: 'widget.picturesdisplaymain'
+Ext.define("WPAKD.view.pictures.display.Main", {
+    extend: "Ext.panel.Panel"
+    , alias: "widget.picturesdisplaymain"
 
     , dockedItems: [{
-        itemId: 'centralpaneltoolbar',
-        xtype: 'toolbar',
-        dock: 'top',
+        itemId: "centralpaneltoolbar",
+        xtype: "toolbar",
+        dock: "top",
         items: [{
-            xtype: 'picturesdisplayzoom'
+            xtype: "picturesdisplayzoom"
             , flex: 2
-        }, '-', {
-            xtype: 'picturesdisplayemailbutton'
+        }, "-", {
+            xtype: "picturesdisplayemailbutton"
         }, {
-            xtype: 'picturesdisplaysensorsbutton'
+            xtype: "picturesdisplaysensorsbutton"
         }, {
-            xtype: 'picturesdisplaydownloadbutton'
-        }, '-', {
-            xtype: 'picturesdisplaypreviousbutton'
+            xtype: "picturesdisplaydownloadbutton"
+        }, "-", {
+            xtype: "picturesdisplaypreviousbutton"
         }, {
-            xtype: 'picturesdisplaynextbutton'
+            xtype: "picturesdisplaynextbutton"
         }, {
-            xtype: 'picturesdisplaylastbutton'
+            xtype: "picturesdisplaylastbutton"
         }, {
-            xtype: 'picturesdisplayrefreshbutton'
+            xtype: "picturesdisplayrefreshbutton"
         }]
     }]
-    , layout: {type: 'vbox', pack: 'start', align: 'stretch'}
+    , layout: {type: "vbox", pack: "start", align: "stretch"}
     , items: [{
-        xtype: 'container'
-        , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
+        xtype: "container"
+        , layout: {type: "hbox", pack: "start", align: "stretch"}
         , height: 30
         , items: [{
-            xtype: 'container'
+            xtype: "container"
             , flex: 1
         }, {
-            xtype: 'picturesdisplaycurrentpicturedate'
+            xtype: "picturesdisplaycurrentpicturedate"
         }, {
-            xtype: 'container'
+            xtype: "container"
             , flex: 1
         }]
     }, {
-        xtype: 'picturesdisplaycurrentpicture'
+        xtype: "picturesdisplaycurrentpicture"
         , flex: 3.5
     }, {
-        xtype: 'picturesdisplaythumbnails'
+        xtype: "picturesdisplaythumbnails"
     }]
 
 });

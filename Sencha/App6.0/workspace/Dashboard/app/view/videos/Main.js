@@ -1,27 +1,28 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.videos.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.videos.Main");
 //</debug>
-Ext.define('WPAKT.view.videos.Main', {
-    extend: 'Ext.container.Container'
-    , alias: 'widget.videosmain'
+Ext.define("WPAKT.view.videos.Main", {
+    extend: "Ext.container.Container"
+    , alias: "widget.videosmain"
 
     , requires: [
-        'Ext.ux.layout.ResponsiveColumn'
+        "Ext.ux.layout.ResponsiveColumn"
     ]
 
-    , id: 'dashboard'
+    , id: "dashboard"
 
-    , layout: 'responsivecolumn',
+    , layout: "responsivecolumn",
     
     listeners: {
-        hide: 'onHideView'
+        hide: "onHideView"
     },
 
     items: [{
-        xtype: 'videosvideomain'
-        , responsiveCls: 'big-70 small-100'         
+        xtype: "videosvideomain"
+        , responsiveCls: "big-70 small-100"         
     }, {
-        xtype: 'videoscontrolsdatemain'
-        , responsiveCls: 'big-30 small-50'      
+        xtype: "videoscontrolsdatemain"
+        , responsiveCls: "big-30 small-50"      
     }]
 });

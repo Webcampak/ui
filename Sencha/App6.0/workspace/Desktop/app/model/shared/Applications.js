@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.model.shared.Applications');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.model.shared.Applications");
 //</debug>
-Ext.define('WPAKD.model.shared.Applications', {
-    extend: 'Ext.data.Model',
+Ext.define("WPAKD.model.shared.Applications", {
+    extend: "Ext.data.Model",
 
-    idProperty : 'APP_ID',
+    idProperty : "APP_ID",
 
     fields: [
-        { name: 'APP_ID',     type: 'int'        }
-        , { name: 'CODE',     type: 'string'     }
-        , { name: 'NAME',     type: 'string'     }
+        { name: "APP_ID",     type: "int"        }
+        , { name: "CODE",     type: "string"     }
+        , { name: "NAME",     type: "string"     }
     ]
 });

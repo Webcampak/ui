@@ -11,11 +11,11 @@
  *
  */
 
-Ext.define('WPAKD.ux.window.Notification', {
-	extend: 'Ext.window.Window',
-	alias: 'widget.uxnotification',
+Ext.define("WPAKD.ux.window.Notification", {
+	extend: "Ext.window.Window",
+	alias: "widget.uxnotification",
 
-	cls: 'ux-notification-window',
+	cls: "ux-notification-window",
 	autoClose: true,
 	autoHeight: true,
 	plain: false,
@@ -29,7 +29,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 	useXAxis: false,
 
 	// Options: br, bl, tr, tl, t, l, b, r
-	position: 'br',
+	position: "br",
 
 	// Pixels between each notification
 	spacing: 6,
@@ -38,8 +38,8 @@ Ext.define('WPAKD.ux.window.Notification', {
 	paddingX: 30,
 	paddingY: 10,
 
-	slideInAnimation: 'easeIn',
-	slideBackAnimation: 'bounceOut',
+	slideInAnimation: "easeIn",
+	slideBackAnimation: "bounceOut",
 	slideInDuration: 1500,
 	slideBackDuration: 1000,
 	hideDuration: 500,
@@ -92,8 +92,8 @@ Ext.define('WPAKD.ux.window.Notification', {
 			me.hideDuration = me.fadeDelay;
 		}
 
-		// 'bc', lc', 'rc', 'tc' compatibility
-		me.position = me.position.replace(/c/, '');
+		// "bc", lc", "rc", "tc" compatibility
+		me.position = me.position.replace(/c/, "");
 
 		me.updateAlignment(me.position);
 
@@ -126,7 +126,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 		var me = this;
 
 		switch (position) {
-			case 'br':
+			case "br":
 				me.paddingFactorX = -1;
 				me.paddingFactorY = -1;
 				me.siblingAlignment = "br-br";
@@ -136,7 +136,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 					me.managerAlignment = "tr-br";
 				}
 				break;
-			case 'bl':
+			case "bl":
 				me.paddingFactorX = 1;
 				me.paddingFactorY = -1;
 				me.siblingAlignment = "bl-bl";
@@ -146,7 +146,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 					me.managerAlignment = "tl-bl";
 				}
 				break;
-			case 'tr':
+			case "tr":
 				me.paddingFactorX = -1;
 				me.paddingFactorY = 1;
 				me.siblingAlignment = "tr-tr";
@@ -156,7 +156,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 					me.managerAlignment = "br-tr";
 				}
 				break;
-			case 'tl':
+			case "tl":
 				me.paddingFactorX = 1;
 				me.paddingFactorY = 1;
 				me.siblingAlignment = "tl-tl";
@@ -166,28 +166,28 @@ Ext.define('WPAKD.ux.window.Notification', {
 					me.managerAlignment = "bl-tl";
 				}
 				break;
-			case 'b':
+			case "b":
 				me.paddingFactorX = 0;
 				me.paddingFactorY = -1;
 				me.siblingAlignment = "b-b";
 				me.useXAxis = 0;
 				me.managerAlignment = "t-b";
 				break;
-			case 't':
+			case "t":
 				me.paddingFactorX = 0;
 				me.paddingFactorY = 1;
 				me.siblingAlignment = "t-t";
 				me.useXAxis = 0;
 				me.managerAlignment = "b-t";
 				break;
-			case 'l':
+			case "l":
 				me.paddingFactorX = 1;
 				me.paddingFactorY = 0;
 				me.siblingAlignment = "l-l";
 				me.useXAxis = 1;
 				me.managerAlignment = "r-l";
 				break;
-			case 'r':
+			case "r":
 				me.paddingFactorX = -1;
 				me.paddingFactorY = 0;
 				me.siblingAlignment = "r-r";
@@ -210,11 +210,11 @@ Ext.define('WPAKD.ux.window.Notification', {
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
 				// as the manager but is still 0 px high. Before rendering the viewport.
-				if (me.position == 'br' || me.position == 'tr' || me.position == 'r') {
-					xPos += me.manager.el.getAnchorXY('r')[0];
+				if (me.position == "br" || me.position == "tr" || me.position == "r") {
+					xPos += me.manager.el.getAnchorXY("r")[0];
 					xPos -= (me.el.getWidth() + me.paddingX);
 				} else {
-					xPos += me.manager.el.getAnchorXY('l')[0];
+					xPos += me.manager.el.getAnchorXY("l")[0];
 					xPos += me.paddingX;
 				}
 			}
@@ -236,11 +236,11 @@ Ext.define('WPAKD.ux.window.Notification', {
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
 				// as the manager but is still 0 px high. Before rendering the viewport.
-				if (me.position == 'br' || me.position == 'bl' || me.position == 'b') {
-					yPos += me.manager.el.getAnchorXY('b')[1];
+				if (me.position == "br" || me.position == "bl" || me.position == "b") {
+					yPos += me.manager.el.getAnchorXY("b")[1];
 					yPos -= (me.el.getHeight() + me.paddingY);
 				} else {
-					yPos += me.manager.el.getAnchorXY('t')[1];
+					yPos += me.manager.el.getAnchorXY("t")[1];
 					yPos += me.paddingY;
 				}
 			}
@@ -253,8 +253,8 @@ Ext.define('WPAKD.ux.window.Notification', {
 		var me = this;
 
 		if (me.useXAxis) {
-			if (me.position == 'tl' || me.position == 'bl' || me.position == 'l') {
-				// Using sibling's width when adding
+			if (me.position == "tl" || me.position == "bl" || me.position == "l") {
+				// Using sibling"s width when adding
 				return (sibling.xPos + sibling.el.getWidth() + sibling.spacing);
 			} else {
 				// Using own width when subtracting
@@ -272,8 +272,8 @@ Ext.define('WPAKD.ux.window.Notification', {
 		if (me.useXAxis) {
 			return me.el.getTop();
 		} else {
-			if (me.position == 'tr' || me.position == 'tl' || me.position == 't') {
-				// Using sibling's width when adding
+			if (me.position == "tr" || me.position == "tl" || me.position == "t") {
+				// Using sibling"s width when adding
 				return (sibling.yPos + sibling.el.getHeight() + sibling.spacing);
 			} else {
 				// Using own width when subtracting
@@ -297,7 +297,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 
 		me.manager = manager;
 
-		if (typeof me.manager == 'string') {
+		if (typeof me.manager == "string") {
 			me.manager = Ext.getCmp(me.manager);
 		}
 
@@ -310,7 +310,7 @@ Ext.define('WPAKD.ux.window.Notification', {
 			}
 		}
 
-		if (typeof me.manager.notifications == 'undefined') {
+		if (typeof me.manager.notifications == "undefined") {
 			me.manager.notifications = {};
 		}
 	},
@@ -320,9 +320,9 @@ Ext.define('WPAKD.ux.window.Notification', {
 
 		if (me.stickOnClick) {
 			if (me.body && me.body.dom) {
-				Ext.fly(me.body.dom).on('click', function () {
+				Ext.fly(me.body.dom).on("click", function () {
 					me.cancelAutoClose();
-					me.addCls('notification-fixed');
+					me.addCls("notification-fixed");
 				}, me);
 			}
 		}
@@ -463,13 +463,13 @@ Ext.define('WPAKD.ux.window.Notification', {
 			if (me.el) {
 				me.el.fadeOut({
 					opacity: 0,
-					easing: 'easeIn',
+					easing: "easeIn",
 					duration: me.hideDuration,
 					remove: me.destroyAfterHide,
 					listeners: {
 						afteranimate: function () {
 							me.isFading = false;
-							me.removeCls('notification-fixed');
+							me.removeCls("notification-fixed");
 							me.removeFromManager();
 							me.hide(me.animateTarget, me.doClose, me);
 						}

@@ -1,13 +1,14 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.model.stats.SourcesPicturesCountSize');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.model.stats.SourcesPicturesCountSize");
 //</debug>
-Ext.define('WPAKD.model.stats.SourcesPicturesCountSize', {
-    extend: 'Ext.data.Model',
+Ext.define("WPAKD.model.stats.SourcesPicturesCountSize", {
+    extend: "Ext.data.Model",
 
     fields: [
-        {name: 'DATE',      type: 'date'}
-        , {name: 'COUNT',   type: 'int'}
-        , {name: 'SIZE',    type: 'int'}
+        {name: "DATE",      type: "date"}
+        , {name: "COUNT",   type: "int"}
+        , {name: "SIZE",    type: "int"}
 
     ]
 });

@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.desktop.ServerAvailability');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.desktop.ServerAvailability");
 //</debug>
-Ext.define('WPAKD.store.desktop.ServerAvailability', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.desktop.ServerAvailability", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.desktop.ServerAvailability',
+    model: "WPAKD.model.desktop.ServerAvailability",
 
     autosync: true,
 
     proxy: {
-        type: 'memory'
+        type: "memory"
     }
 });

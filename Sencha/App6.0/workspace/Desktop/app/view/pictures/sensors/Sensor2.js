@@ -1,12 +1,13 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.pictures.sensors.Sensor2');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.sensors.Sensor2");
 //</debug>
-Ext.define('WPAKD.view.pictures.sensors.Sensor2', {
-    extend: 'Ext.Img'
-    , alias: 'widget.picturessensorssensor2'
+Ext.define("WPAKD.view.pictures.sensors.Sensor2", {
+    extend: "Ext.Img"
+    , alias: "widget.picturessensorssensor2"
 
-    , src: ''
+    , src: ""
     , styleHtmlContent: true
-    , width: '100%'
+    , width: "100%"
 });
 

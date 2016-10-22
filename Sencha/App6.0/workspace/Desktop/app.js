@@ -3,15 +3,16 @@
  * needed for your application, but these edits will have to be merged by
  * Sencha Cmd when upgrading.
  */
-Ext.require('Ext.chart.axis.Numeric');
-Ext.require('Ext.chart.axis.Time');
-Ext.require('Ext.chart.series.Area');
-Ext.require('Ext.chart.series.Line')
-Ext.require('Ext.chart.interactions.ItemHighlight')
+/*global Ext i18n*/
+Ext.require("Ext.chart.axis.Numeric");
+Ext.require("Ext.chart.axis.Time");
+Ext.require("Ext.chart.series.Area");
+Ext.require("Ext.chart.series.Line")
+Ext.require("Ext.chart.interactions.ItemHighlight")
 
-Ext.require('WPAKD.util.ErrorHandling');
-Ext.require('direct.remotingprovider');
-Ext.require('plugin.viewport');
+Ext.require("WPAKD.util.ErrorHandling");
+Ext.require("direct.remotingprovider");
+Ext.require("plugin.viewport");
 
 Ext.direct.Manager.addProvider(Ext_app_REMOTING_API);
 
@@ -20,19 +21,19 @@ Ext.direct.Manager.addProvider(Ext_app_REMOTING_API);
 Ext.enableAriaButtons = false
 
 Ext.application({
-    name: 'WPAKD',
+    name: "WPAKD",
 
-    extend: 'WPAKD.Application',
+    extend: "WPAKD.Application",
 
     requires: [
-        'WPAKD.view.Viewport'
+        "WPAKD.view.Viewport"
     ],
 
     // The name of the initial view to create. With the classic toolkit this class
     // will gain a "viewport" plugin if it does not extend Ext.Viewport. With the
     // modern toolkit, the main view will be added to the Viewport.
     //
-    mainView: 'WPAKD.view.Viewport'
+    mainView: "WPAKD.view.Viewport"
 
     //-------------------------------------------------------------------------
     // Most customizations should be made to WPAKD.Application. If you need to

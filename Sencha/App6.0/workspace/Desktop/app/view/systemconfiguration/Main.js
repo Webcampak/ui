@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.systemconfiguration.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.systemconfiguration.Main");
 //</debug>
-Ext.define('WPAKD.view.systemconfiguration.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.systemconfigurationmain'
+Ext.define("WPAKD.view.systemconfiguration.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.systemconfigurationmain"
 
-    , title: i18n.gettext('System Configuration')
+    , title: i18n.gettext("System Configuration")
 
     , width: 600
     , height: 650
 
     , stateful: true
-    , stateId: 'systemconfigurationmain'
+    , stateId: "systemconfigurationmain"
 
     , scroll: true
     , autoScroll: true
@@ -20,15 +21,15 @@ Ext.define('WPAKD.view.systemconfiguration.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf013
     , layout: {
-        type:'hbox'
-        , pack: 'start'
-        , align: 'stretch'
+        type:"hbox"
+        , pack: "start"
+        , align: "stretch"
     }
     , items: [{
-        xtype: 'systemconfigurationsystemconfiguration'
+        xtype: "systemconfigurationsystemconfiguration"
         , flex: 1
     }]
 });

@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.syncreports.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.syncreports.Main");
 //</debug>
-Ext.define('WPAKD.view.syncreports.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.syncreportsmain'
+Ext.define("WPAKD.view.syncreports.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.syncreportsmain"
 
-    , title: i18n.gettext('FTP Sync Reports')
+    , title: i18n.gettext("FTP Sync Reports")
 
     , width: 1100
     , height: 700
 
     , stateful: true
-    , stateId: 'syncreportsmain'
+    , stateId: "syncreportsmain"
 
     , scroll: true
     , autoScroll: true
@@ -20,38 +21,38 @@ Ext.define('WPAKD.view.syncreports.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf03a
     , layout: {
-        type:'vbox'
-        , pack: 'start'
-        , align: 'stretch'
+        type:"vbox"
+        , pack: "start"
+        , align: "stretch"
     }
     , items: [{
-        xtype: 'syncreportsreportslist'
+        xtype: "syncreportsreportslist"
         , flex: 1
         , dockedItems: [{
-            xtype: 'toolbar',
-            dock: 'bottom',
-            items: ['->', {
-                xtype: 'syncreportstoolbarrecords'
+            xtype: "toolbar",
+            dock: "bottom",
+            items: ["->", {
+                xtype: "syncreportstoolbarrecords"
             }]        
         }]        
     }, {
-        xtype: 'syncreportsdetailsmain'
+        xtype: "syncreportsdetailsmain"
         , height: 360
     }]
     , dockedItems: [{
-        xtype: 'toolbar',
-        dock: 'top',
+        xtype: "toolbar",
+        dock: "top",
         items: [
-            {xtype: 'syncreportsbuttonadd'}
-            , {xtype: 'syncreportsbuttondelete'}            
-            , {xtype: 'syncreportsbuttonrerun'}            
-            , '->'
-            , {xtype: 'syncreportssearch'}
-            , '-'
-            , {xtype: 'syncreportsbuttonrefresh'}
+            {xtype: "syncreportsbuttonadd"}
+            , {xtype: "syncreportsbuttondelete"}
+            , {xtype: "syncreportsbuttonrerun"}
+            , "->"
+            , {xtype: "syncreportssearch"}
+            , "-"
+            , {xtype: "syncreportsbuttonrefresh"}
         ]      
     }]    
 });

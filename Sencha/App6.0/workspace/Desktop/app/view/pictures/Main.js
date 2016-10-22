@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.pictures.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.Main");
 //</debug>
-Ext.define('WPAKD.view.pictures.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.picturesmain'
+Ext.define("WPAKD.view.pictures.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.picturesmain"
 
-    , title: i18n.gettext('Webcampak Pictures')
+    , title: i18n.gettext("Webcampak Pictures")
 
     , width: 1000
     , height: 700
@@ -17,26 +18,26 @@ Ext.define('WPAKD.view.pictures.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf030
-    , layout: {type: 'hbox', pack: 'start', align: 'stretch'}
+    , layout: {type: "hbox", pack: "start", align: "stretch"}
     , dockedItems: [{
-        xtype: 'toolbar'
-        , dock: 'top'
+        xtype: "toolbar"
+        , dock: "top"
         , items: [{
-            xtype: 'picturessourceslist'
+            xtype: "picturessourceslist"
             , width: 335
-        }, '->', {
-            xtype: 'picturessourcename'
+        }, "->", {
+            xtype: "picturessourcename"
             , flex: 1
-        }, '->']
+        }, "->"]
     }]
     , defaults: {frame: true}
     , items: [{
-        xtype: 'picturesselectionmain'
+        xtype: "picturesselectionmain"
         , width: 340
     }, {
-        xtype: 'picturesdisplaymain'
+        xtype: "picturesdisplaymain"
         , flex: 1
     }]
 });

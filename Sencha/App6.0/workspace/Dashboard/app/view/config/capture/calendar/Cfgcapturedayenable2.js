@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.config.capture.calendar.Cfgcapturedayenable2');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.config.capture.calendar.Cfgcapturedayenable2");
 //</debug>
-Ext.define('WPAKT.view.config.capture.calendar.Cfgcapturedayenable2', {
-    extend: 'Ext.form.field.Checkbox'
-    , alias: 'widget.configcapturecalendarcfgcapturedayenable2'
+Ext.define("WPAKT.view.config.capture.calendar.Cfgcapturedayenable2", {
+    extend: "Ext.form.field.Checkbox"
+    , alias: "widget.configcapturecalendarcfgcapturedayenable2"
 
-    , fieldLabel: i18n.gettext('Tuesday')
+    , fieldLabel: i18n.gettext("Tuesday")
 
-    , uncheckedValue: 'no'
-    , inputValue: 'yes'
+    , uncheckedValue: "no"
+    , inputValue: "yes"
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent('WPAKT.controller.config.Config.updateCalendarSchedule', 2); // 2 for Tuesday
+            this.fireEvent("WPAKT.controller.config.Config.updateCalendarSchedule", 2); // 2 for Tuesday
         }
     }
 });

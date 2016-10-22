@@ -1,12 +1,13 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.accesscontrol.groups.managepermissions.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.accesscontrol.groups.managepermissions.Main");
 //</debug>
 Ext.define("WPAKD.view.accesscontrol.groups.managepermissions.Main", {
-    extend: 'Ext.window.Window',
-    alias: 'widget.accesscontrolgroupsmanagepermissionsmain',
+    extend: "Ext.window.Window",
+    alias: "widget.accesscontrolgroupsmanagepermissionsmain",
 
-    title: i18n.gettext('Manage permissions'),
-    layout: 'fit',
+    title: i18n.gettext("Manage permissions"),
+    layout: "fit",
 
     width: 800,
     height: 400,
@@ -14,36 +15,36 @@ Ext.define("WPAKD.view.accesscontrol.groups.managepermissions.Main", {
     modal: true,
 
     items: [{
-        xtype: 'tabpanel',
+        xtype: "tabpanel",
         items: [{
-            title: i18n.gettext('Applications'),
-            itemID: 'userApplicationsTab',
+            title: i18n.gettext("Applications"),
+            itemID: "userApplicationsTab",
             layout: {
-                type:'hbox',
-                align: 'stretch',
-                pack: 'start'
+                type:"hbox",
+                align: "stretch",
+                pack: "start"
             },
             items: [{
                 flex: 1,
-                xtype: 'accesscontrolgroupsmanagepermissionsgroupavailableapplications'
+                xtype: "accesscontrolgroupsmanagepermissionsgroupavailableapplications"
             }, {
                 flex: 1,
-                xtype: 'accesscontrolgroupsmanagepermissionsgroupcurrentapplications'
+                xtype: "accesscontrolgroupsmanagepermissionsgroupcurrentapplications"
             }]
         },     {
-            title: i18n.gettext('Permissions'),
-            itemID: 'groupPermissionsTab',
+            title: i18n.gettext("Permissions"),
+            itemID: "groupPermissionsTab",
             layout: {
-                type:'hbox',
-                align: 'stretch',
-                pack: 'start'
+                type:"hbox",
+                align: "stretch",
+                pack: "start"
             },
             items: [{
                 flex: 1,
-                xtype: 'accesscontrolgroupsmanagepermissionsgroupavailablepermissions'
+                xtype: "accesscontrolgroupsmanagepermissionsgroupavailablepermissions"
             }, {
                 flex: 1,
-                xtype: 'accesscontrolgroupsmanagepermissionsgroupcurrentpermissions'
+                xtype: "accesscontrolgroupsmanagepermissionsgroupcurrentpermissions"
             }]
         }]
     }]

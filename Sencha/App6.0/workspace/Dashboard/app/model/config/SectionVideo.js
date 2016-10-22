@@ -1,10 +1,11 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.model.config.SectionVideo');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.model.config.SectionVideo");
 //</debug>
-Ext.define('WPAKT.model.config.SectionVideo', {
-    extend: 'Ext.data.Model'
+Ext.define("WPAKT.model.config.SectionVideo", {
+    extend: "Ext.data.Model"
 
     , fields: [
-        { name: 'NAME',     type: 'string'     }
+        { name: "NAME",     type: "string"     }
     ]
 });

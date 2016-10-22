@@ -1,8 +1,9 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.view.videos.video.Video');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.videos.video.Video");
 //</debug>
-Ext.define('WPAKT.view.videos.video.Video', {
-    extend: 'Ext.container.Container'
-    , alias: 'widget.videosvideovideo'
+Ext.define("WPAKT.view.videos.video.Video", {
+    extend: "Ext.container.Container"
+    , alias: "widget.videosvideovideo"
 
 });

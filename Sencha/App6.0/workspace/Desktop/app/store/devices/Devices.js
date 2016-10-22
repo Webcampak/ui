@@ -1,26 +1,27 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.devices.Devices');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.devices.Devices");
 //</debug>
-Ext.define('WPAKD.store.devices.Devices', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.devices.Devices", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.devices.Devices',
+    model: "WPAKD.model.devices.Devices",
 
     autoLoad: false,
     autoSync: false,
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         writer: {
             writeAllFields:true
         },
         reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total'
+            type: "json",
+            rootProperty: "results",
+            totalProperty: "total"
         },
         api:{
-            read:   'Devices.getDevices'
+            read:   "Devices.getDevices"
         }
     }
 });

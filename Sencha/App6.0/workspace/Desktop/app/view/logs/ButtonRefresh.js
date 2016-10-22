@@ -1,10 +1,11 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.logs.ButtonRefresh');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.logs.ButtonRefresh");
 //</debug>
-Ext.define('WPAKD.view.logs.ButtonRefresh', {
-    extend: 'Ext.panel.Tool'
-    , alias : 'widget.logsbuttonrefresh'
+Ext.define("WPAKD.view.logs.ButtonRefresh", {
+    extend: "Ext.panel.Tool"
+    , alias : "widget.logsbuttonrefresh"
 
-    , type:'refresh'
-    , tooltip: 'Refresh'
+    , type:"refresh"
+    , tooltip: "Refresh"
 });

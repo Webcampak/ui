@@ -1,32 +1,33 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.sourcesconfiguration.FTPServers');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.sourcesconfiguration.FTPServers");
 //</debug>
-Ext.define('WPAKD.store.sourcesconfiguration.FTPServers', {
-    extend: 'Ext.data.Store'
+Ext.define("WPAKD.store.sourcesconfiguration.FTPServers", {
+    extend: "Ext.data.Store"
 
-    , model: 'WPAKD.model.sourcesconfiguration.FTPServers'
+    , model: "WPAKD.model.sourcesconfiguration.FTPServers"
 
     , autoLoad: false
     , autoSync: false
 
     , proxy:{
-        type: 'direct'
+        type: "direct"
         , extraParams: {
-            SOURCEID: '0'
+            SOURCEID: "0"
         }
         , writer: {
             writeAllFields:true
         }
         , reader: {
-            type: 'json'
-            , rootProperty: 'results'
-            , totalProperty: 'total'
+            type: "json"
+            , rootProperty: "results"
+            , totalProperty: "total"
         }
         , api:{
-            read:       'SCFTPServers.getFTPServers'
-            , create:   'SCFTPServers.updateFTPServer'
-            , destroy:  'SCFTPServers.removeFTPServer'
-            , update:   'SCFTPServers.updateFTPServer'
+            read:       "SCFTPServers.getFTPServers"
+            , create:   "SCFTPServers.updateFTPServer"
+            , destroy:  "SCFTPServers.removeFTPServer"
+            , update:   "SCFTPServers.updateFTPServer"
         }
     }
 });

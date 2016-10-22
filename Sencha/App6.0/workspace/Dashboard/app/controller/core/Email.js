@@ -1,8 +1,9 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.core.Email');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.core.Email");
 //</debug>
-Ext.define('WPAKT.controller.core.Email', {
-    extend: 'Ext.app.Controller'
+Ext.define("WPAKT.controller.core.Email", {
+    extend: "Ext.app.Controller"
 
     , stores: [
 
@@ -13,58 +14,58 @@ Ext.define('WPAKT.controller.core.Email', {
     ]
 
     , views: [
-        'core.email.Main'
-        , 'core.email.EmailSubject'
-        , 'core.email.EmailAttachments'
-        , 'core.email.EmailBody'
-        , 'core.email.SendFrom'
-        , 'core.email.SendTo'
-        , 'core.email.SendCC'
-        , 'core.email.SendBCC'
-        , 'core.email.ButtonCancel'
-        , 'core.email.ButtonSend'
+        "core.email.Main"
+        , "core.email.EmailSubject"
+        , "core.email.EmailAttachments"
+        , "core.email.EmailBody"
+        , "core.email.SendFrom"
+        , "core.email.SendTo"
+        , "core.email.SendCC"
+        , "core.email.SendBCC"
+        , "core.email.ButtonCancel"
+        , "core.email.ButtonSend"
     ]
 
     , refs: [
-        {ref: 'coreemailmain',                  selector: 'coreemailmain',                  autoCreate: true,        xtype: 'coreemailmain'}
-        , {ref: 'coreemailemailsubject',        selector: 'coreemailemailsubject'           }
-        , {ref: 'coreemailemailattachments',    selector: 'coreemailemailattachments'       }
-        , {ref: 'coreemailemailbody',           selector: 'coreemailemailbody'              }
-        , {ref: 'coreemailsendfrom',            selector: 'coreemailsendfrom'               }
-        , {ref: 'coreemailsendto',              selector: 'coreemailsendto'                 }
-        , {ref: 'coreemailsendcc',              selector: 'coreemailsendcc'                 }
-        , {ref: 'coreemailbuttonsend',          selector: 'coreemailbuttonsend'             }
-        , {ref: 'coreemailbuttoncancel',        selector: 'coreemailbuttoncancel'           }
+        {ref: "coreemailmain",                  selector: "coreemailmain",                  autoCreate: true,        xtype: "coreemailmain"}
+        , {ref: "coreemailemailsubject",        selector: "coreemailemailsubject"           }
+        , {ref: "coreemailemailattachments",    selector: "coreemailemailattachments"       }
+        , {ref: "coreemailemailbody",           selector: "coreemailemailbody"              }
+        , {ref: "coreemailsendfrom",            selector: "coreemailsendfrom"               }
+        , {ref: "coreemailsendto",              selector: "coreemailsendto"                 }
+        , {ref: "coreemailsendcc",              selector: "coreemailsendcc"                 }
+        , {ref: "coreemailbuttonsend",          selector: "coreemailbuttonsend"             }
+        , {ref: "coreemailbuttoncancel",        selector: "coreemailbuttoncancel"           }
     ]
 
     , init: function() {
-        this.consoleLog('init()');        
+        this.consoleLog("init()");
         this.control({
-            '#menuOpenSendEmail':               {click:  this.menuOpenSendEmail  }
-            , 'coreemailbuttonsend':            {click:  this.sendEmail          }
-            , 'coreemailbuttoncancel':          {click:  this.cancelEmail        }
+            "#menuOpenSendEmail":               {click:  this.menuOpenSendEmail  }
+            , "coreemailbuttonsend":            {click:  this.sendEmail          }
+            , "coreemailbuttoncancel":          {click:  this.cancelEmail        }
 
         });
 
         this.listen({
              controller: {
-                '*': {
-                    'WPAKT.controller.core.Email.menuOpenSendEmail': this.menuOpenSendEmail
-                    , 'WPAKT.controller.core.Email.openSendEmail': this.openSendEmail
-                    , 'WPAKT.controller.core.Email.closeSendEmail': this.closeSendEmail
+                "*": {
+                    "WPAKT.controller.core.Email.menuOpenSendEmail": this.menuOpenSendEmail
+                    , "WPAKT.controller.core.Email.openSendEmail": this.openSendEmail
+                    , "WPAKT.controller.core.Email.closeSendEmail": this.closeSendEmail
                 }
              }
         });
     },
 
     onLaunch: function() {
-        this.consoleLog('onLaunch()');
+        this.consoleLog("onLaunch()");
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Core->Email: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Core->Email: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
@@ -116,7 +117,7 @@ Ext.define('WPAKT.controller.core.Email', {
     }
 
     , menuOpenSendEmail: function(sendEvent, cancelEvent, emailSubject, emailBody, emailAttachmentName, emailAttachmentSourceId, emailAttachmentPath) {
-        this.consoleLog('menuOpenSendEmail()');
+        this.consoleLog("menuOpenSendEmail()");
         if (sendEvent !== undefined)                {this.setSendEvent(sendEvent);}
         if (cancelEvent !== undefined)              {this.setCancelEvent(cancelEvent);}
         if (emailAttachmentSourceId !== undefined)  {this.setAttachmentSourceId(emailAttachmentSourceId);}
@@ -143,10 +144,10 @@ Ext.define('WPAKT.controller.core.Email', {
     },
 
     openSendEmail: function() {
-        this.consoleLog('openSendEmail()');
+        this.consoleLog("openSendEmail()");
         Ext.getBody().unmask();
         this.getCoreemailmain().show();
-        if (this.getCoreemailsendfrom().getValue() == '') {
+        if (this.getCoreemailsendfrom().getValue() == "") {
             this.getCoreemailsendfrom().setVisible(false);
         } else {
             this.getCoreemailsendfrom().setVisible(true);
@@ -154,13 +155,13 @@ Ext.define('WPAKT.controller.core.Email', {
     },
 
     sendEmail: function() {
-        this.consoleLog('sendEmail()');
+        this.consoleLog("sendEmail()");
         var emailsDstString = this.getCoreemailsendto().getValue() + this.getCoreemailsendcc().getValue();
-        if (emailsDstString.length > 5 && this.getCoreemailemailsubject().getValue() !== '' && this.getCoreemailemailbody().getValue() !== '') {
-            //if (this.getSendEvent() !== '') {
+        if (emailsDstString.length > 5 && this.getCoreemailemailsubject().getValue() !== "" && this.getCoreemailemailbody().getValue() !== "") {
+            //if (this.getSendEvent() !== "") {
             //    this.fireEvent(this.getSendEvent());
             //} else {
-            var newEmail = Ext.create('WPAKT.model.core.SendEmail',
+            var newEmail = Ext.create("WPAKT.model.core.SendEmail",
                 {
                     EMAIL_TO:               this.getCoreemailsendto().getValue()
                     , EMAIL_CC:             this.getCoreemailsendcc().getValue()
@@ -170,31 +171,31 @@ Ext.define('WPAKT.controller.core.Email', {
                     , ATTACHMENT_PATH:      this.getAttachmentPath()
                     , ATTACHMENT_NAME:      this.getAttachmentName()
                     , ATTACHMENT_SOURCEID:  this.getAttachmentSourceId()
-                    , STATUS:               'QUEUED'
+                    , STATUS:               "QUEUED"
                 }
             );
-            this.fireEvent('WPAKT.controller.core.loading.Mask.beginLoading', this.getCoreemailmain(), 'Please wait ... Sending Email to server');
+            this.fireEvent("WPAKT.controller.core.loading.Mask.beginLoading", this.getCoreemailmain(), "Please wait ... Sending Email to server");
             var scope = this;
             newEmail.save({
                 success: function(record, operation) {
-                    scope.fireEvent('WPAKT.controller.core.loading.Mask.endLoading', scope.getCoreemailmain());
+                    scope.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", scope.getCoreemailmain());
                     Ext.MessageBox.show({
-                        title: i18n.gettext('Info'),
-                        msg: i18n.gettext(i18n.gettext('Email successfully added to queue, will be sent shortly')),
+                        title: i18n.gettext("Info"),
+                        msg: i18n.gettext(i18n.gettext("Email successfully added to queue, will be sent shortly")),
                         buttons: Ext.MessageBox.OK,
                         icon: Ext.MessageBox.INFO
                     });
                     scope.fireEvent(scope.getSendEvent());
                 },
                 failure: function(record, operation) {
-                    scope.fireEvent('WPAKT.controller.core.loading.Mask.endLoading', scope.getCoreemailmain());
+                    scope.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", scope.getCoreemailmain());
                 }
             });
             //}
         } else {
             Ext.MessageBox.show({
-                title: i18n.gettext('Info'),
-                msg: i18n.gettext(i18n.gettext('Please ensure required fields have been properly populated. <br /> Required: TO, Subject, Body')),
+                title: i18n.gettext("Info"),
+                msg: i18n.gettext(i18n.gettext("Please ensure required fields have been properly populated. <br /> Required: TO, Subject, Body")),
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.INFO
             });
@@ -202,17 +203,17 @@ Ext.define('WPAKT.controller.core.Email', {
     }
 
     , cancelEmail: function() {
-        this.consoleLog('cancelEmail()');
+        this.consoleLog("cancelEmail()");
         this.getCoreemailemailsubject().setValue();
         this.getCoreemailemailbody().setValue();
         this.getCoreemailsendto().setValue();
         this.getCoreemailsendcc().setValue();
         this.getCoreemailmain().hide();
-        if (this.getCancelEvent() !== '') {this.fireEvent(this.getCancelEvent());}
+        if (this.getCancelEvent() !== "") {this.fireEvent(this.getCancelEvent());}
     }
     
     , closeSendEmail: function() {
-        this.consoleLog('closeSendEmail()');
+        this.consoleLog("closeSendEmail()");
         this.getCoreemailmain().hide();
     }
 });

@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.videos.selection.VideosList');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.videos.selection.VideosList");
 //</debug>
-Ext.define('WPAKD.view.videos.selection.VideosList', {
-    extend: 'Ext.grid.Panel'
-    , alias: 'widget.videosselectionvideoslist'
+Ext.define("WPAKD.view.videos.selection.VideosList", {
+    extend: "Ext.grid.Panel"
+    , alias: "widget.videosselectionvideoslist"
 
     , autoScroll: true
     , height: 250
@@ -17,9 +18,9 @@ Ext.define('WPAKD.view.videos.selection.VideosList', {
     */
     , filesize: function(value, metaData) {
         if (value > 0) {
-            var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+            var sizes = ["Bytes", "KB", "MB", "GB", "TB"];
             var posttxt = 0;
-            if (value == 0) return 'n/a';
+            if (value == 0) return "n/a";
             while( value >= 1024 ) {
                 posttxt++;
                 value = value / 1024;
@@ -36,20 +37,20 @@ Ext.define('WPAKD.view.videos.selection.VideosList', {
      */
     , download: function(value, metaData) {
         if (value != "") {
-            var currentURL = '/' + symfonyEnv + '/dl/source' + Ext.getStore('videos.VideosList').getProxy().extraParams.SOURCEID + '/videos/';
-            return '<a href="' + currentURL + value + '" target="_blank"><img src="../resources/images/download16x16.png" /></a>';
+            var currentURL = "/" + symfonyEnv + "/dl/source" + Ext.getStore("videos.VideosList").getProxy().extraParams.SOURCEID + "/videos/";
+            return "<a href=\"" + currentURL + value + "\" target=\"_blank\"><img src=\"../resources/images/download16x16.png\" /></a>";
         }
     }
     , initComponent: function() {
-        this.store = 'videos.VideosList';
+        this.store = "videos.VideosList";
         //columns: [
         this.columns = [
-        //{width: 5, sortable: false, dataIndex: '01', renderer: this.change},
-            {header: i18n.gettext('Name'),      dataIndex: 'NAME',      sortable: true, flex: 1                             }
-            , {header: i18n.gettext('Format'),    dataIndex: 'FORMAT',    sortable: true, width: 80                           }
-            , {header: i18n.gettext('Size'),      dataIndex: 'SIZE',      sortable: true, width: 60, renderer: this.filesize  }
-            , {header: i18n.gettext('AVI'),       dataIndex: 'AVI',       sortable: true, width: 50, renderer: this.download  }
-            , {header: i18n.gettext('MP4'),       dataIndex: 'MP4',       sortable: true, width: 50, renderer: this.download  }
+        //{width: 5, sortable: false, dataIndex: "01", renderer: this.change},
+            {header: i18n.gettext("Name"),      dataIndex: "NAME",      sortable: true, flex: 1                             }
+            , {header: i18n.gettext("Format"),    dataIndex: "FORMAT",    sortable: true, width: 80                           }
+            , {header: i18n.gettext("Size"),      dataIndex: "SIZE",      sortable: true, width: 60, renderer: this.filesize  }
+            , {header: i18n.gettext("AVI"),       dataIndex: "AVI",       sortable: true, width: 50, renderer: this.download  }
+            , {header: i18n.gettext("MP4"),       dataIndex: "MP4",       sortable: true, width: 50, renderer: this.download  }
         ];
         this.callParent(arguments);
     }

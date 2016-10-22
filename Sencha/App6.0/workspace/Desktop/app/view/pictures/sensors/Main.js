@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.pictures.sensors.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.sensors.Main");
 //</debug>
-Ext.define('WPAKD.view.pictures.sensors.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.picturessensorsmain'
+Ext.define("WPAKD.view.pictures.sensors.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.picturessensorsmain"
 
-    , title: i18n.gettext('Webcampak Sensors')
+    , title: i18n.gettext("Webcampak Sensors")
 
     , width: 520
     , height: 700
@@ -18,22 +19,22 @@ Ext.define('WPAKD.view.pictures.sensors.Main', {
     , constrainHeader: true
 
     , glyph:0xf1fe
-    , layout: 'fit'
+    , layout: "fit"
     , items: [{
-        xtype: 'container'
-        , itemId: 'sensorcontainer'
+        xtype: "container"
+        , itemId: "sensorcontainer"
         , plain: true
         , border: 0
         , bodyPadding: 5
         , layout: {
-            type: 'vbox'
-            , align: 'stretch'
+            type: "vbox"
+            , align: "stretch"
         }
         , items: [
-            {xtype: 'picturessensorssensor1'}
-            , {xtype: 'picturessensorssensor2'}
-            , {xtype: 'picturessensorssensor3'}
-            , {xtype: 'picturessensorssensor4'}
+            {xtype: "picturessensorssensor1"}
+            , {xtype: "picturessensorssensor2"}
+            , {xtype: "picturessensorssensor3"}
+            , {xtype: "picturessensorssensor4"}
         ]
     }]
 });

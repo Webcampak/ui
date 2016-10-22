@@ -1,11 +1,12 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.videos.display.Video');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.videos.display.Video");
 //</debug>
-Ext.define('WPAKD.view.videos.display.Video', {
-    extend: 'Ext.container.Container'
-    , alias: 'widget.videosdisplayvideo'
+Ext.define("WPAKD.view.videos.display.Video", {
+    extend: "Ext.container.Container"
+    , alias: "widget.videosdisplayvideo"
 
-    , html: ''
+    , html: ""
 
 });
 

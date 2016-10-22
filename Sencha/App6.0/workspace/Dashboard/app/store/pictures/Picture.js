@@ -1,29 +1,30 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.store.pictures.Picture');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.store.pictures.Picture");
 //</debug>
-Ext.define('WPAKT.store.pictures.Picture', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKT.store.pictures.Picture", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKT.model.pictures.Picture',
+    model: "WPAKT.model.pictures.Picture",
 
     autoSync: false,
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         extraParams: {
-            SOURCEID: '0'
+            SOURCEID: "0"
             , PICTUREDATE: null
         },
         writer: {
             writeAllFields:true
         },
         reader: {
-            type: 'json'
-            , rootProperty: 'results'
-            , totalProperty: 'total'
+            type: "json"
+            , rootProperty: "results"
+            , totalProperty: "total"
         },
         api:{
-            read: 'Pictures.getPicture'
+            read: "Pictures.getPicture"
         }
     }
 });

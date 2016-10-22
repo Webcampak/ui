@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.sendemail.SendBCC');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.sendemail.SendBCC");
 //</debug>
 Ext.define("WPAKD.view.desktop.sendemail.SendBCC", {
-    extend: 'Ext.form.field.Text',
+    extend: "Ext.form.field.Text",
 
-    alias : 'widget.desktopsendemailsendbcc',
+    alias : "widget.desktopsendemailsendbcc",
 
-    fieldLabel: i18n.gettext('BCC'),
+    fieldLabel: i18n.gettext("BCC"),
 
-    emptyText: i18n.gettext('Add one or more email addresses'),
+    emptyText: i18n.gettext("Add one or more email addresses"),
 
     listeners: {
         specialkey: function(field, e){

@@ -1,44 +1,45 @@
+/*global Ext i18n*/
 //<debug>
 /*
  * This class takes care of updating the disk widget displayed on the dashboard.
  * It gets its values from the status endpoint, periodically updated into the status store.
  * 
  */
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.dashboard.Disk');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.dashboard.Disk");
 //</debug>
-Ext.define('WPAKT.controller.dashboard.Disk', {
-    extend: 'Ext.app.Controller'
+Ext.define("WPAKT.controller.dashboard.Disk", {
+    extend: "Ext.app.Controller"
 
     , stores: [
-        'dashboard.Status'
+        "dashboard.Status"
     ]
 
     , models: [
-        'dashboard.Status'
+        "dashboard.Status"
     ]
 
     , views: [
-        'dashboard.disk.Main'
-        , 'dashboard.disk.FreeDiskBar'
-        , 'dashboard.disk.FreeDiskTxt'
-        , 'dashboard.disk.UsedDiskBar'
-        , 'dashboard.disk.UsedDiskTxt'
+        "dashboard.disk.Main"
+        , "dashboard.disk.FreeDiskBar"
+        , "dashboard.disk.FreeDiskTxt"
+        , "dashboard.disk.UsedDiskBar"
+        , "dashboard.disk.UsedDiskTxt"
     ]
 
     , refs: [
-        {ref: 'dashboarddiskmain',             selector: 'dashboarddiskmain'          }
-        , {ref: 'dashboarddiskfreediskbar',    selector: 'dashboarddiskfreediskbar'   }
-        , {ref: 'dashboarddiskfreedisktxt',    selector: 'dashboarddiskfreedisktxt'   }
-        , {ref: 'dashboarddiskuseddiskbar',    selector: 'dashboarddiskuseddiskbar'   }
-        , {ref: 'dashboarddiskuseddisktxt',    selector: 'dashboarddiskuseddisktxt'   }
+        {ref: "dashboarddiskmain",             selector: "dashboarddiskmain"          }
+        , {ref: "dashboarddiskfreediskbar",    selector: "dashboarddiskfreediskbar"   }
+        , {ref: "dashboarddiskfreedisktxt",    selector: "dashboarddiskfreedisktxt"   }
+        , {ref: "dashboarddiskuseddiskbar",    selector: "dashboarddiskuseddiskbar"   }
+        , {ref: "dashboarddiskuseddisktxt",    selector: "dashboarddiskuseddisktxt"   }
     ]
 
     , init: function() {
-        this.consoleLog('init()');
+        this.consoleLog("init()");
         this.listen({
              controller: {
-                  '*': {
-                    'WPAKT.controller.dashboard.Disk.updateCard': this.updateCard
+                  "*": {
+                    "WPAKT.controller.dashboard.Disk.updateCard": this.updateCard
                   }
              }
         });            
@@ -49,16 +50,16 @@ Ext.define('WPAKT.controller.dashboard.Disk', {
     }
    
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Cards->Disk: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->Disk: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
     , updateCard: function() {
-        this.consoleLog('updateCard()');
+        this.consoleLog("updateCard()");
         if (this.getDashboarddiskmain() !== undefined && this.getDashboarddiskmain().isVisible()) {
-            var lastStatus = this.getDashboardStatusStore().last().get('STATUS');
+            var lastStatus = this.getDashboardStatusStore().last().get("STATUS");
             var statusObj = Ext.JSON.decode(lastStatus, true);
             if (statusObj !== null && statusObj.disk !== undefined) {
                 this.getDashboarddiskfreediskbar().setValue(statusObj.disk.Free / statusObj.disk.Total);                

@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.toolbar.bottom.exceptions.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.toolbar.bottom.exceptions.Main");
 //</debug>
 Ext.define("WPAKD.view.desktop.toolbar.bottom.exceptions.Main", {
-    extend: 'Ext.window.Window',
-    alias : 'widget.desktoptoolbarbottomexceptionsmain',
+    extend: "Ext.window.Window",
+    alias : "widget.desktoptoolbarbottomexceptionsmain",
 
-    title: i18n.gettext('Exception'),
-    layout: 'fit',
+    title: i18n.gettext("Exception"),
+    layout: "fit",
 
     width: 800,
     height: 600,
 
-    closeAction : 'hide',
+    closeAction : "hide",
 //    onEsc: Ext.emptyFn,
 
     scroll: false,
@@ -24,6 +25,6 @@ Ext.define("WPAKD.view.desktop.toolbar.bottom.exceptions.Main", {
     modal: true,
 
     items: [{
-        xtype: 'desktoptoolbarbottomexceptionsexceptions'
+        xtype: "desktoptoolbarbottomexceptionsexceptions"
     }]
 });

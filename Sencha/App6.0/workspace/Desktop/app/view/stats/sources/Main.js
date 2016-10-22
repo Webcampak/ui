@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.stats.sources.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.stats.sources.Main");
 //</debug>
-Ext.define('WPAKD.view.stats.sources.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.statssourcesmain'
+Ext.define("WPAKD.view.stats.sources.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.statssourcesmain"
 
-    , title: i18n.gettext('Sources Statistics')
+    , title: i18n.gettext("Sources Statistics")
 
     , width: 900
     , height: 600
 
     , stateful: true
-    , stateId: 'statssourcesmain'
+    , stateId: "statssourcesmain"
 
     , scroll: false
     , autoScroll: false
@@ -20,33 +21,33 @@ Ext.define('WPAKD.view.stats.sources.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf201
 
     , dockedItems: [{
-        xtype: 'toolbar',
-        dock: 'top',
+        xtype: "toolbar",
+        dock: "top",
         items: [{
-            xtype: 'statssourcessourceslist'
+            xtype: "statssourcessourceslist"
             , width: 300
-        }, '->', {
-            xtype: 'statssourcessourcename'
-        }, '->', {
-            xtype: 'statssourcesbuttonrefresh'
+        }, "->", {
+            xtype: "statssourcessourcename"
+        }, "->", {
+            xtype: "statssourcesbuttonrefresh"
         }]
     }]
 
-    , layout: 'fit'
+    , layout: "fit"
     , items: [{
-        layout: {type: 'vbox', align : 'stretch', pack  : 'start'}
+        layout: {type: "vbox", align : "stretch", pack  : "start"}
         , items: [{
-            xtype: 'statssourcespicturescount'
+            xtype: "statssourcespicturescount"
             , flex:1
         }, {
-            xtype: 'statssourcespicturessize'
+            xtype: "statssourcespicturessize"
             , flex:1
         }, {
-            xtype: 'statssourcesdiskusage'
+            xtype: "statssourcesdiskusage"
             , flex:1
         }]
     }]

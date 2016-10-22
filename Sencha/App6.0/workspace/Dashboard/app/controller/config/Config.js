@@ -1,183 +1,184 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.config.Config');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.config.Config");
 //</debug>
 /*
  * Controller used to handle webcampak configuration from the dashboard
  */
-Ext.define('WPAKT.controller.config.Config', {
-    extend: 'Ext.app.Controller'
+Ext.define("WPAKT.controller.config.Config", {
+    extend: "Ext.app.Controller"
 
     , stores: [
-        'dashboard.Status'
+        "dashboard.Status"
         
         // Contains the list of tabs & sections to be displayed to the user during configuration
-        , 'config.ConfigurationTabs'
-        , 'config.SectionCapture'
-        , 'config.SectionVideo'
-        , 'config.SectionVideoCustom'
-        , 'config.SectionVideoPost'
+        , "config.ConfigurationTabs"
+        , "config.SectionCapture"
+        , "config.SectionVideo"
+        , "config.SectionVideoCustom"
+        , "config.SectionVideoPost"
 
         // Contains the list of configuration settings and their values to be displayed to the user during configuration
-        , 'config.Capture'
-        , 'config.Video'
-        , 'config.VideoCustom'
-        , 'config.VideoPost'
-        , 'config.FTPServers'
-        , 'config.WatermarkFiles'
-        , 'config.Fonts'
-        , 'config.PhidgetSensors'
-        , 'config.PhidgetPorts'
+        , "config.Capture"
+        , "config.Video"
+        , "config.VideoCustom"
+        , "config.VideoPost"
+        , "config.FTPServers"
+        , "config.WatermarkFiles"
+        , "config.Fonts"
+        , "config.PhidgetSensors"
+        , "config.PhidgetPorts"
 
     ]
 
     , models: [
-        'dashboard.Status'
+        "dashboard.Status"
         
         // Contains the list of tabs & sections to be displayed to the user during configuration
-        , 'config.ConfigurationTabs'
-        , 'config.SectionCapture'
-        , 'config.SectionVideo'
-        , 'config.SectionVideoCustom'
-        , 'config.SectionVideoPost'
+        , "config.ConfigurationTabs"
+        , "config.SectionCapture"
+        , "config.SectionVideo"
+        , "config.SectionVideoCustom"
+        , "config.SectionVideoPost"
 
         // Contains the list of configuration settings and their values to be displayed to the user during configuration
-        , 'config.Capture'
-        , 'config.Video'
-        , 'config.VideoCustom'
-        , 'config.VideoPost'
-        , 'config.FTPServers'
-        , 'config.WatermarkFiles'
-        , 'config.Fonts'
-        , 'config.PhidgetSensors'
-        , 'config.PhidgetPorts'
+        , "config.Capture"
+        , "config.Video"
+        , "config.VideoCustom"
+        , "config.VideoPost"
+        , "config.FTPServers"
+        , "config.WatermarkFiles"
+        , "config.Fonts"
+        , "config.PhidgetSensors"
+        , "config.PhidgetPorts"
     ]
 
     , views: [
-        'core.skeleton.card.Main'                
-        , 'config.Main'
+        "core.skeleton.card.Main"
+        , "config.Main"
         
-        , 'config.capture.save.Main'   
-        , 'config.capture.save.SaveButton'
-        , 'config.capture.save.CancelButton'
-        , 'config.capture.save.Status'
+        , "config.capture.save.Main"
+        , "config.capture.save.SaveButton"
+        , "config.capture.save.CancelButton"
+        , "config.capture.save.Status"
                 
-        , 'config.capture.source.Main'
-        , 'config.capture.source.Cfgsourceactive'
-        , 'config.capture.source.Cfgcroncapturevalue'
-        , 'config.capture.source.Cfgcroncaptureinterval'
+        , "config.capture.source.Main"
+        , "config.capture.source.Cfgsourceactive"
+        , "config.capture.source.Cfgcroncapturevalue"
+        , "config.capture.source.Cfgcroncaptureinterval"
 
-        , 'config.capture.calendar.Main'
-        , 'config.capture.calendar.Cfgcroncalendar'
-        , 'config.capture.calendar.Cfgcapturedayenable1'
-        , 'config.capture.calendar.Cfgcaptureendhour1'
-        , 'config.capture.calendar.Cfgcaptureendminute1'
-        , 'config.capture.calendar.Cfgcapturestarthour1'
-        , 'config.capture.calendar.Cfgcapturestartminute1'
-        , 'config.capture.calendar.Cfgcapturedayenable2'
-        , 'config.capture.calendar.Cfgcaptureendhour2'
-        , 'config.capture.calendar.Cfgcaptureendminute2'
-        , 'config.capture.calendar.Cfgcapturestarthour2'
-        , 'config.capture.calendar.Cfgcapturestartminute2'
-        , 'config.capture.calendar.Cfgcapturedayenable3'
-        , 'config.capture.calendar.Cfgcaptureendhour3'
-        , 'config.capture.calendar.Cfgcaptureendminute3'
-        , 'config.capture.calendar.Cfgcapturestarthour3'
-        , 'config.capture.calendar.Cfgcapturestartminute3'
-        , 'config.capture.calendar.Cfgcapturedayenable4'
-        , 'config.capture.calendar.Cfgcaptureendhour4'
-        , 'config.capture.calendar.Cfgcaptureendminute4'
-        , 'config.capture.calendar.Cfgcapturestarthour4'
-        , 'config.capture.calendar.Cfgcapturestartminute4'
-        , 'config.capture.calendar.Cfgcapturedayenable5'
-        , 'config.capture.calendar.Cfgcaptureendhour5'
-        , 'config.capture.calendar.Cfgcaptureendminute5'
-        , 'config.capture.calendar.Cfgcapturestarthour5'
-        , 'config.capture.calendar.Cfgcapturestartminute5'
-        , 'config.capture.calendar.Cfgcapturedayenable6'
-        , 'config.capture.calendar.Cfgcaptureendhour6'
-        , 'config.capture.calendar.Cfgcaptureendminute6'
-        , 'config.capture.calendar.Cfgcapturestarthour6'
-        , 'config.capture.calendar.Cfgcapturestartminute6'
-        , 'config.capture.calendar.Cfgcapturedayenable7'
-        , 'config.capture.calendar.Cfgcaptureendhour7'
-        , 'config.capture.calendar.Cfgcaptureendminute7'
-        , 'config.capture.calendar.Cfgcapturestarthour7'
-        , 'config.capture.calendar.Cfgcapturestartminute7'   
+        , "config.capture.calendar.Main"
+        , "config.capture.calendar.Cfgcroncalendar"
+        , "config.capture.calendar.Cfgcapturedayenable1"
+        , "config.capture.calendar.Cfgcaptureendhour1"
+        , "config.capture.calendar.Cfgcaptureendminute1"
+        , "config.capture.calendar.Cfgcapturestarthour1"
+        , "config.capture.calendar.Cfgcapturestartminute1"
+        , "config.capture.calendar.Cfgcapturedayenable2"
+        , "config.capture.calendar.Cfgcaptureendhour2"
+        , "config.capture.calendar.Cfgcaptureendminute2"
+        , "config.capture.calendar.Cfgcapturestarthour2"
+        , "config.capture.calendar.Cfgcapturestartminute2"
+        , "config.capture.calendar.Cfgcapturedayenable3"
+        , "config.capture.calendar.Cfgcaptureendhour3"
+        , "config.capture.calendar.Cfgcaptureendminute3"
+        , "config.capture.calendar.Cfgcapturestarthour3"
+        , "config.capture.calendar.Cfgcapturestartminute3"
+        , "config.capture.calendar.Cfgcapturedayenable4"
+        , "config.capture.calendar.Cfgcaptureendhour4"
+        , "config.capture.calendar.Cfgcaptureendminute4"
+        , "config.capture.calendar.Cfgcapturestarthour4"
+        , "config.capture.calendar.Cfgcapturestartminute4"
+        , "config.capture.calendar.Cfgcapturedayenable5"
+        , "config.capture.calendar.Cfgcaptureendhour5"
+        , "config.capture.calendar.Cfgcaptureendminute5"
+        , "config.capture.calendar.Cfgcapturestarthour5"
+        , "config.capture.calendar.Cfgcapturestartminute5"
+        , "config.capture.calendar.Cfgcapturedayenable6"
+        , "config.capture.calendar.Cfgcaptureendhour6"
+        , "config.capture.calendar.Cfgcaptureendminute6"
+        , "config.capture.calendar.Cfgcapturestarthour6"
+        , "config.capture.calendar.Cfgcapturestartminute6"
+        , "config.capture.calendar.Cfgcapturedayenable7"
+        , "config.capture.calendar.Cfgcaptureendhour7"
+        , "config.capture.calendar.Cfgcaptureendminute7"
+        , "config.capture.calendar.Cfgcapturestarthour7"
+        , "config.capture.calendar.Cfgcapturestartminute7"
                 
     ]
 
     , refs: [
-        {ref: 'configmain',                                       selector: 'configmain',                                   autoCreate: true,   xtype: 'configmain' }
-        , {ref: 'coreskeletoncardmain',                           selector: 'coreskeletoncardmain'                          }        
+        {ref: "configmain",                                       selector: "configmain",                                   autoCreate: true,   xtype: "configmain" }
+        , {ref: "coreskeletoncardmain",                           selector: "coreskeletoncardmain"                          }
 
-        , {ref: 'configcapturesourcemain',                        selector: 'configcapturesourcemain'                       }
-        , {ref: 'configcapturesourcecfgsourceactive',             selector: 'configcapturesourcecfgsourceactive'            }
-        , {ref: 'configcapturesourcecfgcroncapturevalue',         selector: 'configcapturesourcecfgcroncapturevalue'        }
-        , {ref: 'configcapturesourcecfgcroncaptureinterval',      selector: 'configcapturesourcecfgcroncaptureinterval'     }
+        , {ref: "configcapturesourcemain",                        selector: "configcapturesourcemain"                       }
+        , {ref: "configcapturesourcecfgsourceactive",             selector: "configcapturesourcecfgsourceactive"            }
+        , {ref: "configcapturesourcecfgcroncapturevalue",         selector: "configcapturesourcecfgcroncapturevalue"        }
+        , {ref: "configcapturesourcecfgcroncaptureinterval",      selector: "configcapturesourcecfgcroncaptureinterval"     }
 
-        , {ref: 'configcapturesavemain',                            selector: 'configcapturesavemain'                       }
-        , {ref: 'configcapturesavesavebutton',                      selector: 'configcapturesavesavebutton'                 }
-        , {ref: 'configcapturesavecancelbutton',                    selector: 'configcapturesavecancelbutton'               }
-        , {ref: 'configcapturesavestatus',                          selector: 'configcapturesavestatus'                     }
+        , {ref: "configcapturesavemain",                            selector: "configcapturesavemain"                       }
+        , {ref: "configcapturesavesavebutton",                      selector: "configcapturesavesavebutton"                 }
+        , {ref: "configcapturesavecancelbutton",                    selector: "configcapturesavecancelbutton"               }
+        , {ref: "configcapturesavestatus",                          selector: "configcapturesavestatus"                     }
 
-        , {ref: 'configcapturecalendarmain',                      selector: 'configcapturecalendarmain'                     }
-        , {ref: 'configcapturecalendarcfgcroncalendar',           selector: 'configcapturecalendarcfgcroncalendar'          }
-        , {ref: 'configcapturecalendarcfgcapturestartminute1',    selector: 'configcapturecalendarcfgcapturestartminute1'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable1',      selector: 'configcapturecalendarcfgcapturedayenable1'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour1',        selector: 'configcapturecalendarcfgcaptureendhour1'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute1',      selector: 'configcapturecalendarcfgcaptureendminute1'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour1',      selector: 'configcapturecalendarcfgcapturestarthour1'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute2',    selector: 'configcapturecalendarcfgcapturestartminute2'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable2',      selector: 'configcapturecalendarcfgcapturedayenable2'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour2',        selector: 'configcapturecalendarcfgcaptureendhour2'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute2',      selector: 'configcapturecalendarcfgcaptureendminute2'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour2',      selector: 'configcapturecalendarcfgcapturestarthour2'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute3',    selector: 'configcapturecalendarcfgcapturestartminute3'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable3',      selector: 'configcapturecalendarcfgcapturedayenable3'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour3',        selector: 'configcapturecalendarcfgcaptureendhour3'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute3',      selector: 'configcapturecalendarcfgcaptureendminute3'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour3',      selector: 'configcapturecalendarcfgcapturestarthour3'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute4',    selector: 'configcapturecalendarcfgcapturestartminute4'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable4',      selector: 'configcapturecalendarcfgcapturedayenable4'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour4',        selector: 'configcapturecalendarcfgcaptureendhour4'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute4',      selector: 'configcapturecalendarcfgcaptureendminute4'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour4',      selector: 'configcapturecalendarcfgcapturestarthour4'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute5',    selector: 'configcapturecalendarcfgcapturestartminute5'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable5',      selector: 'configcapturecalendarcfgcapturedayenable5'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour5',        selector: 'configcapturecalendarcfgcaptureendhour5'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute5',      selector: 'configcapturecalendarcfgcaptureendminute5'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour5',      selector: 'configcapturecalendarcfgcapturestarthour5'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute6',    selector: 'configcapturecalendarcfgcapturestartminute6'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable6',      selector: 'configcapturecalendarcfgcapturedayenable6'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour6',        selector: 'configcapturecalendarcfgcaptureendhour6'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute6',      selector: 'configcapturecalendarcfgcaptureendminute6'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour6',      selector: 'configcapturecalendarcfgcapturestarthour6'     }
-        , {ref: 'configcapturecalendarcfgcapturestartminute7',    selector: 'configcapturecalendarcfgcapturestartminute7'   }
-        , {ref: 'configcapturecalendarcfgcapturedayenable7',      selector: 'configcapturecalendarcfgcapturedayenable7'     }
-        , {ref: 'configcapturecalendarcfgcaptureendhour7',        selector: 'configcapturecalendarcfgcaptureendhour7'       }
-        , {ref: 'configcapturecalendarcfgcaptureendminute7',      selector: 'configcapturecalendarcfgcaptureendminute7'     }
-        , {ref: 'configcapturecalendarcfgcapturestarthour7',      selector: 'configcapturecalendarcfgcapturestarthour7'     }
+        , {ref: "configcapturecalendarmain",                      selector: "configcapturecalendarmain"                     }
+        , {ref: "configcapturecalendarcfgcroncalendar",           selector: "configcapturecalendarcfgcroncalendar"          }
+        , {ref: "configcapturecalendarcfgcapturestartminute1",    selector: "configcapturecalendarcfgcapturestartminute1"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable1",      selector: "configcapturecalendarcfgcapturedayenable1"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour1",        selector: "configcapturecalendarcfgcaptureendhour1"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute1",      selector: "configcapturecalendarcfgcaptureendminute1"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour1",      selector: "configcapturecalendarcfgcapturestarthour1"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute2",    selector: "configcapturecalendarcfgcapturestartminute2"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable2",      selector: "configcapturecalendarcfgcapturedayenable2"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour2",        selector: "configcapturecalendarcfgcaptureendhour2"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute2",      selector: "configcapturecalendarcfgcaptureendminute2"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour2",      selector: "configcapturecalendarcfgcapturestarthour2"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute3",    selector: "configcapturecalendarcfgcapturestartminute3"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable3",      selector: "configcapturecalendarcfgcapturedayenable3"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour3",        selector: "configcapturecalendarcfgcaptureendhour3"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute3",      selector: "configcapturecalendarcfgcaptureendminute3"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour3",      selector: "configcapturecalendarcfgcapturestarthour3"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute4",    selector: "configcapturecalendarcfgcapturestartminute4"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable4",      selector: "configcapturecalendarcfgcapturedayenable4"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour4",        selector: "configcapturecalendarcfgcaptureendhour4"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute4",      selector: "configcapturecalendarcfgcaptureendminute4"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour4",      selector: "configcapturecalendarcfgcapturestarthour4"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute5",    selector: "configcapturecalendarcfgcapturestartminute5"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable5",      selector: "configcapturecalendarcfgcapturedayenable5"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour5",        selector: "configcapturecalendarcfgcaptureendhour5"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute5",      selector: "configcapturecalendarcfgcaptureendminute5"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour5",      selector: "configcapturecalendarcfgcapturestarthour5"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute6",    selector: "configcapturecalendarcfgcapturestartminute6"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable6",      selector: "configcapturecalendarcfgcapturedayenable6"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour6",        selector: "configcapturecalendarcfgcaptureendhour6"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute6",      selector: "configcapturecalendarcfgcaptureendminute6"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour6",      selector: "configcapturecalendarcfgcapturestarthour6"     }
+        , {ref: "configcapturecalendarcfgcapturestartminute7",    selector: "configcapturecalendarcfgcapturestartminute7"   }
+        , {ref: "configcapturecalendarcfgcapturedayenable7",      selector: "configcapturecalendarcfgcapturedayenable7"     }
+        , {ref: "configcapturecalendarcfgcaptureendhour7",        selector: "configcapturecalendarcfgcaptureendhour7"       }
+        , {ref: "configcapturecalendarcfgcaptureendminute7",      selector: "configcapturecalendarcfgcaptureendminute7"     }
+        , {ref: "configcapturecalendarcfgcapturestarthour7",      selector: "configcapturecalendarcfgcapturestarthour7"     }
         
     ]
 
     , init: function() {
-        this.consoleLog('init()'); 
+        this.consoleLog("init()");
         this.control({
-            'configcapturesavecancelbutton':            {click:  this.cancelConfigurationChanges   }
-            , 'configcapturesavesavebutton':            {click:  this.saveConfigurationChanges     }
-            , '*': {
-                'WPAKT.controller.config.Config.updateStoreValue':          this.updateStoreValue
-                , 'WPAKT.controller.config.Config.updateCalendarSchedule':  this.updateCalendarSchedule
+            "configcapturesavecancelbutton":            {click:  this.cancelConfigurationChanges   }
+            , "configcapturesavesavebutton":            {click:  this.saveConfigurationChanges     }
+            , "*": {
+                "WPAKT.controller.config.Config.updateStoreValue":          this.updateStoreValue
+                , "WPAKT.controller.config.Config.updateCalendarSchedule":  this.updateCalendarSchedule
             }
 
             
         });        
         this.listen({
              controller: {
-                  '*': {
-                    'WPAKT.controller.config.Config.loadSource':                this.loadSource
-                    , 'WPAKT.controller.config.Config.loadSourceConfiguration': this.loadSourceConfiguration
-                    , 'WPAKT.controller.config.Config.configurationSaved':      this.configurationSaved
+                  "*": {
+                    "WPAKT.controller.config.Config.loadSource":                this.loadSource
+                    , "WPAKT.controller.config.Config.loadSourceConfiguration": this.loadSourceConfiguration
+                    , "WPAKT.controller.config.Config.configurationSaved":      this.configurationSaved
                   }
              }
         });          
@@ -188,9 +189,9 @@ Ext.define('WPAKT.controller.config.Config', {
     }
     
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Dashboard->Config: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Config: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
     
@@ -218,7 +219,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , loadSource: function(sourceid) {
-        this.consoleLog('loadSource() - ID: ' + sourceid);  
+        this.consoleLog("loadSource() - ID: " + sourceid);
         this.setSourceId(sourceid);
         
         var scope = this;
@@ -226,16 +227,16 @@ Ext.define('WPAKT.controller.config.Config', {
         this.getCoreskeletoncardmain().add(scope.getConfigmain());  
         this.getConfigmain().show();     
                              
-        this.getConfigmain().setLoading(i18n.gettext('Loading Configuration'));
+        this.getConfigmain().setLoading(i18n.gettext("Loading Configuration"));
         this.disableAllConfigScreens();
                 
         var requiredStores = [];        
-        this.getConfigCaptureStore().getProxy().setExtraParam('SOURCEID', sourceid);
-        requiredStores.push({store: this.getConfigCaptureStore(),   action: 'REFRESH'});
+        this.getConfigCaptureStore().getProxy().setExtraParam("SOURCEID", sourceid);
+        requiredStores.push({store: this.getConfigCaptureStore(),   action: "REFRESH"});
         
-        this.fireEvent('WPAKT.controller.core.loading.Stores.beginLoading'
-            , 'WEB_CFG_SOURCESCONFIG'
-            , 'WPAKT.controller.config.Config.loadSourceConfiguration'
+        this.fireEvent("WPAKT.controller.core.loading.Stores.beginLoading"
+            , "WEB_CFG_SOURCESCONFIG"
+            , "WPAKT.controller.config.Config.loadSourceConfiguration"
             , requiredStores);
     }    
     
@@ -245,8 +246,8 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , loadSourceConfiguration: function() {
-        this.consoleLog('loadSourceConfiguration()');
-        this.consoleLog('loadSourceConfiguration(): Capture records: ' + this.getConfigCaptureStore().count());
+        this.consoleLog("loadSourceConfiguration()");
+        this.consoleLog("loadSourceConfiguration(): Capture records: " + this.getConfigCaptureStore().count());
         if (this.getConfigCaptureStore().count() > 0) {
             this.enableAllConfigScreens();
             this.checkModifiedConfigStores();
@@ -255,27 +256,27 @@ Ext.define('WPAKT.controller.config.Config', {
             //We store the content of the store in a Javascript object
             var configObj = {};
             this.getConfigCaptureStore().each(function (rec) {
-                var configValue = rec.get('VALUE');
-                var configName = rec.get('NAME');
+                var configValue = rec.get("VALUE");
+                var configName = rec.get("NAME");
                 configObj[configName] = configValue;
             });
 
-            if(configObj.hasOwnProperty('cfgsourceactive')){this.getConfigcapturesourcecfgsourceactive().setValue(configObj['cfgsourceactive']);
+            if(configObj.hasOwnProperty("cfgsourceactive")){this.getConfigcapturesourcecfgsourceactive().setValue(configObj["cfgsourceactive"]);
             } else {this.getConfigcapturesourcecfgsourceactive().setVisible(false);}
             
-            if(configObj.hasOwnProperty('cfgcroncapturevalue')){this.getConfigcapturesourcecfgcroncapturevalue().setValue(configObj['cfgcroncapturevalue']);
+            if(configObj.hasOwnProperty("cfgcroncapturevalue")){this.getConfigcapturesourcecfgcroncapturevalue().setValue(configObj["cfgcroncapturevalue"]);
             } else {this.getConfigcapturesourcecfgcroncapturevalue().setVisible(false);}
 
-            if(configObj.hasOwnProperty('cfgcroncaptureinterval')){this.getConfigcapturesourcecfgcroncaptureinterval().setValue(configObj['cfgcroncaptureinterval']);
+            if(configObj.hasOwnProperty("cfgcroncaptureinterval")){this.getConfigcapturesourcecfgcroncaptureinterval().setValue(configObj["cfgcroncaptureinterval"]);
             } else {this.getConfigcapturesourcecfgcroncaptureinterval().setVisible(false);}
 
-            if(configObj.hasOwnProperty('cfgcroncalendar')){this.getConfigcapturecalendarcfgcroncalendar().setValue(configObj['cfgcroncalendar']);
+            if(configObj.hasOwnProperty("cfgcroncalendar")){this.getConfigcapturecalendarcfgcroncalendar().setValue(configObj["cfgcroncalendar"]);
             } else {this.getConfigcapturecalendarcfgcroncalendar().setVisible(false);}
 
             //yes, 00, 00, 00, 00
-            if(configObj.hasOwnProperty('cfgcronday1')){
-                var cfgcronday1 = configObj['cfgcronday1'];
-                var cfgcronday1split = cfgcronday1.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday1")){
+                var cfgcronday1 = configObj["cfgcronday1"];
+                var cfgcronday1split = cfgcronday1.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable1().setValue(cfgcronday1split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour1().setValue(cfgcronday1split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute1().setValue(cfgcronday1split[2]);
@@ -289,9 +290,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute1().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday2')){
-                var cfgcronday2 = configObj['cfgcronday2'];
-                var cfgcronday2split = cfgcronday2.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday2")){
+                var cfgcronday2 = configObj["cfgcronday2"];
+                var cfgcronday2split = cfgcronday2.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable2().setValue(cfgcronday2split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour2().setValue(cfgcronday2split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute2().setValue(cfgcronday2split[2]);
@@ -305,9 +306,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute2().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday3')){
-                var cfgcronday3 = configObj['cfgcronday3'];
-                var cfgcronday3split = cfgcronday3.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday3")){
+                var cfgcronday3 = configObj["cfgcronday3"];
+                var cfgcronday3split = cfgcronday3.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable3().setValue(cfgcronday3split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour3().setValue(cfgcronday3split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute3().setValue(cfgcronday3split[2]);
@@ -321,9 +322,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute3().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday4')){
-                var cfgcronday4 = configObj['cfgcronday4'];
-                var cfgcronday4split = cfgcronday4.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday4")){
+                var cfgcronday4 = configObj["cfgcronday4"];
+                var cfgcronday4split = cfgcronday4.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable4().setValue(cfgcronday4split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour4().setValue(cfgcronday4split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute4().setValue(cfgcronday4split[2]);
@@ -337,9 +338,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute4().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday5')){
-                var cfgcronday5 = configObj['cfgcronday5'];
-                var cfgcronday5split = cfgcronday5.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday5")){
+                var cfgcronday5 = configObj["cfgcronday5"];
+                var cfgcronday5split = cfgcronday5.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable5().setValue(cfgcronday5split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour5().setValue(cfgcronday5split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute5().setValue(cfgcronday5split[2]);
@@ -353,9 +354,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute5().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday6')){
-                var cfgcronday6 = configObj['cfgcronday6'];
-                var cfgcronday6split = cfgcronday6.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday6")){
+                var cfgcronday6 = configObj["cfgcronday6"];
+                var cfgcronday6split = cfgcronday6.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable6().setValue(cfgcronday6split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour6().setValue(cfgcronday6split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute6().setValue(cfgcronday6split[2]);
@@ -369,9 +370,9 @@ Ext.define('WPAKT.controller.config.Config', {
                 this.getConfigcapturecalendarcfgcaptureendminute6().setVisible(false);
             }
 
-            if(configObj.hasOwnProperty('cfgcronday7')){
-                var cfgcronday7 = configObj['cfgcronday7'];
-                var cfgcronday7split = cfgcronday7.replace(/\s+/g, '').split(',');
+            if(configObj.hasOwnProperty("cfgcronday7")){
+                var cfgcronday7 = configObj["cfgcronday7"];
+                var cfgcronday7split = cfgcronday7.replace(/\s+/g, "").split(",");
                 this.getConfigcapturecalendarcfgcapturedayenable7().setValue(cfgcronday7split[0]);
                 this.getConfigcapturecalendarcfgcapturestarthour7().setValue(cfgcronday7split[1]);
                 this.getConfigcapturecalendarcfgcapturestartminute7().setValue(cfgcronday7split[2]);
@@ -387,7 +388,7 @@ Ext.define('WPAKT.controller.config.Config', {
 
             var configObj = {};
             this.getConfigSectionCaptureStore().each(function (rec) {
-                var configName = rec.get('NAME');
+                var configName = rec.get("NAME");
                 configObj[configName] = true;
             });
 
@@ -401,7 +402,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , disableAllConfigScreens: function() {
-        this.consoleLog('disableAllConfigScreens()');
+        this.consoleLog("disableAllConfigScreens()");
         this.getConfigcapturesavesavebutton().setDisabled(true);
         this.getConfigcapturesavecancelbutton().setDisabled(true);
     }
@@ -411,7 +412,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , enableAllConfigScreens: function() {
-        this.consoleLog('enableAllConfigScreens()');
+        this.consoleLog("enableAllConfigScreens()");
         this.getConfigcapturesavesavebutton().setDisabled(false);
         this.getConfigcapturesavecancelbutton().setDisabled(false);
     }
@@ -421,7 +422,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * Caluclate the number of dirty records update the sync status and message about configuration change
      */
     , checkModifiedConfigStores: function() {
-        this.consoleLog('checkModifiedConfigStores()');
+        this.consoleLog("checkModifiedConfigStores()");
         var dirtyRecords = 0;
         this.getConfigCaptureStore().each(function (rec) {
             if (rec.dirty === true) {dirtyRecords++;}
@@ -439,11 +440,11 @@ Ext.define('WPAKT.controller.config.Config', {
             if (rec.dirty === true) {dirtyRecords++;}
         });
         if (dirtyRecords > 0) {
-            this.getConfigcapturesavestatus().setHtml(i18n.gettext('Configuration has been modified'));
+            this.getConfigcapturesavestatus().setHtml(i18n.gettext("Configuration has been modified"));
             this.setConfigurationSyncStatus(false);
             this.getConfigcapturesavecancelbutton().setDisabled(false);
         } else {
-            this.getConfigcapturesavestatus().setHtml(i18n.gettext('No configuration changes'));
+            this.getConfigcapturesavestatus().setHtml(i18n.gettext("No configuration changes"));
             this.setConfigurationSyncStatus(true);
             this.getConfigcapturesavecancelbutton().setDisabled(true);
         }
@@ -457,15 +458,15 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , updateStoreValue: function(newValue, oldValue, configName) {
-        var configRecord = this.getConfigCaptureStore().findRecord('NAME', configName, 0, false, false, true);
+        var configRecord = this.getConfigCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get('VALUE') != newValue) {
-                this.consoleLog('updateStoreValue(): update config: ' + configName + ' from: ' + configRecord.get('VALUE') + ' to: ' + newValue, 'info');
-                configRecord.set('VALUE', newValue);
+            if (configRecord.get("VALUE") != newValue) {
+                this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
+                configRecord.set("VALUE", newValue);
                 this.checkModifiedConfigStores();
             }
         } else {
-            this.consoleLog('updateStoreValue(): Unable to find: ' + configName, 'warn');
+            this.consoleLog("updateStoreValue(): Unable to find: " + configName, "warn");
         }
     }
     
@@ -475,7 +476,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , updateCalendarSchedule: function(modifiedDay) {
-        this.consoleLog('updateCalendarSchedule()');
+        this.consoleLog("updateCalendarSchedule()");
         if (modifiedDay === 1) {
             var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable1().getValue();
             var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour1().getValue();
@@ -519,18 +520,18 @@ Ext.define('WPAKT.controller.config.Config', {
             var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour7().getValue();
             var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute7().getValue();
         }
-        var configRecord = this.getConfigCaptureStore().findRecord('NAME', 'cfgcronday' + modifiedDay, 0, false, false, true);
+        var configRecord = this.getConfigCaptureStore().findRecord("NAME", "cfgcronday" + modifiedDay, 0, false, false, true);
         if (configRecord !== undefined && cfgcapturestarthour !== null && cfgcapturestartminute !== null && cfgcaptureendhour !== null && cfgcaptureendminute !== null) {
-            if (cfgcapturedayenable === true) {cfgcapturedayenable = 'yes'} else {cfgcapturedayenable = 'no'}
-            if (cfgcapturestarthour < 10) {cfgcapturestarthour = '0' + cfgcapturestarthour}
-            if (cfgcapturestartminute < 10) {cfgcapturestartminute = '0' + cfgcapturestartminute}
-            if (cfgcaptureendhour < 10) {cfgcaptureendhour = '0' + cfgcaptureendhour}
-            if (cfgcaptureendminute < 10) {cfgcaptureendminute = '0' + cfgcaptureendminute}
+            if (cfgcapturedayenable === true) {cfgcapturedayenable = "yes"} else {cfgcapturedayenable = "no"}
+            if (cfgcapturestarthour < 10) {cfgcapturestarthour = "0" + cfgcapturestarthour}
+            if (cfgcapturestartminute < 10) {cfgcapturestartminute = "0" + cfgcapturestartminute}
+            if (cfgcaptureendhour < 10) {cfgcaptureendhour = "0" + cfgcaptureendhour}
+            if (cfgcaptureendminute < 10) {cfgcaptureendminute = "0" + cfgcaptureendminute}
             //yes, 00, 00, 00, 00
-            var cfgcronday = cfgcapturedayenable + ',' + cfgcapturestarthour + ','  + cfgcapturestartminute + ',' + cfgcaptureendhour + ',' + cfgcaptureendminute
-            if (configRecord.get('VALUE') != cfgcronday) {
-                this.consoleLog('updateCalendarSchedule(): update config: cfgcronday' + modifiedDay + ' from: ' + configRecord.get('VALUE') + ' to: ' + cfgcronday, 'info');
-                configRecord.set('VALUE', cfgcronday);
+            var cfgcronday = cfgcapturedayenable + "," + cfgcapturestarthour + ","  + cfgcapturestartminute + "," + cfgcaptureendhour + "," + cfgcaptureendminute
+            if (configRecord.get("VALUE") != cfgcronday) {
+                this.consoleLog("updateCalendarSchedule(): update config: cfgcronday" + modifiedDay + " from: " + configRecord.get("VALUE") + " to: " + cfgcronday, "info");
+                configRecord.set("VALUE", cfgcronday);
                 this.checkModifiedConfigStores();
             }
         }
@@ -541,7 +542,7 @@ Ext.define('WPAKT.controller.config.Config', {
      * @returns {undefined}
      */
     , cancelConfigurationChanges: function() {
-        this.consoleLog('cancelConfigurationChanges()');
+        this.consoleLog("cancelConfigurationChanges()");
         this.getConfigCaptureStore().each(function (rec) {
             if (rec.dirty === true) {rec.reject();}
         });
@@ -552,20 +553,20 @@ Ext.define('WPAKT.controller.config.Config', {
      * When clicking on the save button, update all records tagged as dirty in the store
      */
     , saveConfigurationChanges: function() {
-        this.consoleLog('saveConfigurationChanges()');
+        this.consoleLog("saveConfigurationChanges()");
         if (this.getConfigurationSyncStatus() == false) {
             var requiredStores = [];
             var isDirty = false;
             this.getConfigCaptureStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getConfigCaptureStore(), action: 'SYNC'});}
-            this.fireEvent('WPAKT.controller.core.loading.SyncStores.beginLoading'
-                , 'WEB_CFG_SOURCESCONFIGSYNC'
-                , 'WPAKT.controller.config.Config.configurationSaved'
+            if (isDirty == true) {requiredStores.push({store: this.getConfigCaptureStore(), action: "SYNC"});}
+            this.fireEvent("WPAKT.controller.core.loading.SyncStores.beginLoading"
+                , "WEB_CFG_SOURCESCONFIGSYNC"
+                , "WPAKT.controller.config.Config.configurationSaved"
                 , requiredStores);
         } else {
             Ext.Msg.show({
-                title: i18n.gettext('Configuration')
-                , msg: i18n.gettext('No configuration changes detected, nothing to save')
+                title: i18n.gettext("Configuration")
+                , msg: i18n.gettext("No configuration changes detected, nothing to save")
                 , buttons: Ext.Msg.OK
                 , icon: Ext.Msg.INFO
             });
@@ -576,11 +577,11 @@ Ext.define('WPAKT.controller.config.Config', {
      * Display message after configuration has been saved
      */
     , configurationSaved: function() {
-        this.consoleLog('configurationSaved()');
+        this.consoleLog("configurationSaved()");
         this.checkModifiedConfigStores();
         Ext.Msg.show({
-            title: i18n.gettext('Configuration')
-            , msg: i18n.gettext('Configuration has been saved')
+            title: i18n.gettext("Configuration")
+            , msg: i18n.gettext("Configuration has been saved")
             , buttons: Ext.Msg.OK
             , icon: Ext.Msg.INFO
         });

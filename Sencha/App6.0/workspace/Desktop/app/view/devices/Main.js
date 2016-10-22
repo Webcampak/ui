@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.devices.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.devices.Main");
 //</debug>
-Ext.define('WPAKD.view.devices.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.devicesmain'
+Ext.define("WPAKD.view.devices.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.devicesmain"
 
-    , title: i18n.gettext('Connected Devices')
+    , title: i18n.gettext("Connected Devices")
 
     , width: 900
     , height: 600
 
     , stateful: true
-    , stateId: 'devicesmain'
+    , stateId: "devicesmain"
 
     , scroll: true
     , autoScroll: true
@@ -20,43 +21,43 @@ Ext.define('WPAKD.view.devices.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf0f1
     , layout: {
-        type:'vbox'
-        , pack: 'start'
-        , align: 'stretch'
+        type:"vbox"
+        , pack: "start"
+        , align: "stretch"
     }
     , items: [{
-        xtype: 'panel'
-	, title: i18n.gettext('Gphoto2: Connected Cameras')
+        xtype: "panel"
+	, title: i18n.gettext("Gphoto2: Connected Cameras")
         , flex: 1
-        , layout: 'fit'
+        , layout: "fit"
         , items: [{
-            xtype: 'devicesgphotolist'
+            xtype: "devicesgphotolist"
         }]
         , tools:[{
-            type: 'refresh',
-            tooltip: i18n.gettext('Refresh Devices'),
+            type: "refresh",
+            tooltip: i18n.gettext("Refresh Devices"),
             callback: function() {
-                this.fireEvent('WPAKD.controller.devices.Devices.loadDevices');
+                this.fireEvent("WPAKD.controller.devices.Devices.loadDevices");
             }
         }]
     }, {
-        xtype: 'panel'
-        , title: i18n.gettext('Gphoto2: Cameras Capabilities')
+        xtype: "panel"
+        , title: i18n.gettext("Gphoto2: Cameras Capabilities")
         , flex: 1
-        , layout: 'fit'
+        , layout: "fit"
         , items: [{
-            xtype: 'devicesgphotocapabilities'
+            xtype: "devicesgphotocapabilities"
         }]
     }, {
         flex: 1
-        , xtype: 'panel'
-        , title: i18n.gettext('USB devices connected (lsusb)')
-        , layout: 'fit'
+        , xtype: "panel"
+        , title: i18n.gettext("USB devices connected (lsusb)")
+        , layout: "fit"
         , items: [{
-            xtype: 'deviceslsusb'
+            xtype: "deviceslsusb"
         }]
     }]
 });

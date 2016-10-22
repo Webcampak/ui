@@ -1,54 +1,55 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.stats.sources.DiskUsage');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.stats.sources.DiskUsage");
 //</debug>
-Ext.define('WPAKD.view.stats.sources.DiskUsage', {
-    extend: 'Ext.chart.CartesianChart'
-    , alias : 'widget.statssourcesdiskusage'
+Ext.define("WPAKD.view.stats.sources.DiskUsage", {
+    extend: "Ext.chart.CartesianChart"
+    , alias : "widget.statssourcesdiskusage"
 
 
-    , store: 'stats.SourcesDiskUsage'
+    , store: "stats.SourcesDiskUsage"
     , legend: false
     , animate: true
     , shadow: true
 
     , axes: [{
-        title: i18n.gettext('Disk Usage')
-        , type: 'numeric'
-        , position: 'left'
-        , fields: ['SIZE']
+        title: i18n.gettext("Disk Usage")
+        , type: "numeric"
+        , position: "left"
+        , fields: ["SIZE"]
         , minimum: 0
         , grid: {
             odd: {
                 opacity: 1
-                , fill: '#ddd'
-                , stroke: '#bbb'
-                , 'stroke-width': 0.5
+                , fill: "#ddd"
+                , stroke: "#bbb"
+                , "stroke-width": 0.5
             }
         }
-        , label: {font: '10px Arial'}
+        , label: {font: "10px Arial"}
         , renderer: function (axis, label, layoutContext, lastlabel) {
             if (parseInt(label) <= 1) {return Math.round(label);} 
             else {return Ext.util.Format.fileSize(label);}
         }         
     }, {
-        type: 'time'
-        , title: i18n.gettext('Disk usage evolution (GB) per day')
-        , position: 'bottom'
-        , fields: ['DATE']
-        , dateFormat: 'd M'
-        , label: {font: '10px Arial'}
+        type: "time"
+        , title: i18n.gettext("Disk usage evolution (GB) per day")
+        , position: "bottom"
+        , fields: ["DATE"]
+        , dateFormat: "d M"
+        , label: {font: "10px Arial"}
         , grid: true
     }],
     series: [{
-        type: 'line'
-        , xField: 'DATE'
-        , yField: 'SIZE'
+        type: "line"
+        , xField: "DATE"
+        , yField: "SIZE"
         , showInLegend: false
         //, marker: true
         , tooltip: {
             trackMouse: true,
             renderer: function (tooltip, record, item) {
-                tooltip.setHtml(Ext.util.Format.fileSize(record.get('SIZE')) + ' ' + i18n.gettext('on') + ' ' + Ext.util.Format.dateRenderer('M d, Y')(record.get('DATE')));
+                tooltip.setHtml(Ext.util.Format.fileSize(record.get("SIZE")) + " " + i18n.gettext("on") + " " + Ext.util.Format.dateRenderer("M d, Y")(record.get("DATE")));
             }
         }
     }]

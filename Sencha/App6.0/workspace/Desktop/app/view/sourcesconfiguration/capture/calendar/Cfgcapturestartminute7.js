@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturestartminute7');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturestartminute7");
 //</debug>
-Ext.define('WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturestartminute7', {
-    extend: 'Ext.form.field.Number'
-    , alias: 'widget.sourcesconfigurationcapturecalendarcfgcapturestartminute7'
+Ext.define("WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturestartminute7", {
+    extend: "Ext.form.field.Number"
+    , alias: "widget.sourcesconfigurationcapturecalendarcfgcapturestartminute7"
 
     , allowBlank: false
     , minValue: 0
@@ -11,7 +12,7 @@ Ext.define('WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturestartminu
     , checkChangeEvents: 500
     , listeners : {
         change : function(scope, newValue, oldValue, eOpts ) {
-            this.fireEvent('WPAKD.controller.sourcesconfiguration.capture.Capture.updateCalendarSchedule', 7);
+            this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateCalendarSchedule", 7);
         }
     }
 });

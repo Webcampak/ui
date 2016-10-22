@@ -1,17 +1,18 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.logs.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.logs.Main");
 //</debug>
-Ext.define('WPAKD.view.logs.Main', {
-    extend: 'Ext.window.Window'
-    , alias: 'widget.logsmain'
+Ext.define("WPAKD.view.logs.Main", {
+    extend: "Ext.window.Window"
+    , alias: "widget.logsmain"
 
-    , title: i18n.gettext('Sources Logs')
+    , title: i18n.gettext("Sources Logs")
 
     , width: 1000
     , height: 600
 
     , stateful: true
-    , stateId: 'logsmain'
+    , stateId: "logsmain"
 
     , scroll: true
     , autoScroll: true
@@ -20,19 +21,19 @@ Ext.define('WPAKD.view.logs.Main', {
 
     , constrainHeader: true
 
-    , closeAction : 'hide'
+    , closeAction : "hide"
     , glyph:0xf03a
     , layout: {
-        type:'hbox'
-        , pack: 'start'
-        , align: 'stretch'
+        type:"hbox"
+        , pack: "start"
+        , align: "stretch"
     }
     , items: [{
-        xtype: 'logssourceslist'
+        xtype: "logssourceslist"
         , width: 300
-        , title: i18n.gettext('Available Sources')
+        , title: i18n.gettext("Available Sources")
     }, {
-        xtype: 'logslogs'
+        xtype: "logslogs"
         , flex: 1
     }]
 });

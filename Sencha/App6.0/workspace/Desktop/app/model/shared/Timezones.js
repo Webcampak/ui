@@ -1,9 +1,10 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.model.shared.Timezones');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.model.shared.Timezones");
 //</debug>
-Ext.define('WPAKD.model.shared.Timezones', {
-    extend: 'Ext.data.Model',
+Ext.define("WPAKD.model.shared.Timezones", {
+    extend: "Ext.data.Model",
     fields: [
-        {name: 'NAME',    type: 'string'}
+        {name: "NAME",    type: "string"}
     ]
 });

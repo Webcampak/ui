@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.accesscontrol.users.shared.Username');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.accesscontrol.users.shared.Username");
 //</debug>
 Ext.define("WPAKD.view.accesscontrol.users.shared.Username", {
-    extend: 'Ext.form.field.Text',
+    extend: "Ext.form.field.Text",
      
-    alias : 'widget.accesscontroluserssharedusername',
+    alias : "widget.accesscontroluserssharedusername",
                   
-    fieldLabel: i18n.gettext('Username'),
+    fieldLabel: i18n.gettext("Username"),
     allowBlank: false,
-    vtype: 'username',
+    vtype: "username",
     maxLength: 25,
     minLength: 3
 });

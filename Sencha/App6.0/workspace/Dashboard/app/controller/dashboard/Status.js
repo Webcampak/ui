@@ -1,36 +1,37 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKT.controller.dashboard.Status');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.dashboard.Status");
 //</debug>
-Ext.define('WPAKT.controller.dashboard.Status', {
-    extend: 'Ext.app.Controller',
+Ext.define("WPAKT.controller.dashboard.Status", {
+    extend: "Ext.app.Controller",
 
     stores: [
-        'dashboard.Status'
+        "dashboard.Status"
     ],
 
     models: [
-        'dashboard.Status'
+        "dashboard.Status"
     ],
 
 
     views: [
-        'dashboard.Main'
+        "dashboard.Main"
 
     ],
 
     refs: [
-        {ref: 'dashboardmain',           selector: 'dashboardmain',    autoCreate: true,   xtype: 'dashboardmain'    }
+        {ref: "dashboardmain",           selector: "dashboardmain",    autoCreate: true,   xtype: "dashboardmain"    }
 
     ]
 
     , init: function() {
-        this.consoleLog('init()');
+        this.consoleLog("init()");
         this.listen({
              controller: {
-                  '*': {
-                    'WPAKT.controller.dashboard.Status.loadStatus': this.loadStatus
-                    , 'WPAKT.controller.dashboard.Status.isLoadedAndAuthenticated': this.isLoadedAndAuthenticated
-                    , 'WPAKT.controller.dashboard.Status.fireCardsUpdate': this.fireCardsUpdate
+                  "*": {
+                    "WPAKT.controller.dashboard.Status.loadStatus": this.loadStatus
+                    , "WPAKT.controller.dashboard.Status.isLoadedAndAuthenticated": this.isLoadedAndAuthenticated
+                    , "WPAKT.controller.dashboard.Status.fireCardsUpdate": this.fireCardsUpdate
                   }
              }
         });          
@@ -38,7 +39,7 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     }
 
     , onLaunch: function() {
-        this.consoleLog('onLaunch()');
+        this.consoleLog("onLaunch()");
         var scope = this;
         this.loadStatus();        
         var interval = setInterval(function() {                
@@ -47,9 +48,9 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     }
    
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ': Log: Controller->Dashboard->Status: ';
+        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Status: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
-        if (logLevel === undefined) {logLevel = 'log';}
+        if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
@@ -65,7 +66,7 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     }
 
     , isStatusLoading: function() {
-        this.consoleLog('isStatusLoading()');
+        this.consoleLog("isStatusLoading()");
         return this.getStatusLoading();
     }
 
@@ -82,7 +83,7 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     
     //This function is used to check if the user was allowed to access the status endpoint
     , isLoadedAndAuthenticated: function() {
-        this.consoleLog('isLoadedAndAuthenticated()');        
+        this.consoleLog("isLoadedAndAuthenticated()");
         var lastStatus = this.getStatus();            
         if (lastStatus === null) {
             return false;
@@ -98,21 +99,21 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     
 
     , loadStatus: function() {
-        this.consoleLog('loadStatus()');
+        this.consoleLog("loadStatus()");
         var scope = this;
         if (this.getStatusLoading() !== true) {
             this.setStatusLoading(true);
-            var serverUrl = '/' + symfonyEnv + '/status';
+            var serverUrl = "/" + symfonyEnv + "/status";
             var initTimestamp = new Date().getTime()
             Ext.Ajax.request({
                 url: serverUrl,
                 timeout: 10000,
                 success: function(response){
                     var text = response.responseText;
-                    //scope.consoleLog('loadStatus(): ' + response.responseText, 'info');
+                    //scope.consoleLog("loadStatus(): " + response.responseText, "info");
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
-                    scope.consoleLog('loadStatus(): Latency: ' + latency + 'ms');
+                    scope.consoleLog("loadStatus(): Latency: " + latency + "ms");
                     //var serverResonse = Ext.decode(response.responseText, true);
                     scope.setStatus(response.responseText);
                     scope.setStatusLoading(false);
@@ -122,9 +123,9 @@ Ext.define('WPAKT.controller.dashboard.Status', {
                     var latency = successTimestamp - initTimestamp;
                     
                     if (parseInt(response.status) == 0) {
-                        scope.consoleLog('loadStatus(): Error loading status: Server not available', 'warn');
+                        scope.consoleLog("loadStatus(): Error loading status: Server not available", "warn");
                     } else {
-                        scope.consoleLog('loadStatus(): Error loading status: ' + response.status, 'warn');                        
+                        scope.consoleLog("loadStatus(): Error loading status: " + response.status, "warn");
                     }
                     scope.setStatusLoading(false);
                 }
@@ -133,15 +134,15 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     }
     
     , registerStatus: function() {
-        this.consoleLog('registerStatus()');
+        this.consoleLog("registerStatus()");
         var scope = this;        
-        //this.consoleLog('registerStatus(): Number of records: ' + this.getDashboardStatusStore().getCount());
+        //this.consoleLog("registerStatus(): Number of records: " + this.getDashboardStatusStore().getCount());
         if (this.getDashboardStatusStore().getCount() > 20) {
             var recordsToDelete = this.getDashboardStatusStore().getCount() - 20;
-            //this.consoleLog('registerStatus(): Records to Delete: ' + recordsToDelete);
+            //this.consoleLog("registerStatus(): Records to Delete: " + recordsToDelete);
             this.getDashboardStatusStore().removeAt(0, recordsToDelete);
         }
-        //this.consoleLog('registerStatus(): Number of records: ' + this.getDashboardStatusStore().getCount());  
+        //this.consoleLog("registerStatus(): Number of records: " + this.getDashboardStatusStore().getCount());
         this.getDashboardStatusStore().add({STATUS: scope.getStatus()});
         setTimeout(function() {
             scope.fireCardsUpdate();
@@ -150,10 +151,10 @@ Ext.define('WPAKT.controller.dashboard.Status', {
     
     //Send an update event to all cards controllers
     , fireCardsUpdate: function() {
-        this.consoleLog('fireCardsUpdate()');
-        this.fireEvent('WPAKT.controller.dashboard.Disk.updateCard');
-        this.fireEvent('WPAKT.controller.dashboard.Cameras.updateCard');
-        this.fireEvent('WPAKT.controller.dashboard.Uptime.updateCard');
-        this.fireEvent('WPAKT.controller.dashboard.SourcesStatus.updateCard');
+        this.consoleLog("fireCardsUpdate()");
+        this.fireEvent("WPAKT.controller.dashboard.Disk.updateCard");
+        this.fireEvent("WPAKT.controller.dashboard.Cameras.updateCard");
+        this.fireEvent("WPAKT.controller.dashboard.Uptime.updateCard");
+        this.fireEvent("WPAKT.controller.dashboard.SourcesStatus.updateCard");
     }
 });

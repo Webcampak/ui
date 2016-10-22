@@ -1,10 +1,11 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesconfiguration.videos.advanced.CfgvideocodecH264480pcropx');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.sourcesconfiguration.videos.advanced.CfgvideocodecH264480pcropx");
 //</debug>
-Ext.define('WPAKD.view.sourcesconfiguration.videos.advanced.CfgvideocodecH264480pcropx', {
-    extend: 'Ext.form.field.Text'
-    , alias: 'widget.sourcesconfigurationvideosadvancedcfgvideocodecH264480pcropx'
+Ext.define("WPAKD.view.sourcesconfiguration.videos.advanced.CfgvideocodecH264480pcropx", {
+    extend: "Ext.form.field.Text"
+    , alias: "widget.sourcesconfigurationvideosadvancedcfgvideocodecH264480pcropx"
 
-    , readOnlyCls: 'x-item-disabled'
+    , readOnlyCls: "x-item-disabled"
     , readOnly: true
 });

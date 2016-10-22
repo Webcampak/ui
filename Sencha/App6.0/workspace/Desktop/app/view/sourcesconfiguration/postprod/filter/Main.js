@@ -1,20 +1,21 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.sourcesconfiguration.postprod.filter.Main');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.sourcesconfiguration.postprod.filter.Main");
 //</debug>
-Ext.define('WPAKD.view.sourcesconfiguration.postprod.filter.Main', {
-    extend: 'Ext.form.FieldSet'
-    , alias: 'widget.sourcesconfigurationpostprodfiltermain'
+Ext.define("WPAKD.view.sourcesconfiguration.postprod.filter.Main", {
+    extend: "Ext.form.FieldSet"
+    , alias: "widget.sourcesconfigurationpostprodfiltermain"
 
-    , title: i18n.gettext('Filter similar pictures')
+    , title: i18n.gettext("Filter similar pictures")
     , collapsible: true
     , collapsed: true
 
     , padding: 5
-    , layout: 'fit'
+    , layout: "fit"
     , defaults: {labelWidth: 200}
-    , items: [{xtype: 'sourcesconfigurationpostprodfiltercfgfilteractivate'}
-        , {xtype: 'sourcesconfigurationpostprodfiltercfgfilterwatermarkfile'}
-        , {xtype: 'sourcesconfigurationpostprodfiltercfgfiltervalue'}
+    , items: [{xtype: "sourcesconfigurationpostprodfiltercfgfilteractivate"}
+        , {xtype: "sourcesconfigurationpostprodfiltercfgfilterwatermarkfile"}
+        , {xtype: "sourcesconfigurationpostprodfiltercfgfiltervalue"}
     ]
 });
 

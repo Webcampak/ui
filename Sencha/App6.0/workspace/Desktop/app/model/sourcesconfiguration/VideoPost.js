@@ -1,13 +1,14 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.model.sourcesconfiguration.VideoPost');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.model.sourcesconfiguration.VideoPost");
 //</debug>
-Ext.define('WPAKD.model.sourcesconfiguration.VideoPost', {
-    extend: 'Ext.data.Model',
+Ext.define("WPAKD.model.sourcesconfiguration.VideoPost", {
+    extend: "Ext.data.Model",
 
     fields: [
-        { name: 'NAME',     type: 'string'     }
-        , { name: 'VALUE',  type: 'string'     }
-        , { name: 'SOURCEID',   type: 'int'    }
+        { name: "NAME",     type: "string"     }
+        , { name: "VALUE",  type: "string"     }
+        , { name: "SOURCEID",   type: "int"    }
 
     ]
 });

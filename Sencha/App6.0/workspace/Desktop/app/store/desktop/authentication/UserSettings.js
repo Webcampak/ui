@@ -1,35 +1,36 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.desktop.authentication.UserSettings');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.desktop.authentication.UserSettings");
 //</debug>
-Ext.define('WPAKD.store.desktop.authentication.UserSettings', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.desktop.authentication.UserSettings", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.desktop.authentication.UserSettings',
+    model: "WPAKD.model.desktop.authentication.UserSettings",
 /*
     proxy: {
-        type: 'memory'
+        type: "memory"
     }
 */
     proxy:{
-        type: 'direct',
+        type: "direct",
         reader: {
-            type: 'json',
-            rootProperty: 'results',
-            totalProperty: 'total'
+            type: "json",
+            rootProperty: "results",
+            totalProperty: "total"
         },
         extraParams: {
             TZ_OFFSET: -new Date().getTimezoneOffset()/60
-            , SENCHA_APP: 'null'
+            , SENCHA_APP: "null"
         },
         api:{
-            read:        'UserSettings.getSettings'
+            read:        "UserSettings.getSettings"
         }/*,
         afterRequest:function(request,success){
             if (success == false) {
                 if (request.operation.error) {var errorMsg = request.operation.error;}
                 else {var errorMsg = "Unknown Error";}
                 Ext.MessageBox.show({
-                    title: 'Error',
+                    title: "Error",
                     msg: errorMsg,
                     buttons: Ext.MessageBox.OK,
                     icon: Ext.MessageBox.ERROR

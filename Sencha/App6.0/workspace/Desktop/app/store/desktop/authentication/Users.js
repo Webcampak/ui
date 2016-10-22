@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.desktop.authentication.Users');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.desktop.authentication.Users");
 //</debug>
-Ext.define('WPAKD.store.desktop.authentication.Users', {
-    extend: 'Ext.data.Store',
+Ext.define("WPAKD.store.desktop.authentication.Users", {
+    extend: "Ext.data.Store",
 
-    model: 'WPAKD.model.desktop.authentication.Users',
+    model: "WPAKD.model.desktop.authentication.Users",
 
     autosync: true,
 
     proxy: {
-        type: 'memory'
+        type: "memory"
     }
 });

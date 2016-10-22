@@ -1,22 +1,23 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.store.desktop.emails.SentEmail');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.store.desktop.emails.SentEmail");
 //</debug>
-Ext.define('WPAKD.store.desktop.emails.SentEmail', {
-    extend: 'Ext.data.Store',
-    model: 'WPAKD.model.desktop.emails.SentEmail',
+Ext.define("WPAKD.store.desktop.emails.SentEmail", {
+    extend: "Ext.data.Store",
+    model: "WPAKD.model.desktop.emails.SentEmail",
 
     proxy:{
-        type: 'direct',
+        type: "direct",
         extraParams: {
-            ATTACHMENTS:              'null'
+            ATTACHMENTS:              "null"
         },
         reader: {
-            type: 'json'
-            , rootProperty: 'results'
-            , totalProperty: 'total'
+            type: "json"
+            , rootProperty: "results"
+            , totalProperty: "total"
         },
         api:{
-            read: 'SystemEmails.getEmailsQueue'
+            read: "SystemEmails.getEmailsQueue"
         }
     }
 });

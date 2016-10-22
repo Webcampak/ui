@@ -1,14 +1,15 @@
+/*global Ext i18n*/
 //<debug>
-console.log(new Date().toLocaleTimeString() + ': Log: Load: WPAKD.view.desktop.sendemail.EmailAttachments');
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.sendemail.EmailAttachments");
 //</debug>
 Ext.define("WPAKD.view.desktop.sendemail.EmailAttachments", {
-    extend: 'Ext.form.field.Text',
+    extend: "Ext.form.field.Text",
 
-    alias : 'widget.desktopsendemailemailattachments',
+    alias : "widget.desktopsendemailemailattachments",
 
-    fieldLabel: i18n.gettext('Attachments'),
+    fieldLabel: i18n.gettext("Attachments"),
 
-    emptyText: i18n.gettext('No Attachments'),
+    emptyText: i18n.gettext("No Attachments"),
 
     allowBlank: false,
     disabled: true,
