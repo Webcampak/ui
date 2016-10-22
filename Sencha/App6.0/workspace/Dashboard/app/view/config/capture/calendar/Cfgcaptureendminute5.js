@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.config.capture.calendar.Cfgcaptureendminute5");
 //</debug>

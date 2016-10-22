@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.sensors.Sensor1");
 //</debug>

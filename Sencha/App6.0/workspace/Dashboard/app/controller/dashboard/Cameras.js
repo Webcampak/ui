@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext*/
 //<debug>
 /*
  * This class takes care of updating the camera widget displayed on the dashboard.
