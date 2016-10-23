@@ -235,7 +235,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.customvideos.Videos", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->CustomVideos: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->CustomVideos: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

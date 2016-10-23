@@ -87,7 +87,7 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Authentication: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Authentication: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

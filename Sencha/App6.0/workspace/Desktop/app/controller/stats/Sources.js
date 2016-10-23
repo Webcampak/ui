@@ -70,7 +70,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Stats->Sources: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Stats->Sources: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

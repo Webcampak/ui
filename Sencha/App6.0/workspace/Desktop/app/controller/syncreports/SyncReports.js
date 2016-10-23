@@ -145,7 +145,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SyncReports: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SyncReports: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

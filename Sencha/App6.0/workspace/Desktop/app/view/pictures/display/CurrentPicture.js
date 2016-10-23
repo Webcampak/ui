@@ -1,4 +1,4 @@
-/*global Ext*/
+/*global Ext symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.pictures.display.CurrentPicture");
 //</debug>

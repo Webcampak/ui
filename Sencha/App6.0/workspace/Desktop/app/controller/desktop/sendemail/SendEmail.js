@@ -62,7 +62,7 @@ Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Desktop->SendEmail: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Desktop->SendEmail: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

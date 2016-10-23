@@ -179,7 +179,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.pictures.Pictures", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->Pictures: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->Pictures: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

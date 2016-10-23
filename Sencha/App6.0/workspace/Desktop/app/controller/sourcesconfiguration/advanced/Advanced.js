@@ -70,7 +70,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.advanced.Advanced", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->Advanced: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->Advanced: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
