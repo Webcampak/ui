@@ -28,12 +28,12 @@ Ext.define("WPAKD.store.accesscontrol.sources.SourceCurrentUsers", {
             destroy:   "ACSources.removeSourceCurrentUsers",
             update:    "ACUsers.updateUserCurrentSources" //Calling this method to avoid duplicates
         },
-	listeners: {
+	    listeners: {
             exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.users.UserCurrentSources");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.sources.Sources.reloadUsers");
             }
-	}
+	    }
     },
     listeners: {
         write: function(store, operation){

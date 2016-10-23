@@ -25,12 +25,12 @@ Ext.define("WPAKD.store.accesscontrol.groups.Groups", {
             destroy:    "ACGroups.removeGroup",
             update:     "ACGroups.updateGroup"
         },
-	listeners: {
-        exception: function() {
-            var currentStore = Ext.getStore("accesscontrol.groups.Groups");
-            currentStore.fireEvent("WPAKD.controller.accesscontrol.groups.Groups.openEditGroup");
-        }
-	}
+	    listeners: {
+            exception: function() {
+                var currentStore = Ext.getStore("accesscontrol.groups.Groups");
+                currentStore.fireEvent("WPAKD.controller.accesscontrol.groups.Groups.openEditGroup");
+            }
+	    }
     },
     listeners: {
         write: function(store, operation){

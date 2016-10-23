@@ -25,12 +25,12 @@ Ext.define("WPAKD.store.accesscontrol.sources.Sources", {
             destroy:   "ACSources.removeSource",
             update:    "ACSources.updateSource"
         },
-	listeners: {
+	    listeners: {
             exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.sources.Sources");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.sources.Sources.openEditSource");
             }
-	}
+	    }
     },
     listeners: {
         write: function(store, operation){
