@@ -19,10 +19,10 @@ Ext.define("WPAKD.util.ErrorHandling", {
         me.fireEvent("beginprocessresponse", me, response, operation);
 
         if (response.result.success === false) {
+            var msgTitle = i18n.gettext("Server error");
             if (response.result.title !== "") {var msgTitle = response.result.title;}
-            else {var msgTitle = i18n.gettext("Server error");}
+            var msgText = i18n.gettext("There is an error with your request, please contact support");
             if (response.result.message !== "") {var msgText = response.result.message;}
-            else {var msgText = i18n.gettext("There is an error with your request, please contact support");}
             Ext.raise({
                 title: msgTitle
                 , msg: msgText
