@@ -3,26 +3,26 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.desktop.icons.Icons");
 //</debug>
 Ext.define("WPAKD.controller.desktop.icons.Icons", {
-    extend: "Ext.app.Controller",
+    extend: "Ext.app.Controller"
 
-    stores: [
+    , stores: [
         "shared.Applications"
 
         , "desktop.icons.DesktopAvailableIcons"
         , "desktop.icons.DesktopCurrentIcons"
         , "shared.UserSettings"
-    ],
+    ]
 
-    models: [
+    , models: [
         "shared.Applications"
 
         , "desktop.icons.DesktopAvailableIcons"
         , "desktop.icons.DesktopCurrentIcons"
         , "shared.UserSettings"
 
-    ],
+    ]
 
-    views: [
+    , views: [
         "desktop.Main"
         , "desktop.icons.AccessControl"
         , "desktop.icons.SourcesConfiguration"
@@ -40,9 +40,9 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         , "desktop.settings.icons.Main"
         , "desktop.settings.icons.DesktopAvailableIcons"
         , "desktop.settings.icons.DesktopCurrentIcons"
-    ],
+    ]
 
-    refs: [
+    , refs: [
         {ref: "desktopmain",                            selector: "desktopmain"                 }
         , {ref: "desktopiconsmain",                     selector: "desktopiconsmain"            }
         , {ref: "desktopiconsaccesscontrol",            selector: "desktopiconsaccesscontrol",          autoCreate: true,        xtype: "desktopiconsaccesscontrol"         }
@@ -62,9 +62,9 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         , {ref: "desktopsettingsiconsdesktopavailableicons",    selector: "desktopsettingsiconsdesktopavailableicons"    }
         , {ref: "desktopsettingsiconsdesktopcurrenticons",      selector: "desktopsettingsiconsdesktopcurrenticons"      }
 
-    ],
+    ]
 
-    init: function() {
+    , init: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Icons->Icons: Controller init: function()");
         this.control({
             "*": {
@@ -99,8 +99,6 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
 
     , onLaunch: function() {
         this.consoleLog("onLaunch()");
-//        this.reloadSharedApplications();
-//        this.getDesktopIconsDesktopCurrentIconsStore().on("load",this.reloadDesktopIcons,this,{single:true});
         this.getDesktopIconsDesktopCurrentIconsStore().load();
         this.getSharedApplicationsStore().on("load",this.reloadDesktopIcons,this,{single:true});
         this.getSharedApplicationsStore().load();
@@ -172,21 +170,23 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         this.getSharedApplicationsStore().each(function(r){
             scope.consoleLog("reloadDesktopIcons(): CODE: " + r.get("CODE"));
             var currentCode = r.get("CODE");
-            if (currentCode === "WEB_CFG_ACCESSCONTROL")     {var currentIconWidget = scope.getDesktopiconsaccesscontrol();             var currentIconDefaultX = -2;  var currentIconDefaultY = 2;   }
-            else if (currentCode === "WEB_CFG_SOURCES")      {var currentIconWidget = scope.getDesktopiconssourcesconfiguration();      var currentIconDefaultX = -8;  var currentIconDefaultY = 2;   }
-            else if (currentCode === "WEB_CFG_SYSTEM")       {var currentIconWidget = scope.getDesktopiconssystemconfiguration();       var currentIconDefaultX = -2;  var currentIconDefaultY = 8;   }
-            else if (currentCode === "WEB_DSP_PICTURES")     {var currentIconWidget = scope.getDesktopiconspictures();                  var currentIconDefaultX = 2;   var currentIconDefaultY = 2;   }
-            else if (currentCode === "WEB_DSP_VIDEOS")       {var currentIconWidget = scope.getDesktopiconsvideos();                    var currentIconDefaultX = 8;   var currentIconDefaultY = 2;   }
-            else if (currentCode === "WEB_DSP_LOGS")         {var currentIconWidget = scope.getDesktopiconslogs();                      var currentIconDefaultX = 2;   var currentIconDefaultY = 14;  }
-            else if (currentCode === "WEB_DSP_SYNCREPORTS")  {var currentIconWidget = scope.getDesktopiconssyncreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 26;  }
-            else if (currentCode === "WEB_DSP_XFERREPORTS")  {var currentIconWidget = scope.getDesktopiconsxferreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 46;  }
-            else if (currentCode === "WEB_CFG_ALERTS")       {var currentIconWidget = scope.getDesktopiconsalerts();                    var currentIconDefaultX = 2;   var currentIconDefaultY = 20;  }
-            else if (currentCode === "WEB_DSP_DEVICES")      {var currentIconWidget = scope.getDesktopiconsdevices();                   var currentIconDefaultX = -2;  var currentIconDefaultY = 14;  }
-            else if (currentCode === "WEB_DSP_STATS_SYSTEM") {var currentIconWidget = scope.getDesktopiconsstatssystem();               var currentIconDefaultX = 8;   var currentIconDefaultY = 8;   }
-            else if (currentCode === "WEB_DSP_STATS_SOURCES"){var currentIconWidget = scope.getDesktopiconsstatssources();              var currentIconDefaultX = 2;   var currentIconDefaultY = 8;   }
-            else {var currentIconWidget = null;}
+            var currentIconWidget = null;
+            var currentIconDefaultX = null;
+            var currentIconDefaultY = null;
+            if (currentCode === "WEB_CFG_ACCESSCONTROL")     {currentIconWidget = scope.getDesktopiconsaccesscontrol();         currentIconDefaultX = -2;  currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_CFG_SOURCES")      {currentIconWidget = scope.getDesktopiconssourcesconfiguration();  currentIconDefaultX = -8;  currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_CFG_SYSTEM")       {currentIconWidget = scope.getDesktopiconssystemconfiguration();   currentIconDefaultX = -2;  currentIconDefaultY = 8;   }
+            else if (currentCode === "WEB_DSP_PICTURES")     {currentIconWidget = scope.getDesktopiconspictures();              currentIconDefaultX = 2;   currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_DSP_VIDEOS")       {currentIconWidget = scope.getDesktopiconsvideos();                currentIconDefaultX = 8;   currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_DSP_LOGS")         {currentIconWidget = scope.getDesktopiconslogs();                  currentIconDefaultX = 2;   currentIconDefaultY = 14;  }
+            else if (currentCode === "WEB_DSP_SYNCREPORTS")  {currentIconWidget = scope.getDesktopiconssyncreports();           currentIconDefaultX = 2;   currentIconDefaultY = 26;  }
+            else if (currentCode === "WEB_DSP_XFERREPORTS")  {currentIconWidget = scope.getDesktopiconsxferreports();           currentIconDefaultX = 2;   currentIconDefaultY = 46;  }
+            else if (currentCode === "WEB_CFG_ALERTS")       {currentIconWidget = scope.getDesktopiconsalerts();                currentIconDefaultX = 2;   currentIconDefaultY = 20;  }
+            else if (currentCode === "WEB_DSP_DEVICES")      {currentIconWidget = scope.getDesktopiconsdevices();               currentIconDefaultX = -2;  currentIconDefaultY = 14;  }
+            else if (currentCode === "WEB_DSP_STATS_SYSTEM") {currentIconWidget = scope.getDesktopiconsstatssystem();           currentIconDefaultX = 8;   currentIconDefaultY = 8;   }
+            else if (currentCode === "WEB_DSP_STATS_SOURCES"){currentIconWidget = scope.getDesktopiconsstatssources();          currentIconDefaultX = 2;   currentIconDefaultY = 8;   }
 
-            if (currentIconWidget) {
+            if (currentIconWidget !== null) {
                 var record = scope.getDesktopIconsDesktopCurrentIconsStore().findRecord("CODE", currentCode, 0, false, false, true);
                 if (record && record.get("ICON_VISIBLE_FLAG") === "Y") {
                     if (record.get("ICON_X_COORDINATE") !== 0 && record.get("ICON_Y_COORDINATE") !== 0 ) {
@@ -210,7 +210,6 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         this.getDesktopIconsDesktopCurrentIconsStore().sync();
         if (this.getDesktopIconsDesktopAvailableIconsStore().getCount() === 0){this.getDesktopIconsDesktopAvailableIconsStore().load();}
         if (this.getDesktopIconsDesktopCurrentIconsStore().getCount() === 0){this.getDesktopIconsDesktopCurrentIconsStore().load();}
-        //if (this.getSharedApplicationsStore().getCount() === 0){this.getSharedApplicationsStore().load();}
 
         this.getDesktopsettingsiconsmain().show();
     }

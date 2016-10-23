@@ -1,3 +1,7 @@
+/*global Ext*/
+//<debug>
+console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.ux.window.Notifications");
+//</debug>
 /*
  *	Notification extension for Ext JS 4.0.2+
  *	Version: 2.1.3
