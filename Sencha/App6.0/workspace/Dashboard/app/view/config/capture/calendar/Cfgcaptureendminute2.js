@@ -11,7 +11,7 @@ Ext.define("WPAKT.view.config.capture.calendar.Cfgcaptureendminute2", {
     , maxValue: 59
     , checkChangeEvents: 500
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKT.controller.config.Config.updateCalendarSchedule", 2);
         }
     }

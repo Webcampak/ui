@@ -10,7 +10,7 @@ Ext.define("WPAKT.view.config.capture.calendar.Cfgcroncalendar", {
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             if (newValue === true) {newValue = "yes";} else {newValue = "no";}
             if (oldValue === true) {oldValue = "yes";} else {oldValue = "no";}
             this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgcroncalendar");

@@ -11,7 +11,7 @@ Ext.define("WPAKT.view.config.capture.source.Cfgcroncapturevalue", {
     , allowBlank: false
 
     , listeners : {
-        change : function(scope, newValue, oldValue, eOpts ) {
+        change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgcroncapturevalue")
         }
     }
