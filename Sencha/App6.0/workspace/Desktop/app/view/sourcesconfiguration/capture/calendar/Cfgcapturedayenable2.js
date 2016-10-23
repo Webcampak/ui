@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.calendar.Cfgcapturedayenable
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {
-        change : function(scope, newValue, oldValue) {
+        change : function() {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.capture.Capture.updateCalendarSchedule", 2); // 2 for Tuesday
         }
     }
