@@ -28,13 +28,13 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
         , {text: i18n.gettext("Started"),   dataIndex: "DATE_START",    align: "left",    width: 150,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
         , {text: i18n.gettext("Completed"), dataIndex: "DATE_COMPLETED",align: "left",    width: 150,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
         , {text: i18n.gettext("Src. Size"), dataIndex: "SRC_SIZE",      align: "left",    width: 80,   sortable: true, renderer:
-            function(value, metaData) {
+            function(value) {
                 if (value !== "") {return Ext.util.Format.fileSize(value);}
                 else {return value;}
             }                    
         }
         , {text: i18n.gettext("Dst. Size"), dataIndex: "DST_SIZE",      align: "left",    width: 80,   sortable: true, renderer:
-            function(value, metaData) {
+            function(value) {
                 if (value !== "") {return Ext.util.Format.fileSize(value);}
                 else {return value;}
             }

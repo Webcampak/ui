@@ -22,13 +22,13 @@ Ext.define("WPAKD.view.xferreports.ReportsList", {
                 , {text: i18n.gettext("Completed"), dataIndex: "JOB_COMPLETED", align: "left",  width: 130,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
                 , {text: i18n.gettext("Direction"), dataIndex: "JOB_DIRECTION", align: "left",  width: 80,  sortable: true}
                 , { text: i18n.gettext("Size"),     dataIndex: "JOB_SIZE",      align: "left",  width: 80,   sortable: true, renderer:
-                    function(value, metaData) {
+                    function(value) {
                         if (value !== "") {return Ext.util.Format.fileSize(value);} 
                         else {return value;}
                     }                    
                 }  
                 , { text: i18n.gettext("Rate"),     dataIndex: "JOB_RATE",      align: "left",  width: 100,   sortable: true, renderer:
-                    function(value, metaData) {
+                    function(value) {
                         if (value !== "") {return Ext.util.Format.fileSize(value) + "/s";} 
                         else {return value;}
                     }                    

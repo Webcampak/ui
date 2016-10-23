@@ -16,7 +16,7 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
     * @param integer precision Number of digits after the decimal separator
     * @return string
     */
-    , filesize: function(value, metaData) {
+    , filesize: function(value) {
         if (value > 0) {
             var sizes = ["Bytes", "KB", "MB", "GB", "TB"];
             var posttxt = 0;
@@ -37,7 +37,7 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
      * Custom function used for display a downloadable link
      * @param {Object} val
      */
-    , download: function(value, metaData) {
+    , download: function(value) {
         if (value !== "") {
             var currentURL = "/" + symfonyEnv + "/dl/source" + Ext.getStore("videos.VideosList").getProxy().extraParams.SOURCEID + "/videos/";
             return "<a href=\"" + currentURL + value + "\" target=\"_blank\"><img src=\"../resources/images/download16x16.png\" /></a>";

@@ -22,19 +22,19 @@ Ext.define("WPAKD.view.syncreports.details.summary.SummaryList", {
             text: i18n.gettext("File Size")
             , columns: [
             { text: i18n.gettext("Total"), dataIndex: "FILES_SIZE_TOTAL",  align: "left",    width: 80,   sortable: true, renderer:
-                function(value, metaData) {
+                function(value) {
                     if (value !== "") {return Ext.util.Format.fileSize(value);}
                     else {return value;}
                 }                    
             }
             , {text: i18n.gettext("JPG"), dataIndex: "FILES_SIZE_JPG",      align: "left",    width: 80,   sortable: true, renderer:
-                function(value, metaData) {
+                function(value) {
                     if (value !== "") {return Ext.util.Format.fileSize(value);}
                     else {return value;}
                 }                    
             }
             , {text: i18n.gettext("RAW"), dataIndex: "FILES_SIZE_RAW",      align: "left",    width: 80,   sortable: true, renderer:
-                function(value, metaData) {
+                function(value) {
                     if (value !== "") {return Ext.util.Format.fileSize(value);}
                     else {return value;}
                 }                    
