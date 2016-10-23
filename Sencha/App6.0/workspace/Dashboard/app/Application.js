@@ -123,7 +123,7 @@ Ext.define("WPAKT.Application", {
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.ERROR
             });
-        }        
+        };
     }
 
     , onAppUpdate: function () {

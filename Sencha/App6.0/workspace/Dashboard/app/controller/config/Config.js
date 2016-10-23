@@ -525,13 +525,14 @@ Ext.define("WPAKT.controller.config.Config", {
         }
         var configRecord = this.getConfigCaptureStore().findRecord("NAME", "cfgcronday" + modifiedDay, 0, false, false, true);
         if (configRecord !== undefined && cfgcapturestarthour !== null && cfgcapturestartminute !== null && cfgcaptureendhour !== null && cfgcaptureendminute !== null) {
-            if (cfgcapturedayenable === true) {cfgcapturedayenable = "yes"} else {cfgcapturedayenable = "no"}
-            if (cfgcapturestarthour < 10) {cfgcapturestarthour = "0" + cfgcapturestarthour}
-            if (cfgcapturestartminute < 10) {cfgcapturestartminute = "0" + cfgcapturestartminute}
-            if (cfgcaptureendhour < 10) {cfgcaptureendhour = "0" + cfgcaptureendhour}
-            if (cfgcaptureendminute < 10) {cfgcaptureendminute = "0" + cfgcaptureendminute}
+            cfgcapturedayenable = "no";
+            if (cfgcapturedayenable === true) {cfgcapturedayenable = "yes";}
+            if (cfgcapturestarthour < 10) {cfgcapturestarthour = "0" + cfgcapturestarthour;}
+            if (cfgcapturestartminute < 10) {cfgcapturestartminute = "0" + cfgcapturestartminute;}
+            if (cfgcaptureendhour < 10) {cfgcaptureendhour = "0" + cfgcaptureendhour;}
+            if (cfgcaptureendminute < 10) {cfgcaptureendminute = "0" + cfgcaptureendminute;}
             //yes, 00, 00, 00, 00
-            var cfgcronday = cfgcapturedayenable + "," + cfgcapturestarthour + ","  + cfgcapturestartminute + "," + cfgcaptureendhour + "," + cfgcaptureendminute
+            var cfgcronday = cfgcapturedayenable + "," + cfgcapturestarthour + ","  + cfgcapturestartminute + "," + cfgcaptureendhour + "," + cfgcaptureendminute;
             if (configRecord.get("VALUE") !== cfgcronday) {
                 this.consoleLog("updateCalendarSchedule(): update config: cfgcronday" + modifiedDay + " from: " + configRecord.get("VALUE") + " to: " + cfgcronday, "info");
                 configRecord.set("VALUE", cfgcronday);
