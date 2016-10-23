@@ -29,7 +29,7 @@ Ext.define("WPAKD.store.accesscontrol.groups.GroupAvailableApplications", {
             update:     "ACGroups.updateGroupAvailableApplications"
         },
 	listeners: {
-            exception: function(proxy, response, options) {
+            exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.groups.Groups");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.groups.Groups.reloadGroupsAssociations");
             }

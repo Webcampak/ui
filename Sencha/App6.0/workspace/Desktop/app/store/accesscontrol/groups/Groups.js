@@ -26,10 +26,10 @@ Ext.define("WPAKD.store.accesscontrol.groups.Groups", {
             update:     "ACGroups.updateGroup"
         },
 	listeners: {
-            exception: function(proxy, response, options) {
-                var currentStore = Ext.getStore("accesscontrol.groups.Groups");
-                currentStore.fireEvent("WPAKD.controller.accesscontrol.groups.Groups.openEditGroup");
-            }
+        exception: function() {
+            var currentStore = Ext.getStore("accesscontrol.groups.Groups");
+            currentStore.fireEvent("WPAKD.controller.accesscontrol.groups.Groups.openEditGroup");
+        }
 	}
     },
     listeners: {

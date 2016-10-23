@@ -29,7 +29,7 @@ Ext.define("WPAKD.store.accesscontrol.users.UserCurrentSources", {
             update:    "ACUsers.updateUserCurrentSources"
         },
 	listeners: {
-            exception: function(proxy, response, options) {
+            exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.users.UserCurrentSources");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.users.ACUsers.reloadSources");
             }

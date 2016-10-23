@@ -26,7 +26,7 @@ Ext.define("WPAKD.store.accesscontrol.sources.Sources", {
             update:    "ACSources.updateSource"
         },
 	listeners: {
-            exception: function(proxy, response, options) {
+            exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.sources.Sources");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.sources.Sources.openEditSource");
             }

@@ -24,7 +24,7 @@ Ext.define("WPAKD.store.accesscontrol.customers.Customers", {
             , update:    "ACCustomers.updateCustomer"
         }
         , listeners: {
-            exception: function(proxy, response, options) {
+            exception: function() {
                 var currentStore = Ext.getStore("accesscontrol.customers.Customers");
                 currentStore.fireEvent("WPAKD.controller.accesscontrol.customers.Customers.openEditCustomer");
             }
