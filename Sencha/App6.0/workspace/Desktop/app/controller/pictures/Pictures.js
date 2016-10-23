@@ -304,7 +304,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.consoleLog("onSourceSelected()");
         this.clearWindowContent();
         
-        selectedSource = this.getSharedSourcesStore().getById(newValue);
+        var selectedSource = this.getSharedSourcesStore().getById(newValue);
         this.getPicturessourcename().setHtml(selectedSource.get("NAME"));
 
         this.consoleLog("onSourceSelected(): Selected source name is: " + selectedSource.get("NAME"));

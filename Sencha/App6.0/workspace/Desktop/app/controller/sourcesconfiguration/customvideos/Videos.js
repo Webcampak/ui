@@ -290,7 +290,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.customvideos.Videos", {
                     this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
                 }
             } else {
-                this.consoleLog("updateStoreValue(): Unable to find: " + configName, "warn");
+                this.consoleLog("updateStoreValue(): Unable to find: " + "cfgcustom" + dateType + "year", "warn");
             }
         }
     }

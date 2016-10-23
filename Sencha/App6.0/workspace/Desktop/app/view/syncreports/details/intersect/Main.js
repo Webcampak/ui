@@ -9,4 +9,4 @@ Ext.define("WPAKD.view.syncreports.details.intersect.Main", {
     , items: [
         {xtype: "syncreportsdetailsintersectpiechart"}
     ]  
-})
+});

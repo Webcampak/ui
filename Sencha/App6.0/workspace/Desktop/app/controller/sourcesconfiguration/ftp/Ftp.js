@@ -99,10 +99,10 @@ Ext.define("WPAKD.controller.sourcesconfiguration.ftp.Ftp", {
         var scope = this;
         //We store the content of the store in a Javascript object
         var configObj = {};
+        var configName = null;
         this.getSourcesconfigurationCaptureStore().each(function (rec) {
-            var configValue = rec.get("VALUE");
-            var configName = rec.get("NAME");
-            configObj[configName] = configValue;
+            configName = rec.get("NAME");
+            configObj[configName] = rec.get("VALUE");
         });
 
         if(configObj.hasOwnProperty("cfglocalftppass")){
@@ -112,9 +112,9 @@ Ext.define("WPAKD.controller.sourcesconfiguration.ftp.Ftp", {
             this.getSourcesconfigurationftplocalcfglocalftppass().setVisible(false);
             this.getSourcesconfigurationftplocalcfglocalftpusername().setVisible(false);
         }
-        var configObj = {};
+        configObj = {};
         this.getSourcesconfigurationSectionCaptureStore().each(function (rec) {
-            var configName = rec.get("NAME");
+            configName = rec.get("NAME");
             configObj[configName] = true;
         });
 
