@@ -251,8 +251,8 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
             if (XPos < 0) {XPos = usableXDotsNb - (XPos*-1);}
             if (YPos < 0) {YPos = usableYDotsNb - (YPos*-1);}
 
-            if (XPos > usableXDotsNb) {XPos = usableXDotsNb}
-            if (YPos > usableYDotsNb) {YPos = usableYDotsNb}
+            if (XPos > usableXDotsNb) {XPos = usableXDotsNb;}
+            if (YPos > usableYDotsNb) {YPos = usableYDotsNb;}
 
             this.consoleLog("arrangeIcon() - Updated Position: X: " + XPos + " Y: " + YPos);
             this.consoleLog("arrangeIcon() - Inserting icon at screen position: X: " + (XPos * gridStepX) + " Y: " + (YPos * gridStepY));
@@ -302,9 +302,9 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
 
         var usableXDotsNb = XDotsNb - 4;
         var usableYDotsNb = YDotsNb - 4;
-        var usableWindowWidth = usableXDotsNb * gridStepX;
-        var usableWindowHeight = usableYDotsNb * gridStepY;
 
+        //var usableWindowWidth = usableXDotsNb * gridStepX;
+        //var usableWindowHeight = usableYDotsNb * gridStepY;
         //console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Icons->Icons: Controller moveIcon: Number of horizontal dots: " + XDotsNb);
         //console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Icons->Icons: Controller moveIcon: Number of vertical dots: " + YDotsNb);
         //console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Icons->Icons: Controller moveIcon: Usable Window Width: " + usableWindowWidth);
@@ -313,26 +313,29 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         //console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Icons->Icons: Controller moveIcon: Number of usable vertical dots: " + usableYDotsNb);
 
         //Find onto which dot the icon must be attached
+        var targetXDot = null;
         if (droppedLocationX > (usableXDotsNb*gridStepX)) {
-                var targetXDot = usableXDotsNb;
+            targetXDot = usableXDotsNb;
         } else if (droppedLocationX < 0) {
-                var targetXDot = 0;
+            targetXDot = 0;
         } else {
-            for (var i=0;i<usableXDotsNb;i++) {
+            var i = null;
+            for (i=0;i<usableXDotsNb;i++) {
                 if (droppedLocationX >= (i*gridStepX) && droppedLocationX < ((i+1)*gridStepX)){
-                    var targetXDot = i;
+                    targetXDot = i;
                 }
             }
         }
-
+        var targetYDot = null;
         if (droppedLocationY > (usableYDotsNb*gridStepY)) {
-                var targetYDot = usableYDotsNb;
+            targetYDot = usableYDotsNb;
         } else if (droppedLocationY < gridStepY) {
-                var targetYDot = 1;
+            targetYDot = 1;
         }  else {
-            for (var i=0;i<usableYDotsNb;i++) {
+            var i = null;
+            for (i=0;i<usableYDotsNb;i++) {
                 if (droppedLocationY >= (i*gridStepY) && droppedLocationY < ((i+1)*gridStepY)){
-                    var targetYDot = i;
+                    targetYDot = i;
                 }
             }
         }
