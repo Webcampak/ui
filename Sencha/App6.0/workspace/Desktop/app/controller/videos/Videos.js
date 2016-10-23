@@ -3,9 +3,9 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.videos.Videos");
 //</debug>
 Ext.define("WPAKD.controller.videos.Videos", {
-    extend: "Ext.app.Controller",
+    extend: "Ext.app.Controller"
 
-    views: [
+    , views: [
         "desktop.toolbar.top.Taskbar"
         , "desktop.sendemail.Main"
 
@@ -22,23 +22,23 @@ Ext.define("WPAKD.controller.videos.Videos", {
         , "videos.selection.DaysList"
         , "videos.selection.VideosList"
 
-    ],
+    ]
 
-    stores: [
+    , stores: [
         "shared.Sources"
         , "videos.DaysList"
         , "videos.VideosList"
 
-    ],
+    ]
 
-    models: [
+    , models: [
         "shared.Sources"
         , "videos.DaysList"
         , "videos.VideosList"
 
-    ],
+    ]
 
-    refs: [
+    , refs: [
         {ref: "desktopmain",                selector: "desktopmain"                 }
         , {ref: "desktoptoolbartoptaskbar", selector: "desktoptoolbartoptaskbar"    }
         , {ref: "desktopsendemailmain",     selector: "desktopsendemailmain"        }
@@ -57,9 +57,9 @@ Ext.define("WPAKD.controller.videos.Videos", {
         , {ref: "videosselectiondayslist",    selector: "videosselectiondayslist"   }
         , {ref: "videosselectionvideoslist",  selector: "videosselectionvideoslist" }
 
-    ],
+    ]
 
-    init: function() {
+    , init: function() {
         this.consoleLog("init()");
         this.control({
             "desktoptoolbartoptaskbar button[action=openWEB_DSP_VIDEOS]": {click:  this.openVideos                                  }
@@ -94,9 +94,8 @@ Ext.define("WPAKD.controller.videos.Videos", {
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
-    , reloadVideosForSource: function(scope, selectedVideo) {
+    , reloadVideosForSource: function(scope) {
         this.consoleLog("reloadVideosForSource()");
-
     }
 
     , onVideoSelected: function(scope, selectedVideo) {
@@ -115,7 +114,8 @@ Ext.define("WPAKD.controller.videos.Videos", {
             this.consoleLog("onVideoSelected(): Picture Size:" + previewJpgWidth + "x" + previewJpgHeight);
 
             //We ensure that target height of the picture will not by greather than current window height (otherwise a portion of the picture will not be displayed)
-            currentPictureTargetHeight = Math.round(currentWindowWidth * previewJpgHeight / previewJpgWidth);
+            var currentPictureTargetHeight = Math.round(currentWindowWidth * previewJpgHeight / previewJpgWidth);
+            var currentPictureTargetWidth = null;
             if (currentPictureTargetHeight > currentWindowHeight) {
                     currentPictureTargetWidth = Math.round(currentWindowHeight * previewJpgWidth / previewJpgHeight);
                     this.getVideosdisplayvideo().setSize({width:currentPictureTargetWidth, height:currentWindowHeight});
@@ -132,10 +132,10 @@ Ext.define("WPAKD.controller.videos.Videos", {
             var currentPreviewJpg = currentURL + selectedVideo[0].get("JPG");
 
             var insertPlayer = "<div class=\"flowplayer\">";
-            var insertPlayer = insertPlayer + "<video controls>";
-            var insertPlayer = insertPlayer + "<source type=\"video/mp4\"  src=\"" + currentPreviewMp4 + "\">";
-            var insertPlayer = insertPlayer + "</video>";
-            var insertPlayer = insertPlayer + "</div>";
+            insertPlayer = insertPlayer + "<video controls>";
+            insertPlayer = insertPlayer + "<source type=\"video/mp4\"  src=\"" + currentPreviewMp4 + "\">";
+            insertPlayer = insertPlayer + "</video>";
+            insertPlayer = insertPlayer + "</div>";
 
             this.getVideosdisplayvideo().update("<center>" + insertPlayer + "</center>");
         } else {
@@ -176,9 +176,9 @@ Ext.define("WPAKD.controller.videos.Videos", {
         });
     }
 
-    , onSourceSelected: function(combo, newValue, oldValue) {
+    , onSourceSelected: function(combo, newValue) {
         this.consoleLog("onSourceSelected()");
-        selectedSource = this.getSharedSourcesStore().getById(newValue);
+        var selectedSource = this.getSharedSourcesStore().getById(newValue);
 
         this.getVideossourcename().setHtml(selectedSource.get("NAME"));
 
@@ -207,29 +207,30 @@ Ext.define("WPAKD.controller.videos.Videos", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getVideosDaysListStore().last();
         //Determine days not to be displayed on calendar
+        var currentDisabledDates = null;
         if (daysWidgetSetting.get("DISABLED") !== "" ) {
-                currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
-                this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
-                this.getVideosselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
+            currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
+            this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
+            this.getVideosselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         } else {
-                testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
-                currentDisabledDates = eval("[" + testDisabledDates + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
-                this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
-                this.getVideosselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
+            var testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
+            currentDisabledDates = eval("[" + testDisabledDates + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
+            this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
+            this.getVideosselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         }
 
         // Set Min date in calendar
         if (daysWidgetSetting.get("MIN") > 0 ) {
-                this.consoleLog("updateDaysWidget(): Set Min date to: " + daysWidgetSetting.get("MIN") + " Date: " + new Date(daysWidgetSetting.get("MIN")));
-                this.getVideosselectiondayslist().setMinDate(new Date(daysWidgetSetting.get("MIN")));
+            this.consoleLog("updateDaysWidget(): Set Min date to: " + daysWidgetSetting.get("MIN") + " Date: " + new Date(daysWidgetSetting.get("MIN")));
+            this.getVideosselectiondayslist().setMinDate(new Date(daysWidgetSetting.get("MIN")));
         }
         // Set Max date in calendar
         if (daysWidgetSetting.get("MAX") > 0 ) {
-                this.consoleLog("updateDaysWidget(): Set Max and Selected date to: " + daysWidgetSetting.get("MAX") + " Date: " + new Date(daysWidgetSetting.get("MAX")));
-                this.getVideosselectiondayslist().setMaxDate(new Date(daysWidgetSetting.get("MAX")));
-                this.getVideosselectiondayslist().setValue(new Date(daysWidgetSetting.get("MAX")));
-                var convertedDate = Ext.Date.format(new Date(daysWidgetSetting.get("MAX")), "Ymd");
-                this.filterVideoList(convertedDate);
+            this.consoleLog("updateDaysWidget(): Set Max and Selected date to: " + daysWidgetSetting.get("MAX") + " Date: " + new Date(daysWidgetSetting.get("MAX")));
+            this.getVideosselectiondayslist().setMaxDate(new Date(daysWidgetSetting.get("MAX")));
+            this.getVideosselectiondayslist().setValue(new Date(daysWidgetSetting.get("MAX")));
+            var convertedDate = Ext.Date.format(new Date(daysWidgetSetting.get("MAX")), "Ymd");
+            this.filterVideoList(convertedDate);
         } else {
             this.consoleLog("updateDaysWidget(): There are no videos, disabling all dates in picker");
             this.getVideosselectiondayslist().setMinDate(new Date());
@@ -239,7 +240,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
 
     }
 
-    , selectFirstSource: function(key) {
+    , selectFirstSource: function() {
         this.consoleLog("selectFirstSource()");
         var record = this.getSharedSourcesStore().first();
 
@@ -262,7 +263,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     },
 
-    openVideos: function(key) {
+    openVideos: function() {
         this.consoleLog("openVideos()");
         Ext.getBody().unmask();
 
@@ -283,7 +284,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         }
     },
 
-    closeVideos: function(key) {
+    closeVideos: function() {
         this.consoleLog("closeVideos()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbvideos").setVisible(false);
     }
