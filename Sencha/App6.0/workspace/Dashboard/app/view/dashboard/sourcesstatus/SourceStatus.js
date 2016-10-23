@@ -43,7 +43,7 @@ Ext.define("WPAKT.view.dashboard.sourcesstatus.SourceStatus", {
                     , src: ""
                     , listeners: {
                         el: {
-                            click: function(event, element, eOpts) {
+                            click: function() {
                                 console.log(this);
                                 console.log(this.component.config.sourceid);
                             }

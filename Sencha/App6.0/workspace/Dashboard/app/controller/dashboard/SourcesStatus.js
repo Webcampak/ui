@@ -1,4 +1,4 @@
-/*global Ext, i18n*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 /*
  * This class takes care of updating the sources widget displayed on the dashboard.

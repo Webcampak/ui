@@ -1,4 +1,4 @@
-/*global Ext, i18n*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.videos.Videos");
 //</debug>
@@ -113,7 +113,7 @@ Ext.define("WPAKT.controller.videos.Videos", {
     }
 
 
-    , onVideoSelected: function(scope, selectedVideo, eOpts) {
+    , onVideoSelected: function(scope, selectedVideo) {
         this.consoleLog("onVideoSelected()");
 //        console.log(selectedVideo);
         if (selectedVideo !== null) {
@@ -130,11 +130,12 @@ Ext.define("WPAKT.controller.videos.Videos", {
 
             //We ensure that target height of the picture will not by greather than current window height (otherwise a portion of the picture will not be displayed)
             var currentPictureTargetHeight = Math.round(currentWindowWidth * previewJpgHeight / previewJpgWidth);
+            var currentPictureTargetWidth = null;
             if (currentPictureTargetHeight > currentWindowHeight) {
-                    var currentPictureTargetWidth = Math.round(currentWindowHeight * previewJpgWidth / previewJpgHeight);
-                    this.getVideosvideovideo().setSize({width:currentPictureTargetWidth, height:currentWindowHeight});
+                currentPictureTargetWidth = Math.round(currentWindowHeight * previewJpgWidth / previewJpgHeight);
+                this.getVideosvideovideo().setSize({width:currentPictureTargetWidth, height:currentWindowHeight});
             } else {
-                    var currentPictureTargetWidth = currentWindowWidth;
+                currentPictureTargetWidth = currentWindowWidth;
             }
 
             //Launching Flowplayer
@@ -142,13 +143,13 @@ Ext.define("WPAKT.controller.videos.Videos", {
 
             var currentURL = "/" + symfonyEnv + "/dl/source" + this.getSourceId() + "/videos/";
             var currentPreviewMp4 = currentURL + selectedVideo.get("MP4");
-            var currentPreviewJpg = currentURL + selectedVideo.get("JPG");
+            //var currentPreviewJpg = currentURL + selectedVideo.get("JPG");
 
             var insertPlayer = "<div class=\"flowplayer\">";
-            var insertPlayer = insertPlayer + "<video controls>";
-            var insertPlayer = insertPlayer + "<source type=\"video/mp4\"  src=\"" + currentPreviewMp4 + "\">";
-            var insertPlayer = insertPlayer + "</video>";
-            var insertPlayer = insertPlayer + "</div>";
+            insertPlayer = insertPlayer + "<video controls>";
+            insertPlayer = insertPlayer + "<source type=\"video/mp4\"  src=\"" + currentPreviewMp4 + "\">";
+            insertPlayer = insertPlayer + "</video>";
+            insertPlayer = insertPlayer + "</div>";
 
             this.getVideosvideovideo().update("<center>" + insertPlayer + "</center>");
         } else {
@@ -161,27 +162,28 @@ Ext.define("WPAKT.controller.videos.Videos", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getVideosDaysListStore().last();
         //Determine days not to be displayed on calendar
+        var currentDisabledDates = null;
         if (daysWidgetSetting.get("DISABLED") !== "" ) {
-                var currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
-                this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
-                this.getVideoscontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
+            currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
+            this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
+            this.getVideoscontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         } else {
-                var testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
-                currentDisabledDates = eval("[" + testDisabledDates + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
-                this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
-                this.getVideoscontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
+            var testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
+            currentDisabledDates = eval("[" + testDisabledDates + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
+            this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
+            this.getVideoscontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         }
 
         // Set Min date in calendar
         if (daysWidgetSetting.get("MIN") > 0 ) {
-                this.consoleLog("updateDaysWidget(): Set Min date to: " + daysWidgetSetting.get("MIN") + " Date: " + new Date(daysWidgetSetting.get("MIN")));
-                this.getVideoscontrolsdatedatepicker().setMinDate(new Date(daysWidgetSetting.get("MIN")));
+            this.consoleLog("updateDaysWidget(): Set Min date to: " + daysWidgetSetting.get("MIN") + " Date: " + new Date(daysWidgetSetting.get("MIN")));
+            this.getVideoscontrolsdatedatepicker().setMinDate(new Date(daysWidgetSetting.get("MIN")));
         }
         // Set Max date in calendar
         if (daysWidgetSetting.get("MAX") > 0 ) {
-                this.consoleLog("updateDaysWidget(): Set Max and Selected date to: " + daysWidgetSetting.get("MAX") + " Date: " + new Date(daysWidgetSetting.get("MAX")));
-                this.getVideoscontrolsdatedatepicker().setMaxDate(new Date(daysWidgetSetting.get("MAX")));
-                this.getVideoscontrolsdatedatepicker().setValue(new Date(daysWidgetSetting.get("MAX")));
+            this.consoleLog("updateDaysWidget(): Set Max and Selected date to: " + daysWidgetSetting.get("MAX") + " Date: " + new Date(daysWidgetSetting.get("MAX")));
+            this.getVideoscontrolsdatedatepicker().setMaxDate(new Date(daysWidgetSetting.get("MAX")));
+            this.getVideoscontrolsdatedatepicker().setValue(new Date(daysWidgetSetting.get("MAX")));
         } else {
             this.consoleLog("updateDaysWidget(): There are no videos, disabling all dates in picker");
             this.getVideoscontrolsdatedatepicker().setMinDate(new Date());
@@ -191,7 +193,7 @@ Ext.define("WPAKT.controller.videos.Videos", {
         this.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", this.getVideoscontrolsdatedatepicker());
     }  
 
-    , onDaySelected: function(scope, date, eOpts ) {
+    , onDaySelected: function(scope, date) {
         this.consoleLog("onDaySelected()");
         var convertedDate = Ext.Date.format(date, "Ymd");
         this.consoleLog("onDaySelected(): Selected date is: " + date + " converted to: " + convertedDate);

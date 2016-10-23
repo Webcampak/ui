@@ -1,4 +1,4 @@
-/*global Ext*/
+/*global Ext, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.pictures.picture.Picture");
 //</debug>
@@ -13,7 +13,7 @@ Ext.define("WPAKT.view.pictures.picture.Picture", {
     , src: ""
     , listeners: {
         el: {
-            click: function(event, element, eOpts) {
+            click: function() {
                 var currentPicture = Ext.getStore("pictures.Picture").last().get("PICTURE");
                 if (currentPicture !== "") {
                     //http://127.0.0.1/app_dev.php/dl/source1/pictures/20150620/20150620003006.jpg?width=10000
