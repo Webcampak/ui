@@ -1,4 +1,4 @@
-/*global Ext, i18n*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.pictures.Pictures");
 //</debug>
@@ -181,14 +181,14 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
     }    
 
 
-    , getSourceStatus: function(sourceid) {
+    , getSourceStatus: function() {
         this.consoleLog("getSourceStatus()");
         var scope = this;
         var lastStatus = this.getDashboardStatusStore().last().get("STATUS");
         var statusObj = Ext.JSON.decode(lastStatus, true);    
 
         var identifiedSource = null;
-        Ext.Array.each(statusObj.sources, function(sourceObj, index) {            
+        Ext.Array.each(statusObj.sources, function(sourceObj) {
             if (sourceObj.SOURCEID !== undefined && parseInt(sourceObj.SOURCEID) === scope.getSourceId()) {
                 identifiedSource = sourceObj;
             }
@@ -214,8 +214,9 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getPicturesDaysListStore().last();
         //Determine days not to be displayed on calendar
+        var currentDisabledDates = null;
         if (daysWidgetSetting.get("DISABLED") !== "" ) {
-                var currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
+                currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getPicturescontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         } else {
@@ -280,12 +281,15 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         } else {
             this.setSourcePicture({filename: displayPicture.get("PICTURE"), date: displayPicture.get("PICTUREDATE")});
 
-            if (displayPicture.get("PICTUREJPGSIZE") > 0) {var jpgSize = Ext.util.Format.fileSize(displayPicture.get("PICTUREJPGSIZE"));}
-            else {var jpgSize = i18n.gettext("Not Available");}
-            if (displayPicture.get("PICTURERAWSIZE") > 0) {var rawSize = Ext.util.Format.fileSize(displayPicture.get("PICTURERAWSIZE"));}
-            else {var rawSize = i18n.gettext("Not Available");}
-            if (parseInt(displayPicture.get("PICTUREWIDTH")) === 0 || parseInt(displayPicture.get("PICTUREHEIGHT")) === 0) {var definition = i18n.gettext("n/a");}
-            else {var definition = displayPicture.get("PICTUREWIDTH") + "x" + displayPicture.get("PICTUREHEIGHT");}
+            var jpgSize = null;
+            var rawSize = null;
+            var definition = null;
+            if (displayPicture.get("PICTUREJPGSIZE") > 0) {jpgSize = Ext.util.Format.fileSize(displayPicture.get("PICTUREJPGSIZE"));}
+            else {jpgSize = i18n.gettext("Not Available");}
+            if (displayPicture.get("PICTURERAWSIZE") > 0) {rawSize = Ext.util.Format.fileSize(displayPicture.get("PICTURERAWSIZE"));}
+            else {rawSize = i18n.gettext("Not Available");}
+            if (parseInt(displayPicture.get("PICTUREWIDTH")) === 0 || parseInt(displayPicture.get("PICTUREHEIGHT")) === 0) {definition = i18n.gettext("n/a");}
+            else {definition = displayPicture.get("PICTUREWIDTH") + "x" + displayPicture.get("PICTUREHEIGHT");}
             this.getPicturescontrolsdetailsfilesize().setData({jpg: jpgSize, raw: rawSize, definition: definition});
         }
     }
@@ -296,8 +300,6 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         if (currentPicture === null) {
             this.disableAllQuickNavButtons();
         } else {
-            var currentPictureDisplay = currentPicture.get("PICTURE");
-
             if (currentPicture.get("THUMB1") !== "") {this.getPicturescontrolsquicknavminus15button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavminus15button().setDisabled(true);}
             
@@ -353,19 +355,19 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
       
     , clickNavButton: function(button) {
         this.consoleLog("clickNavButton()");
-        if (button.xtype === "picturescontrolsquicknavminus15button") {var modelValue = "THUMB1"}
-        else if (button.xtype === "picturescontrolsquicknavminus10button") {var modelValue = "THUMB2"}
-        else if (button.xtype === "picturescontrolsquicknavminus5button") {var modelValue = "THUMB3"}
-        else if (button.xtype === "picturescontrolsquicknavplus5button") {var modelValue = "THUMB4"}
-        else if (button.xtype === "picturescontrolsquicknavplus10button") {var modelValue = "THUMB5"}
-        else if (button.xtype === "picturescontrolsquicknavplus15button") {var modelValue = "THUMB6"}
-        else if (button.xtype === "picturescontrolsquicknavnextbutton") {var modelValue = "NEXT"}
-        else {var modelValue = "PREVIOUS"}
+        var modelValue = "PREVIOUS";
+        if (button.xtype === "picturescontrolsquicknavminus15button")       {modelValue = "THUMB1";}
+        else if (button.xtype === "picturescontrolsquicknavminus10button")  {modelValue = "THUMB2";}
+        else if (button.xtype === "picturescontrolsquicknavminus5button")   {modelValue = "THUMB3";}
+        else if (button.xtype === "picturescontrolsquicknavplus5button")    {modelValue = "THUMB4";}
+        else if (button.xtype === "picturescontrolsquicknavplus10button")   {modelValue = "THUMB5";}
+        else if (button.xtype === "picturescontrolsquicknavplus15button")   {modelValue = "THUMB6";}
+        else if (button.xtype === "picturescontrolsquicknavnextbutton")     {modelValue = "NEXT";}
         var currentPicture = this.getPicturesPictureStore().last();
         this.loadNewPicture(currentPicture.get(modelValue));
     }
  
-    , onHourSelected: function(combo, record, eOpts) {        
+    , onHourSelected: function(combo, record) {
         this.consoleLog("onHourSelected()");
         this.loadNewPicture(record.get("PICTURE"));
     }
@@ -399,7 +401,7 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         return pictureDate;
     }   
 
-    , onDaySelected: function(scope, date, eOpts ) {
+    , onDaySelected: function(scope, date) {
         this.consoleLog("onDaySelected()");
         var convertedDate = Ext.Date.format(date, "Ymd");
         this.consoleLog("onDaySelected(): Selected date is: " + date + " converted to: " + convertedDate);
