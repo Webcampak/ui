@@ -1,4 +1,4 @@
-/*global Ext i18n symfonyEnv*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.desktop.toolbar.top.DesktopConfig");
 //</debug>
