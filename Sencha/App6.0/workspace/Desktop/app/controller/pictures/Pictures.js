@@ -1,4 +1,4 @@
-/*global Ext i18n $j symfonyEnv dateFormat*/
+/*global Ext, i18n, $j, symfonyEnv, dateFormat*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.pictures.Pictures");
 //</debug>

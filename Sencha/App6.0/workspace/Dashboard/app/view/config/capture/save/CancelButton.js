@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext, i18n*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.config.capture.save.CancelButton");
 //</debug>

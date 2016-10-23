@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext, i18n*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": SyncReports: Load: WPAKD.controller.syncreports.SyncReports");
 //</debug>
