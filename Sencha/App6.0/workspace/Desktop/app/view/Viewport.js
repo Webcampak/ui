@@ -1,3 +1,4 @@
+/*global Ext*/
 Ext.define("WPAKD.view.Viewport", {
     extend: "Ext.panel.Panel",
     requires:[
