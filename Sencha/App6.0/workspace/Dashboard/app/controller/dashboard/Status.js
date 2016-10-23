@@ -104,7 +104,7 @@ Ext.define("WPAKT.controller.dashboard.Status", {
         if (this.getStatusLoading() !== true) {
             this.setStatusLoading(true);
             var serverUrl = "/" + symfonyEnv + "/status";
-            var initTimestamp = new Date().getTime()
+            var initTimestamp = new Date().getTime();
             Ext.Ajax.request({
                 url: serverUrl,
                 timeout: 10000,

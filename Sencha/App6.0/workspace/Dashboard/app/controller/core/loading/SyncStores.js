@@ -101,6 +101,6 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
                 clearInterval(storeLoadingInterval);
             }
         }, 100); // refresh every 100ms
-        setTimeout(function(){clearInterval(storeLoadingInterval)},240000);
+        setTimeout(function(){clearInterval(storeLoadingInterval);},240000);
     }
 });

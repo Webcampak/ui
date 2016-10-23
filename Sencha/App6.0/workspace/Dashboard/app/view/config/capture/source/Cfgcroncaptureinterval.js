@@ -24,7 +24,7 @@ Ext.define("WPAKT.view.config.capture.source.Cfgcroncaptureinterval", {
         })
     , listeners : {
         change : function(scope, newValue, oldValue) {
-            this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgcroncaptureinterval")
+            this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgcroncaptureinterval");
         }
     }
 });

@@ -14,7 +14,7 @@ Ext.define("WPAKT.view.config.capture.source.Cfgsourceactive", {
         change : function(scope, newValue, oldValue) {
             if (newValue === true) {newValue = "yes";} else {newValue = "no";}
             if (oldValue === true) {oldValue = "yes";} else {oldValue = "no";}
-            this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgsourceactive")
+            this.fireEvent("WPAKT.controller.config.Config.updateStoreValue", newValue, oldValue, "cfgsourceactive");
         }
     }
 });

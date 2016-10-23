@@ -71,7 +71,7 @@ Ext.define("WPAKT.controller.core.Router", {
             if (this.fireEvent("WPAKT.controller.dashboard.Status.isLoadedAndAuthenticated") === true) {
                 this.fireEvent("WPAKT.controller.core.Navigation.loadNavigation");
                 this.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", this.getCoremain());
-                this.fireEvent(event, sourceid)
+                this.fireEvent(event, sourceid);
             } else {            
                 this.fireEvent("WPAKT.controller.core.loading.Mask.beginLoading", this.getCoremain(), "Loading initial data ...");
                 if (init === true) {this.fireEvent("WPAKT.controller.dashboard.Status.loadStatus");} // Force load it this is the first time the event is fired
