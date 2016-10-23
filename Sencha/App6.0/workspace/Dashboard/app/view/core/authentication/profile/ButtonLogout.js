@@ -1,4 +1,4 @@
-/*global Ext, i18n*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.view.core.authentication.profile.ButtonLogout");
 //</debug>
