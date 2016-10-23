@@ -3,9 +3,9 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.alerts.Alerts");
 //</debug>
 Ext.define("WPAKD.controller.alerts.Alerts", {
-    extend: "Ext.app.Controller",
+    extend: "Ext.app.Controller"
 
-    views: [
+    , views: [
         "desktop.toolbar.top.Taskbar"
         , "alerts.Main"
         , "alerts.Alerts"
@@ -31,24 +31,24 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         , "alerts.controls.edit.Type"
         , "alerts.controls.edit.ButtonApply"
                 
-    ],
+    ]
 
-    stores: [
+    , stores: [
         "shared.Sources"
         , "shared.Empty"
         , "alerts.Schedule"
         , "alerts.SourcesSchedule"
 
-    ],
+    ]
 
-    models: [
+    , models: [
         "shared.Sources"
         , "alerts.Schedule"
         , "alerts.SourcesSchedule"
 
-    ],
+    ]
 
-    refs: [
+    , refs: [
         {ref: "desktopmain",                selector: "desktopmain"                 }
         , {ref: "desktoptoolbartoptaskbar", selector: "desktoptoolbartoptaskbar"    }
 
@@ -77,9 +77,9 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         , {ref: "alertscontrolsedittype",           selector: "alertscontrolsedittype"          }
         , {ref: "alertscontrolseditbuttonapply",    selector: "alertscontrolseditbuttonapply"   }
 
-    ],
+    ]
 
-    init: function() {
+    , init: function() {
         this.consoleLog("init()");
         this.control({
             "desktoptoolbartoptaskbar button[action=openWEB_CFG_ALERTS]":   {click:  this.openAlerts                              }
@@ -151,7 +151,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     }    
 
     // When user click on a grid cell, change its value
-    , onMinuteSelected: function(viewScope, td, cellIndex, record, tr, rowIndex, e) {
+    , onMinuteSelected: function(viewScope, td, cellIndex, record) {
         this.consoleLog("onMinuteSelected()");
         var columnName = viewScope.panel.headerCt.getHeaderAtIndex(cellIndex).text;
         this.consoleLog("onMinuteSelected() - Click on Minute: " + columnName);
@@ -203,13 +203,15 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     }
     
     // Verify if provided time is within a specific range
-    , isTimeBetweenRange: function(currentHour, currentMinute, startHour, startMinute, endHour, endMinute) {       
-        if (startMinute < 10) {startTime = parseInt(startHour.toString() + "0" + startMinute.toString())}
-        else {startTime = parseInt(startHour.toString() +  startMinute.toString())}
-        if (endMinute < 10) {endTime = parseInt(endHour.toString() + "0" + endMinute.toString())}
-        else {endTime = parseInt(endHour.toString() +  endMinute.toString())}        
-        if (currentMinute < 10) {currentTime = parseInt(currentHour.toString() + "0" + currentMinute.toString())}
-        else {currentTime = parseInt(currentHour.toString() +  currentMinute.toString())}              
+    , isTimeBetweenRange: function(currentHour, currentMinute, startHour, startMinute, endHour, endMinute) {
+        var startTime = parseInt(startHour.toString() +  startMinute.toString());
+        if (startMinute < 10) {startTime = parseInt(startHour.toString() + "0" + startMinute.toString());}
+
+        var endTime = parseInt(endHour.toString() +  endMinute.toString());
+        if (endMinute < 10) {endTime = parseInt(endHour.toString() + "0" + endMinute.toString());}
+
+        var currentTime = parseInt(currentHour.toString() +  currentMinute.toString());
+        if (currentMinute < 10) {currentTime = parseInt(currentHour.toString() + "0" + currentMinute.toString());}
 
         if (startTime === 0 && endTime === 0) {
             return true;
@@ -217,7 +219,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
             if ((currentTime >= startTime && currentTime < 2400) || (currentTime >= 0 && currentTime <= endTime)) {
                 return true;
             } else {
-                return false
+                return false;
             }
         } else {
             if (currentTime >= startTime && currentTime <= endTime) {
@@ -262,8 +264,8 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
                 for (var j=0;j<60;j++) {
                     if (scope.isTimeBetweenRange(record.data.HOUR, j.toString(), startHour, startMinute, endHour, endMinute)){
                         //console.log("Day: " + record.data.DAYTXT + " Hour: " + record.data.HOUR + ":" + j.toString() + " is between: " + startHour + ":" + endHour + " and " + endHour + ":" + endMinute);
-                        if (j < 10) {var minuteString = "0" + j;}
-                        else {var minuteString = j.toString();}
+                        var minuteString = j.toString();
+                        if (j < 10) {minuteString = "0" + j;}
                         var currentMinute = parseInt(j);
                         if (captureRateObj[currentDay] && captureRateObj[currentDay][currentHour] && captureRateObj[currentDay][currentHour][currentMinute]) {
                             if (editType === "add") {record.set(minuteString, "Y");}
@@ -355,9 +357,9 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     }
 
     // When a source is selected, load its corresponding content
-    , onSourceSelected: function(scope, selected) {
+    , onSourceSelected: function(scope) {
         this.consoleLog("onSourceSelected()");
-        var scope = this;
+        scope = this;
         this.showMask();        
         var selectedSourceId = this.getAlertscontrolssourceslist().getValue();        
         var record = this.getAlertsSourcesScheduleStore().findRecord("SOURCEID", selectedSourceId, 0, false, false, true);
@@ -411,8 +413,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     // Load the schedule store from JSON
     , importStoreFromJSON: function(jsonStore) {
         this.consoleLog("importStoreFromJSON()");
-        var scope = this;
-                
+
         this.initializeStore(); // First, clear the store from any existing records.        
         var alertsObj = Ext.JSON.decode(jsonStore);             
         //We loop through the store to populate it with the correct values               
@@ -421,8 +422,8 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
             var currentHour = parseInt(record.data.HOUR);                
             for (var j=0;j<60;j++) {
                 if (alertsObj[currentDay] && alertsObj[currentDay][currentHour] && alertsObj[currentDay][currentHour][j]) {
-                    if (j < 10) {var minuteString = "0" + j;}
-                    else {var minuteString = j.toString();}
+                    var minuteString = j.toString();
+                    if (j < 10) {minuteString = "0" + j;}
                     record.set(minuteString, "Y");
                 }                    
             }                    

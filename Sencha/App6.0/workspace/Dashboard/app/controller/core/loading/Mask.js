@@ -57,8 +57,8 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
         var scope = this;
         Ext.Direct.on("exception", function(event) {
             scope.processException("Ext.Direct Exception: " + event.message);
-            if (event.message) {var errorMsg = event.message;}
-            else {var errorMsg = "Unknown Error";}
+            var errorMsg = "Unknown Error";
+            if (event.message) {errorMsg = event.message;}
             Ext.MessageBox.show({
                 title: "Error",
                 msg: i18n.gettext(errorMsg),
@@ -88,14 +88,14 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
             if (this.loadMaskComponents === undefined) {
                 this.loadMaskComponents = Array();
             }
-            var componentFound = 0;
+            var componentFound = false;
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
                 if (this.loadMaskComponents[i] !== undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
-                    var componentFound = 1;
+                    componentFound = true;
                     this.loadMaskComponents[i].setLoading(loadMessage);
                 }
             }
-            if (componentFound === 0) {
+            if (componentFound === false) {
                 this.loadMaskComponents.push(extComponent);
                 extComponent.setLoading(loadMessage);
             }
@@ -125,7 +125,7 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
     /*
      * In case of an issue, kill all loading masks in front of all components
      */
-    , killLoading: function(extComponent) {
+    , killLoading: function() {
         this.consoleLog("killLoading(): function()");
         Ext.getBody().unmask();
         if (this.loadMaskComponents !== undefined) {
@@ -141,7 +141,7 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
     /*
      * Display an exception message  
      */
-    , processException: function(exceptionMsg) {
+    , processException: function() {
         this.consoleLog("processException()");
         Ext.MessageBox.show({
             title: i18n.gettext("Error"),

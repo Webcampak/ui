@@ -33,7 +33,7 @@ Ext.define("WPAKD.store.accesscontrol.users.Users", {
             var popupMessage = i18n.gettext("User successfully");
             if (operation.action === "destroy") {popupMessage = popupMessage + " " + i18n.gettext("removed");}
             else if (operation.action === "update"){popupMessage = popupMessage + " " + i18n.gettext("updated");}
-            else {var popupMessage = popupMessage + " " + i18n.gettext("added");}
+            else {popupMessage = popupMessage + " " + i18n.gettext("added");}
             this.fireEvent("WPAKD.controller.desktop.notifications.NotificationsPopups.displayNotification", popupTitle, popupMessage);
             this.load();
         }

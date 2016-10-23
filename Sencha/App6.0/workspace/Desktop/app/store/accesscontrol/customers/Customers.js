@@ -36,7 +36,7 @@ Ext.define("WPAKD.store.accesscontrol.customers.Customers", {
             var popupMessage = i18n.gettext("Customer successfully");
             if (operation.action === "destroy") {popupMessage = popupMessage + " " + i18n.gettext("removed");}
             else if (operation.action === "update"){popupMessage = popupMessage + " " + i18n.gettext("updated");}
-            else {var popupMessage = popupMessage + " " + i18n.gettext("added");}
+            else {popupMessage = popupMessage + " " + i18n.gettext("added");}
             this.fireEvent("WPAKD.controller.desktop.notifications.NotificationsPopups.displayNotification", popupTitle, popupMessage);
             store.load();
         }
