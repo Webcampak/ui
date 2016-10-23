@@ -33,8 +33,8 @@ Ext.define("WPAKD.view.desktop.icons.SourcesConfiguration", {
       Ext.applyIf(me, {
          listeners: {
              el: {
-                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_CFG_SOURCES")},
-                 click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_CFG_SOURCES")}
+                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_CFG_SOURCES");}
+                 , click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_CFG_SOURCES");}
              }
          }
       });

@@ -65,7 +65,7 @@ Ext.define("WPAKT.controller.core.authentication.UserSettings", {
     , applyUserSettings: function() {
         this.consoleLog("applyUserSettings()");
         var record = this.getCoreAuthenticationUserSettingsStore().findRecord("CODE", "CHANGEPASSWORD", 0, false, false, true);
-        if (record && record.get("VALUE") == "Y") {
+        if (record && record.get("VALUE") === "Y") {
             this.fireEvent("WPAKT.controller.core.authentication.ChangePassword.showChangePassword");
         }
 /*

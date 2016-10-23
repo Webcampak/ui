@@ -117,7 +117,7 @@ Ext.define("WPAKD.controller.devices.Devices", {
         this.consoleLog("openDevices()");
         Ext.getBody().unmask();
 
-        if(this.getDevicesmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getDevicesmain().getId()) {
+        if(this.getDevicesmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getDevicesmain().getId()) {
             this.consoleLog("openDevices(): getDevicesmain().toFront()");
             this.getDevicesmain().toFront();
         } else if(!this.getDevicesmain().isVisible()) {

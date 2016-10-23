@@ -48,8 +48,8 @@ Ext.define("WPAKD.controller.desktop.notifications.NotificationsPopups", {
              Date.now = function() { return new Date().getTime(); };
         }
         var displayPopup = true;
-        if (this.lastNotificationDate != undefined && this.previousNotification != undefined) {
-            if (window.btoa(popupTitle + popupMessage) != this.previousNotification) {
+        if (this.lastNotificationDate !== undefined && this.previousNotification !== undefined) {
+            if (window.btoa(popupTitle + popupMessage) !== this.previousNotification) {
                 displayPopup = true;
             } else {
                 if (Date.now() - this.lastNotificationDate < 3000) { //Time in miliseconds
@@ -59,7 +59,7 @@ Ext.define("WPAKD.controller.desktop.notifications.NotificationsPopups", {
         }
         this.lastNotificationDate = Date.now();
         this.previousNotification = window.btoa(popupTitle + popupMessage);
-        if (displayPopup == true) {
+        if (displayPopup === true) {
             var notificationPopup = Ext.create("widget.uxnotification", {
                                                         title: popupTitle,
                                                         position: "tr",

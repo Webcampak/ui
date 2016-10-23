@@ -217,7 +217,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.capture.Capture", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -281,7 +281,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.capture.Capture", {
             if (cfgcaptureendminute < 10) {cfgcaptureendminute = "0" + cfgcaptureendminute}
             //yes, 00, 00, 00, 00
             var cfgcronday = cfgcapturedayenable + "," + cfgcapturestarthour + ","  + cfgcapturestartminute + "," + cfgcaptureendhour + "," + cfgcaptureendminute
-            if (configRecord.get("VALUE") != cfgcronday) {
+            if (configRecord.get("VALUE") !== cfgcronday) {
                 this.consoleLog("updateCalendarSchedule(): update config: cfgcronday" + modifiedDay + " from: " + configRecord.get("VALUE") + " to: " + cfgcronday, "info");
                 configRecord.set("VALUE", cfgcronday);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -495,7 +495,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.capture.Capture", {
             } else {this.getSourcesconfigurationcapturelinkcfgsourcewebfileurl().setVisible(false);}
 
             this.collapseOnSourceType();
-            if(configObj["cfgcroncalendar"] == "yes") {
+            if(configObj["cfgcroncalendar"] === "yes") {
                 this.getSourcesconfigurationcapturecalendarmain().expand();
             } else {
                 this.getSourcesconfigurationcapturecalendarmain().collapse();
@@ -521,27 +521,27 @@ Ext.define("WPAKD.controller.sourcesconfiguration.capture.Capture", {
 
     , collapseOnSourceType: function() {
         this.consoleLog("collapseOnSourceType()");
-        if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "gphoto"){
+        if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "gphoto"){
             this.getSourcesconfigurationcapturegphotomain().expand();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
-        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "wpak") {
+        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "wpak") {
             this.getSourcesconfigurationcapturegphotomain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().expand();
-        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "webcam") {
+        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "webcam") {
             this.getSourcesconfigurationcapturegphotomain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().collapse();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
-        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "ipcam") {
+        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "ipcam") {
             this.getSourcesconfigurationcapturegphotomain().collapse();
             this.getSourcesconfigurationcapturelinkmain().collapse();
             this.getSourcesconfigurationcaptureipcameramain().expand();
             this.getSourcesconfigurationcapturewebcampakmain().collapse();
-        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "webfile" || this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() == "rtsp") {
+        } else if (this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "webfile" || this.getSourcesconfigurationcapturesourcecfgsourcetype().getValue() === "rtsp") {
             this.getSourcesconfigurationcapturegphotomain().collapse();
             this.getSourcesconfigurationcapturelinkmain().expand();
             this.getSourcesconfigurationcaptureipcameramain().collapse();

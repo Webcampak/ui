@@ -46,7 +46,7 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
         var nbStoresToLoad = 0;
         Ext.Array.each(requiredStores, function(currentStore) {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: Processing: " + currentStore.store.storeId + " Action: " + currentStore.action);
-            if ((currentStore.action == "LOAD" && currentStore.store.getTotalCount() == 0) || currentStore.action == "REFRESH") {
+            if ((currentStore.action === "LOAD" && currentStore.store.getTotalCount() === 0) || currentStore.action === "REFRESH") {
                 console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: Loading: " + currentStore.store.storeId);
                 // Load Store
                 // 1- Add record to tracking store
@@ -59,7 +59,7 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
                 );
                 nbStoresToLoad = nbStoresToLoad + 1;
                 // 2- Remove all previous records in store prior to loading, useful in case of exception when refreshing to ensure store is empty
-                if (currentStore.action == "REFRESH") {
+                if (currentStore.action === "REFRESH") {
                     currentStore.store.removeAll(true);
                 }
                 // 3- Load store
@@ -68,7 +68,7 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
                     //4- Once store loaded, update store
                     console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: Store: " + currentStore.store.storeId + " loaded");
                     currentContext.getDesktopLoadingStoresStore().each(function (rec) {
-                        if (rec.get("STORE_ID") == currentStore.store.storeId && rec.get("SESSION_CODE") == sessionCode) {
+                        if (rec.get("STORE_ID") === currentStore.store.storeId && rec.get("SESSION_CODE") === sessionCode) {
                             rec.set("STATUS", "LOADED");
                         }
                     });
@@ -78,15 +78,15 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
         var storeLoadingInterval = setInterval(function() {
             var storesStillLoading = nbStoresToLoad;
             currentContext.getDesktopLoadingStoresStore().each(function (rec) {
-                if (rec.get("STATUS") == "LOADED" && rec.get("SESSION_CODE") == sessionCode) {
+                if (rec.get("STATUS") === "LOADED" && rec.get("SESSION_CODE") === sessionCode) {
                     storesStillLoading = storesStillLoading - 1;
                 }
             });
 //            console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Stores: Controller beginLoading: Number of stores still loading: " + storesStillLoading);
-            if (storesStillLoading == 0) {
+            if (storesStillLoading === 0) {
                 var recordsRemove = [];
                 currentContext.getDesktopLoadingStoresStore().each(function (rec) {
-                    if (rec.get("SESSION_CODE") == sessionCode) {
+                    if (rec.get("SESSION_CODE") === sessionCode) {
                         recordsRemove.push(rec);
                     }
                 });
@@ -95,6 +95,6 @@ Ext.define("WPAKD.controller.desktop.loading.Stores", {
                 clearInterval(storeLoadingInterval);
             }
         }, 100); // refresh every 100ms
-        setTimeout(function(){clearInterval(storeLoadingInterval)},240000);
+        setTimeout(function(){clearInterval(storeLoadingInterval);},240000);
     }
 });

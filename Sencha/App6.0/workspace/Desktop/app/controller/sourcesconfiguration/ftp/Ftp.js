@@ -84,7 +84,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.ftp.Ftp", {
         //console.log(new Date().toLocaleTimeString() + ": Log: Controller->SourcesConfiguration->Capture: updateStoreValue: function()");
         var configRecord = this.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");

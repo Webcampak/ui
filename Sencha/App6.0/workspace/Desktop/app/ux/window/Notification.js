@@ -210,7 +210,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
 				// as the manager but is still 0 px high. Before rendering the viewport.
-				if (me.position == "br" || me.position == "tr" || me.position == "r") {
+				if (me.position === "br" || me.position === "tr" || me.position === "r") {
 					xPos += me.manager.el.getAnchorXY("r")[0];
 					xPos -= (me.el.getWidth() + me.paddingX);
 				} else {
@@ -236,7 +236,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 			} else {
 				// Using getAnchorXY instead of getTop/getBottom should give a correct placement when document is used
 				// as the manager but is still 0 px high. Before rendering the viewport.
-				if (me.position == "br" || me.position == "bl" || me.position == "b") {
+				if (me.position === "br" || me.position === "bl" || me.position === "b") {
 					yPos += me.manager.el.getAnchorXY("b")[1];
 					yPos -= (me.el.getHeight() + me.paddingY);
 				} else {
@@ -253,7 +253,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 		var me = this;
 
 		if (me.useXAxis) {
-			if (me.position == "tl" || me.position == "bl" || me.position == "l") {
+			if (me.position === "tl" || me.position === "bl" || me.position === "l") {
 				// Using sibling"s width when adding
 				return (sibling.xPos + sibling.el.getWidth() + sibling.spacing);
 			} else {
@@ -272,7 +272,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 		if (me.useXAxis) {
 			return me.el.getTop();
 		} else {
-			if (me.position == "tr" || me.position == "tl" || me.position == "t") {
+			if (me.position === "tr" || me.position === "tl" || me.position === "t") {
 				// Using sibling"s width when adding
 				return (sibling.yPos + sibling.el.getHeight() + sibling.spacing);
 			} else {
@@ -297,7 +297,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 
 		me.manager = manager;
 
-		if (typeof me.manager == "string") {
+		if (typeof me.manager === "string") {
 			me.manager = Ext.getCmp(me.manager);
 		}
 
@@ -310,7 +310,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 			}
 		}
 
-		if (typeof me.manager.notifications == "undefined") {
+		if (typeof me.manager.notifications === "undefined") {
 			me.manager.notifications = {};
 		}
 	},
@@ -432,7 +432,7 @@ Ext.define("WPAKD.ux.window.Notification", {
 		if (me.manager) {
 			var notifications = me.getNotifications(me.managerAlignment);
 			var index = Ext.Array.indexOf(notifications, me);
-			if (index != -1) {
+			if (index !== -1) {
 				// Requires Ext JS 4.0.2
 				Ext.Array.erase(notifications, index, 1);
 

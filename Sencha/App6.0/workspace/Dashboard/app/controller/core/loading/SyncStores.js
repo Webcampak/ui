@@ -55,7 +55,7 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
         var nbStoresToLoad = 0;
         Ext.Array.each(requiredStores, function(currentStore) {
             scope.consoleLog("beginLoading(): Processing: " + currentStore.store.storeId + " Action: " + currentStore.action);
-            if (currentStore.action == "SYNC") {
+            if (currentStore.action === "SYNC") {
                 scope.consoleLog("beginLoading(): Loading: " + currentStore.store.storeId);
                 // Load Store
                 // 1- Add record to tracking store
@@ -73,7 +73,7 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
                     callback: function(records, operation, success) {
                         scope.consoleLog("beginLoading(): Store: " + currentStore.store.storeId + " synced");
                         scope.getCoreLoadingStoresStore().each(function (rec) {
-                            if (rec.get("STORE_ID") == currentStore.store.storeId && rec.get("SESSION_CODE") == sessionCode) {
+                            if (rec.get("STORE_ID") === currentStore.store.storeId && rec.get("SESSION_CODE") === sessionCode) {
                                 rec.set("STATUS", "SYNCED");
                             }
                         });
@@ -84,15 +84,15 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
         var storeLoadingInterval = setInterval(function() {
             var storesStillLoading = nbStoresToLoad;
             scope.getCoreLoadingStoresStore().each(function (rec) {
-                if (rec.get("STATUS") == "SYNCED" && rec.get("SESSION_CODE") == sessionCode) {
+                if (rec.get("STATUS") === "SYNCED" && rec.get("SESSION_CODE") === sessionCode) {
                     storesStillLoading = storesStillLoading - 1;
                 }
             });
 //            console.log(new Date().toLocaleTimeString() + ": Log: Controller->Core->Loading->SyncStores: Controller beginLoading: Number of stores still loading: " + storesStillLoading);
-            if (storesStillLoading == 0) {
+            if (storesStillLoading === 0) {
                 var recordsRemove = [];
                 scope.getCoreLoadingStoresStore().each(function (rec) {
-                    if (rec.get("SESSION_CODE") == sessionCode) {
+                    if (rec.get("SESSION_CODE") === sessionCode) {
                         recordsRemove.push(rec);
                     }
                 });

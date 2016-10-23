@@ -40,7 +40,7 @@ Ext.define("WPAKD.view.accesscontrol.sources.manageusers.SourceCurrentUsers", {
                 , valueField: "ALERTS_FLAG"
             }
             , renderer: function(value) {
-                if (value == "Y") {return "YES";}
+                if (value === "Y") {return "YES";}
                 else {return "NO";}
             }
         }        

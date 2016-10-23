@@ -70,7 +70,7 @@ Ext.define("WPAKD.controller.desktop.ServerAvailability", {
         if (init !== undefined) {
             this.consoleLog("checkOnlineStatus(): checkOnlineStatus() - INIT: " + init);
         }
-        //If init == true, it means that"s it"s the first checkOnlineStatus call made by the app, it is also used to determine whether the login box should be displayed or not
+        //If init === true, it means that"s it"s the first checkOnlineStatus call made by the app, it is also used to determine whether the login box should be displayed or not
 
         var scope = this;
         if (this.callInProgress !== true) {
@@ -106,18 +106,18 @@ Ext.define("WPAKD.controller.desktop.ServerAvailability", {
                         currentStatus.set("CODE", "ONLINE");
                         currentStatus.set("MSG", serverResonse.message);
                         currentStatus.set("LATENCY", latency);
-                        if (serverResonse.status == "AUTHENTICATED") {
+                        if (serverResonse.status === "AUTHENTICATED") {
                             currentUser.set("USERNAME", serverResonse.USERNAME);
                             currentUser.set("AUTHENTICATED", "Y");
-                        } else if ((serverResonse.status == "NOTAUTHENTICATED" || serverResonse.status == "SESSIONMISTMATCH") && currentUser.get("USERNAME") != "") {
+                        } else if ((serverResonse.status === "NOTAUTHENTICATED" || serverResonse.status === "SESSIONMISTMATCH") && currentUser.get("USERNAME") !== "") {
                             scope.fireEvent("WPAKD.controller.desktop.Authentication.displayLoginWindow");
                             //scope.fireEvent("WPAKD.controller.desktop.Authentication.doReAuthenticate");
                         }
                     }
                     scope.fireEvent("WPAKD.controller.desktop.toolbar.Bottom.updateStatusButtons");
-                    if (init == true) {
+                    if (init === true) {
                         scope.fireEvent("WPAKD.controller.desktop.Authentication.displayLoginWindow");
-                    } else if (serverResonse.status == "NOTAUTHENTICATED" && currentUser.get("AUTHENTICATED") == "Y") {
+                    } else if (serverResonse.status === "NOTAUTHENTICATED" && currentUser.get("AUTHENTICATED") === "Y") {
                         scope.fireEvent("WPAKD.controller.desktop.Authentication.userLoggedOffOnServer");
                         currentUser.set("AUTHENTICATED", "N");
                     }
@@ -128,7 +128,7 @@ Ext.define("WPAKD.controller.desktop.ServerAvailability", {
                     //console.log("server-side failure with status code " + response.status);
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
-                    if (parseInt(response.status) == 0) {
+                    if (parseInt(response.status) === 0) {
                         currentStatus.set("MSG", "Remote server not available");
                     } else {
                         currentStatus.set("MSG", response.status);
@@ -146,10 +146,10 @@ Ext.define("WPAKD.controller.desktop.ServerAvailability", {
     isOnline: function(warning) {
         this.consoleLog("isOnline()");
         var currentStatus = this.getDesktopServerAvailabilityStore().first();
-        if (currentStatus.get("CODE") == "ONLINE") {
+        if (currentStatus.get("CODE") === "ONLINE") {
             return true;
         } else {
-            if (warning == true) {
+            if (warning === true) {
                 Ext.MessageBox.show({
                     title: i18n.gettext("Unable to communicate with server"),
                     msg: i18n.gettext("Webcampak app appears to be offline, please try again later<br />You can check online/offline status in the bottom right corner of your window"),

@@ -14,7 +14,7 @@ Ext.define("WPAKD.view.pictures.display.CurrentPicture", {
         el: {
             click: function() {
                 var currentPicture = Ext.getStore("pictures.Picture").last().get("PICTURE");
-                if (currentPicture != "") {
+                if (currentPicture !== "") {
                     //http://127.0.0.1/app_dev.php/dl/source1/pictures/20150620/20150620003006.jpg?width=10000
                     var currentSourceId = Ext.getStore("pictures.Picture").getProxy().extraParams.SOURCEID;
                     var currentURL = "/" + symfonyEnv + "/dl/source" + currentSourceId + "/pictures/" + currentPicture.substring(0, 8) + "/";

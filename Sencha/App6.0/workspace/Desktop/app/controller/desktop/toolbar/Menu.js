@@ -136,67 +136,67 @@ Ext.define("WPAKD.controller.desktop.toolbar.Menu", {
             if (record) {
                 scope.consoleLog("refreshMenu(): Current Application: " + record.get("CODE"));
             }
-            if (currentCode == "WEB_DSP_PICTURES") {
+            if (currentCode === "WEB_DSP_PICTURES") {
                 if (record) { scope.getDesktoptoolbartopmenupictures().setVisible(true);}
                 else {scope.getDesktoptoolbartopmenupictures().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_VIDEOS") {
+            } else if (currentCode === "WEB_DSP_VIDEOS") {
                 if (record) {scope.getDesktoptoolbartopmenuvideos().setVisible(true);}
                 else {scope.getDesktoptoolbartopmenuvideos().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_STATS_SOURCES") {
+            } else if (currentCode === "WEB_DSP_STATS_SOURCES") {
                 if (record) {
                     scope.getDesktoptoolbartopmenustatssources().setVisible(true);
                     scope.getDesktoptoolbartopmenustatsmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenustatssources().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_STATS_SYSTEM") {
+            } else if (currentCode === "WEB_DSP_STATS_SYSTEM") {
                 if (record) {
                     scope.getDesktoptoolbartopmenustatssystem().setVisible(true);
                     scope.getDesktoptoolbartopmenustatsmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenustatssystem().setVisible(false);}
-            } else if (currentCode == "WEB_CFG_ACCESSCONTROL") {
+            } else if (currentCode === "WEB_CFG_ACCESSCONTROL") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigaccesscontrol().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigaccesscontrol().setVisible(false);}
-            } else if (currentCode == "WEB_CFG_SOURCES") {
+            } else if (currentCode === "WEB_CFG_SOURCES") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigsources().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigsources().setVisible(false);}
-            } else if (currentCode == "WEB_CFG_SYSTEM") {
+            } else if (currentCode === "WEB_CFG_SYSTEM") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigsystem().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigsystem().setVisible(false);}
-            } else if (currentCode == "WEB_CFG_ALERTS") {
+            } else if (currentCode === "WEB_CFG_ALERTS") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigalerts().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigalerts().setVisible(false);}                
-            } else if (currentCode == "WEB_DSP_DEVICES") {
+            } else if (currentCode === "WEB_DSP_DEVICES") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigdevices().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigdevices().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_LOGS") {
+            } else if (currentCode === "WEB_DSP_LOGS") {
                 if (record) {
                     scope.getDesktoptoolbartopmenulogs().setVisible(true);
                     scope.getDesktoptoolbartopmenuconfigmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenulogs().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_SYNCREPORTS") {
+            } else if (currentCode === "WEB_DSP_SYNCREPORTS") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigsyncreports().setVisible(true);
                     scope.getDesktoptoolbartopmenustatsmain().setVisible(true);
                 }
                 else {scope.getDesktoptoolbartopmenuconfigsyncreports().setVisible(false);}
-            } else if (currentCode == "WEB_DSP_XFERREPORTS") {
+            } else if (currentCode === "WEB_DSP_XFERREPORTS") {
                 if (record) {
                     scope.getDesktoptoolbartopmenuconfigxferreports().setVisible(true);
                     scope.getDesktoptoolbartopmenustatsmain().setVisible(true);

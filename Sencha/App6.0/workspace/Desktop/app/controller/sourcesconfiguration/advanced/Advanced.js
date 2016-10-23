@@ -79,7 +79,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.advanced.Advanced", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");

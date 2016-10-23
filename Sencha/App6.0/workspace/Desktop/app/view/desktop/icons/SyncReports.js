@@ -33,8 +33,8 @@ Ext.define("WPAKD.view.desktop.icons.SyncReports", {
       Ext.applyIf(me, {
          listeners: {
              el: {
-                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_DSP_SYNCREPORTS")},
-                 click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_DSP_SYNCREPORTS")}
+                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_DSP_SYNCREPORTS");}
+                 , click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_DSP_SYNCREPORTS");}
              }
          }
       });

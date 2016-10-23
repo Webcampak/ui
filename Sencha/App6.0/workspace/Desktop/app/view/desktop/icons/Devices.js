@@ -33,8 +33,8 @@ Ext.define("WPAKD.view.desktop.icons.Devices", {
       Ext.applyIf(me, {
          listeners: {
              el: {
-                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_DSP_DEVICES")},
-                 click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_DSP_DEVICES")}
+                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_DSP_DEVICES");}
+                 , click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_DSP_DEVICES");}
              }
          }
       });

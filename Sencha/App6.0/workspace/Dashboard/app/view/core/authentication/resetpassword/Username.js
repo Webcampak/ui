@@ -19,7 +19,7 @@ Ext.define("WPAKT.view.core.authentication.resetpassword.Username", {
     }
     , listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 this.fireEvent("WPAKT.controller.core.authentication.ResetPassword.resetPassword");
             }
         }

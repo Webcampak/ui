@@ -187,22 +187,22 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         var currentURL = "/" + symfonyEnv + "/dl/source" + currentSourceId + "/pictures/";
 
         var currentSensorValue = this.getPicturesSensorsStore().last();
-        if (currentSensorValue.get("SENSOR1") != "") {
+        if (currentSensorValue.get("SENSOR1") !== "") {
             this.getPicturessensorssensor1().setSrc(currentURL + currentSensorValue.get("SENSOR1"));
             this.getPicturessensorssensor1().setWidth(497);
             this.getPicturessensorssensor1().setHeight(162);
         }
-        if (currentSensorValue.get("SENSOR2") != "") {
+        if (currentSensorValue.get("SENSOR2") !== "") {
             this.getPicturessensorssensor2().setSrc(currentURL + currentSensorValue.get("SENSOR2"));
             this.getPicturessensorssensor2().setWidth(497);
             this.getPicturessensorssensor2().setHeight(162);
         }
-        if (currentSensorValue.get("SENSOR3") != "") {
+        if (currentSensorValue.get("SENSOR3") !== "") {
             this.getPicturessensorssensor3().setSrc(currentURL + currentSensorValue.get("SENSOR3"));
             this.getPicturessensorssensor3().setWidth(497);
             this.getPicturessensorssensor3().setHeight(162);
         }
-        if (currentSensorValue.get("SENSOR4") != "") {
+        if (currentSensorValue.get("SENSOR4") !== "") {
             this.getPicturessensorssensor4().setSrc(currentURL + currentSensorValue.get("SENSOR4"));
             this.getPicturessensorssensor4().setWidth(497);
             this.getPicturessensorssensor4().setHeight(162);
@@ -261,7 +261,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             var currentPicture = this.getPicturesPictureStore().last().get("PICTURE");
             var currentPictureDay = currentPicture.substring(0, 4) + currentPicture.substring(4, 6) +  currentPicture.substring(6, 8);
             var newPictureDay = pictureToLoad.substring(0, 4) + pictureToLoad.substring(4, 6) +  pictureToLoad.substring(6, 8);
-            if (currentPictureDay != newPictureDay || this.getPicturesHoursListStore().getProxy().extraParams.SELECTEDDAY != currentPictureDay) {
+            if (currentPictureDay !== newPictureDay || this.getPicturesHoursListStore().getProxy().extraParams.SELECTEDDAY !== currentPictureDay) {
                 this.consoleLog("loadNewPicture(): New picture is in a different day, reloading hours list");
                 Ext.getStore("pictures.HoursList").getProxy().setExtraParam("SELECTEDDAY", newPictureDay);
                 this.getPicturesHoursListStore().load();
@@ -337,7 +337,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
     , updateSensorsButton: function() {
         this.consoleLog("updateSensorsButton()");
         var currentSensors = this.getPicturesSensorsStore().last();      
-        if (currentSensors.get("SENSOR1") != "") {
+        if (currentSensors.get("SENSOR1") !== "") {
             this.getPicturesdisplaysensorsbutton().setDisabled(false);
             if (this.getPicturessensorsmain().isVisible() === true) {
                 this.showSensors();
@@ -356,13 +356,13 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             this.getPicturesdisplaypreviousbutton().setDisabled(true);
             this.getPicturesdisplaylastbutton().setDisabled(true);
         } else {
-            if (displayPicture.get("NEXT") == "") {this.getPicturesdisplaynextbutton().setDisabled(true);}
+            if (displayPicture.get("NEXT") === "") {this.getPicturesdisplaynextbutton().setDisabled(true);}
             else {this.getPicturesdisplaynextbutton().setDisabled(false);}
 
-            if (displayPicture.get("PREVIOUS") == "") {this.getPicturesdisplaypreviousbutton().setDisabled(true);}
+            if (displayPicture.get("PREVIOUS") === "") {this.getPicturesdisplaypreviousbutton().setDisabled(true);}
             else {this.getPicturesdisplaypreviousbutton().setDisabled(false);}
 
-            if (displayPicture.get("LAST") == "") {this.getPicturesdisplaylastbutton().setDisabled(true);}
+            if (displayPicture.get("LAST") === "") {this.getPicturesdisplaylastbutton().setDisabled(true);}
             else {this.getPicturesdisplaylastbutton().setDisabled(false);}
         }
     }
@@ -483,7 +483,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             var currentSourceId = this.getPicturesPictureStore().getProxy().extraParams.SOURCEID;
             var currentURL = "/" + symfonyEnv + "/dl/source" + currentSourceId + "/pictures/" + currentPictureDisplay.substring(0, 8) + "/";
 
-            if (currentPicture.get("THUMB1") != "") {
+            if (currentPicture.get("THUMB1") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB1") + "?width=" + targetThumbnailWidth);
                     var thumb1time = currentPicture.get("THUMB1");
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("date").update(thumb1time.substring(8, 10) + ":" + thumb1time.substring(10, 12));
@@ -493,7 +493,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("date").hide();
             };
-            if (currentPicture.get("THUMB2") != "") {
+            if (currentPicture.get("THUMB2") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB2") + "?width=" + targetThumbnailWidth);
                     var thumb2time = currentPicture.get("THUMB2");
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("date").update(thumb2time.substring(8, 10) + ":" + thumb2time.substring(10, 12));
@@ -503,7 +503,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("date").hide();
             };
-            if (currentPicture.get("THUMB3") != "") {
+            if (currentPicture.get("THUMB3") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB3") + "?width=" + targetThumbnailWidth);
                     var thumb3time = currentPicture.get("THUMB3");
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("date").update(thumb3time.substring(8, 10) + ":" + thumb3time.substring(10, 12));
@@ -513,7 +513,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("date").hide();
             };
-            if (currentPicture.get("THUMB4") != "") {
+            if (currentPicture.get("THUMB4") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB4") + "?width=" + targetThumbnailWidth);
                     var thumb4time = currentPicture.get("THUMB4");
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("date").update(thumb4time.substring(8, 10) + ":" + thumb4time.substring(10, 12));
@@ -523,7 +523,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("date").hide();
             };
-            if (currentPicture.get("THUMB5") != "") {
+            if (currentPicture.get("THUMB5") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB5") + "?width=" + targetThumbnailWidth);
                     var thumb5time = currentPicture.get("THUMB5");
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("date").update(thumb5time.substring(8, 10) + ":" + thumb5time.substring(10, 12));
@@ -533,7 +533,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("date").hide();
             };
-            if (currentPicture.get("THUMB6") != "") {
+            if (currentPicture.get("THUMB6") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB6") + "?width=" + targetThumbnailWidth);
                     var thumb6time = currentPicture.get("THUMB6");
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("date").update(thumb6time.substring(8, 10) + ":" + thumb6time.substring(10, 12));
@@ -550,7 +550,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getPicturesDaysListStore().last();
         //Determine days not to be displayed on calendar
-        if (daysWidgetSetting.get("DISABLED") != "" ) {
+        if (daysWidgetSetting.get("DISABLED") !== "" ) {
                 currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getPicturesselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
@@ -635,7 +635,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.consoleLog("openPictures()");
         Ext.getBody().unmask();
 
-        if(this.getPicturesmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getPicturesmain().getId()) {
+        if(this.getPicturesmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getPicturesmain().getId()) {
             this.consoleLog("openPictures(): getPicturesmain().toFront()");
             this.getPicturesmain().toFront();
         } else if(!this.getPicturesmain().isVisible()) {

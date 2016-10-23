@@ -92,7 +92,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -166,7 +166,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
 
     , clearFTPServer: function(serverId) {
         this.consoleLog("clearFTPServer()");
-        if (this.getSourcesconfigurationphidgetsphidgetcfgftpphidgetserverid().getValue() == serverId) {
+        if (this.getSourcesconfigurationphidgetsphidgetcfgftpphidgetserverid().getValue() === serverId) {
            this.getSourcesconfigurationphidgetsphidgetcfgftpphidgetserverid().setValue();
         }
     }
@@ -180,7 +180,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
             var newValue = rec.get("NAME") + "," + rec.get("PORT") + "," + rec.get("LEGEND") + "," + rec.get("COLOR");
             var configRecord = scope.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
             if (configRecord !== undefined && configRecord !== null) {
-                if (configRecord.get("VALUE") != newValue) {
+                if (configRecord.get("VALUE") !== newValue) {
                     scope.consoleLog("phidgetSensorsModified(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                     configRecord.set("VALUE", newValue);
                     scope.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");

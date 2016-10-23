@@ -147,7 +147,7 @@ Ext.define("WPAKT.controller.core.Email", {
         this.consoleLog("openSendEmail()");
         Ext.getBody().unmask();
         this.getCoreemailmain().show();
-        if (this.getCoreemailsendfrom().getValue() == "") {
+        if (this.getCoreemailsendfrom().getValue() === "") {
             this.getCoreemailsendfrom().setVisible(false);
         } else {
             this.getCoreemailsendfrom().setVisible(true);

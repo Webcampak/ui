@@ -125,7 +125,7 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
         } else {
             var serverCode = "ONLINE";
             var serverMsg = serverResponse.message;
-            if (serverResponse.status == "AUTHENTICATED") {
+            if (serverResponse.status === "AUTHENTICATED") {
                 var serverUsername =  serverResponse.USERNAME;
                 var serverUserAuthenticated =  "Y";
             }
@@ -167,7 +167,7 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
                     scope.fireEvent("WPAKT.controller.core.BackgroundActivities.endAjaxLoading");
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;                    
-                    if (parseInt(response.status) == 0) {
+                    if (parseInt(response.status) === 0) {
                         scope.consoleLog("checkOnlineStatus(): Error loading status: Server not available", "warn");
                     } else {
                         scope.consoleLog("checkOnlineStatus(): Error loading status: " + response.status, "warn");
@@ -182,10 +182,10 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
     , isOnline: function(warning) {
         this.consoleLog("isOnline()");
         var currentStatus = this.getCoreServerAvailabilityStore().last();
-        if (currentStatus.get("CODE") == "ONLINE") {
+        if (currentStatus.get("CODE") === "ONLINE") {
             return true;
         } else {
-            if (warning == true) {
+            if (warning === true) {
                 Ext.MessageBox.show({
                     title: i18n.gettext("Unable to communicate with server"),
                     msg: i18n.gettext("Webcampak app appears to be offline, please try again later<br />You can check online/offline status in the bottom right corner of your window"),

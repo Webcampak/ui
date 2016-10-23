@@ -71,21 +71,21 @@ Ext.define("WPAKD.controller.desktop.loading.Mask", {
 
     beginLoading: function(extComponent, loadMessage) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Mask: Controller beginLoading: function()");
-        if (extComponent == "body") {
+        if (extComponent === "body") {
             Ext.getBody().mask(loadMessage);
         } else {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Mask: Controller beginLoading: Current Component ID: " + extComponent.getId());
-            if (this.loadMaskComponents == undefined) {
+            if (this.loadMaskComponents === undefined) {
                 this.loadMaskComponents = Array();
             }
             var componentFound = 0;
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() == extComponent.getId()) {
+                if (this.loadMaskComponents[i] !== undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                     componentFound = 1;
                     this.loadMaskComponents[i].setLoading(loadMessage);
                 }
             }
-            if (componentFound == 0) {
+            if (componentFound === 0) {
                 this.loadMaskComponents.push(extComponent);
                 extComponent.setLoading(loadMessage);
             }
@@ -94,13 +94,13 @@ Ext.define("WPAKD.controller.desktop.loading.Mask", {
 
     endLoading: function(extComponent) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Mask: Controller endLoading: function()");
-        if (extComponent == "body") {
+        if (extComponent === "body") {
             Ext.getBody().unmask();
         } else {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Mask: Controller endLoading: Current Component ID: " + extComponent.getId());
-            if (this.loadMaskComponents != undefined) {
+            if (this.loadMaskComponents !== undefined) {
                 for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                    if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() == extComponent.getId()) {
+                    if (this.loadMaskComponents[i] !== undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                         this.loadMaskComponents[i].setLoading(false);
                         delete this.loadMaskComponents[i];
                     }
@@ -112,9 +112,9 @@ Ext.define("WPAKD.controller.desktop.loading.Mask", {
     killLoading: function(extComponent) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->Mask: Controller killLoading: function()");
         Ext.getBody().unmask();
-        if (this.loadMaskComponents != undefined) {
+        if (this.loadMaskComponents !== undefined) {
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                if (this.loadMaskComponents[i] != undefined) {
+                if (this.loadMaskComponents[i] !== undefined) {
                     this.loadMaskComponents[i].setLoading(false);
                 }
                 delete this.loadMaskComponents[i];

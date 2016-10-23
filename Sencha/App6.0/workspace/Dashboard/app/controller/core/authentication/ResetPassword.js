@@ -110,7 +110,7 @@ Ext.define("WPAKT.controller.core.authentication.ResetPassword", {
                     scope.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", scope.getCoreauthenticationresetpasswordmain());
                     var serverResponse = Ext.decode(response.responseText, true);
                     if (serverResponse !== null) {
-                        if (serverResponse.authentication == "SUCCESS") {
+                        if (serverResponse.authentication === "SUCCESS") {
                             Ext.MessageBox.show({
                                 title: i18n.gettext("Password sent")
                                 , msg: i18n.gettext("A temporary password has been sent to your email address")

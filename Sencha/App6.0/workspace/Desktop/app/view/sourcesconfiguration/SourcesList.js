@@ -18,7 +18,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.SourcesList", {
         , {text: i18n.gettext("Name"),    dataIndex: "NAME",          align: "left",    flex: 1,     sortable: true                 }
         /*{text: i18n.gettext("Remote"),    dataIndex: "REMOTE_HOST",   align: "left",    width: 40,     sortable: true,
           renderer: function(value) {
-              if (value == "") {return "NO";}
+              if (value === "") {return "NO";}
               else {return "YES";}
           }
         }*/

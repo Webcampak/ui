@@ -215,7 +215,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.postprod.PostProd", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationVideoPostStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -234,7 +234,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.postprod.PostProd", {
                 if (fieldDay < 10) {
                     fieldDay = "0" + fieldDay;
                 }
-                if (configRecordDay.get("VALUE") != fieldDay) {
+                if (configRecordDay.get("VALUE") !== fieldDay) {
                     this.consoleLog("updateDate(): update config: " + "cfgcustom" + dateType + "day" + " from: " + configRecordDay.get("VALUE") + " to: " + fieldDay, "info");
                     configRecordDay.set("VALUE", fieldDay);
                     this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -246,7 +246,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.postprod.PostProd", {
                 if (fieldMonth < 10) {
                     fieldMonth = "0" + fieldMonth;
                 }
-                if (configRecordMonth.get("VALUE") != fieldMonth) {
+                if (configRecordMonth.get("VALUE") !== fieldMonth) {
                     this.consoleLog("updateDate(): update config: " + "cfgcustom" + dateType + "month" + " from: " + configRecordMonth.get("VALUE") + " to: " + fieldMonth, "info");
                     configRecordMonth.set("VALUE", fieldMonth);
                     this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -255,7 +255,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.postprod.PostProd", {
             var configRecordYear = this.getSourcesconfigurationVideoCustomStore().findRecord("NAME", "cfgcustom" + dateType + "year", 0, false, false, true);
             if (configRecordYear !== undefined && configRecordYear !== null) {
                 var fieldYear = newValue.getFullYear();
-                if (configRecordYear.get("VALUE") != fieldYear) {
+                if (configRecordYear.get("VALUE") !== fieldYear) {
                     this.consoleLog("updateDate(): update config: " + "cfgcustom" + dateType + "year" + " from: " + configRecordYear.get("VALUE") + " to: " + fieldYear, "info");
                     configRecordYear.set("VALUE", fieldYear);
                     this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -413,21 +413,21 @@ Ext.define("WPAKD.controller.sourcesconfiguration.postprod.PostProd", {
             if(configObj.hasOwnProperty("cfgwatermarkpositiony")){this.getSourcesconfigurationpostprodwatermarkcfgwatermarkpositiony().setValue(configObj["cfgwatermarkpositiony"]);
             } else {this.getSourcesconfigurationpostprodwatermarkcfgwatermarkpositiony().setVisible(false);}
 
-            if(configObj.hasOwnProperty("cfgcropactivate") && configObj["cfgcropactivate"] == "yes") {this.getSourcesconfigurationpostprodcropmain().expand();}
+            if(configObj.hasOwnProperty("cfgcropactivate") && configObj["cfgcropactivate"] === "yes") {this.getSourcesconfigurationpostprodcropmain().expand();}
             else if (configObj.hasOwnProperty("cfgcropactivate")) {this.getSourcesconfigurationpostprodcropmain().collapse();}
-            if(configObj.hasOwnProperty("cfgfilteractivate") && configObj["cfgfilteractivate"] == "yes") {this.getSourcesconfigurationpostprodfiltermain().expand();}
+            if(configObj.hasOwnProperty("cfgfilteractivate") && configObj["cfgfilteractivate"] === "yes") {this.getSourcesconfigurationpostprodfiltermain().expand();}
             else if (configObj.hasOwnProperty("cfgfilteractivate")) {this.getSourcesconfigurationpostprodfiltermain().collapse();}
-            if(configObj.hasOwnProperty("cfgtransitionactivate") && configObj["cfgtransitionactivate"] == "yes") {this.getSourcesconfigurationpostprodtransitionmain().expand();}
+            if(configObj.hasOwnProperty("cfgtransitionactivate") && configObj["cfgtransitionactivate"] === "yes") {this.getSourcesconfigurationpostprodtransitionmain().expand();}
             else if (configObj.hasOwnProperty("cfgtransitionactivate")) {this.getSourcesconfigurationpostprodtransitionmain().collapse();}
-            if(configObj.hasOwnProperty("cfgwatermarkactivate") && configObj["cfgwatermarkactivate"] == "yes") {this.getSourcesconfigurationpostprodwatermarkmain().expand();}
+            if(configObj.hasOwnProperty("cfgwatermarkactivate") && configObj["cfgwatermarkactivate"] === "yes") {this.getSourcesconfigurationpostprodwatermarkmain().expand();}
             else if (configObj.hasOwnProperty("cfgwatermarkactivate")) {this.getSourcesconfigurationpostprodwatermarkmain().collapse();}
-            if(configObj.hasOwnProperty("cfgthumbnailactivate") && configObj["cfgthumbnailactivate"] == "yes") {this.getSourcesconfigurationpostprodthumbnailmain().expand();}
+            if(configObj.hasOwnProperty("cfgthumbnailactivate") && configObj["cfgthumbnailactivate"] === "yes") {this.getSourcesconfigurationpostprodthumbnailmain().expand();}
             else if (configObj.hasOwnProperty("cfgthumbnailactivate")) {this.getSourcesconfigurationpostprodthumbnailmain().collapse();}
-            if(configObj.hasOwnProperty("cfgvideopreimagemagicktxt") && configObj["cfgvideopreimagemagicktxt"] == "yes") {this.getSourcesconfigurationpostprodtextmain().expand();}
+            if(configObj.hasOwnProperty("cfgvideopreimagemagicktxt") && configObj["cfgvideopreimagemagicktxt"] === "yes") {this.getSourcesconfigurationpostprodtextmain().expand();}
             else if (configObj.hasOwnProperty("cfgvideopreimagemagicktxt")) {this.getSourcesconfigurationpostprodtextmain().collapse();}
-            if(configObj.hasOwnProperty("cfgrotateactivate") && configObj["cfgrotateactivate"] == "yes") {this.getSourcesconfigurationpostprodrotatemain().expand();}
+            if(configObj.hasOwnProperty("cfgrotateactivate") && configObj["cfgrotateactivate"] === "yes") {this.getSourcesconfigurationpostprodrotatemain().expand();}
             else if (configObj.hasOwnProperty("cfgrotateactivate")) {this.getSourcesconfigurationpostprodrotatemain().collapse();}
-            if(configObj.hasOwnProperty("cfgvideosizeactivate") && configObj["cfgvideosizeactivate"] == "yes") {this.getSourcesconfigurationpostprodresizemain().expand();}
+            if(configObj.hasOwnProperty("cfgvideosizeactivate") && configObj["cfgvideosizeactivate"] === "yes") {this.getSourcesconfigurationpostprodresizemain().expand();}
             else if (configObj.hasOwnProperty("cfgvideosizeactivate")) {this.getSourcesconfigurationpostprodresizemain().collapse();}
 
             var configObj = {};

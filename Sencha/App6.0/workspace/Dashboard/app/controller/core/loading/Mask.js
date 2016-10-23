@@ -81,21 +81,21 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
      */
     , beginLoading: function(extComponent, loadMessage) {
         this.consoleLog("beginLoading()");
-        if (extComponent == "body") {
+        if (extComponent === "body") {
             Ext.getBody().mask(loadMessage);
         } else {
             this.consoleLog("beginLoading(): Current Component ID: " + extComponent.getId());
-            if (this.loadMaskComponents == undefined) {
+            if (this.loadMaskComponents === undefined) {
                 this.loadMaskComponents = Array();
             }
             var componentFound = 0;
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() == extComponent.getId()) {
+                if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                     var componentFound = 1;
                     this.loadMaskComponents[i].setLoading(loadMessage);
                 }
             }
-            if (componentFound == 0) {
+            if (componentFound === 0) {
                 this.loadMaskComponents.push(extComponent);
                 extComponent.setLoading(loadMessage);
             }
@@ -107,13 +107,13 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
      */
     , endLoading: function(extComponent) {
         this.consoleLog("endLoading(): function()");
-        if (extComponent == "body") {
+        if (extComponent === "body") {
             Ext.getBody().unmask();
         } else {
             this.consoleLog("endLoading(): Current Component ID: " + extComponent.getId());
             if (this.loadMaskComponents != undefined) {
                 for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                    if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() == extComponent.getId()) {
+                    if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                         this.loadMaskComponents[i].setLoading(false);
                         delete this.loadMaskComponents[i];
                     }

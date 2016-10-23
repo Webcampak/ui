@@ -38,7 +38,7 @@ Ext.define("WPAKD.view.accesscontrol.users.managesources.UserCurrentSources", {
                 , valueField: "ALERTS_FLAG"
             }
             , renderer: function(value) {
-                if (value == "Y") {return "YES";}
+                if (value === "Y") {return "YES";}
                 else {return "NO";}
             }
         }        

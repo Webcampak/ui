@@ -280,7 +280,7 @@ Ext.define("WPAKD.controller.accesscontrol.groups.Groups", {
             if (currentName.indexOf(currentFilter) !== -1) {return true;}
             else {return false;}
         });
-        if (this.getAccesscontrolgroupssearch().getValue() == "") {
+        if (this.getAccesscontrolgroupssearch().getValue() === "") {
             this.getAccesscontrolgroupstoolbarrecords().setText(i18n.gettext("Total number of records: ") + this.getAccesscontrolGroupsGroupsStore().getTotalCount() );
         } else {
             this.getAccesscontrolgroupstoolbarrecords().setText(i18n.gettext("Number of filtered records: ") + this.getAccesscontrolGroupsGroupsStore().getCount() + " (" + i18n.gettext("Total") + ": " + this.getAccesscontrolGroupsGroupsStore().getTotalCount() + ")");

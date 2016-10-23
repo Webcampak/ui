@@ -97,7 +97,7 @@ Ext.define("WPAKD.controller.xferreports.XferReports", {
             if (currentUuid.indexOf(currentFilter) !== -1) {return true;}
             else {return false;}
         });
-        if (this.getXferreportssearch().getValue() == null) {
+        if (this.getXferreportssearch().getValue() === null) {
             this.getXferreportstoolbarrecords().setText(i18n.gettext("Total number of records: ") + this.getXferreportsXferReportsStore().getTotalCount() );
         } else {
             this.getXferreportstoolbarrecords().setText(i18n.gettext("Number of filtered records: ") + this.getXferreportsXferReportsStore().getCount() + " (" + i18n.gettext("Total") + ": " + this.getXferreportsXferReportsStore().getTotalCount() + ")");
@@ -124,7 +124,7 @@ Ext.define("WPAKD.controller.xferreports.XferReports", {
     openXferReports: function(key) {
         this.consoleLog("openXferReports()");
         Ext.getBody().unmask();
-        if(this.getXferreportsmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getXferreportsmain().getId()) {
+        if(this.getXferreportsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getXferreportsmain().getId()) {
             this.consoleLog("openXferReports(): getXferreportsmain().toFront()");
             this.getXferreportsmain().toFront();
         } else if(!this.getXferreportsmain().isVisible()) {

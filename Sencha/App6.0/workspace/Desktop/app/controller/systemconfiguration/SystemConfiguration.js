@@ -114,7 +114,7 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
      */
     , setConfigurationSyncStatus: function(status) {this.configurationSynced = status;}
     , getConfigurationSyncStatus: function() {
-        if (this.configurationSynced == undefined) {this.setConfigurationSyncStatus(true);}
+        if (this.configurationSynced === undefined) {this.setConfigurationSyncStatus(true);}
         return this.configurationSynced;
     }
 
@@ -188,7 +188,7 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
         this.consoleLog("updateStoreValue()");
         var configRecord = this.getSystemconfigurationSystemConfigurationStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.checkModifiedConfigStores();
@@ -233,11 +233,11 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
 
     , saveConfigurationChanges: function() {
         this.consoleLog("saveConfigurationChanges()");
-        if (this.getConfigurationSyncStatus() == false) {
+        if (this.getConfigurationSyncStatus() === false) {
             var requiredStores = [];
             var isDirty = false;
             this.getSystemconfigurationSystemConfigurationStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSystemconfigurationSystemConfigurationStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSystemconfigurationSystemConfigurationStore(), action: "SYNC"});}
 
             this.fireEvent("WPAKD.controller.desktop.loading.SyncStores.beginLoading"
                 , "WEB_CFG_SYSTEMCONFIGSYNC"
@@ -339,7 +339,7 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
         this.consoleLog("openSystemConfiguration()");
         Ext.getBody().unmask();
 
-        if(this.getSystemconfigurationmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getSystemconfigurationmain().getId()) {
+        if(this.getSystemconfigurationmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getSystemconfigurationmain().getId()) {
             this.consoleLog("openSystemConfiguration(): getSystemconfigurationmain().toFront()");
             this.getSystemconfigurationmain().toFront();
         } else if(!this.getSystemconfigurationmain().isVisible()) {

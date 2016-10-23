@@ -90,9 +90,9 @@ Ext.define("WPAKT.controller.core.authentication.ChangePassword", {
      */
     , savePassword: function() {
         this.consoleLog("savePassword()");
-        if (this.getCoreauthenticationchangepasswordnewpassword().getValue() == this.getCoreauthenticationchangepasswordnewpasswordconfirmation().getValue()) {
+        if (this.getCoreauthenticationchangepasswordnewpassword().getValue() === this.getCoreauthenticationchangepasswordnewpasswordconfirmation().getValue()) {
             var scope = this;
-            if (document.location.protocol == "https:") {
+            if (document.location.protocol === "https:") {
                 var formOldPassword = this.getCoreauthenticationchangepasswordcurrentpassword().getValue();
                 var formNewPassword = this.getCoreauthenticationchangepasswordnewpassword().getValue();
                 if (formOldPassword.length < 4 || formNewPassword.length < 4) {
@@ -120,7 +120,7 @@ Ext.define("WPAKT.controller.core.authentication.ChangePassword", {
                             console.log(response);
                             var serverResponse = Ext.decode(response.responseText, true);
                             if (serverResponse !== null) {
-                                if (serverResponse.status == "SUCCESS") {
+                                if (serverResponse.status === "SUCCESS") {
                                     Ext.MessageBox.show({
                                         title: i18n.gettext("Password"),
                                         msg: i18n.gettext("Password modification successful"),

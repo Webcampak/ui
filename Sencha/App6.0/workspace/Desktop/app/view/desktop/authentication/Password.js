@@ -14,7 +14,7 @@ Ext.define("WPAKD.view.desktop.authentication.Password", {
 
     listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 this.fireEvent("WPAKD.controller.desktop.Authentication.doFormLogin");
             }
         }

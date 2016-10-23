@@ -208,7 +208,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
         var currentStore = this.getSyncreportsSyncReportsStore();
         var scope = this;
         if (seletedReport) {
-            if (seletedReport.get("STATUS") == "process") {
+            if (seletedReport.get("STATUS") === "process") {
                 Ext.MessageBox.show({
                      title: i18n.gettext("Info"),
                      msg: i18n.gettext("A running report cannot be deleted, please wait until completion"),
@@ -384,7 +384,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             else if (currentDstName.indexOf(currentFilter) !== -1) {return true;}
             else {return false;}
         });
-        if (this.getSyncreportssearch().getValue() == null) {
+        if (this.getSyncreportssearch().getValue() === null) {
             this.getSyncreportstoolbarrecords().setText(i18n.gettext("Total number of records: ") + this.getSyncreportsSyncReportsStore().getTotalCount() );
         } else {
             this.getSyncreportstoolbarrecords().setText(i18n.gettext("Number of filtered records: ") + this.getSyncreportsSyncReportsStore().getCount() + " (" + i18n.gettext("Total") + ": " + this.getSyncreportsSyncReportsStore().getTotalCount() + ")");
@@ -561,7 +561,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
     openSyncReports: function(key) {
         this.consoleLog("openSyncReports()");
         Ext.getBody().unmask();
-        if(this.getSyncreportsmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getSyncreportsmain().getId()) {
+        if(this.getSyncreportsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getSyncreportsmain().getId()) {
             this.consoleLog("openSyncReports(): getSyncreportsmain().toFront()");
             this.getSyncreportsmain().toFront();
         } else if(!this.getSyncreportsmain().isVisible()) {

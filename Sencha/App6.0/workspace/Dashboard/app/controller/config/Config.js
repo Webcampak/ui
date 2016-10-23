@@ -208,7 +208,7 @@ Ext.define("WPAKT.controller.config.Config", {
      */
     , setConfigurationSyncStatus: function(status) {this.configurationSynced = status;}
     , getConfigurationSyncStatus: function() {
-        if (this.configurationSynced == undefined) {this.setConfigurationSyncStatus(true);}
+        if (this.configurationSynced === undefined) {this.setConfigurationSyncStatus(true);}
         return this.configurationSynced;
     }
 
@@ -554,11 +554,11 @@ Ext.define("WPAKT.controller.config.Config", {
      */
     , saveConfigurationChanges: function() {
         this.consoleLog("saveConfigurationChanges()");
-        if (this.getConfigurationSyncStatus() == false) {
+        if (this.getConfigurationSyncStatus() === false) {
             var requiredStores = [];
             var isDirty = false;
             this.getConfigCaptureStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getConfigCaptureStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getConfigCaptureStore(), action: "SYNC"});}
             this.fireEvent("WPAKT.controller.core.loading.SyncStores.beginLoading"
                 , "WEB_CFG_SOURCESCONFIGSYNC"
                 , "WPAKT.controller.config.Config.configurationSaved"

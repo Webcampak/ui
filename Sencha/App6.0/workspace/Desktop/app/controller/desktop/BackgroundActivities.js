@@ -45,9 +45,9 @@ Ext.define("WPAKD.controller.desktop.BackgroundActivities", {
         var scope = this;
         if (this.extAjaxCallCount === undefined) {this.extAjaxCallCount = 0;}
         var interval = setInterval(function() {
-            if (scope.getDesktoptoolbarbottomloadingbutton() != undefined) {
+            if (scope.getDesktoptoolbarbottomloadingbutton() !== undefined) {
                 var databaseCalls = parseInt(Ext.direct.Manager.transactions.getCount() + scope.extAjaxCallCount);
-                if (databaseCalls == 0) {
+                if (databaseCalls === 0) {
                     scope.getDesktoptoolbarbottomloadingbutton().setIconCls("icon-database_png");
                     scope.getDesktoptoolbarbottomloadingbutton().setText("");
                     scope.getDesktoptoolbarbottomloadingbutton().setTooltip();

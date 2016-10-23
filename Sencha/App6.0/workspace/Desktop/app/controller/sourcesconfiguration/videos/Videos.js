@@ -230,7 +230,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.videos.Videos", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationVideoStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -406,13 +406,13 @@ Ext.define("WPAKD.controller.sourcesconfiguration.videos.Videos", {
             if(configObj.hasOwnProperty("cfgftpmainservermp4retry")){this.getSourcesconfigurationvideosftpcfgftpmainservermp4retry().setValue(configObj["cfgftpmainservermp4retry"]);
             } else {this.getSourcesconfigurationvideosftpcfgftpmainservermp4retry().setVisible(false);}
 
-            if(configObj.hasOwnProperty("cfgvideoaddaudio") && configObj["cfgvideoaddaudio"] == "yes") {this.getSourcesconfigurationvideosaudiomain().expand();}
+            if(configObj.hasOwnProperty("cfgvideoaddaudio") && configObj["cfgvideoaddaudio"] === "yes") {this.getSourcesconfigurationvideosaudiomain().expand();}
             else if (configObj.hasOwnProperty("cfgvideoaddaudio")) {this.getSourcesconfigurationvideosaudiomain().collapse();}
-            if(configObj.hasOwnProperty("cfgvideopreimagemagicktxt") && configObj["cfgvideopreimagemagicktxt"] == "yes") {this.getSourcesconfigurationvideospreprocessmain().expand();}
+            if(configObj.hasOwnProperty("cfgvideopreimagemagicktxt") && configObj["cfgvideopreimagemagicktxt"] === "yes") {this.getSourcesconfigurationvideospreprocessmain().expand();}
             else if (configObj.hasOwnProperty("cfgvideopreimagemagicktxt")) {this.getSourcesconfigurationvideospreprocessmain().collapse();}
-            if(configObj.hasOwnProperty("cfgwatermarkactivate") && configObj["cfgwatermarkactivate"] == "yes") {this.getSourcesconfigurationvideoswatermarkmain().expand();}
+            if(configObj.hasOwnProperty("cfgwatermarkactivate") && configObj["cfgwatermarkactivate"] === "yes") {this.getSourcesconfigurationvideoswatermarkmain().expand();}
             else if (configObj.hasOwnProperty("cfgwatermarkactivate")) {this.getSourcesconfigurationvideoswatermarkmain().collapse();}
-            if(configObj.hasOwnProperty("cfgfilteractivate") && configObj["cfgfilteractivate"] == "yes") {this.getSourcesconfigurationvideosfiltermain().expand();}
+            if(configObj.hasOwnProperty("cfgfilteractivate") && configObj["cfgfilteractivate"] === "yes") {this.getSourcesconfigurationvideosfiltermain().expand();}
             else if (configObj.hasOwnProperty("cfgfilteractivate")) {this.getSourcesconfigurationvideosfiltermain().collapse();}
 
             var configObj = {};
@@ -435,16 +435,16 @@ Ext.define("WPAKD.controller.sourcesconfiguration.videos.Videos", {
 
     , clearFTPServer: function(serverId) {
         this.consoleLog("clearFTPServer()");
-        if (this.getSourcesconfigurationvideosftpcfgftphotlinkserveraviid().getValue() == serverId) {
+        if (this.getSourcesconfigurationvideosftpcfgftphotlinkserveraviid().getValue() === serverId) {
            this.getSourcesconfigurationvideosftpcfgftphotlinkserveraviid().setValue();
         }
-        if (this.getSourcesconfigurationvideosftpcfgftphotlinkservermp4id().getValue() == serverId) {
+        if (this.getSourcesconfigurationvideosftpcfgftphotlinkservermp4id().getValue() === serverId) {
            this.getSourcesconfigurationvideosftpcfgftphotlinkservermp4id().setValue();
         }
-        if (this.getSourcesconfigurationvideosftpcfgftpmainserveraviid().getValue() == serverId) {
+        if (this.getSourcesconfigurationvideosftpcfgftpmainserveraviid().getValue() === serverId) {
            this.getSourcesconfigurationvideosftpcfgftpmainserveraviid().setValue();
         }
-        if (this.getSourcesconfigurationvideosftpcfgftpmainservermp4id().getValue() == serverId) {
+        if (this.getSourcesconfigurationvideosftpcfgftpmainservermp4id().getValue() === serverId) {
            this.getSourcesconfigurationvideosftpcfgftpmainservermp4id().setValue();
         }
     }

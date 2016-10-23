@@ -43,7 +43,7 @@ Ext.define("WPAKD.model.desktop.emails.SendEmail", {
             update:    "DesktopEmails.sendEmail"
         }/*,
         afterRequest:function(request,success){
-            if (success == false) {
+            if (success === false) {
                 if (request.operation.error) {var errorMsg = request.operation.error;}
                 else {var errorMsg = "Unknown Error";}
                 Ext.MessageBox.show({

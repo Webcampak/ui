@@ -20,7 +20,7 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
         if (value > 0) {
             var sizes = ["Bytes", "KB", "MB", "GB", "TB"];
             var posttxt = 0;
-            if (value == 0) {
+            if (value === 0) {
                 return "n/a";
             }
             while( value >= 1024 ) {
@@ -38,7 +38,7 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
      * @param {Object} val
      */
     , download: function(value, metaData) {
-        if (value != "") {
+        if (value !== "") {
             var currentURL = "/" + symfonyEnv + "/dl/source" + Ext.getStore("videos.VideosList").getProxy().extraParams.SOURCEID + "/videos/";
             return "<a href=\"" + currentURL + value + "\" target=\"_blank\"><img src=\"../resources/images/download16x16.png\" /></a>";
         }

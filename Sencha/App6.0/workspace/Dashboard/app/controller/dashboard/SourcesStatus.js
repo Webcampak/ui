@@ -86,7 +86,7 @@ Ext.define("WPAKT.controller.dashboard.SourcesStatus", {
                 Ext.Array.each(statusObj.sources, function(sourceObj, index) {
                     var currentSourceComponent = undefined;
                     Ext.Array.each(componentsItems.items, function(sourceComponent, index) {
-                        if (sourceComponent.sourceid !== undefined && sourceComponent.sourceid == sourceObj.SOURCEID) {
+                        if (sourceComponent.sourceid !== undefined && sourceComponent.sourceid === sourceObj.SOURCEID) {
                             currentSourceComponent = sourceComponent;
                         }
                     });

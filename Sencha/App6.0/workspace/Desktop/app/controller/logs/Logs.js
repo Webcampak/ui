@@ -105,15 +105,15 @@ Ext.define("WPAKD.controller.logs.Logs", {
     , reloadLogs: function() {
         this.consoleLog("reloadLogs()");
         var activeTab = this.getLogslogs().getActiveTab();
-        if (activeTab.xtype == "logscapturemain") {
+        if (activeTab.xtype === "logscapturemain") {
             this.getLogsCaptureStore().load();
-        } else if (activeTab.xtype == "logsvideosmain") {
+        } else if (activeTab.xtype === "logsvideosmain") {
             this.getLogsVideosStore().load();
-        } else if (activeTab.xtype == "logscustomvideosmain") {
+        } else if (activeTab.xtype === "logscustomvideosmain") {
             this.getLogsCustomVideosStore().load();
-        } else if (activeTab.xtype == "logspostprodmain") {
+        } else if (activeTab.xtype === "logspostprodmain") {
             this.getLogsPostprodStore().load();
-        } else if (activeTab.xtype == "logsconfigurationmain") {
+        } else if (activeTab.xtype === "logsconfigurationmain") {
             this.getLogsConfigurationStore().load();
         }
 
@@ -175,7 +175,7 @@ Ext.define("WPAKD.controller.logs.Logs", {
         this.consoleLog("openLogs()");
         Ext.getBody().unmask();
 
-        if(this.getLogsmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getLogsmain().getId()) {
+        if(this.getLogsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getLogsmain().getId()) {
             this.consoleLog("openLogs(): getLogsmain().toFront()");
             this.getLogsmain().toFront();
         } else if(!this.getLogsmain().isVisible()) {

@@ -139,7 +139,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
         this.consoleLog("openStatsSources()");
         Ext.getBody().unmask();
 
-        if(this.getStatssourcesmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getStatssourcesmain().getId()) {
+        if(this.getStatssourcesmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getStatssourcesmain().getId()) {
             this.consoleLog("openStatsSources(): getStatssourcesmain().toFront()");
             this.getStatssourcesmain().toFront();
         } else if(!this.getStatssourcesmain().isVisible()) {

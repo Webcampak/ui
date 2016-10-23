@@ -33,8 +33,8 @@ Ext.define("WPAKD.view.desktop.icons.Alerts", {
       Ext.applyIf(me, {
          listeners: {
              el: {
-                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_CFG_ALERTS")},
-                 click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_CFG_ALERTS")}
+                 dblclick: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconDbClick", this, "WEB_CFG_ALERTS");}
+                 , click: function() {me.fireEvent("WPAKD.controller.desktop.icons.Icons.iconClick", this, "WEB_CFG_ALERTS");}
              }
          }
       });

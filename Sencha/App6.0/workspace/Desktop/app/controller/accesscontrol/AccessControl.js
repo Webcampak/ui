@@ -85,7 +85,7 @@ Ext.define("WPAKD.controller.accesscontrol.AccessControl", {
 
     , openAccessControl: function(key) {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: openAccessControl: function()");
-        if(this.getAccesscontrolmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getAccesscontrolmain().getId()) {
+        if(this.getAccesscontrolmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getAccesscontrolmain().getId()) {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: openAccessControl: getAccesscontrolmain().toFront()");
             this.getAccesscontrolmain().toFront();
         } else if(!this.getAccesscontrolmain().isVisible()) {

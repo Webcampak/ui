@@ -172,23 +172,23 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         this.getSharedApplicationsStore().each(function(r){
             scope.consoleLog("reloadDesktopIcons(): CODE: " + r.get("CODE"));
             var currentCode = r.get("CODE");
-            if (currentCode == "WEB_CFG_ACCESSCONTROL")     {var currentIconWidget = scope.getDesktopiconsaccesscontrol();             var currentIconDefaultX = -2;  var currentIconDefaultY = 2;   }
-            else if (currentCode == "WEB_CFG_SOURCES")      {var currentIconWidget = scope.getDesktopiconssourcesconfiguration();      var currentIconDefaultX = -8;  var currentIconDefaultY = 2;   }
-            else if (currentCode == "WEB_CFG_SYSTEM")       {var currentIconWidget = scope.getDesktopiconssystemconfiguration();       var currentIconDefaultX = -2;  var currentIconDefaultY = 8;   }
-            else if (currentCode == "WEB_DSP_PICTURES")     {var currentIconWidget = scope.getDesktopiconspictures();                  var currentIconDefaultX = 2;   var currentIconDefaultY = 2;   }
-            else if (currentCode == "WEB_DSP_VIDEOS")       {var currentIconWidget = scope.getDesktopiconsvideos();                    var currentIconDefaultX = 8;   var currentIconDefaultY = 2;   }
-            else if (currentCode == "WEB_DSP_LOGS")         {var currentIconWidget = scope.getDesktopiconslogs();                      var currentIconDefaultX = 2;   var currentIconDefaultY = 14;  }
-            else if (currentCode == "WEB_DSP_SYNCREPORTS")  {var currentIconWidget = scope.getDesktopiconssyncreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 26;  }
-            else if (currentCode == "WEB_DSP_XFERREPORTS")  {var currentIconWidget = scope.getDesktopiconsxferreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 46;  }
-            else if (currentCode == "WEB_CFG_ALERTS")       {var currentIconWidget = scope.getDesktopiconsalerts();                    var currentIconDefaultX = 2;   var currentIconDefaultY = 20;  }
-            else if (currentCode == "WEB_DSP_DEVICES")      {var currentIconWidget = scope.getDesktopiconsdevices();                   var currentIconDefaultX = -2;  var currentIconDefaultY = 14;  }
-            else if (currentCode == "WEB_DSP_STATS_SYSTEM") {var currentIconWidget = scope.getDesktopiconsstatssystem();               var currentIconDefaultX = 8;   var currentIconDefaultY = 8;   }
-            else if (currentCode == "WEB_DSP_STATS_SOURCES"){var currentIconWidget = scope.getDesktopiconsstatssources();              var currentIconDefaultX = 2;   var currentIconDefaultY = 8;   }
+            if (currentCode === "WEB_CFG_ACCESSCONTROL")     {var currentIconWidget = scope.getDesktopiconsaccesscontrol();             var currentIconDefaultX = -2;  var currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_CFG_SOURCES")      {var currentIconWidget = scope.getDesktopiconssourcesconfiguration();      var currentIconDefaultX = -8;  var currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_CFG_SYSTEM")       {var currentIconWidget = scope.getDesktopiconssystemconfiguration();       var currentIconDefaultX = -2;  var currentIconDefaultY = 8;   }
+            else if (currentCode === "WEB_DSP_PICTURES")     {var currentIconWidget = scope.getDesktopiconspictures();                  var currentIconDefaultX = 2;   var currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_DSP_VIDEOS")       {var currentIconWidget = scope.getDesktopiconsvideos();                    var currentIconDefaultX = 8;   var currentIconDefaultY = 2;   }
+            else if (currentCode === "WEB_DSP_LOGS")         {var currentIconWidget = scope.getDesktopiconslogs();                      var currentIconDefaultX = 2;   var currentIconDefaultY = 14;  }
+            else if (currentCode === "WEB_DSP_SYNCREPORTS")  {var currentIconWidget = scope.getDesktopiconssyncreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 26;  }
+            else if (currentCode === "WEB_DSP_XFERREPORTS")  {var currentIconWidget = scope.getDesktopiconsxferreports();               var currentIconDefaultX = 2;   var currentIconDefaultY = 46;  }
+            else if (currentCode === "WEB_CFG_ALERTS")       {var currentIconWidget = scope.getDesktopiconsalerts();                    var currentIconDefaultX = 2;   var currentIconDefaultY = 20;  }
+            else if (currentCode === "WEB_DSP_DEVICES")      {var currentIconWidget = scope.getDesktopiconsdevices();                   var currentIconDefaultX = -2;  var currentIconDefaultY = 14;  }
+            else if (currentCode === "WEB_DSP_STATS_SYSTEM") {var currentIconWidget = scope.getDesktopiconsstatssystem();               var currentIconDefaultX = 8;   var currentIconDefaultY = 8;   }
+            else if (currentCode === "WEB_DSP_STATS_SOURCES"){var currentIconWidget = scope.getDesktopiconsstatssources();              var currentIconDefaultX = 2;   var currentIconDefaultY = 8;   }
             else {var currentIconWidget = null;}
 
             if (currentIconWidget) {
                 var record = scope.getDesktopIconsDesktopCurrentIconsStore().findRecord("CODE", currentCode, 0, false, false, true);
-                if (record && record.get("ICON_VISIBLE_FLAG") == "Y") {
+                if (record && record.get("ICON_VISIBLE_FLAG") === "Y") {
                     if (record.get("ICON_X_COORDINATE") !== 0 && record.get("ICON_Y_COORDINATE") !== 0 ) {
                         scope.arrangeIcon(currentIconWidget, record.get("ICON_X_COORDINATE"), record.get("ICON_Y_COORDINATE"));
                     }
@@ -208,9 +208,9 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
     , openDesktopIconsSettings: function() {
         this.consoleLog("openDesktopIconsSettings()");
         this.getDesktopIconsDesktopCurrentIconsStore().sync();
-        if (this.getDesktopIconsDesktopAvailableIconsStore().getCount() == 0){this.getDesktopIconsDesktopAvailableIconsStore().load();}
-        if (this.getDesktopIconsDesktopCurrentIconsStore().getCount() == 0){this.getDesktopIconsDesktopCurrentIconsStore().load();}
-        //if (this.getSharedApplicationsStore().getCount() == 0){this.getSharedApplicationsStore().load();}
+        if (this.getDesktopIconsDesktopAvailableIconsStore().getCount() === 0){this.getDesktopIconsDesktopAvailableIconsStore().load();}
+        if (this.getDesktopIconsDesktopCurrentIconsStore().getCount() === 0){this.getDesktopIconsDesktopCurrentIconsStore().load();}
+        //if (this.getSharedApplicationsStore().getCount() === 0){this.getSharedApplicationsStore().load();}
 
         this.getDesktopsettingsiconsmain().show();
     }
@@ -271,18 +271,18 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         this.consoleLog("iconClick()");
         this.consoleLog("iconClick() - User clicked on " + clickedIcon);
 
-        if (clickedIcon == "WEB_CFG_ACCESSCONTROL")         {this.moveIcon(this.getDesktopiconsaccesscontrol(), clickedIcon);            }
-        else if (clickedIcon == "WEB_CFG_SOURCES")          {this.moveIcon(this.getDesktopiconssourcesconfiguration(), clickedIcon);     }
-        else if (clickedIcon == "WEB_CFG_SYSTEM")           {this.moveIcon(this.getDesktopiconssystemconfiguration(), clickedIcon);      }
-        else if (clickedIcon == "WEB_DSP_PICTURES")         {this.moveIcon(this.getDesktopiconspictures(), clickedIcon);                 }
-        else if (clickedIcon == "WEB_DSP_VIDEOS")           {this.moveIcon(this.getDesktopiconsvideos(), clickedIcon);                   }
-        else if (clickedIcon == "WEB_DSP_LOGS")             {this.moveIcon(this.getDesktopiconslogs(), clickedIcon);                     }
-        else if (clickedIcon == "WEB_DSP_SYNCREPORTS")      {this.moveIcon(this.getDesktopiconssyncreports(), clickedIcon);              }
-        else if (clickedIcon == "WEB_DSP_XFERREPORTS")      {this.moveIcon(this.getDesktopiconsxferreports(), clickedIcon);              }
-        else if (clickedIcon == "WEB_CFG_ALERTS")           {this.moveIcon(this.getDesktopiconsalerts(), clickedIcon);                   }
-        else if (clickedIcon == "WEB_DSP_DEVICES")          {this.moveIcon(this.getDesktopiconsdevices(), clickedIcon);                  }
-        else if (clickedIcon == "WEB_DSP_STATS_SYSTEM")     {this.moveIcon(this.getDesktopiconsstatssystem(), clickedIcon);              }
-        else if (clickedIcon == "WEB_DSP_STATS_SOURCES")    {this.moveIcon(this.getDesktopiconsstatssources(), clickedIcon);             }
+        if (clickedIcon === "WEB_CFG_ACCESSCONTROL")         {this.moveIcon(this.getDesktopiconsaccesscontrol(), clickedIcon);            }
+        else if (clickedIcon === "WEB_CFG_SOURCES")          {this.moveIcon(this.getDesktopiconssourcesconfiguration(), clickedIcon);     }
+        else if (clickedIcon === "WEB_CFG_SYSTEM")           {this.moveIcon(this.getDesktopiconssystemconfiguration(), clickedIcon);      }
+        else if (clickedIcon === "WEB_DSP_PICTURES")         {this.moveIcon(this.getDesktopiconspictures(), clickedIcon);                 }
+        else if (clickedIcon === "WEB_DSP_VIDEOS")           {this.moveIcon(this.getDesktopiconsvideos(), clickedIcon);                   }
+        else if (clickedIcon === "WEB_DSP_LOGS")             {this.moveIcon(this.getDesktopiconslogs(), clickedIcon);                     }
+        else if (clickedIcon === "WEB_DSP_SYNCREPORTS")      {this.moveIcon(this.getDesktopiconssyncreports(), clickedIcon);              }
+        else if (clickedIcon === "WEB_DSP_XFERREPORTS")      {this.moveIcon(this.getDesktopiconsxferreports(), clickedIcon);              }
+        else if (clickedIcon === "WEB_CFG_ALERTS")           {this.moveIcon(this.getDesktopiconsalerts(), clickedIcon);                   }
+        else if (clickedIcon === "WEB_DSP_DEVICES")          {this.moveIcon(this.getDesktopiconsdevices(), clickedIcon);                  }
+        else if (clickedIcon === "WEB_DSP_STATS_SYSTEM")     {this.moveIcon(this.getDesktopiconsstatssystem(), clickedIcon);              }
+        else if (clickedIcon === "WEB_DSP_STATS_SOURCES")    {this.moveIcon(this.getDesktopiconsstatssources(), clickedIcon);             }
     }
 
     , moveIcon: function(selectedIcon, appCode) {
@@ -358,17 +358,17 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
     , iconDbClick: function(view, clickedIcon) {
         this.consoleLog("iconDbClick()");
         this.consoleLog("iconDbClick() - User double clicked on " + clickedIcon);
-        if (clickedIcon == "WEB_CFG_ACCESSCONTROL")     {this.fireEvent("WPAKD.controller.accesscontrol.AccessControl.menuOpenAccessControl");                      }
-        else if (clickedIcon == "WEB_CFG_SOURCES")      {this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.menuOpenSourcesConfiguration"); }
-        else if (clickedIcon == "WEB_CFG_SYSTEM")       {this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.menuOpenSystemConfiguration");    }
-        else if (clickedIcon == "WEB_DSP_PICTURES")     {this.fireEvent("WPAKD.controller.pictures.Pictures.menuOpenPictures");                                     }
-        else if (clickedIcon == "WEB_DSP_VIDEOS")       {this.fireEvent("WPAKD.controller.videos.Videos.menuOpenVideos");                                           }
-        else if (clickedIcon == "WEB_DSP_LOGS")         {this.fireEvent("WPAKD.controller.logs.Logs.menuOpenLogs");                                                 }
-        else if (clickedIcon == "WEB_DSP_SYNCREPORTS")  {this.fireEvent("WPAKD.controller.syncreports.SyncReports.menuOpenSyncReports");                            }
-        else if (clickedIcon == "WEB_DSP_XFERREPORTS")  {this.fireEvent("WPAKD.controller.xferreports.XferReports.menuOpenXferReports");                            }
-        else if (clickedIcon == "WEB_CFG_ALERTS")       {this.fireEvent("WPAKD.controller.alerts.Alerts.menuOpenAlerts");                                           }
-        else if (clickedIcon == "WEB_DSP_DEVICES")      {this.fireEvent("WPAKD.controller.devices.Devices.menuOpenDevices");                                        }
-        else if (clickedIcon == "WEB_DSP_STATS_SYSTEM") {this.fireEvent("WPAKD.controller.stats.System.menuOpenStatsSystem");                                       }
-        else if (clickedIcon == "WEB_DSP_STATS_SOURCES"){this.fireEvent("WPAKD.controller.stats.Sources.menuOpenStatsSources");                                     }
+        if (clickedIcon === "WEB_CFG_ACCESSCONTROL")     {this.fireEvent("WPAKD.controller.accesscontrol.AccessControl.menuOpenAccessControl");                      }
+        else if (clickedIcon === "WEB_CFG_SOURCES")      {this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.menuOpenSourcesConfiguration"); }
+        else if (clickedIcon === "WEB_CFG_SYSTEM")       {this.fireEvent("WPAKD.controller.systemconfiguration.SystemConfiguration.menuOpenSystemConfiguration");    }
+        else if (clickedIcon === "WEB_DSP_PICTURES")     {this.fireEvent("WPAKD.controller.pictures.Pictures.menuOpenPictures");                                     }
+        else if (clickedIcon === "WEB_DSP_VIDEOS")       {this.fireEvent("WPAKD.controller.videos.Videos.menuOpenVideos");                                           }
+        else if (clickedIcon === "WEB_DSP_LOGS")         {this.fireEvent("WPAKD.controller.logs.Logs.menuOpenLogs");                                                 }
+        else if (clickedIcon === "WEB_DSP_SYNCREPORTS")  {this.fireEvent("WPAKD.controller.syncreports.SyncReports.menuOpenSyncReports");                            }
+        else if (clickedIcon === "WEB_DSP_XFERREPORTS")  {this.fireEvent("WPAKD.controller.xferreports.XferReports.menuOpenXferReports");                            }
+        else if (clickedIcon === "WEB_CFG_ALERTS")       {this.fireEvent("WPAKD.controller.alerts.Alerts.menuOpenAlerts");                                           }
+        else if (clickedIcon === "WEB_DSP_DEVICES")      {this.fireEvent("WPAKD.controller.devices.Devices.menuOpenDevices");                                        }
+        else if (clickedIcon === "WEB_DSP_STATS_SYSTEM") {this.fireEvent("WPAKD.controller.stats.System.menuOpenStatsSystem");                                       }
+        else if (clickedIcon === "WEB_DSP_STATS_SOURCES"){this.fireEvent("WPAKD.controller.stats.Sources.menuOpenStatsSources");                                     }
     }
 });

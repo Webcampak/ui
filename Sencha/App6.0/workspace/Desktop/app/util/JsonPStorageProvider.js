@@ -24,7 +24,7 @@ Ext.define("WPAKD.util.JsonPStorageProvider", {
         console.log(new Date().toLocaleTimeString() + ": Log: Util->JsonPStorageProvider: set: function()");
           var me = this;
 
-          if( typeof value == "undefined" || value === null) {
+          if( typeof value === "undefined" || value === null) {
                 me.clear(name);
                 return;
           }

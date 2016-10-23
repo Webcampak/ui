@@ -12,7 +12,7 @@ Ext.define("WPAKT.view.core.email.EmailAttachments", {
     , disabled: true
     , listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 // Some action
             }
         }

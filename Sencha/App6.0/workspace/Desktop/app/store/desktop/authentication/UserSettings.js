@@ -26,7 +26,7 @@ Ext.define("WPAKD.store.desktop.authentication.UserSettings", {
             read:        "UserSettings.getSettings"
         }/*,
         afterRequest:function(request,success){
-            if (success == false) {
+            if (success === false) {
                 if (request.operation.error) {var errorMsg = request.operation.error;}
                 else {var errorMsg = "Unknown Error";}
                 Ext.MessageBox.show({

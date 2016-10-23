@@ -96,7 +96,7 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
     , isAuthenticated: function() {
         this.consoleLog("isAuthenticated()");
         var currentUser = this.getDesktopAuthenticationUsersStore().first();
-        if (currentUser !== undefined && currentUser.get("AUTHENTICATED") == "N") {
+        if (currentUser !== undefined && currentUser.get("AUTHENTICATED") === "N") {
             return false;
         } else {
             return true;
@@ -120,7 +120,7 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
         Ext.getBody().unmask();
         this.fireEvent("WPAKD.controller.desktop.loading.Mask.endLoading", this.getDesktopauthenticationmain());
         var currentUser = this.getDesktopAuthenticationUsersStore().first();
-        if (currentUser.get("AUTHENTICATED") == "N") {
+        if (currentUser.get("AUTHENTICATED") === "N") {
             this.getDesktopauthenticationmain().show();
             this.getDesktopauthenticationmain().toFront();
             //this.fireEvent("WPAKD.controller.desktop.icons.Icons.hideIcons");
@@ -139,11 +139,11 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
     , doFormLogin: function() {
         this.consoleLog("doFormLogin()");
         var scope = this;
-        if (document.location.protocol == "https:") {
+        if (document.location.protocol === "https:") {
             var formUsername = this.getDesktopauthenticationusername().getValue();
             var formPassword = this.getDesktopauthenticationpassword().getValue();
             var formRememberMe = this.getDesktopauthenticationrememberme().getValue();
-            if (formRememberMe == true) {formRememberMe = "Y";}
+            if (formRememberMe === true) {formRememberMe = "Y";}
             else {formRememberMe = "N";}
             if (formUsername.length < 2 || formPassword.length < 2) {
                 Ext.MessageBox.show({
@@ -174,7 +174,7 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
                         //console.log(response);
                         var serverResponse = Ext.decode(response.responseText, true);
                         if (serverResponse !== null) {
-                            if (serverResponse.authentication == "SUCCESS") {
+                            if (serverResponse.authentication === "SUCCESS") {
                                 currentUser.set("USERNAME", serverResponse.USERNAME);
                                 currentUser.set("AUTHENTICATED", "Y");
                                 scope.displayLoginWindow();
@@ -247,7 +247,7 @@ Ext.define("WPAKD.controller.desktop.authentication.Authentication", {
                     scope.fireEvent("WPAKD.controller.desktop.loading.Mask.endLoading", scope.getDesktopauthenticationlostpasswordmain());
                     var serverResponse = Ext.decode(response.responseText, true);
                     if (serverResponse !== null) {
-                        if (serverResponse.authentication == "SUCCESS") {
+                        if (serverResponse.authentication === "SUCCESS") {
                             Ext.MessageBox.show({
                                 title: i18n.gettext("Password sent")
                                 , msg: i18n.gettext("A temporary password has been sent to your email address")

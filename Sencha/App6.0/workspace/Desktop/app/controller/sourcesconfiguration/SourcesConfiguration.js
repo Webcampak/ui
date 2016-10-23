@@ -148,12 +148,12 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
      */
     , setConfigurationSyncStatus: function(status) {this.configurationSynced = status;}
     , getConfigurationSyncStatus: function() {
-        if (this.configurationSynced == undefined) {this.setConfigurationSyncStatus(true);}
+        if (this.configurationSynced === undefined) {this.setConfigurationSyncStatus(true);}
         return this.configurationSynced;
     }
     , setRemoteHost: function(remoteHost) {this.remoteHost = remoteHost;}
     , getRemoteHost: function() {
-        if (this.remoteHost == undefined) {this.setRemoteHost(null);}
+        if (this.remoteHost === undefined) {this.setRemoteHost(null);}
         return this.remoteHost;
     }
 
@@ -164,7 +164,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
     , changeActiveTab: function(tabPanel, newCard, oldCard) {
         this.consoleLog("changeActiveTab()");
         // If old tab is FTP Server, we ensure all FTP servers have been saved
-        if (oldCard.alias[0] == "widget.sourcesconfigurationftpmain") {
+        if (oldCard.alias[0] === "widget.sourcesconfigurationftpmain") {
             var syncStore = false;
             var scope = this;
             this.getSourcesconfigurationFTPServersStore().each(function (rec) {
@@ -223,7 +223,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
      */
     , verifyConfigurationStatusBeforeSelect: function(scope, record, index) {
         this.consoleLog("verifyConfigurationStatusBeforeSelect()");
-        if (this.getConfigurationSyncStatus() == false) { // Means configuration has been changed
+        if (this.getConfigurationSyncStatus() === false) { // Means configuration has been changed
             var scope = this;
             Ext.Msg.show({
                 title: i18n.gettext("Unsaved configuration"),
@@ -305,23 +305,23 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
 
     , saveConfigurationChanges: function() {
         this.consoleLog("saveConfigurationChanges()");
-        if (this.getConfigurationSyncStatus() == false) {
+        if (this.getConfigurationSyncStatus() === false) {
             var requiredStores = [];
             var isDirty = false;
             this.getSourcesconfigurationCaptureStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSourcesconfigurationCaptureStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSourcesconfigurationCaptureStore(), action: "SYNC"});}
             var isDirty = false;
             this.getSourcesconfigurationVideoStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSourcesconfigurationVideoStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSourcesconfigurationVideoStore(), action: "SYNC"});}
             var isDirty = false;
             this.getSourcesconfigurationVideoCustomStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSourcesconfigurationVideoCustomStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSourcesconfigurationVideoCustomStore(), action: "SYNC"});}
             var isDirty = false;
             this.getSourcesconfigurationVideoPostStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSourcesconfigurationVideoPostStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSourcesconfigurationVideoPostStore(), action: "SYNC"});}
             var isDirty = false;
             this.getSourcesconfigurationFTPServersStore().each(function (rec) {if (rec.dirty === true) {isDirty = true;}});
-            if (isDirty == true) {requiredStores.push({store: this.getSourcesconfigurationFTPServersStore(), action: "SYNC"});}
+            if (isDirty === true) {requiredStores.push({store: this.getSourcesconfigurationFTPServersStore(), action: "SYNC"});}
             this.fireEvent("WPAKD.controller.desktop.loading.SyncStores.beginLoading"
                 , "WEB_CFG_SOURCESCONFIGSYNC"
                 , "WPAKD.controller.sourcesconfiguration.SourcesConfiguration.configurationSaved"
@@ -425,7 +425,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         this.consoleLog("openSourcesConfiguration()");
         Ext.getBody().unmask();
 
-        if(this.getSourcesconfigurationmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getSourcesconfigurationmain().getId()) {
+        if(this.getSourcesconfigurationmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getSourcesconfigurationmain().getId()) {
             this.consoleLog("openSourcesConfiguration(): getSourcesconfigurationmain().toFront()");
             this.getSourcesconfigurationmain().toFront();
         } else if(!this.getSourcesconfigurationmain().isVisible()) {

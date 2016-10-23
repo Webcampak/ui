@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.desktop.authentication.lostpassword.Username", {
 
     listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 this.fireEvent("WPAKD.controller.desktop.Authentication.doFormLostPassword");
             }
         }

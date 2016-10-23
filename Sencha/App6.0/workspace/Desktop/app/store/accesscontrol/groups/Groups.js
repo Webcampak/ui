@@ -36,8 +36,8 @@ Ext.define("WPAKD.store.accesscontrol.groups.Groups", {
         write: function(store, operation){
             var popupTitle = i18n.gettext("Group");
             var popupMessage = i18n.gettext("Group successfully");
-            if (operation.action == "destroy") {popupMessage = popupMessage + " " + i18n.gettext("removed");}
-            else if (operation.action == "update"){popupMessage = popupMessage + " " + i18n.gettext("updated");}
+            if (operation.action === "destroy") {popupMessage = popupMessage + " " + i18n.gettext("removed");}
+            else if (operation.action === "update"){popupMessage = popupMessage + " " + i18n.gettext("updated");}
             else {var popupMessage = popupMessage + " " + i18n.gettext("added");}
             this.fireEvent("WPAKD.controller.desktop.notifications.NotificationsPopups.displayNotification", popupTitle, popupMessage);
         }

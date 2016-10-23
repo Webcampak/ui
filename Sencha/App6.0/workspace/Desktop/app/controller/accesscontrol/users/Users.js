@@ -182,9 +182,9 @@ Ext.define("WPAKD.controller.accesscontrol.users.Users", {
         addUserValues["LASTNAME"]   = this.getAccesscontroluserssharedlastname().getValue();
         addUserValues["EMAIL"]      = this.getAccesscontroluserssharedemail().getValue();
 
-        if (this.getAccesscontroluserssharedactiveflag().getValue() == true) {addUserValues["ACTIVE_FLAG"] = "Y";}
+        if (this.getAccesscontroluserssharedactiveflag().getValue() === true) {addUserValues["ACTIVE_FLAG"] = "Y";}
         else {addUserValues["ACTIVE_FLAG"] = "N";}
-        if (this.getAccesscontroluserssharedchangepwdflag().getValue() == true) {addUserValues["CHANGE_PWD_FLAG"] = "Y";}
+        if (this.getAccesscontroluserssharedchangepwdflag().getValue() === true) {addUserValues["CHANGE_PWD_FLAG"] = "Y";}
         else {addUserValues["CHANGE_PWD_FLAG"] = "N";}
 
         this.getAccesscontrolUsersUsersStore().add(
@@ -223,9 +223,9 @@ Ext.define("WPAKD.controller.accesscontrol.users.Users", {
             this.getAccesscontroluserssharedfirstname().setValue(seletedUser.get("FIRSTNAME"));
             this.getAccesscontroluserssharedlastname().setValue(seletedUser.get("LASTNAME"));
             this.getAccesscontroluserssharedemail().setValue(seletedUser.get("EMAIL"));
-            if (seletedUser.get("ACTIVE_FLAG") == "Y") {this.getAccesscontroluserssharedactiveflag().setValue(true)}
+            if (seletedUser.get("ACTIVE_FLAG") === "Y") {this.getAccesscontroluserssharedactiveflag().setValue(true)}
             else {this.getAccesscontroluserssharedactiveflag().setValue(false)}
-            if (seletedUser.get("CHANGE_PWD_FLAG") == "Y") {this.getAccesscontroluserssharedchangepwdflag().setValue(true)}
+            if (seletedUser.get("CHANGE_PWD_FLAG") === "Y") {this.getAccesscontroluserssharedchangepwdflag().setValue(true)}
             else {this.getAccesscontroluserssharedchangepwdflag().setValue(false)}
         } else {
             Ext.MessageBox.show({
@@ -256,13 +256,13 @@ Ext.define("WPAKD.controller.accesscontrol.users.Users", {
             editUserValues["LASTNAME"]      = this.getAccesscontroluserssharedlastname().getValue();
             editUserValues["EMAIL"]         = this.getAccesscontroluserssharedemail().getValue();
 
-            if (this.getAccesscontroluserssharedactiveflag().getValue() == true) {editUserValues["ACTIVE_FLAG"] = "Y";}
+            if (this.getAccesscontroluserssharedactiveflag().getValue() === true) {editUserValues["ACTIVE_FLAG"] = "Y";}
             else {editUserValues["ACTIVE_FLAG"] = "N";}
-            if (this.getAccesscontroluserssharedchangepwdflag().getValue() == true) {editUserValues["CHANGE_PWD_FLAG"] = "Y";}
+            if (this.getAccesscontroluserssharedchangepwdflag().getValue() === true) {editUserValues["CHANGE_PWD_FLAG"] = "Y";}
             else {editUserValues["CHANGE_PWD_FLAG"] = "N";}
 
             this.getAccesscontrolUsersUsersStore().suspendAutoSync();
-            if (editUserValues["PASSWORD"] != "") {
+            if (editUserValues["PASSWORD"] !== "") {
                 seletedUser.set("PASSWORD", editUserValues["PASSWORD"]);
             }
             seletedUser.set("CUS_ID", editUserValues["CUS_ID"]);
@@ -334,7 +334,7 @@ Ext.define("WPAKD.controller.accesscontrol.users.Users", {
             if (this.getAccesscontroluserssharedusername().getValue().length < 3) {
                 this.getAccesscontroluserssharedusername().setFieldStyle("color:red;");
                 this.getAccesscontroluserssharedusername().markInvalid(i18n.gettext("Username too short"));
-            } else if (this.getAccesscontrolUsersUsersStore().find("USERNAME",this.getAccesscontroluserssharedusername().getValue()) == -1) {
+            } else if (this.getAccesscontrolUsersUsersStore().find("USERNAME",this.getAccesscontroluserssharedusername().getValue()) === -1) {
                 this.getAccesscontroluserssharedusername().setFieldStyle("color:green;");
             } else {
                 this.getAccesscontroluserssharedusername().setFieldStyle("color:red;");
@@ -386,7 +386,7 @@ Ext.define("WPAKD.controller.accesscontrol.users.Users", {
             else if (currentLastname.indexOf(currentFilter) !== -1) {return true;}
             else {return false;}
         });
-        if (this.getAccesscontroluserssearch().getValue() == "") {
+        if (this.getAccesscontroluserssearch().getValue() === "") {
             this.getAccesscontroluserstoolbarrecords().setText(i18n.gettext("Total number of records: ") + this.getAccesscontrolUsersUsersStore().getTotalCount() );
         } else {
             this.getAccesscontroluserstoolbarrecords().setText(i18n.gettext("Number of filtered records: ") + this.getAccesscontrolUsersUsersStore().getCount() + " (" + i18n.gettext("Total") + ": " + this.getAccesscontrolUsersUsersStore().getTotalCount() + ")");

@@ -11,7 +11,7 @@ Ext.define("WPAKT.view.core.email.EmailSubject", {
     , allowBlank: false
     , listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 // Some action
             }
         }

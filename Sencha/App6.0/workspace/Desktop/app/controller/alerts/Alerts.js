@@ -143,7 +143,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
     , getDayNb: function(dayTxt) {
         var weekday = this.getDayArray();
         for (var i=1;i<8;i++) {
-            if (weekday[i] == dayTxt) {
+            if (weekday[i] === dayTxt) {
                 return i;
             }
         }
@@ -155,7 +155,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         this.consoleLog("onMinuteSelected()");
         var columnName = viewScope.panel.headerCt.getHeaderAtIndex(cellIndex).text;
         this.consoleLog("onMinuteSelected() - Click on Minute: " + columnName);
-        if (record.get(columnName) == "Y") {
+        if (record.get(columnName) === "Y") {
             record.set(columnName, "N");
         } else {
             record.set(columnName, "Y");
@@ -167,8 +167,8 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         this.consoleLog("isDayBetweenRange() - Source: " + dayTxt + " From: " + dayFromTxt + " To: " + dayToTxt);
         
         var dayNb = this.getDayNb(dayTxt);
-        if (dayTxt == dayFromTxt) {return true;} 
-        else if (dayTxt == dayToTxt) {return true;} 
+        if (dayTxt === dayFromTxt) {return true;}
+        else if (dayTxt === dayToTxt) {return true;}
         else {
             var dayFromNb = this.getDayNb(dayFromTxt);
             var dayToNb = this.getDayNb(dayToTxt);        
@@ -211,7 +211,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         if (currentMinute < 10) {currentTime = parseInt(currentHour.toString() + "0" + currentMinute.toString())}
         else {currentTime = parseInt(currentHour.toString() +  currentMinute.toString())}              
 
-        if (startTime == 0 && endTime == 0) {
+        if (startTime === 0 && endTime === 0) {
             return true;
         } else if (startTime >= endTime) {
             if ((currentTime >= startTime && currentTime < 2400) || (currentTime >= 0 && currentTime <= endTime)) {
@@ -266,10 +266,10 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
                         else {var minuteString = j.toString();}
                         var currentMinute = parseInt(j);
                         if (captureRateObj[currentDay] && captureRateObj[currentDay][currentHour] && captureRateObj[currentDay][currentHour][currentMinute]) {
-                            if (editType == "add") {record.set(minuteString, "Y");}
-                            else if (editType == "del") {record.set(minuteString, "N");}
+                            if (editType === "add") {record.set(minuteString, "Y");}
+                            else if (editType === "del") {record.set(minuteString, "N");}
                         } else {
-                            if (editType == "addex") {record.set(minuteString, "N");}
+                            if (editType === "addex") {record.set(minuteString, "N");}
                         }
                     }
                 }                    
@@ -332,8 +332,8 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
 
         this.getAlertsScheduleStore().clearFilter();
         this.getAlertsScheduleStore().filterBy(function (record) {
-            if (displayDay == "All") {return true;}
-            else if (record.data.DAYTXT == displayDay) {return true;} 
+            if (displayDay === "All") {return true;}
+            else if (record.data.DAYTXT === displayDay) {return true;}
             else {return false;}
         });
         
@@ -361,7 +361,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         this.showMask();        
         var selectedSourceId = this.getAlertscontrolssourceslist().getValue();        
         var record = this.getAlertsSourcesScheduleStore().findRecord("SOURCEID", selectedSourceId, 0, false, false, true);
-        if (record && record.get("JSON") != "") {
+        if (record && record.get("JSON") !== "") {
             Ext.Function.defer(function(){
                 scope.importStoreFromJSON(record.get("JSON"));
                 scope.filterStore();
@@ -397,7 +397,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
             for (var j=0;j<60;j++) {
                 if (j < 10) {var minuteString = "0" + j;}
                 else {var minuteString = j.toString();}
-                if (record.get(minuteString) == "Y") {
+                if (record.get(minuteString) === "Y") {
                     if (alertsObj[currentDay] === undefined) {alertsObj[currentDay] = {};}
                     if (alertsObj[currentDay][currentHour] === undefined) {alertsObj[currentDay][currentHour] = {};}
                     alertsObj[currentDay][currentHour][j] = "Y";
@@ -451,7 +451,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         this.consoleLog("openAlerts()");
         Ext.getBody().unmask();
 
-        if(this.getAlertsmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getAlertsmain().getId()) {
+        if(this.getAlertsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getAlertsmain().getId()) {
             this.consoleLog("openAlerts(): getAlertsmain().toFront()");
             this.getAlertsmain().toFront();
         } else if(!this.getAlertsmain().isVisible()) {

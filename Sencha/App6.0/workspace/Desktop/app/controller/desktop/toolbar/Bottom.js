@@ -58,7 +58,7 @@ Ext.define("WPAKD.controller.desktop.toolbar.Bottom", {
         if (this.getDesktoptoolbarbottomconnectionbutton() !== undefined) {
             this.getDesktoptoolbarbottomconnectionbutton().setVisible(true);
             var currentStatus = this.getDesktopServerAvailabilityStore().first();
-            if (currentStatus !== undefined && currentStatus.get("CODE") == "ONLINE") {
+            if (currentStatus !== undefined && currentStatus.get("CODE") === "ONLINE") {
                 //this.getDesktoptoolbarbottomconnectionbutton().setIconCls("icon-connect_png");
                 this.getDesktoptoolbarbottomconnectionbutton().setGlyph(0xf0c1);
                 this.getDesktoptoolbarbottomconnectionbutton().setText("ONLINE");

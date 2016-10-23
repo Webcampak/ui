@@ -61,7 +61,7 @@ Ext.define("WPAKD.controller.desktop.authentication.ChangePassword", {
     },
 
     specialKey: function(field, e) {
-        if (e.getKey() == e.ENTER) {
+        if (e.getKey() === e.ENTER) {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Authentication->ChangePassword: specialKey()");
             this.savePassword();
         }
@@ -85,7 +85,7 @@ Ext.define("WPAKD.controller.desktop.authentication.ChangePassword", {
 
     savePassword: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Authentication->ChangePassword: Controller savePassword: function()");
-        if (this.getDesktopauthenticationchangepasswordnewpassword().getValue() == this.getDesktopauthenticationchangepasswordnewpasswordverif().getValue()) {
+        if (this.getDesktopauthenticationchangepasswordnewpassword().getValue() === this.getDesktopauthenticationchangepasswordnewpasswordverif().getValue()) {
             /*
             var changePasswordValues = new Array()
             changePasswordValues["OLDPASSWORD"] = this.getDesktopauthenticationchangepasswordoldpassword().getValue();
@@ -101,7 +101,7 @@ Ext.define("WPAKD.controller.desktop.authentication.ChangePassword", {
             );
             */
             var scope = this;
-            if (document.location.protocol == "https:") {
+            if (document.location.protocol === "https:") {
                 var formOldPassword = this.getDesktopauthenticationchangepasswordoldpassword().getValue();
                 var formNewPassword = this.getDesktopauthenticationchangepasswordnewpassword().getValue();
                 if (formOldPassword.length < 4 || formNewPassword.length < 4) {
@@ -130,7 +130,7 @@ Ext.define("WPAKD.controller.desktop.authentication.ChangePassword", {
                             scope.fireEvent("WPAKD.controller.desktop.loading.Mask.endLoading", scope.getDesktopauthenticationchangepasswordmain());
                             var serverResponse = Ext.decode(response.responseText, true);
                             if (serverResponse !== null) {
-                                if (serverResponse.status == "SUCCESS") {
+                                if (serverResponse.status === "SUCCESS") {
                                     Ext.MessageBox.show({
                                         title: i18n.gettext("Password"),
                                         msg: i18n.gettext("Password modification successful"),

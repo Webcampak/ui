@@ -188,7 +188,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.pictures.Pictures", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
@@ -314,22 +314,22 @@ Ext.define("WPAKD.controller.sourcesconfiguration.pictures.Pictures", {
             if(configObj.hasOwnProperty("cfgcopysecondenable")){this.getSourcesconfigurationpicturescopycfgcopysecondenable().setValue(configObj["cfgcopysecondenable"]);
             } else {this.getSourcesconfigurationpicturescopycfgcopysecondenable().setVisible(false);}
 
-            if(configObj.hasOwnProperty("cfgrotateactivate") && configObj["cfgrotateactivate"] == "yes") {this.getSourcesconfigurationpicturesrotatemain().expand();}
+            if(configObj.hasOwnProperty("cfgrotateactivate") && configObj["cfgrotateactivate"] === "yes") {this.getSourcesconfigurationpicturesrotatemain().expand();}
             else if (configObj.hasOwnProperty("cfgrotateactivate")) {this.getSourcesconfigurationpicturesrotatemain().collapse();}
 
-            if(configObj.hasOwnProperty("cfgcropactivate") && configObj["cfgcropactivate"] == "yes") {this.getSourcesconfigurationpicturescropmain().expand();}
+            if(configObj.hasOwnProperty("cfgcropactivate") && configObj["cfgcropactivate"] === "yes") {this.getSourcesconfigurationpicturescropmain().expand();}
             else if (configObj.hasOwnProperty("cfgcropactivate")) {this.getSourcesconfigurationpicturescropmain().collapse();}
 
-            if(configObj.hasOwnProperty("cfgpicwatermarkactivate") && configObj["cfgpicwatermarkactivate"] == "yes") {this.getSourcesconfigurationpictureswatermarkmain().expand();}
+            if(configObj.hasOwnProperty("cfgpicwatermarkactivate") && configObj["cfgpicwatermarkactivate"] === "yes") {this.getSourcesconfigurationpictureswatermarkmain().expand();}
             else if (configObj.hasOwnProperty("cfgpicwatermarkactivate")) {this.getSourcesconfigurationpictureswatermarkmain().collapse();}
 
-            if(configObj.hasOwnProperty("cfgimagemagicktxt") && configObj["cfgimagemagicktxt"] == "yes") {this.getSourcesconfigurationpicturestextmain().expand();}
+            if(configObj.hasOwnProperty("cfgimagemagicktxt") && configObj["cfgimagemagicktxt"] === "yes") {this.getSourcesconfigurationpicturestextmain().expand();}
             else if (configObj.hasOwnProperty("cfgimagemagicktxt")) {this.getSourcesconfigurationpicturestextmain().collapse();}
 
-            if(configObj.hasOwnProperty("cfghotlinksize1") && configObj["cfghotlinksize1"] == "") {this.getSourcesconfigurationpictureshotlinkmain().expand();}
+            if(configObj.hasOwnProperty("cfghotlinksize1") && configObj["cfghotlinksize1"] === "") {this.getSourcesconfigurationpictureshotlinkmain().expand();}
             else if (configObj.hasOwnProperty("cfghotlinksize1")) {this.getSourcesconfigurationpictureshotlinkmain().collapse();}
 
-            if(configObj.hasOwnProperty("cfgsavepictures") && configObj["cfgsavepictures"] == "") {this.getSourcesconfigurationpicturesarchivesmain().expand();}
+            if(configObj.hasOwnProperty("cfgsavepictures") && configObj["cfgsavepictures"] === "") {this.getSourcesconfigurationpicturesarchivesmain().expand();}
             else if (configObj.hasOwnProperty("cfgsavepictures")) {this.getSourcesconfigurationpicturesarchivesmain().collapse();}
 
             var configObj = {};
@@ -353,13 +353,13 @@ Ext.define("WPAKD.controller.sourcesconfiguration.pictures.Pictures", {
 
     , clearFTPServer: function(serverId) {
         this.consoleLog("clearFTPServer()");
-        if (this.getSourcesconfigurationpicturesftpcfgftpmainserverid().getValue() == serverId) {
+        if (this.getSourcesconfigurationpicturesftpcfgftpmainserverid().getValue() === serverId) {
            this.getSourcesconfigurationpicturesftpcfgftpmainserverid().setValue();
         }
-        if (this.getSourcesconfigurationpicturesftpcfgftpsecondserverid().getValue() == serverId) {
+        if (this.getSourcesconfigurationpicturesftpcfgftpsecondserverid().getValue() === serverId) {
            this.getSourcesconfigurationpicturesftpcfgftpsecondserverid().setValue();
         }
-        if (this.getSourcesconfigurationpicturesftpcfgftphotlinkserverid().getValue() == serverId) {
+        if (this.getSourcesconfigurationpicturesftpcfgftphotlinkserverid().getValue() === serverId) {
            this.getSourcesconfigurationpicturesftpcfgftphotlinkserverid().setValue();
         }
     }

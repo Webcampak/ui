@@ -10,7 +10,7 @@ Ext.define("WPAKT.view.core.email.SendCC", {
     , emptyText: i18n.gettext("Add one or more email addresses")
     , listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 // Some action
             }
         }

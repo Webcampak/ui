@@ -28,7 +28,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.FtpServersList", {
                 , allowBlank: false
             }
             , renderer: function(value) {
-                if (value == "yes") {return "YES";}
+                if (value === "yes") {return "YES";}
                 else {return "NO";}
             }
         }
@@ -47,7 +47,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.FtpServersList", {
                         , allowBlank: false
                     },
                     renderer: function(value) {
-                        if (value == "yes") {return "YES";}
+                        if (value === "yes") {return "YES";}
                         else {return "NO";}
                     }
                 }        

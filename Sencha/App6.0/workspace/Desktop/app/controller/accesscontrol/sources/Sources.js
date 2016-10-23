@@ -229,7 +229,7 @@ Ext.define("WPAKD.controller.accesscontrol.sources.Sources", {
             if (currentName.indexOf(currentFilter) !== -1) {return true;}
             else {return false;}
         });
-        if (this.getAccesscontrolsourcessearch().getValue() == "") {
+        if (this.getAccesscontrolsourcessearch().getValue() === "") {
             this.getAccesscontrolsourcestoolbarrecords().setText(i18n.gettext("Total number of records: ") + this.getAccesscontrolSourcesSourcesStore().getTotalCount() );
         } else {
             this.getAccesscontrolsourcestoolbarrecords().setText(i18n.gettext("Number of filtered records: ") + this.getAccesscontrolSourcesSourcesStore().getCount() + " (" + i18n.gettext("Total") + ": " + this.getAccesscontrolSourcesSourcesStore().getTotalCount() + ")");

@@ -15,7 +15,7 @@ Ext.define("WPAKD.view.desktop.sendemail.EmailSubject", {
 
     listeners: {
         specialkey: function(field, e){
-            if (e.getKey() == e.ENTER) {
+            if (e.getKey() === e.ENTER) {
                 // Some action
             }
         }

@@ -122,7 +122,7 @@ Ext.define("WPAKT.controller.dashboard.Status", {
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
                     
-                    if (parseInt(response.status) == 0) {
+                    if (parseInt(response.status) === 0) {
                         scope.consoleLog("loadStatus(): Error loading status: Server not available", "warn");
                     } else {
                         scope.consoleLog("loadStatus(): Error loading status: " + response.status, "warn");

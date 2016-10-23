@@ -139,7 +139,7 @@ Ext.define("WPAKT.controller.core.authentication.Authentication", {
     , displayLoginWindow: function() {
         this.consoleLog("displayLoginWindow()");
         var currentUser = this.getCoreServerAvailabilityStore().first();
-        if (currentUser.get("AUTHENTICATED") == "N") {
+        if (currentUser.get("AUTHENTICATED") === "N") {
             this.getCoreauthenticationmain().show();
             this.getCoreauthenticationmain().toFront();
             this.getCoreauthenticationloginmain().show();
@@ -158,11 +158,11 @@ Ext.define("WPAKT.controller.core.authentication.Authentication", {
     , doFormLogin: function() {
         this.consoleLog("doFormLogin()");
         var scope = this;
-        if (document.location.protocol == "https:") {
+        if (document.location.protocol === "https:") {
             var formUsername = this.getCoreauthenticationloginusername().getValue();
             var formPassword = this.getCoreauthenticationloginpassword().getValue();
             var formRememberMe = this.getCoreauthenticationloginrememberme().getValue();
-            if (formRememberMe == true) {formRememberMe = "Y";}
+            if (formRememberMe === true) {formRememberMe = "Y";}
             else {formRememberMe = "N";}
             if (formUsername.length < 2 || formPassword.length < 2) {
                 Ext.MessageBox.show({
@@ -191,7 +191,7 @@ Ext.define("WPAKT.controller.core.authentication.Authentication", {
                         //console.log(response);
                         var serverResponse = Ext.decode(response.responseText, true);
                         if (serverResponse !== null) {
-                            if (serverResponse.authentication == "SUCCESS") {
+                            if (serverResponse.authentication === "SUCCESS") {
                                 currentUser.set("USERNAME", serverResponse.USERNAME);
                                 currentUser.set("AUTHENTICATED", "Y");
                                 scope.fireEvent("WPAKT.controller.dashboard.Status.loadStatus");

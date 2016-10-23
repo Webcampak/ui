@@ -18,10 +18,10 @@ Ext.define("WPAKD.view.pictures.selection.HoursList", {
      * @param {Object} val
      */
     , change: function(value, metaData) {
-        if (value == "0") {
+        if (value === "0") {
                 metaData.style = "background:#989898;";
                 return "<span style=\"color: #989898;\">" + value + "</span>";
-        } else if (value.substring(0, 1) == "X"){
+        } else if (value.substring(0, 1) === "X"){
                 //If first character is a "X" it means that this picture has a comment attached
                 metaData.style = "background:#3896af; color:#3896af;";
                 value = value.substring(0, 1) + value.substring(1 + 1, value.length)	// We then remove "X"

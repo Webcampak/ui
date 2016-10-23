@@ -56,7 +56,7 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
         var nbStoresToLoad = 0;
         Ext.Array.each(requiredStores, function(currentStore) {
             scope.consoleLog("beginLoading(): Processing: " + currentStore.store.storeId + " Action: " + currentStore.action);
-            if ((currentStore.action == "LOAD" && currentStore.store.getTotalCount() == 0) || currentStore.action == "REFRESH") {
+            if ((currentStore.action === "LOAD" && currentStore.store.getTotalCount() === 0) || currentStore.action === "REFRESH") {
                 scope.consoleLog("beginLoading(): Loading: " + currentStore.store.storeId);
                 // Load Store
                 // 1- Add record to tracking store
@@ -69,7 +69,7 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
                 );
                 nbStoresToLoad = nbStoresToLoad + 1;
                 // 2- Remove all previous records in store prior to loading, useful in case of exception when refreshing to ensure store is empty
-                if (currentStore.action == "REFRESH") {
+                if (currentStore.action === "REFRESH") {
                     currentStore.store.removeAll(true);
                 }
                 // 3- Load store
@@ -78,7 +78,7 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
                     //4- Once store loaded, update store
                     scope.consoleLog("beginLoading(): Store: " + currentStore.store.storeId + " loaded");
                     scope.getCoreLoadingStoresStore().each(function (rec) {
-                        if (rec.get("STORE_ID") == currentStore.store.storeId && rec.get("SESSION_CODE") == sessionCode) {
+                        if (rec.get("STORE_ID") === currentStore.store.storeId && rec.get("SESSION_CODE") === sessionCode) {
                             rec.set("STATUS", "LOADED");
                         }
                     });
@@ -88,15 +88,15 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
         var storeLoadingInterval = setInterval(function() {
             var storesStillLoading = nbStoresToLoad;
             scope.getCoreLoadingStoresStore().each(function (rec) {
-                if (rec.get("STATUS") == "LOADED" && rec.get("SESSION_CODE") == sessionCode) {
+                if (rec.get("STATUS") === "LOADED" && rec.get("SESSION_CODE") === sessionCode) {
                     storesStillLoading = storesStillLoading - 1;
                 }
             });
 //            console.log(new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->Stores: Controller beginLoading: Number of stores still loading: " + storesStillLoading);
-            if (storesStillLoading == 0) {
+            if (storesStillLoading === 0) {
                 var recordsRemove = [];
                 scope.getCoreLoadingStoresStore().each(function (rec) {
-                    if (rec.get("SESSION_CODE") == sessionCode) {
+                    if (rec.get("SESSION_CODE") === sessionCode) {
                         recordsRemove.push(rec);
                     }
                 });

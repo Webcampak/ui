@@ -15,11 +15,11 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.sensors.SensorsList", {
           field: {xtype: "sourcesconfigurationphidgetssensorsphidgetsportslist"},
           renderer: function(value) {
               if (!isNaN(value)){
-                  if (Ext.data.StoreManager.lookup("sourcesconfiguration.PhidgetSensors").findRecord("ID", value, 0, false, false, true) != null) {return Ext.data.StoreManager.lookup("sourcesconfiguration.PhidgetSensors").findRecord("ID", value, 0, false, false, true).get("NAME");}
+                  if (Ext.data.StoreManager.lookup("sourcesconfiguration.PhidgetSensors").findRecord("ID", value, 0, false, false, true) !== null) {return Ext.data.StoreManager.lookup("sourcesconfiguration.PhidgetSensors").findRecord("ID", value, 0, false, false, true).get("NAME");}
                   else {return value;}
               }
-              else if (typeof value != "undefined") {
-                  if (value.name != null) {return value.name;}
+              else if (typeof value !== "undefined") {
+                  if (value.name !== null) {return value.name;}
                   else {return "";}
               }
               else {return "";}

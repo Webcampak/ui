@@ -146,7 +146,7 @@ Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
         this.consoleLog("openSendEmail()");
         Ext.getBody().unmask();
         this.getDesktopsendemailmain().show();
-        if (this.getDesktopsendemailsendfrom().getValue() == "") {
+        if (this.getDesktopsendemailsendfrom().getValue() === "") {
             this.getDesktopsendemailsendfrom().setVisible(false);
         } else {
             this.getDesktopsendemailsendfrom().setVisible(true);
@@ -156,7 +156,7 @@ Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
     sendEmail: function() {
         this.consoleLog("sendEmail()");
         var emailsDstString = this.getDesktopsendemailsendto().getValue() + this.getDesktopsendemailsendcc().getValue();
-        if (emailsDstString.length > 5 && this.getDesktopsendemailemailsubject().getValue() != "" && this.getDesktopsendemailemailbody().getValue() != "") {
+        if (emailsDstString.length > 5 && this.getDesktopsendemailemailsubject().getValue() !== "" && this.getDesktopsendemailemailbody().getValue() !== "") {
             //if (this.getSendEvent() !== "") {
             //    this.fireEvent(this.getSendEvent());
             //} else {

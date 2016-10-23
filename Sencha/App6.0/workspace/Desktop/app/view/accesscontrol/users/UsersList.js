@@ -19,11 +19,11 @@ Ext.define("WPAKD.view.accesscontrol.users.UsersList", {
           field: {xtype: "accesscontroluserssharedgroupslist"},
           renderer: function(value) {
               if (!isNaN(value)){
-                  if (Ext.data.StoreManager.lookup("accesscontrol.groups.Groups").findRecord("GRO_ID", value, 0, false, false, true) != null) {return Ext.data.StoreManager.lookup("accesscontrol.groups.Groups").findRecord("GRO_ID", value, 0, false, false, true).get("NAME");}
+                  if (Ext.data.StoreManager.lookup("accesscontrol.groups.Groups").findRecord("GRO_ID", value, 0, false, false, true) !== null) {return Ext.data.StoreManager.lookup("accesscontrol.groups.Groups").findRecord("GRO_ID", value, 0, false, false, true).get("NAME");}
                   else {return value;}
               }
-              else if (typeof value != "undefined") {
-                  if (value.name != null) {return value.name;}
+              else if (typeof value !== "undefined") {
+                  if (value.name !== null) {return value.name;}
                   else {return "";}
               }
               else {return "";}
@@ -33,11 +33,11 @@ Ext.define("WPAKD.view.accesscontrol.users.UsersList", {
           field: {xtype: "accesscontroluserssharedcustomerslist"},
           renderer: function(value) {
               if (!isNaN(value)){
-                  if (Ext.data.StoreManager.lookup("accesscontrol.customers.Customers").findRecord("CUS_ID", value, 0, false, false, true) != null) {return Ext.data.StoreManager.lookup("accesscontrol.customers.Customers").findRecord("CUS_ID", value, 0, false, false, true).get("NAME");}
+                  if (Ext.data.StoreManager.lookup("accesscontrol.customers.Customers").findRecord("CUS_ID", value, 0, false, false, true) !== null) {return Ext.data.StoreManager.lookup("accesscontrol.customers.Customers").findRecord("CUS_ID", value, 0, false, false, true).get("NAME");}
                   else {return value;}
               }
-              else if (typeof value != "undefined") {
-                  if (value.name != null) {return value.name;}
+              else if (typeof value !== "undefined") {
+                  if (value.name !== null) {return value.name;}
                   else {return "";}
               }
               else {return "";}
@@ -57,7 +57,7 @@ Ext.define("WPAKD.view.accesscontrol.users.UsersList", {
               valueField: "ACTIVE_FLAG"
             },
           renderer: function(value) {
-              if (value == "Y") {return "YES";}
+              if (value === "Y") {return "YES";}
               else {return "NO";}
           }
         }

@@ -207,7 +207,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getVideosDaysListStore().last();
         //Determine days not to be displayed on calendar
-        if (daysWidgetSetting.get("DISABLED") != "" ) {
+        if (daysWidgetSetting.get("DISABLED") !== "" ) {
                 currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getVideosselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
@@ -266,7 +266,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
         this.consoleLog("openVideos()");
         Ext.getBody().unmask();
 
-        if(this.getVideosmain().isVisible() && Ext.WindowManager.getActive().getId() != this.getVideosmain().getId()) {
+        if(this.getVideosmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getVideosmain().getId()) {
             this.consoleLog("openVideos(): getVideosmain().toFront()");
             this.getVideosmain().toFront();
         } else if(!this.getVideosmain().isVisible()) {

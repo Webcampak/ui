@@ -127,7 +127,7 @@ Ext.define("WPAKD.Application", {
 
         //Disable backspace when used outside of a text field
         Ext.EventManager.addListener(Ext.getBody(), "keydown", function(e){
-              if((e.getTarget().type != "text"&& e.getTarget().type != "textarea" && e.getTarget().type != "password") && e.getKey() == "8" ){
+              if((e.getTarget().type !== "text"&& e.getTarget().type !== "textarea" && e.getTarget().type !== "password") && e.getKey() === "8" ){
                     e.preventDefault();
               }
          });

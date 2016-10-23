@@ -56,7 +56,7 @@ Ext.define("WPAKD.controller.desktop.authentication.UserSettings", {
     applyUserSettings: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->UserSettings: Controller applyUserSettings: function()");
         var record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CHANGEPASSWORD", 0, false, false, true);
-        if (record && record.get("VALUE") == "Y") {
+        if (record && record.get("VALUE") === "Y") {
             this.fireEvent("WPAKD.controller.desktop.authentication.ChangePassword.changeUserPassword");
         }
 
