@@ -61,7 +61,7 @@ Ext.define("WPAKD.controller.desktop.loading.SyncStores", {
 
                 // 3- Sync store
                 currentStore.store.sync({
-                    callback: function(records, operation, success) {
+                    callback: function() {
                         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Loading->SyncStores: Controller beginLoading: Store: " + currentStore.store.storeId + " synced");
                         currentContext.getDesktopLoadingStoresStore().each(function (rec) {
                             if (rec.get("STORE_ID") === currentStore.store.storeId && rec.get("SESSION_CODE") === sessionCode) {

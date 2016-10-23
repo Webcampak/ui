@@ -119,9 +119,9 @@ Ext.define("WPAKD.controller.xferreports.XferReports", {
 
         var applicationName = "WEB_DSP_XFERREPORTS";
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
-    },
+    }
 
-    openXferReports: function(key) {
+    , openXferReports: function() {
         this.consoleLog("openXferReports()");
         Ext.getBody().unmask();
         if(this.getXferreportsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getXferreportsmain().getId()) {
@@ -138,9 +138,9 @@ Ext.define("WPAKD.controller.xferreports.XferReports", {
             this.getXferreportsmain().setVisible(false);
             this.getDesktoptoolbartoptaskbar().getComponent("tbxferreports").setVisible(true);
         }
-    },
+    }
 
-    closeXferReports: function(key) {
+    , closeXferReports: function() {
         this.consoleLog("closeXferReports()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbxferreports").setVisible(false);
     }

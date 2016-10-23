@@ -176,7 +176,7 @@ Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
             this.fireEvent("WPAKD.controller.desktop.loading.Stores.beginLoading", this.getDesktopsendemailmain(), "Please wait ... Sending Email to server");
             var scope = this;
             newEmail.save({
-                success: function(record, operation) {
+                success: function() {
                     scope.fireEvent("WPAKD.controller.desktop.loading.Stores.endLoading", scope.getDesktopsendemailmain());
                     Ext.MessageBox.show({
                         title: i18n.gettext("Info"),
@@ -186,7 +186,7 @@ Ext.define("WPAKD.controller.desktop.sendemail.SendEmail", {
                     });
                     scope.fireEvent(scope.getSendEvent());
                 },
-                failure: function(record, operation) {
+                failure: function() {
                     scope.fireEvent("WPAKD.controller.desktop.loading.Stores.endLoading", scope.getDesktopsendemailmain());
                 }
             });

@@ -556,9 +556,9 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
 
         var applicationName = "WEB_DSP_SYNCREPORTS";
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
-    },
+    }
 
-    openSyncReports: function(key) {
+    , openSyncReports: function() {
         this.consoleLog("openSyncReports()");
         Ext.getBody().unmask();
         if(this.getSyncreportsmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getSyncreportsmain().getId()) {
@@ -575,9 +575,9 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             this.getSyncreportsmain().setVisible(false);
             this.getDesktoptoolbartoptaskbar().getComponent("tbsyncreports").setVisible(true);
         }
-    },
+    }
 
-    closeSyncReports: function(key) {
+    , closeSyncReports: function() {
         this.consoleLog("closeSyncReports()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbsyncreports").setVisible(false);
     }

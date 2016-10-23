@@ -76,7 +76,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
     }
 
-    , loadStores: function(key) {
+    , loadStores: function() {
         this.consoleLog("loadStores()");
 
         this.fireEvent("WPAKD.controller.desktop.loading.Mask.beginLoading", this.getStatssourcesmain(), "Please wait, loading data...");
@@ -91,7 +91,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
             , requiredStores);
     }
 
-    , loadingCompleted: function(key) {
+    , loadingCompleted: function() {
         this.consoleLog("loadingCompleted()");
         this.fireEvent("WPAKD.controller.desktop.loading.Mask.endLoading", this.getStatssourcesmain());
     }
@@ -113,7 +113,7 @@ Ext.define("WPAKD.controller.stats.Sources", {
 
     }
 
-    , selectFirstSource: function(key) {
+    , selectFirstSource: function() {
         this.consoleLog("selectFirstSource()");
         var record = this.getSharedSourcesStore().first();
         this.getStatssourcessourceslist().setValue(record);
@@ -133,9 +133,9 @@ Ext.define("WPAKD.controller.stats.Sources", {
 
         var applicationName = "WEB_DSP_STATS_SOURCES";
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
-    },
+    }
 
-    openStatsSources: function(key) {
+    , openStatsSources: function() {
         this.consoleLog("openStatsSources()");
         Ext.getBody().unmask();
 
@@ -154,9 +154,9 @@ Ext.define("WPAKD.controller.stats.Sources", {
             this.getStatssourcesmain().setVisible(false);
             this.getDesktoptoolbartoptaskbar().getComponent("tbstatssources").setVisible(true);
         }
-    },
+    }
 
-    closeStatsSources: function(key) {
+    , closeStatsSources: function() {
         this.consoleLog("closeStatsSources()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbstatssources").setVisible(false);
     }

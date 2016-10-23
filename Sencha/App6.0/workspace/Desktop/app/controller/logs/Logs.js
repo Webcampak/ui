@@ -171,7 +171,7 @@ Ext.define("WPAKD.controller.logs.Logs", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     },
 
-    openLogs: function(key) {
+    openLogs: function() {
         this.consoleLog("openLogs()");
         Ext.getBody().unmask();
 
@@ -191,7 +191,7 @@ Ext.define("WPAKD.controller.logs.Logs", {
         }
     },
 
-    closeLogs: function(key) {
+    closeLogs: function() {
         this.consoleLog("closeLogs()");
         this.getDesktoptoolbartoptaskbar().getComponent("tblogs").setVisible(false);
     }

@@ -70,7 +70,7 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
 
                 // 3- Sync store
                 currentStore.store.sync({
-                    callback: function(records, operation, success) {
+                    callback: function() {
                         scope.consoleLog("beginLoading(): Store: " + currentStore.store.storeId + " synced");
                         scope.getCoreLoadingStoresStore().each(function (rec) {
                             if (rec.get("STORE_ID") === currentStore.store.storeId && rec.get("SESSION_CODE") === sessionCode) {

@@ -44,7 +44,7 @@ Ext.define("WPAKD.view.stats.sources.PicturesCount", {
         //, marker: true
         , tooltip: {
             trackMouse: true,
-            renderer: function (tooltip, record, item) {
+            renderer: function (tooltip, record) {
                 tooltip.setHtml(record.get("COUNT") + " " + i18n.gettext("on") + " " + Ext.util.Format.dateRenderer("M d, Y")(record.get("DATE")));
             }
         }

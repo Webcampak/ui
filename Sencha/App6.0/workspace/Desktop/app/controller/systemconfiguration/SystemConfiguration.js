@@ -333,9 +333,9 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
 
         var applicationName = "WEB_CFG_SYSTEM";
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
-    },
+    }
 
-    openSystemConfiguration: function(key) {
+    , openSystemConfiguration: function() {
         this.consoleLog("openSystemConfiguration()");
         Ext.getBody().unmask();
 
@@ -353,9 +353,9 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
             this.getSystemconfigurationmain().setVisible(false);
             this.getDesktoptoolbartoptaskbar().getComponent("tbsystemconfiguration").setVisible(true);
         }
-    },
+    }
 
-    closeSystemConfiguration: function(key) {
+    , closeSystemConfiguration: function() {
         this.consoleLog("closeSystemConfiguration()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbsystemconfiguration").setVisible(false);
     }

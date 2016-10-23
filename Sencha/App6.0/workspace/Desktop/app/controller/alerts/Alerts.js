@@ -447,7 +447,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     },
 
-    openAlerts: function(key) {
+    openAlerts: function() {
         this.consoleLog("openAlerts()");
         Ext.getBody().unmask();
 
@@ -467,7 +467,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
         }
     },
 
-    closeAlerts: function(key) {
+    closeAlerts: function() {
         this.consoleLog("closeAlerts()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbalerts").setVisible(false);
     }

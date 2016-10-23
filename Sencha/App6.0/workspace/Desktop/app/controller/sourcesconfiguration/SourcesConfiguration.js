@@ -421,7 +421,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     },
 
-    openSourcesConfiguration: function(key) {
+    openSourcesConfiguration: function() {
         this.consoleLog("openSourcesConfiguration()");
         Ext.getBody().unmask();
 
@@ -441,7 +441,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         }
     },
 
-    closeSourcesConfiguration: function(key) {
+    closeSourcesConfiguration: function() {
         this.consoleLog("closeSourcesConfiguration()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbsourcesconfiguration").setVisible(false);
     }

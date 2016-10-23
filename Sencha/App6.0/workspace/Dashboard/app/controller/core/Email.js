@@ -177,7 +177,7 @@ Ext.define("WPAKT.controller.core.Email", {
             this.fireEvent("WPAKT.controller.core.loading.Mask.beginLoading", this.getCoreemailmain(), "Please wait ... Sending Email to server");
             var scope = this;
             newEmail.save({
-                success: function(record, operation) {
+                success: function(record) {
                     scope.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", scope.getCoreemailmain());
                     Ext.MessageBox.show({
                         title: i18n.gettext("Info"),
@@ -187,7 +187,7 @@ Ext.define("WPAKT.controller.core.Email", {
                     });
                     scope.fireEvent(scope.getSendEvent());
                 },
-                failure: function(record, operation) {
+                failure: function(record) {
                     scope.fireEvent("WPAKT.controller.core.loading.Mask.endLoading", scope.getCoreemailmain());
                 }
             });

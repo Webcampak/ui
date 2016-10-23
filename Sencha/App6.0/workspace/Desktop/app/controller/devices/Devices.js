@@ -113,7 +113,7 @@ Ext.define("WPAKD.controller.devices.Devices", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     },
 
-    openDevices: function(key) {
+    openDevices: function() {
         this.consoleLog("openDevices()");
         Ext.getBody().unmask();
 
@@ -134,7 +134,7 @@ Ext.define("WPAKD.controller.devices.Devices", {
         }
     },
 
-    closeDevices: function(key) {
+    closeDevices: function() {
         this.consoleLog("closeDevices()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbdevices").setVisible(false);
     }

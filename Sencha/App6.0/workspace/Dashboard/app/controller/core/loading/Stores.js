@@ -74,7 +74,7 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
                 }
                 // 3- Load store
 //                console.log(new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->Stores: Controller beginLoading: Loading: " + currentStore.store.storeId );
-                currentStore.store.load(function(records, operation, success) {
+                currentStore.store.load(function() {
                     //4- Once store loaded, update store
                     scope.consoleLog("beginLoading(): Store: " + currentStore.store.storeId + " loaded");
                     scope.getCoreLoadingStoresStore().each(function (rec) {

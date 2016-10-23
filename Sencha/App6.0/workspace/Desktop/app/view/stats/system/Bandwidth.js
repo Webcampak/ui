@@ -30,7 +30,7 @@ Ext.define("WPAKD.view.stats.system.Bandwidth", {
             }
         }
         , label: {font: "10px Arial"}
-        , renderer: function (axis, label, layoutContext, lastlabel) {
+        , renderer: function (axis, label) {
             if (parseInt(label) <= 1) {return Math.round(label);}
             else {return Ext.util.Format.fileSize(label);}
         }

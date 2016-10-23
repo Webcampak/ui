@@ -83,7 +83,7 @@ Ext.define("WPAKD.controller.accesscontrol.AccessControl", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     }
 
-    , openAccessControl: function(key) {
+    , openAccessControl: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: openAccessControl: function()");
         if(this.getAccesscontrolmain().isVisible() && Ext.WindowManager.getActive().getId() !== this.getAccesscontrolmain().getId()) {
             console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: openAccessControl: getAccesscontrolmain().toFront()");
@@ -102,12 +102,12 @@ Ext.define("WPAKD.controller.accesscontrol.AccessControl", {
         }
     }
 
-    , closeAccessControl: function(key) {
+    , closeAccessControl: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: closeAccessControl: function()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbaccesscontrol").setVisible(false);
     }
 
-    , refreshTotalCount: function(key) {
+    , refreshTotalCount: function() {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->AccessControl->AccessControl: refreshTotalCount: function()");
         this.getAccesscontroluserstoolbarrecords().setText(i18n.gettext("Total number of records: " + this.getAccesscontrolUsersUsersStore().getTotalCount()) );
         this.getAccesscontrolgroupstoolbarrecords().setText(i18n.gettext("Total number of records: " + this.getAccesscontrolGroupsGroupsStore().getTotalCount()) );

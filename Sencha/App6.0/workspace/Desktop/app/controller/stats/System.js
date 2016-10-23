@@ -103,9 +103,9 @@ Ext.define("WPAKD.controller.stats.System", {
 
         var applicationName = "WEB_DSP_STATS_SYSTEM";
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
-    },
+    }
 
-    openStatsSystem: function(key) {
+    , openStatsSystem: function() {
         this.consoleLog("openStatsSystem()");
         Ext.getBody().unmask();
 
@@ -123,9 +123,9 @@ Ext.define("WPAKD.controller.stats.System", {
             this.getStatssystemmain().setVisible(false);
             this.getDesktoptoolbartoptaskbar().getComponent("tbstatssystem").setVisible(true);
         }
-    },
+    }
 
-    closeStatsSystem: function(key) {
+    , closeStatsSystem: function() {
         this.consoleLog("closeStatsSystem()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbstatssystem").setVisible(false);
     }

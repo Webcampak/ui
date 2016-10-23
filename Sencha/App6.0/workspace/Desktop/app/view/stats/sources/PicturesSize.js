@@ -27,8 +27,8 @@ Ext.define("WPAKD.view.stats.sources.PicturesSize", {
             }
         }
         , label: {font: "10px Arial"}
-        , renderer: function (axis, label, layoutContext, lastlabel) {
-            if (parseInt(label) <= 1) {return Math.round(label);} 
+        , renderer: function (axis, label) {
+            if (parseInt(label) <= 1) {return Math.round(label);}
             else {return Ext.util.Format.fileSize(label);}
         }        
     }, {
@@ -48,7 +48,7 @@ Ext.define("WPAKD.view.stats.sources.PicturesSize", {
         //, marker: true
         , tooltip: {
             trackMouse: true,
-            renderer: function (tooltip, record, item) {
+            renderer: function (tooltip, record) {
                 tooltip.setHtml(Ext.util.Format.fileSize(record.get("SIZE")) + " " + i18n.gettext("on") + " " + Ext.util.Format.dateRenderer("M d, Y")(record.get("DATE")));
             }
         }
