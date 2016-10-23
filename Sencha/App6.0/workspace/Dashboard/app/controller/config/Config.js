@@ -475,48 +475,53 @@ Ext.define("WPAKT.controller.config.Config", {
      */
     , updateCalendarSchedule: function(modifiedDay) {
         this.consoleLog("updateCalendarSchedule()");
+        var cfgcapturedayenable = null;
+        var cfgcapturestarthour = null;
+        var cfgcapturestartminute = null;
+        var cfgcaptureendhour = null;
+        var cfgcaptureendminute = null;
         if (modifiedDay === 1) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable1().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour1().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute1().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour1().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute1().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable1().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour1().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute1().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour1().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute1().getValue();
         } else if (modifiedDay === 2) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable2().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour2().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute2().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour2().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute2().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable2().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour2().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute2().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour2().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute2().getValue();
         } else if (modifiedDay === 3) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable3().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour3().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute3().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour3().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute3().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable3().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour3().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute3().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour3().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute3().getValue();
         } else if (modifiedDay === 4) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable4().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour4().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute4().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour4().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute4().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable4().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour4().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute4().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour4().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute4().getValue();
         } else if (modifiedDay === 5) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable5().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour5().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute5().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour5().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute5().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable5().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour5().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute5().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour5().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute5().getValue();
         } else if (modifiedDay === 6) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable6().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour6().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute6().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour6().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute6().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable6().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour6().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute6().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour6().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute6().getValue();
         } else if (modifiedDay === 7) {
-            var cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable7().getValue();
-            var cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour7().getValue();
-            var cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute7().getValue();
-            var cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour7().getValue();
-            var cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute7().getValue();
+            cfgcapturedayenable = this.getConfigcapturecalendarcfgcapturedayenable7().getValue();
+            cfgcapturestarthour = this.getConfigcapturecalendarcfgcapturestarthour7().getValue();
+            cfgcapturestartminute = this.getConfigcapturecalendarcfgcapturestartminute7().getValue();
+            cfgcaptureendhour = this.getConfigcapturecalendarcfgcaptureendhour7().getValue();
+            cfgcaptureendminute = this.getConfigcapturecalendarcfgcaptureendminute7().getValue();
         }
         var configRecord = this.getConfigCaptureStore().findRecord("NAME", "cfgcronday" + modifiedDay, 0, false, false, true);
         if (configRecord !== undefined && cfgcapturestarthour !== null && cfgcapturestartminute !== null && cfgcaptureendhour !== null && cfgcaptureendminute !== null) {
