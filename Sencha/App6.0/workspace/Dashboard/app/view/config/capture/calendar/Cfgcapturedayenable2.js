@@ -11,7 +11,7 @@ Ext.define("WPAKT.view.config.capture.calendar.Cfgcapturedayenable2", {
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {
-        change : function(scope, newValue, oldValue) {
+        change : function() {
             this.fireEvent("WPAKT.controller.config.Config.updateCalendarSchedule", 2); // 2 for Tuesday
         }
     }
