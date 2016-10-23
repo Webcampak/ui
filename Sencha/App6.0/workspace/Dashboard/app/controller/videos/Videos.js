@@ -161,7 +161,7 @@ Ext.define("WPAKT.controller.videos.Videos", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getVideosDaysListStore().last();
         //Determine days not to be displayed on calendar
-        if (daysWidgetSetting.get("DISABLED") != "" ) {
+        if (daysWidgetSetting.get("DISABLED") !== "" ) {
                 var currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getVideoscontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY

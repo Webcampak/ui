@@ -90,7 +90,7 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
             }
             var componentFound = 0;
             for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
+                if (this.loadMaskComponents[i] !== undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                     var componentFound = 1;
                     this.loadMaskComponents[i].setLoading(loadMessage);
                 }
@@ -111,9 +111,9 @@ Ext.define("WPAKT.controller.core.loading.Mask", {
             Ext.getBody().unmask();
         } else {
             this.consoleLog("endLoading(): Current Component ID: " + extComponent.getId());
-            if (this.loadMaskComponents != undefined) {
+            if (this.loadMaskComponents !== undefined) {
                 for (var i = 0; i < this.loadMaskComponents.length; i++) {
-                    if (this.loadMaskComponents[i] != undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
+                    if (this.loadMaskComponents[i] !== undefined && this.loadMaskComponents[i].getId() === extComponent.getId()) {
                         this.loadMaskComponents[i].setLoading(false);
                         delete this.loadMaskComponents[i];
                     }

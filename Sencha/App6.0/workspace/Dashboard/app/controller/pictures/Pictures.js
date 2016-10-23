@@ -214,7 +214,7 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getPicturesDaysListStore().last();
         //Determine days not to be displayed on calendar
-        if (daysWidgetSetting.get("DISABLED") != "" ) {
+        if (daysWidgetSetting.get("DISABLED") !== "" ) {
                 var currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getPicturescontrolsdatedatepicker().setDisabledDates(currentDisabledDates);	//MMDDYYYY
@@ -247,7 +247,7 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
     , updateSensorsButton: function() {
         this.consoleLog("updateSensorsButton()");
         var currentSensors = this.getPicturesSensorsStore().last();   
-        if (currentSensors !== null && currentSensors.get("SENSOR1") != "") {
+        if (currentSensors !== null && currentSensors.get("SENSOR1") !== "") {
             this.getPicturescontrolsdetailssensorsbutton().setDisabled(false);
         } else {
             this.getPicturescontrolsdetailssensorsbutton().setDisabled(true);
@@ -298,28 +298,28 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
         } else {
             var currentPictureDisplay = currentPicture.get("PICTURE");
 
-            if (currentPicture.get("THUMB1") != "") {this.getPicturescontrolsquicknavminus15button().setDisabled(false);}
+            if (currentPicture.get("THUMB1") !== "") {this.getPicturescontrolsquicknavminus15button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavminus15button().setDisabled(true);}
             
-            if (currentPicture.get("THUMB2") != "") {this.getPicturescontrolsquicknavminus10button().setDisabled(false);}
+            if (currentPicture.get("THUMB2") !== "") {this.getPicturescontrolsquicknavminus10button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavminus10button().setDisabled(true);}
             
-            if (currentPicture.get("THUMB3") != "") {this.getPicturescontrolsquicknavminus5button().setDisabled(false);}
+            if (currentPicture.get("THUMB3") !== "") {this.getPicturescontrolsquicknavminus5button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavminus5button().setDisabled(true);}
             
-            if (currentPicture.get("THUMB4") != "") {this.getPicturescontrolsquicknavplus5button().setDisabled(false);}
+            if (currentPicture.get("THUMB4") !== "") {this.getPicturescontrolsquicknavplus5button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavplus5button().setDisabled(true);}
             
-            if (currentPicture.get("THUMB5") != "") {this.getPicturescontrolsquicknavplus10button().setDisabled(false);}
+            if (currentPicture.get("THUMB5") !== "") {this.getPicturescontrolsquicknavplus10button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavplus10button().setDisabled(true);}
             
-            if (currentPicture.get("THUMB6") != "") {this.getPicturescontrolsquicknavplus15button().setDisabled(false);}
+            if (currentPicture.get("THUMB6") !== "") {this.getPicturescontrolsquicknavplus15button().setDisabled(false);}
             else {this.getPicturescontrolsquicknavplus15button().setDisabled(true);}
             
-            if (currentPicture.get("PREVIOUS") != "") {this.getPicturescontrolsquicknavpreviousbutton().setDisabled(false);}
+            if (currentPicture.get("PREVIOUS") !== "") {this.getPicturescontrolsquicknavpreviousbutton().setDisabled(false);}
             else {this.getPicturescontrolsquicknavpreviousbutton().setDisabled(true);}            
             
-            if (currentPicture.get("NEXT") != "") {this.getPicturescontrolsquicknavnextbutton().setDisabled(false);}
+            if (currentPicture.get("NEXT") !== "") {this.getPicturescontrolsquicknavnextbutton().setDisabled(false);}
             else {this.getPicturescontrolsquicknavnextbutton().setDisabled(true);}               
         }
     }    
@@ -383,7 +383,7 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
             var currentPicture = this.getPicturesPictureStore().last().get("PICTURE");
             var currentPictureDay = currentPicture.substring(0, 4) + currentPicture.substring(4, 6) +  currentPicture.substring(6, 8);
             var newPictureDay = pictureToLoad.substring(0, 4) + pictureToLoad.substring(4, 6) +  pictureToLoad.substring(6, 8);
-            if (currentPictureDay != newPictureDay || this.getPicturesHoursListStore().getProxy().extraParams.SELECTEDDAY != currentPictureDay) {
+            if (currentPictureDay !== newPictureDay || this.getPicturesHoursListStore().getProxy().extraParams.SELECTEDDAY !== currentPictureDay) {
                 this.consoleLog("loadNewPicture(): New picture is in a different day, reloading hours list");
                 this.getPicturesHoursListStore().getProxy().setExtraParam("SELECTEDDAY", newPictureDay);
                 this.getPicturesHoursListStore().load();
@@ -435,25 +435,25 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
 
         var currentURL = "/" + symfonyEnv + "/dl/source" + this.getSourceId() + "/pictures/";
         var currentSensorValue = this.getPicturesSensorsStore().last();
-        if (currentSensorValue.get("SENSOR1") != "") {
+        if (currentSensorValue.get("SENSOR1") !== "") {
             this.getPicturessensorssensor1().setVisible(true);
             this.getPicturessensorssensor1().setSrc(currentURL + currentSensorValue.get("SENSOR1"));
             this.getPicturessensorssensor1().setWidth(497);
             this.getPicturessensorssensor1().setHeight(162);
         } else {this.getPicturessensorssensor1().setVisible(false);}
-        if (currentSensorValue.get("SENSOR2") != "") {
+        if (currentSensorValue.get("SENSOR2") !== "") {
             this.getPicturessensorssensor2().setVisible(true);
             this.getPicturessensorssensor2().setSrc(currentURL + currentSensorValue.get("SENSOR2"));
             this.getPicturessensorssensor2().setWidth(497);
             this.getPicturessensorssensor2().setHeight(162);
         } else {this.getPicturessensorssensor2().setVisible(false);}
-        if (currentSensorValue.get("SENSOR3") != "") {
+        if (currentSensorValue.get("SENSOR3") !== "") {
             this.getPicturessensorssensor3().setVisible(true);
             this.getPicturessensorssensor3().setSrc(currentURL + currentSensorValue.get("SENSOR3"));
             this.getPicturessensorssensor3().setWidth(497);
             this.getPicturessensorssensor3().setHeight(162);
         } else {this.getPicturessensorssensor3().setVisible(false);}
-        if (currentSensorValue.get("SENSOR4") != "") {
+        if (currentSensorValue.get("SENSOR4") !== "") {
             this.getPicturessensorssensor1().setVisible(true);
             this.getPicturessensorssensor4().setSrc(currentURL + currentSensorValue.get("SENSOR4"));
             this.getPicturessensorssensor4().setWidth(497);

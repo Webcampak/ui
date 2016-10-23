@@ -22,7 +22,7 @@ Ext.define("WPAKT.view.videos.controls.VideosList", {
      * @param {Object} val
      */
     , download: function(value, metaData) {
-        if (value != "") {
+        if (value !== "") {
             var currentURL = "/" + symfonyEnv + "/dl/source" + Ext.getStore("videos.VideosList").getProxy().extraParams.SOURCEID + "/videos/";
             return "<a href=\"" + currentURL + value + "\" target=\"_blank\"><img src=\"../resources/images/download16x16.png\" /></a>";
         }

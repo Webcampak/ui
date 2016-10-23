@@ -251,13 +251,12 @@ Ext.define("WPAKT.controller.config.Config", {
             this.enableAllConfigScreens();
             this.checkModifiedConfigStores();
                         
-            var scope = this;
             //We store the content of the store in a Javascript object
             var configObj = {};
+            var configName = null;
             this.getConfigCaptureStore().each(function (rec) {
-                var configValue = rec.get("VALUE");
-                var configName = rec.get("NAME");
-                configObj[configName] = configValue;
+                configName = rec.get("NAME");
+                configObj[configName] = rec.get("VALUE");
             });
 
             if(configObj.hasOwnProperty("cfgsourceactive")){this.getConfigcapturesourcecfgsourceactive().setValue(configObj["cfgsourceactive"]);
@@ -385,9 +384,9 @@ Ext.define("WPAKT.controller.config.Config", {
                 this.getConfigcapturecalendarcfgcaptureendminute7().setVisible(false);
             }
 
-            var configObj = {};
+            configObj = {};
             this.getConfigSectionCaptureStore().each(function (rec) {
-                var configName = rec.get("NAME");
+                configName = rec.get("NAME");
                 configObj[configName] = true;
             });
 
@@ -459,7 +458,7 @@ Ext.define("WPAKT.controller.config.Config", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getConfigCaptureStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") != newValue) {
+            if (configRecord.get("VALUE") !== newValue) {
                 this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.checkModifiedConfigStores();
@@ -528,7 +527,7 @@ Ext.define("WPAKT.controller.config.Config", {
             if (cfgcaptureendminute < 10) {cfgcaptureendminute = "0" + cfgcaptureendminute}
             //yes, 00, 00, 00, 00
             var cfgcronday = cfgcapturedayenable + "," + cfgcapturestarthour + ","  + cfgcapturestartminute + "," + cfgcaptureendhour + "," + cfgcaptureendminute
-            if (configRecord.get("VALUE") != cfgcronday) {
+            if (configRecord.get("VALUE") !== cfgcronday) {
                 this.consoleLog("updateCalendarSchedule(): update config: cfgcronday" + modifiedDay + " from: " + configRecord.get("VALUE") + " to: " + cfgcronday, "info");
                 configRecord.set("VALUE", cfgcronday);
                 this.checkModifiedConfigStores();
