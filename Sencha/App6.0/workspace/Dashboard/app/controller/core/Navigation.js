@@ -81,15 +81,14 @@ Ext.define("WPAKT.controller.core.Navigation", {
             , leaf:   true
             , iconCls: "x-fa fa-desktop"
             , routeId: "dashboard"
-        }
+        };
+        var storePicturesRecord = {};
         if (this.getCoreApplicationsStore().findRecord("CODE", "WEB_DSP_PICTURES", 0, false, false, true) !== null) {
-            var storePicturesRecord = {};
             var pictureSources = [];
             this.getCoreSourcesStore().each(function (rec) {
+                var pictureIconCls = "x-fa fa-camera-retro";
                 if (rec.get("REMOTE_HOST") !== "" && rec.get("REMOTE_HOST") !== "127.0.0.1") {
-                    var pictureIconCls = "right-icon rem-icon x-fa fa-camera-retro";
-                } else {
-                    var pictureIconCls = "x-fa fa-camera-retro";
+                    pictureIconCls = "right-icon rem-icon x-fa fa-camera-retro";
                 }
                 pictureSources.push({
                     text: rec.get("NAME")
@@ -100,7 +99,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
                 });
             });
             if (pictureSources.length > 0) {
-                var storePicturesRecord = {
+                storePicturesRecord = {
                     text:   i18n.gettext("Pictures")
                     , expanded: false
                     , selectable: false
@@ -108,20 +107,18 @@ Ext.define("WPAKT.controller.core.Navigation", {
                     //, routeId : "pages-parent"
                     //, id:       "pages-parent"
                     , children: pictureSources                  
-                }
+                };
             }
-        } else {
-            var storePicturesRecord = {};
         }
+        var storeVideosRecord = {};
         if (this.getCoreApplicationsStore().findRecord("CODE", "WEB_DSP_VIDEOS", 0, false, false, true) !== null) {
             var storeVideosRecord = {};
             var videoSources = [];
             this.getCoreSourcesStore().each(function (rec) {
+                var videoIconCls = "x-fa fa-video-camera";
                 if (rec.get("REMOTE_HOST") !== "" && rec.get("REMOTE_HOST") !== "127.0.0.1") {
-                    var videoIconCls = "right-icon rem-icon x-fa fa-video-camera";
-                } else {
-                    var videoIconCls = "x-fa fa-video-camera";
-                }                
+                    videoIconCls = "right-icon rem-icon x-fa fa-video-camera";
+                }
                 videoSources.push({
                     text: rec.get("NAME")
                     , view: "pages.BlankPage"
@@ -131,7 +128,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
                 });
             });
             if (videoSources.length > 0) {
-                var storeVideosRecord = {
+                storeVideosRecord = {
                     text:   i18n.gettext("Videos")
                     , expanded: false
                     , selectable: false
@@ -139,20 +136,17 @@ Ext.define("WPAKT.controller.core.Navigation", {
 //                    , routeId : "pages-parent"
 //                    , id:       "pages-parent"
                     , children: videoSources                  
-                }
+                };
             }
-        } else {
-            var storeVideosRecord = {};
         }
+        var storeConfigRecord = {};
         if (this.getCoreApplicationsStore().findRecord("CODE", "WEB_CFG_SOURCES", 0, false, false, true) !== null) {
-            var storeConfigRecord = {};
             var configSources = [];
             this.getCoreSourcesStore().each(function (rec) {
+                var configIconCls = "x-fa fa-cogs";
                 if (rec.get("REMOTE_HOST") !== "" && rec.get("REMOTE_HOST") !== "127.0.0.1") {
                     var configIconCls = "left-icon rem-icon x-fa fa-cogs";
-                } else {
-                    var configIconCls = "x-fa fa-cogs";
-                }                  
+                }
                 configSources.push({
                     text: rec.get("NAME")
                     , view: "pages.BlankPage"
@@ -170,10 +164,8 @@ Ext.define("WPAKT.controller.core.Navigation", {
 //                    , routeId : "pages-parent"
 //                    , id:       "pages-parent"
                     , children: configSources                  
-                }
+                };
             }
-        } else {
-            var storeConfigRecord = {};
         }
         
         var storeRecords = {
