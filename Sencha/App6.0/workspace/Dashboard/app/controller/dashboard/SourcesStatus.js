@@ -58,7 +58,7 @@ Ext.define("WPAKT.controller.dashboard.SourcesStatus", {
     }
    
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->SourcesStatus: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->SourcesStatus: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

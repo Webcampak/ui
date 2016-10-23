@@ -125,7 +125,7 @@ Ext.define("WPAKT.controller.pictures.Pictures", {
     }
     
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Pictures: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Pictures: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

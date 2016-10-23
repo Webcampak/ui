@@ -1,4 +1,4 @@
-/*global Ext i18n*/
+/*global Ext i18n $j symfonyEnv dateFormat*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.controller.pictures.Pictures");
 //</debug>
@@ -161,7 +161,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         var sendEvent = "WPAKD.controller.pictures.Pictures.sendEmail";
         //var sendEvent = "";
         var cancelEvent = "WPAKD.controller.pictures.Pictures.cancelEmail";
-        var emailSubject = i18n.gettext("Webcampak picture")
+        var emailSubject = i18n.gettext("Webcampak picture");
         var emailBody = i18n.gettext("Hello, <br /><br />You\"ll find enclosed an interesting picture<br /><br />Best Regards.");
         var emailAttachmentName = currentPicture;
         var emailAttachmentSourceId = currentSourceId;
@@ -277,13 +277,13 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         return pictureDate;
     }
 
-    , onHourSelected: function(iView, iCellEl, iColIdx, iRecord, iRowEl, iRowIdx, iEvent) {
+    , onHourSelected: function(iView, iCellEl, iColIdx, iRecord) {
         this.consoleLog("onHourSelected()");
-        var selectedcol = iColIdx - 1
+        var selectedcol = iColIdx - 1;
         if (iColIdx < 10) { selectedcol = "0" + selectedcol;};
         //get selected picture time from grid
-        var selectedpicture = iRecord.getData()[selectedcol]
-        if (selectedpicture !="0") {
+        var selectedpicture = iRecord.getData()[selectedcol];
+        if (selectedpicture !== "0") {
             this.loadNewPicture(selectedpicture);
         }
     }
@@ -300,7 +300,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.getPicturesSensorsStore().on("load",this.updateSensorsButton,this,{single:true});
     }
 
-    , onSourceSelected: function(combo, newValue, oldValue) {
+    , onSourceSelected: function(combo, newValue) {
         this.consoleLog("onSourceSelected()");
         this.clearWindowContent();
         
@@ -331,7 +331,6 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.getPicturesDaysListStore().on("load",this.updateDaysWidget,this,{single:true});
 
         //Load Pictures store to get latest pictures and thumbnail
-
     }
 
     , updateSensorsButton: function() {
@@ -409,7 +408,8 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             this.consoleLog("updatePictureElements(): Main Picture: Window Size:" + currentWindowWidth + "x" + currentWindowHeight);
             this.consoleLog("updatePictureElements(): Main Picture: Picture Size:" + currentPictureWidth + "x" + currentPictureHeight);
 
-            currentPictureTargetHeight = Math.round(currentWindowWidth * currentPictureHeight / currentPictureWidth);
+            var currentPictureTargetHeight = Math.round(currentWindowWidth * currentPictureHeight / currentPictureWidth);
+            var currentPictureTargetWidth = null;
             if (currentPictureTargetHeight > currentWindowHeight) {
                     currentPictureTargetWidth = Math.round(currentWindowHeight * currentPictureWidth / currentPictureHeight);
                     this.getPicturesdisplaycurrentpicture().setSize({width:currentPictureTargetWidth, height:currentWindowHeight});
@@ -492,7 +492,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("date").hide();
-            };
+            }
             if (currentPicture.get("THUMB2") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB2") + "?width=" + targetThumbnailWidth);
                     var thumb2time = currentPicture.get("THUMB2");
@@ -502,7 +502,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("date").hide();
-            };
+            }
             if (currentPicture.get("THUMB3") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB3") + "?width=" + targetThumbnailWidth);
                     var thumb3time = currentPicture.get("THUMB3");
@@ -512,7 +512,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("date").hide();
-            };
+            }
             if (currentPicture.get("THUMB4") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB4") + "?width=" + targetThumbnailWidth);
                     var thumb4time = currentPicture.get("THUMB4");
@@ -522,7 +522,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("date").hide();
-            };
+            }
             if (currentPicture.get("THUMB5") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB5") + "?width=" + targetThumbnailWidth);
                     var thumb5time = currentPicture.get("THUMB5");
@@ -532,7 +532,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("date").hide();
-            };
+            }
             if (currentPicture.get("THUMB6") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB6") + "?width=" + targetThumbnailWidth);
                     var thumb6time = currentPicture.get("THUMB6");
@@ -542,7 +542,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             } else {
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("picture").hide();
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("date").hide();
-            };
+            }
         }
     }
 
@@ -550,12 +550,13 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.consoleLog("updateDaysWidget()");
         var daysWidgetSetting = this.getPicturesDaysListStore().last();
         //Determine days not to be displayed on calendar
+        var currentDisabledDates = null;
         if (daysWidgetSetting.get("DISABLED") !== "" ) {
                 currentDisabledDates = eval("[" + daysWidgetSetting.get("DISABLED") + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getPicturesselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
         } else {
-                testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
+                var testDisabledDates = "02/19/2010"; //This is a fake value to reset calendar
                 currentDisabledDates = eval("[" + testDisabledDates + "]"); //["06/09/2012", "04/../2012"]	MMDDYYYY
                 this.consoleLog("updateDaysWidget(): Set disabled dates: " + currentDisabledDates);
                 this.getPicturesselectiondayslist().setDisabledDates(currentDisabledDates);	//MMDDYYYY
@@ -608,7 +609,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.getPicturesdisplaycurrentpicture().update("");
     }
 
-    , selectFirstSource: function(key) {
+    , selectFirstSource: function() {
         this.consoleLog("selectFirstSource()");
         this.clearWindowContent();
         var record = this.getSharedSourcesStore().first();
@@ -631,7 +632,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         this.fireEvent("WPAKD.controller.desktop.ApplicationsPreferences.incrementUsageStats", applicationName);
     }
 
-    , openPictures: function(key) {
+    , openPictures: function() {
         this.consoleLog("openPictures()");
         Ext.getBody().unmask();
 
@@ -652,7 +653,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
         }
     }
 
-    , closePictures: function(key) {
+    , closePictures: function() {
         this.consoleLog("closePictures()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbpictures").setVisible(false);
     }

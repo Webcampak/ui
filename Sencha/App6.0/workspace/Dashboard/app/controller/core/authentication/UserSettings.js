@@ -43,7 +43,7 @@ Ext.define("WPAKT.controller.core.authentication.UserSettings", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->UserSettings: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->UserSettings: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

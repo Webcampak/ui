@@ -28,7 +28,6 @@ Ext.define("WPAKT.controller.config.Config", {
         , "config.Fonts"
         , "config.PhidgetSensors"
         , "config.PhidgetPorts"
-
     ]
 
     , models: [
@@ -189,7 +188,7 @@ Ext.define("WPAKT.controller.config.Config", {
     }
     
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Config: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Config: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

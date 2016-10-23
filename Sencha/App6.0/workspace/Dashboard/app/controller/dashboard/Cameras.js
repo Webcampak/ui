@@ -45,7 +45,7 @@ Ext.define("WPAKT.controller.dashboard.Cameras", {
     }
    
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->Cameras: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Cards->Cameras: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

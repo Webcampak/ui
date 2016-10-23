@@ -37,7 +37,7 @@ Ext.define("WPAKT.controller.core.loading.SyncStores", {
     }
     
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->SyncStores: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->SyncStores: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);

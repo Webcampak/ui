@@ -38,7 +38,7 @@ Ext.define("WPAKT.controller.core.loading.Stores", {
     }
 
     , consoleLog: function(logMessage, logLevel, logDump) {
-        logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->Stores: ";
+        var logPrefix = new Date().toLocaleTimeString() + ": Log: Controller->Dashboard->Loading->Stores: ";
         //level: One of: "error", "warn", "info" or "log" (the default is "log").
         if (logLevel === undefined) {logLevel = "log";}
         Ext.log({ level: logLevel, dump: logDump }, logPrefix + logMessage);
