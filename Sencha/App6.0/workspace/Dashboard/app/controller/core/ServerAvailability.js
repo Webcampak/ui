@@ -1,4 +1,4 @@
-/*global Ext, i18n*/
+/*global Ext, i18n, symfonyEnv*/
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKT.controller.core.ServerAvailability");
 //</debug>
@@ -54,7 +54,7 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
             },100);
         } else {
             scope.checkOnlineStatus();
-            var interval = setInterval(function() {
+            setInterval(function() {
                 scope.checkOnlineStatus();
             }, 30000); //Check online every 30s                       
         }        
@@ -111,23 +111,23 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
             this.getCoreServerAvailabilityStore().removeAt(0, recordsToDelete);
         }
         
-        var serverResponse = Ext.decode(scope.getAvailability(), true)
-            , serverLatency = this.getLatency()
-            , serverUserAuthenticated =  "N"
-            , serverUsername =  ""
-            , serverMsg =  ""
-            , serverCode = "";
+        var serverResponse = Ext.decode(scope.getAvailability(), true);
+        var serverLatency = this.getLatency();
+        var serverUserAuthenticated =  "N";
+        var serverUsername =  "";
+        var serverMsg =  "";
+        var serverCode = "";
         if (serverResponse === null) {
-            var serverCode = "OFFLINE";
+            serverCode = "OFFLINE";
             var rawServerResponse = scope.getAvailability();
             if(rawServerResponse.length() > 500) {var serverMsg = rawServerResponse.substring(0, 500);} 
-            else {var serverMsg = rawServerResponse}
+            else {serverMsg = rawServerResponse;}
         } else {
-            var serverCode = "ONLINE";
-            var serverMsg = serverResponse.message;
+            serverCode = "ONLINE";
+            serverMsg = serverResponse.message;
             if (serverResponse.status === "AUTHENTICATED") {
-                var serverUsername =  serverResponse.USERNAME;
-                var serverUserAuthenticated =  "Y";
+                serverUsername =  serverResponse.USERNAME;
+                serverUserAuthenticated =  "Y";
             }
         }         
         this.getCoreServerAvailabilityStore().add({
@@ -146,8 +146,8 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
         //if (this.callInProgress !== true) {
         if (this.getAvailabilityLoading() !== true) {            
             var serverUrl = "/" + symfonyEnv + "/onlinestatus";
-            var initTimestamp = new Date().getTime()
-            this.setAvailabilityLoading(true);            
+            var initTimestamp = new Date().getTime();
+            this.setAvailabilityLoading(true);
             this.fireEvent("WPAKT.controller.core.BackgroundActivities.startAjaxLoading");
             Ext.Ajax.request({
                 url: serverUrl,
@@ -155,7 +155,6 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
                 success: function(response){
                     scope.fireEvent("WPAKT.controller.core.BackgroundActivities.endAjaxLoading");
                     scope.consoleLog("checkOnlineStatus(): " + response.responseText, "info");
-                    var text = response.responseText;
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
                     scope.setLatency(latency);
@@ -163,10 +162,8 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
                     scope.setAvailability(response.responseText);
                     scope.setAvailabilityLoading(false);                    
                  },
-                failure: function(response, opts) {
+                failure: function(response) {
                     scope.fireEvent("WPAKT.controller.core.BackgroundActivities.endAjaxLoading");
-                    var successTimestamp = new Date().getTime();
-                    var latency = successTimestamp - initTimestamp;                    
                     if (parseInt(response.status) === 0) {
                         scope.consoleLog("checkOnlineStatus(): Error loading status: Server not available", "warn");
                     } else {

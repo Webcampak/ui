@@ -13,12 +13,12 @@ Ext.define("WPAKT.view.dashboard.lastpictures.thumb.Picture", {
     , listeners: {
         el: {
             click: function() {
-                me.emitNavAction("THUMB3");
+                this.emitNavAction("THUMB3");
             }
         }
         , afterrender: function(scope) {
             scope.el.on({
-                load: function (evt, ele, opts) {
+                load: function (evt) {
                     scope.fireEvent("WPAKT.controller.dashboard.LastPictures.refreshThumbnailHeight", scope);
                 }
             });
