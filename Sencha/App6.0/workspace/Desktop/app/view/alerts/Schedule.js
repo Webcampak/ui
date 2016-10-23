@@ -23,7 +23,7 @@ Ext.define("WPAKD.view.alerts.Schedule", {
         } else if (value.substring(0, 1) === "Y"){
                 //If first character is a "X" it means that this picture has a comment attached
                 metaData.style = "background:#3896af; color:#3896af;";
-                value = value.substring(0, 1) + value.substring(1 + 1, value.length)	// We then remove "X"
+                value = value.substring(0, 1) + value.substring(1 + 1, value.length);	// We then remove "X"
                 value = Ext.String.htmlEncode(value);
                 return value;
         //} else if (value > 0) {

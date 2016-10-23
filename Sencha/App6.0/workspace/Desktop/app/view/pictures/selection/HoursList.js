@@ -24,7 +24,7 @@ Ext.define("WPAKD.view.pictures.selection.HoursList", {
         } else if (value.substring(0, 1) === "X"){
                 //If first character is a "X" it means that this picture has a comment attached
                 metaData.style = "background:#3896af; color:#3896af;";
-                value = value.substring(0, 1) + value.substring(1 + 1, value.length)	// We then remove "X"
+                value = value.substring(0, 1) + value.substring(1 + 1, value.length);	// We then remove "X"
                 value = Ext.String.htmlEncode(value);
                 metaData.tdAttr = "data-qtip=\"" + Ext.String.htmlEncode(value.substring(8, 10) + ":" + value.substring(10, 12)) + "\"";
                 return value;
