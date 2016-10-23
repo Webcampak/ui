@@ -319,8 +319,7 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         } else if (droppedLocationX < 0) {
             targetXDot = 0;
         } else {
-            var i = null;
-            for (i=0;i<usableXDotsNb;i++) {
+            for (var i=0;i<usableXDotsNb;i++) {
                 if (droppedLocationX >= (i*gridStepX) && droppedLocationX < ((i+1)*gridStepX)){
                     targetXDot = i;
                 }
@@ -332,8 +331,7 @@ Ext.define("WPAKD.controller.desktop.icons.Icons", {
         } else if (droppedLocationY < gridStepY) {
             targetYDot = 1;
         }  else {
-            var i = null;
-            for (i=0;i<usableYDotsNb;i++) {
+            for (var i=0;i<usableYDotsNb;i++) {
                 if (droppedLocationY >= (i*gridStepY) && droppedLocationY < ((i+1)*gridStepY)){
                     targetYDot = i;
                 }
