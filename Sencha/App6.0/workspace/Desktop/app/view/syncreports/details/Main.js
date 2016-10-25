@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.syncreports.details.Main", {
     , items: [{
         xtype: "container"
         , layout: {type:"hbox", pack: "start", align: "stretch"}
-        , height: 110
+        , height: 120
         , items: [{
             xtype: "fieldset"
             , title: i18n.gettext("Source")
