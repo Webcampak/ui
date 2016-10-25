@@ -10,4 +10,5 @@ Ext.define("WPAKD.view.systemconfiguration.general.Cfgftpresourcesusername", {
     , labelWidth: 200
     , readOnlyCls: "x-item-disabled"
     , readOnly: true
+    , value: 'wpresources'
 });

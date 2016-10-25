@@ -9,7 +9,7 @@ Ext.define("WPAKD.view.syncreports.Main", {
     , title: i18n.gettext("FTP Sync Reports")
 
     , width: 1100
-    , height: 700
+    , height: 800
 
     , stateful: true
     , stateId: "syncreportsmain"
@@ -40,7 +40,7 @@ Ext.define("WPAKD.view.syncreports.Main", {
         }]        
     }, {
         xtype: "syncreportsdetailsmain"
-        , height: 360
+        , height: 420
     }]
     , dockedItems: [{
         xtype: "toolbar",

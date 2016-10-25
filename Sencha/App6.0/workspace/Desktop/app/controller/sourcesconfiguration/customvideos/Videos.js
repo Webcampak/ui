@@ -244,8 +244,13 @@ Ext.define("WPAKD.controller.sourcesconfiguration.customvideos.Videos", {
     , updateStoreValue: function(newValue, oldValue, configName) {
         var configRecord = this.getSourcesconfigurationVideoCustomStore().findRecord("NAME", configName, 0, false, false, true);
         if (configRecord !== undefined && configRecord !== null) {
-            if (configRecord.get("VALUE") !== newValue) {
-                this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + configRecord.get("VALUE") + " to: " + newValue, "info");
+            var storeValue = configRecord.get("VALUE");
+            if (typeof newValue !== typeof storeValue) {
+                if (typeof newValue === 'string') {storeValue = String(storeValue)}
+                if (typeof newValue === 'number') {storeValue = Number(storeValue)}
+            }
+            if (storeValue !== newValue) {
+                this.consoleLog("updateStoreValue(): update config: " + configName + " from: " + storeValue + " to: " + newValue, "info");
                 configRecord.set("VALUE", newValue);
                 this.fireEvent("WPAKD.controller.sourcesconfiguration.SourcesConfiguration.checkModifiedConfigStores");
             }

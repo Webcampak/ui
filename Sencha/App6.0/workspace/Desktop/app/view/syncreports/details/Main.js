@@ -9,46 +9,48 @@ Ext.define("WPAKD.view.syncreports.details.Main", {
     , hidden: true
     , layout: {type:"vbox", pack: "start", align: "stretch"}
     , items: [{
-                xtype: "container"
-                , layout: {type:"hbox", pack: "start", align: "stretch"}
-                , items: [{
-                    xtype: "fieldset"
-                    , title: i18n.gettext("Source")
-                    , flex: 2
-                    , margin: "2 10 2 10"
-                    , layout: {type:"vbox", pack: "start", align: "stretch"}
-                    , defaults: {labelWidth: 100}
-                    , items: [
-                        {xtype: "syncreportsdetailssourcesourceslist"}
-                        , {xtype: "syncreportsdetailssourcetype"}
-                        , {xtype: "syncreportsdetailssourceftpserverslist"}
-                    ]
-                }, {
-                    xtype: "fieldset"
-                    , title: i18n.gettext("Destination")
-                    , flex: 2
-                    , margin: "2 10 2 10"
-                    , layout: {type:"vbox", pack: "start", align: "stretch"}
-                    , defaults: {labelWidth: 100}
-                    , items: [
-                        {xtype: "syncreportsdetailsdestinationsourceslist"}
-                        , {xtype: "syncreportsdetailsdestinationtype"}
-                        , {xtype: "syncreportsdetailsdestinationftpserverslist"}
-                    ]
-                }, {
-                    xtype: "fieldset"
-                    , title: i18n.gettext("Actions")
-                    , flex: 1
-                    , margin: "2 10 2 10"
-                    , layout: {type:"vbox", pack: "start", align: "stretch"}
-                    , defaults: {labelWidth: 100}
-                    , items: [
-                        {xtype: "syncreportsdetailsbuttonxfer"}
-                    ]                    
-                }]                
+        xtype: "container"
+        , layout: {type:"hbox", pack: "start", align: "stretch"}
+        , height: 110
+        , items: [{
+            xtype: "fieldset"
+            , title: i18n.gettext("Source")
+            , flex: 2
+            , margin: "2 10 2 10"
+            , layout: {type:"vbox", pack: "start", align: "stretch"}
+            , defaults: {labelWidth: 100}
+            , items: [
+                {xtype: "syncreportsdetailssourcesourceslist"}
+                , {xtype: "syncreportsdetailssourcetype"}
+                , {xtype: "syncreportsdetailssourceftpserverslist"}
+            ]
+        }, {
+            xtype: "fieldset"
+            , title: i18n.gettext("Destination")
+            , flex: 2
+            , margin: "2 10 2 10"
+            , layout: {type:"vbox", pack: "start", align: "stretch"}
+            , defaults: {labelWidth: 100}
+            , items: [
+                {xtype: "syncreportsdetailsdestinationsourceslist"}
+                , {xtype: "syncreportsdetailsdestinationtype"}
+                , {xtype: "syncreportsdetailsdestinationftpserverslist"}
+            ]
+        }, {
+            xtype: "fieldset"
+            , title: i18n.gettext("Actions")
+            , flex: 1
+            , margin: "2 10 2 10"
+            , layout: {type:"vbox", pack: "start", align: "stretch"}
+            , defaults: {labelWidth: 100}
+            , items: [
+                {xtype: "syncreportsdetailsbuttonxfer"}
+            ]
+        }]
     }, {
         xtype: "container"
         , layout: {type:"hbox", pack: "start", align: "stretch"}
+        , flex: 1
         , defaults: {margin: "5 5 5 10"}
         , items: [{
             xtype: "fieldset"
