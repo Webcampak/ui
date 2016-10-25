@@ -58,4 +58,3 @@ Ext.define("WPAKD.model.syncreports.SyncReports", {
         , {name: "ITR_RESULT_SIZE_TOTAL",     type: "int"     }
     ]
 });
- 

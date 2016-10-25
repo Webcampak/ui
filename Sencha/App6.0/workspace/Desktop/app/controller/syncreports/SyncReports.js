@@ -284,7 +284,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                 , FILES_SIZE_JPG: seletedReport.get("SRC_RESULT_FILES_SIZE_JPG")
                 , FILES_SIZE_RAW: seletedReport.get("SRC_RESULT_FILES_SIZE_RAW")
             }, {
-                NAME: i18n.gettext("Destination")
+                NAME: i18n.gettext("Destination-")
                 , FILES_COUNT_TOTAL: seletedReport.get("DST_RESULT_FILES_COUNT_TOTAL")
                 , FILES_COUNT_JPG: seletedReport.get("DST_RESULT_FILES_COUNT_JPG")
                 , FILES_COUNT_RAW: seletedReport.get("DST_RESULT_FILES_COUNT_RAW")
@@ -306,7 +306,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                 , FILES_COUNT_RAW: seletedReport.get("SRC_RESULT_MISSING_COUNT_RAW")
                 , FILES_SIZE_TOTAL: seletedReport.get("SRC_RESULT_MISSING_SIZE_TOTAL")
                 , FILES_SIZE_JPG: seletedReport.get("SRC_RESULT_MISSING_SIZE_JPG")
-                , FILES_SIZE_RAW: seletedReport.get("SRC_RESULT_MISSINGT_SIZE_RAW")
+                , FILES_SIZE_RAW: seletedReport.get("SRC_RESULT_MISSING_SIZE_RAW")
             }, {
                 NAME: i18n.gettext("Missing in Destination")
                 , FILES_COUNT_TOTAL: seletedReport.get("DST_RESULT_MISSING_COUNT_TOTAL")
