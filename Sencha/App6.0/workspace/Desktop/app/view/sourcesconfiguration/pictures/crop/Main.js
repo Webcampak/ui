@@ -24,9 +24,9 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Main", {
             , fieldLabel: i18n.gettext("Size of the area")
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items: [
-                {xtype : "sourcesconfigurationpicturescropcfgcropsizewidth", width: 60      }
+                {xtype : "sourcesconfigurationpicturescropcfgcropsizewidth", width: 80      }
                 , {html: "x", xtype: "label", width: 10, padding: 2                         }
-                , {xtype : "sourcesconfigurationpicturescropcfgcropsizeheight", width: 60   }
+                , {xtype : "sourcesconfigurationpicturescropcfgcropsizeheight", width: 80   }
             ]
         }, {
             xtype: "fieldcontainer"

@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.ftp.local.Main", {
 
     , title: i18n.gettext("Local FTP Account")
 
-    , layout: "fit"
+    //, layout: "fit"
     , defaults: {labelWidth: 200}
     , items: [
         {xtype: "sourcesconfigurationftplocalcfglocalftpusername"}

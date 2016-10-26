@@ -3,17 +3,19 @@
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.view.sourcesconfiguration.ftp.Main");
 //</debug>
 Ext.define("WPAKD.view.sourcesconfiguration.ftp.Main", {
-    extend: "Ext.panel.Panel",
-    alias: "widget.sourcesconfigurationftpmain",
+    extend: "Ext.panel.Panel"
+    , alias: "widget.sourcesconfigurationftpmain"
 
-    title: i18n.gettext("FTP")
+    , title: i18n.gettext("FTP")
     , disabled: true
     , scroll: true
     , autoScroll: true
     , defaults: {margin: 10}
 
+    , layout: {type:"vbox",	align: "stretch", pack: "start"}
     , items: [{
         xtype: "sourcesconfigurationftplocalmain"
+        , height: 100
     }, {
         xtype: "fieldset"
         , title: i18n.gettext("Remote FTP Servers")
