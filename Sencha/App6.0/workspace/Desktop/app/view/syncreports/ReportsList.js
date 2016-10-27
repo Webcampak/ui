@@ -39,7 +39,12 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
                 else {return value;}
             }
         }
+        , {text: i18n.gettext("Xfer"), dataIndex: "XFER",      align: "left",    width: 50,   sortable: true, renderer:
+            function(value) {
+                if (value === true) {return i18n.gettext("Yes");}
+                else {return i18n.gettext("No");}
+            }
+        }
     ]
-
     , selType: "rowmodel"
 });
