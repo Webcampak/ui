@@ -139,9 +139,10 @@ Ext.define("WPAKT.controller.dashboard.SourcesStatus", {
                     
         // Disk Usage
         if (sourceData.disk !== false) {
+
             sourceComponent.queryById("diskUsageTxt").setData({
                             disk: Ext.util.Format.fileSize(sourceData.disk.Used)
-                            , percent: Math.round(sourceData.disk.Used / sourceData.disk.Total) * 100
+                            , percent: Math.round(sourceData.disk.Used / sourceData.disk.Total * 100)
                         });
             sourceComponent.queryById("diskUsageBar").setValue(sourceData.disk.Used / sourceData.disk.Total);
             /*
