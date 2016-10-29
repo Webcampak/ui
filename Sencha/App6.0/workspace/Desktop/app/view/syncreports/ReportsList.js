@@ -11,9 +11,9 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
     , autoScroll: true
 
     , features: [{
-        id: 'group'
-        , ftype: 'grouping'
-        , groupHeaderTpl: '{name}'
+        id: "group"
+        , ftype: "grouping"
+        , groupHeaderTpl: "{name}"
         , hideGroupedHeader: false
         , enableGroupingMenu: false
     }]

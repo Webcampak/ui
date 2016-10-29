@@ -8,7 +8,7 @@ Ext.define("WPAKD.store.syncreports.SyncReports", {
     , model: "WPAKD.model.syncreports.SyncReports"
 
     , autoSync: true
-    , groupField: 'NAME'
+    , groupField: "NAME"
     , proxy:{
         type: "direct"
         , writer: {
@@ -26,19 +26,6 @@ Ext.define("WPAKD.store.syncreports.SyncReports", {
             , update:    "SyncReports.createSyncReport"
         }
     }
-    /*
-    , listeners: {
-        datachanged: function(store, operation) {
-            if (store.count() === 0 && this.fireEvent("WPAKD.controller.desktop.Authentication.isAuthenticated") === true) {
-                Ext.raise({
-                    title: i18n.gettext("Source permission required")
-                    , msg: i18n.gettext("Your currently don\"t have access to any sources.") + "<br/>" + i18n.gettext("Please contact support and restart your browser")
-                });
-
-            }
-        }
-    }
-    */
 });
 
 
