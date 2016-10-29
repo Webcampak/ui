@@ -250,36 +250,47 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             var srcSource = this.getSharedSourcesStore().findRecord("SOURCEID", seletedReport.get("SRC_SOURCEID"), 0, false, false, true);
             if (srcSource) {this.getSyncreportsdetailssourcesourceslist().setValue(srcSource.get("NAME"));}
             else {this.getSyncreportsdetailssourcesourceslist().setValue();}            
-            this.getSyncreportsdetailssourcetype().setValue(seletedReport.get("SRC_TYPE"));
+            if (seletedReport.get("SRC_TYPE") === "ftp") {
+                this.getSyncreportsdetailssourcetype().setValue("ftp (" + seletedReport.get("SRC_NAME") + ")");
+            } else {
+                this.getSyncreportsdetailssourcetype().setValue(seletedReport.get("SRC_TYPE"));
+            }
+
+            /*
             if (seletedReport.get("SRC_TYPE") === "ftp") {
                 this.getSyncreportsdetailssourceftpserverslist().setVisible(true);
                 this.getSyncreportsdetailssourceftpserverslist().setValue(seletedReport.get("SRC_NAME"));
-                /*
+
                 this.getSyncreportsSourceFTPServersStore().getProxy().setExtraParam("SOURCEID", seletedReport.get("SRC_SOURCEID"));
                 this.getSyncreportsSourceFTPServersStore().on("load",this.populateReportSrcFTPServer,this,{single:true});
                 this.getSyncreportsSourceFTPServersStore().load();
-               */
+
             } else {
                 this.getSyncreportsdetailssourceftpserverslist().setVisible(false);
-            } 
+            }
+             */
             
             // Destination
             var dstSource = this.getSharedSourcesStore().findRecord("SOURCEID", seletedReport.get("DST_SOURCEID"), 0, false, false, true);
             if (dstSource) {this.getSyncreportsdetailsdestinationsourceslist().setValue(dstSource.get("NAME"));}
-            else {this.getSyncreportsdetailsdestinationsourceslist().setValue();}            
-            this.getSyncreportsdetailsdestinationtype().setValue(seletedReport.get("DST_TYPE"));
+            else {this.getSyncreportsdetailsdestinationsourceslist().setValue();}
+            if (seletedReport.get("DST_TYPE") === "ftp") {
+                this.getSyncreportsdetailsdestinationtype().setValue("ftp (" + seletedReport.get("DST_NAME") + ")");
+            } else {
+                this.getSyncreportsdetailsdestinationtype().setValue(seletedReport.get("DST_TYPE"));
+            }            /*
             if (seletedReport.get("DST_TYPE") === "ftp") {
                 this.getSyncreportsdetailsdestinationftpserverslist().setVisible(true);
                 this.getSyncreportsdetailsdestinationftpserverslist().setValue(seletedReport.get("DST_NAME"));
-                /*
+
                 this.getSyncreportsDestinationFTPServersStore().getProxy().setExtraParam("SOURCEID", seletedReport.get("DST_SOURCEID"));
                 this.getSyncreportsDestinationFTPServersStore().on("load",this.populateReportDstFTPServer,this,{single:true});
                 this.getSyncreportsDestinationFTPServersStore().load();
-                */
+
             } else {
                 this.getSyncreportsdetailsdestinationftpserverslist().setVisible(false);
             }  
-            
+            */
             this.getSyncreportsDetailsResultsStore().removeAll();            
             this.getSyncreportsDetailsResultsStore().add([{
                 NAME: i18n.gettext("Source")

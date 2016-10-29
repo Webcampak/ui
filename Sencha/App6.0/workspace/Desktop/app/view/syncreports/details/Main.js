@@ -11,7 +11,7 @@ Ext.define("WPAKD.view.syncreports.details.Main", {
     , items: [{
         xtype: "container"
         , layout: {type:"hbox", pack: "start", align: "stretch"}
-        , height: 120
+        , height: 90
         , items: [{
             xtype: "fieldset"
             , title: i18n.gettext("Source")
@@ -22,7 +22,7 @@ Ext.define("WPAKD.view.syncreports.details.Main", {
             , items: [
                 {xtype: "syncreportsdetailssourcesourceslist"}
                 , {xtype: "syncreportsdetailssourcetype"}
-                , {xtype: "syncreportsdetailssourceftpserverslist"}
+                //, {xtype: "syncreportsdetailssourceftpserverslist"}
             ]
         }, {
             xtype: "fieldset"
@@ -34,7 +34,7 @@ Ext.define("WPAKD.view.syncreports.details.Main", {
             , items: [
                 {xtype: "syncreportsdetailsdestinationsourceslist"}
                 , {xtype: "syncreportsdetailsdestinationtype"}
-                , {xtype: "syncreportsdetailsdestinationftpserverslist"}
+                //, {xtype: "syncreportsdetailsdestinationftpserverslist"}
             ]
         }, {
             xtype: "fieldset"
