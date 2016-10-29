@@ -8,7 +8,7 @@ Ext.define("WPAKD.store.syncreports.SyncReports", {
     , model: "WPAKD.model.syncreports.SyncReports"
 
     , autoSync: true
-
+    , groupField: 'NAME'
     , proxy:{
         type: "direct"
         , writer: {

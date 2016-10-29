@@ -8,11 +8,8 @@ Ext.define("WPAKD.view.syncreports.Main", {
 
     , title: i18n.gettext("FTP Sync Reports")
 
-    , width: 1100
+    , width: 1300
     , height: 800
-
-    , stateful: true
-    , stateId: "syncreportsmain"
 
     , scroll: true
     , autoScroll: true
