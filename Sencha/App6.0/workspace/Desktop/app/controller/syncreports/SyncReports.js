@@ -252,10 +252,13 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             else {this.getSyncreportsdetailssourcesourceslist().setValue();}            
             this.getSyncreportsdetailssourcetype().setValue(seletedReport.get("SRC_TYPE"));
             if (seletedReport.get("SRC_TYPE") === "ftp") {
-                this.getSyncreportsdetailssourceftpserverslist().setVisible(true);                
+                this.getSyncreportsdetailssourceftpserverslist().setVisible(true);
+                this.getSyncreportsdetailssourceftpserverslist().setValue(seletedReport.get("SRC_NAME"));
+                /*
                 this.getSyncreportsSourceFTPServersStore().getProxy().setExtraParam("SOURCEID", seletedReport.get("SRC_SOURCEID"));
                 this.getSyncreportsSourceFTPServersStore().on("load",this.populateReportSrcFTPServer,this,{single:true});
-                this.getSyncreportsSourceFTPServersStore().load();                
+                this.getSyncreportsSourceFTPServersStore().load();
+               */
             } else {
                 this.getSyncreportsdetailssourceftpserverslist().setVisible(false);
             } 
@@ -266,10 +269,13 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             else {this.getSyncreportsdetailsdestinationsourceslist().setValue();}            
             this.getSyncreportsdetailsdestinationtype().setValue(seletedReport.get("DST_TYPE"));
             if (seletedReport.get("DST_TYPE") === "ftp") {
-                this.getSyncreportsdetailsdestinationftpserverslist().setVisible(true);                
+                this.getSyncreportsdetailsdestinationftpserverslist().setVisible(true);
+                this.getSyncreportsdetailsdestinationftpserverslist().setValue(seletedReport.get("DST_NAME"));
+                /*
                 this.getSyncreportsDestinationFTPServersStore().getProxy().setExtraParam("SOURCEID", seletedReport.get("DST_SOURCEID"));
                 this.getSyncreportsDestinationFTPServersStore().on("load",this.populateReportDstFTPServer,this,{single:true});
-                this.getSyncreportsDestinationFTPServersStore().load();                
+                this.getSyncreportsDestinationFTPServersStore().load();
+                */
             } else {
                 this.getSyncreportsdetailsdestinationftpserverslist().setVisible(false);
             }  

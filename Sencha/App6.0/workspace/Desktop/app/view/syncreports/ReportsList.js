@@ -36,7 +36,7 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
         , {text: i18n.gettext("Source")
             , columns: [
                 {text: i18n.gettext("Name"),   dataIndex: "SRC_NAME", align: "left", width: 150,  sortable: true             }
-                , {text: i18n.gettext("Size"), dataIndex: "SRC_SIZE", align: "left", width: 70,   sortable: true, renderer:
+                , {text: i18n.gettext("Size"), dataIndex: "SRC_SIZE", align: "left", width: 80,   sortable: true, renderer:
                     function(value) {
                         if (value !== "") {return Ext.util.Format.fileSize(value);}
                         else {return value;}
@@ -47,7 +47,7 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
         , {text: i18n.gettext("Destination")
             , columns: [
                 {text: i18n.gettext("Name"),   dataIndex: "DST_NAME", align: "left", width: 150,  sortable: true             }
-                , {text: i18n.gettext("Size"), dataIndex: "DST_SIZE", align: "left", width: 70,   sortable: true, renderer:
+                , {text: i18n.gettext("Size"), dataIndex: "DST_SIZE", align: "left", width: 80,   sortable: true, renderer:
                     function(value) {
                         if (value !== "") {return Ext.util.Format.fileSize(value);}
                         else {return value;}
