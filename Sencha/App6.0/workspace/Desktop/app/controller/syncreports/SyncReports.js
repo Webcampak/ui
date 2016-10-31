@@ -179,6 +179,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             [{
                 NAME:               seletedReport.get("NAME")
                 , XFER:             Xfer
+                , XFER_STATUS:      "n/a"
                 , SRC_SOURCEID:     seletedReport.get("SRC_SOURCEID")
                 , SRC_TYPE:         seletedReport.get("SRC_TYPE")
                 , SRC_FTPSERVERID:  seletedReport.get("SRC_FTPSERVERID")
@@ -476,6 +477,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                 [{
                     NAME:               this.getSyncreportsreportaddname().getValue()
                     , XFER:             false
+                    , XFER_STATUS:      "n/a"
                     , SRC_SOURCEID:     this.getSyncreportsreportaddsourcesourceslist().getValue()
                     , SRC_TYPE:         this.getSyncreportsreportaddsourcetype().getValue()
                     , SRC_FTPSERVERID:  this.getSyncreportsreportaddsourceftpserverslist().getValue()
