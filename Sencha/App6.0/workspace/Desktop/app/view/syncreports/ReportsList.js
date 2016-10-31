@@ -58,11 +58,16 @@ Ext.define("WPAKD.view.syncreports.ReportsList", {
         , {text: i18n.gettext("Queued"),    dataIndex: "DATE_QUEUED",   align: "left",    width: 130,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
         , {text: i18n.gettext("Started"),   dataIndex: "DATE_START",    align: "left",    width: 130,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
         , {text: i18n.gettext("Completed"), dataIndex: "DATE_COMPLETED",align: "left",    width: 130,  sortable: true, formatter:"date(\"Y-m-d H:i\")" }
-        , {text: i18n.gettext("Xfer"), dataIndex: "XFER",      align: "left",    width: 50,   sortable: true, renderer:
-            function(value) {
-                if (value === true) {return i18n.gettext("Yes");}
-                else {return i18n.gettext("No");}
-            }
+        , {text: i18n.gettext("Xfer")
+            , columns: [
+                {text: i18n.gettext("Active"), dataIndex: "XFER",      align: "left",    width: 80,   sortable: true, renderer:
+                    function(value) {
+                        if (value === true) {return i18n.gettext("Yes");}
+                        else {return i18n.gettext("No");}
+                    }
+                }
+                , {text: i18n.gettext("Status"), dataIndex: "XFER_STATUS",  align: "left",    width: 150,     sortable: true }
+            ]
         }
     ]
     , selType: "rowmodel"

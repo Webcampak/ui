@@ -37,7 +37,7 @@ Ext.define("WPAKD.view.syncreports.Main", {
         }]        
     }, {
         xtype: "syncreportsdetailsmain"
-        , height: 400
+        , height: 380
     }]
     , dockedItems: [{
         xtype: "toolbar",

@@ -9,6 +9,7 @@ Ext.define("WPAKD.model.syncreports.SyncReports", {
         , {name: "STATUS",          type: "string"  }
         , {name: "FILENAME",        type: "string"  }
         , {name: "XFER",            type: "boolean" }
+        , {name: "XFER_STATUS",     type: "string"  }
         , {name: "LOGS",            type: "string"  }
         , {name: "DATE_QUEUED",     type: "date"    }
         , {name: "DATE_START",      type: "date"    }
