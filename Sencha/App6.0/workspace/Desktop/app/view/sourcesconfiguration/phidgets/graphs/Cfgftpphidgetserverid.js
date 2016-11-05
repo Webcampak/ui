@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.graphs.Cfgftpphidgetserveri
     extend: "Ext.form.ComboBox"
     , alias : "widget.sourcesconfigurationphidgetsgraphscfgftpphidgetserverid"
 
-    , fieldLabel: i18n.gettext("Send sensor to")
+    , fieldLabel: i18n.gettext("Send sensor graph to")
     , store: "sourcesconfiguration.FTPServers"
     , valueField: "ID"
     , displayField: "NAME"
