@@ -16,6 +16,7 @@ Ext.define("WPAKD.model.accesscontrol.users.Users", {
         , {name: "EMAIL",           type: "string"}
         , {name: "CHANGE_PWD_FLAG", type: "string"}
         , {name: "ACTIVE_FLAG",     type: "string"}
+        , {name: "LOG_COUNT",       type: "int"}
         , {name: "SALT",            type: "string"}
     ]
 });
