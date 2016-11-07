@@ -155,7 +155,8 @@ Ext.define("WPAKT.controller.dashboard.SourcesStatus", {
             */
         }
                 
-        // Graph displaying pictures per day       
+        // Graph displaying pictures per day
+        /*
         if (sourceData.history.count.length > 0) {
             var graphPicturesDay = sourceComponent.queryById("graphPicturesDay");
             var graphPicturesDayStore = graphPicturesDay.getStore();
@@ -168,6 +169,7 @@ Ext.define("WPAKT.controller.dashboard.SourcesStatus", {
             var graphSizeDayStore = graphSizeDay.getStore();
             graphSizeDayStore.setData(sourceData.history.size);            
         }
+        */
         
         
         

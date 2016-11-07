@@ -21,7 +21,7 @@ Ext.define("WPAKT.view.dashboard.Main", {
         
     , items: [{
         xtype: "dashboardsourcesstatusmain"
-        , responsiveCls: "big-60 small-100"
+        , responsiveCls: "big-40 small-100"
     }, {
         xtype: "dashboardcamerasmain"
         , responsiveCls: "big-20 small-50"

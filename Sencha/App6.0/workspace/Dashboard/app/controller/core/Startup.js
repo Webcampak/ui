@@ -35,7 +35,7 @@ Ext.define("WPAKT.controller.core.Startup", {
         , {ref: "coreloadingmain",              selector: "coreloadingmain",                autoCreate: true,   xtype: "coreloadingmain"                }
         , {ref: "coreskeletoncardmain",         selector: "coreskeletoncardmain",           autoCreate: true,   xtype: "coreskeletoncardmain"           }
         , {ref: "coreskeletoncardbasemain",     selector: "coreskeletoncardbasemain",       autoCreate: true,   xtype: "coreskeletoncardbasemain"       }
-        , {ref: "coremain",  selector: "coremain",    autoCreate: true,   xtype: "coremain"    }
+        , {ref: "coremain",                     selector: "coremain",                       autoCreate: true,   xtype: "coremain"                       }
     ]
 
     , init: function() {

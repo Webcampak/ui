@@ -30,32 +30,34 @@ Ext.define("WPAKT.view.dashboard.sourcesstatus.SourceStatus", {
         xtype: "container"
         , layout: {type: "hbox", align: "stretch"}
         , items: [{
+            xtype: "container"
+            , width: 200
+            , height: 125
+            , layout: {type: "vbox", align: "stretch"}
+            , items: [{
+                xtype: "image"
+                , itemId: "sourceLastImage"
+                , mode: ""
+                , sourceid: null
+                , styleHtmlContent: true
+                , width: "100%"
+                , src: ""
+                , listeners: {
+                    el: {
+                        click: function() {
+                            console.log(this);
+                            console.log(this.component.config.sourceid);
+                        }
+                    }
+                }
+            }, {
                 xtype: "container"
-                , width: 200
-                , layout: {type: "vbox", align: "stretch"}
-                , items: [{
-                    xtype: "image"
-                    , itemId: "sourceLastImage"
-                    , mode: ""
-                    , sourceid: null
-                    , styleHtmlContent: true
-                    , width: "100%"
-                    , src: ""
-                    , listeners: {
-                        el: {
-                            click: function() {
-                                console.log(this);
-                                console.log(this.component.config.sourceid);
-                            }
-                        }             
-                    }                    
-                }, {
-                    xtype: "container"
-                    , flex: 1
-                }]                                
-            }
-            , {xtype: "container", width: 10}
-            , {
+                , flex: 1
+            }]
+        }
+        , {xtype: "container", width: 10}
+            /*
+        , {
                 xtype: "container"
                 , flex: 1
                 , layout: {type: "vbox", align: "stretch"}
@@ -177,7 +179,7 @@ Ext.define("WPAKT.view.dashboard.sourcesstatus.SourceStatus", {
                         type: "panzoom"
                     }]  
                 }]                                
-            }
+            }*/
             , {xtype: "container", width: 10}
             , {            
                xtype: "container"

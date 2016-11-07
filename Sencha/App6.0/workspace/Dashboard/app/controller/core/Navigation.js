@@ -29,12 +29,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
     , init: function() {
         this.consoleLog("init()");
         this.control({
-            //"configcapturesavecancelbutton":            {click:  this.cancelConfigurationChanges   }
-            //, "configcapturesavesavebutton":            {click:  this.saveConfigurationChanges     }
-            //, "*": {
-            //    "WPAKT.controller.config.Config.updateStoreValue":          this.updateStoreValue
-            //    , "WPAKT.controller.config.Config.updateCalendarSchedule":  this.updateCalendarSchedule
-            //}            
+
         });        
         this.listen({
              controller: {
@@ -104,9 +99,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
                     , expanded: false
                     , selectable: false
                     , iconCls: "x-fa fa-camera-retro"
-                    //, routeId : "pages-parent"
-                    //, id:       "pages-parent"
-                    , children: pictureSources                  
+                    , children: pictureSources
                 };
             }
         }
@@ -133,9 +126,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
                     , expanded: false
                     , selectable: false
                     , iconCls: "x-fa fa-video-camera"
-//                    , routeId : "pages-parent"
-//                    , id:       "pages-parent"
-                    , children: videoSources                  
+                    , children: videoSources
                 };
             }
         }
@@ -161,9 +152,7 @@ Ext.define("WPAKT.controller.core.Navigation", {
                     , expanded: false
                     , selectable: false
                     , iconCls: "x-fa fa-cogs"
-//                    , routeId : "pages-parent"
-//                    , id:       "pages-parent"
-                    , children: configSources                  
+                    , children: configSources
                 };
             }
         }

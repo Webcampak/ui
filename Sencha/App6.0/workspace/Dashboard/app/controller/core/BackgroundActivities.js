@@ -14,12 +14,10 @@ Ext.define("WPAKT.controller.core.BackgroundActivities", {
     ]
 
     , views: [
-        //"core.toolbar.bottom.LoadingButton"
 
     ]
 
     , refs: [
-        //{ref: "coretoolbarbottomloadingbutton",    selector: "coretoolbarbottomloadingbutton"}
 
     ]
 

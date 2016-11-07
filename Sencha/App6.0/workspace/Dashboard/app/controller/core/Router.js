@@ -13,28 +13,14 @@ Ext.define("WPAKT.controller.core.Router", {
 
     ]
 
-
     , views: [
         "core.Main"
-//        , "core.skeleton.card.default.Main"
-
     ]
 
     , refs: [
         {ref: "coremain",                       selector: "coremain",                       autoCreate: true,   xtype: "coremain"    }
-//        , {ref: "coreskeletoncarddefaultmain",  selector: "coreskeletoncarddefaultmain",    autoCreate: true,   xtype: "coreskeletoncarddefaultmain"    }
-
     ]
-/*    
-    , routes: {
-        "pictures/:id":             function(sourceid) {this.fireEvent("WPAKT.controller.pictures.Pictures.loadSource", sourceid);}
-        , "auth/login":             function() {this.fireEvent("WPAKT.controller.core.authentication.Authentication.showLogin");}
-        , "auth/changepassword":    function() {this.fireEvent("WPAKT.controller.core.authentication.ChangePassword.showChangePassword");}
-        , "user/profile":           function() {this.fireEvent("WPAKT.controller.core.authentication.Profile.showProfileMenu");}
-        , "auth/resetpassword":     function() {this.fireEvent("WPAKT.controller.core.authentication.ResetPassword.showResetPassword");}
-        , "dashboard":              function() {this.fireEvent("WPAKT.controller.dashboard.Dashboard.showDashboard");}
-    }
-*/
+
     , routes: {
         "pictures/:id":             function(sourceid) {this.eventProxy("WPAKT.controller.pictures.Pictures.loadSource", sourceid);}
         , "videos/:id":             function(sourceid) {this.eventProxy("WPAKT.controller.videos.Videos.loadSource", sourceid);}
