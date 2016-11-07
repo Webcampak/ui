@@ -120,7 +120,7 @@ Ext.define("WPAKT.controller.core.ServerAvailability", {
         if (serverResponse === null) {
             serverCode = "OFFLINE";
             var rawServerResponse = scope.getAvailability();
-            if(rawServerResponse.length() > 500) {var serverMsg = rawServerResponse.substring(0, 500);} 
+            if(rawServerResponse !== null && rawServerResponse.length() > 500) {var serverMsg = rawServerResponse.substring(0, 500);}
             else {serverMsg = rawServerResponse;}
         } else {
             serverCode = "ONLINE";
