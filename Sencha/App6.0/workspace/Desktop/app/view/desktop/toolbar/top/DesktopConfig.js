@@ -27,7 +27,7 @@ Ext.define("WPAKD.view.desktop.toolbar.top.DesktopConfig", {
                 , glyph:0xf084 // key
             }, "-", {
                 text: i18n.gettext("Français")
-                , href: "/" + symfonyEnv + "/desktop-fr_Fr.utf8"
+                , href: "/" + symfonyEnv + "/desktop-fr_FR.utf8"
                 , glyph:0xf11d // flag
             }, {
                 text: i18n.gettext("English")

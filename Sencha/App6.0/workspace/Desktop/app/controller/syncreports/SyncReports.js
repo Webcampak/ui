@@ -574,6 +574,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
     , openAddReportWindow: function() {
         this.consoleLog("openAddReportWindow()");
         this.getSyncreportsreportaddmain().show();
+        this.getSyncreportsreportaddname().setValue();
     }
 
     , menuOpenSyncReports: function() {
