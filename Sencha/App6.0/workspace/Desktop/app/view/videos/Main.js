@@ -19,7 +19,7 @@ Ext.define("WPAKD.view.videos.Main", {
     , maximizable: true
     , minimizable: true
 
-    , constrainHeader: true
+    , constrain: true
 
     , closeAction : "hide"
     , glyph:0xf03d // video-camera
