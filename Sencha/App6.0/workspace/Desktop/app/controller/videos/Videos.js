@@ -106,7 +106,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
 
             //Get window size. For Height, 30px adjustement is to keep name below picture on screen
             var currentWindowWidth = this.getVideosdisplayvideo().getWidth();
-            var currentWindowHeight = this.getVideosdisplayvideo() - 30;
+            var currentWindowHeight = this.getVideosdisplayvideo().getHeight() - 30;
             var previewJpgWidth = selectedVideo[0].get("JPGWIDTH");
             var previewJpgHeight = selectedVideo[0].get("JPGHEIGHT");
 
@@ -117,11 +117,15 @@ Ext.define("WPAKD.controller.videos.Videos", {
             var currentPictureTargetHeight = Math.round(currentWindowWidth * previewJpgHeight / previewJpgWidth);
             var currentPictureTargetWidth = null;
             if (currentPictureTargetHeight > currentWindowHeight) {
-                    currentPictureTargetWidth = Math.round(currentWindowHeight * previewJpgWidth / previewJpgHeight);
-                    this.getVideosdisplayvideo().setSize({width:currentPictureTargetWidth, height:currentWindowHeight});
+                this.consoleLog("onVideoSelected(): Picture Height of: " + currentPictureTargetHeight + " is greater than window height of: " + currentWindowHeight + " picture will be resized");
+                currentPictureTargetWidth = Math.round(currentWindowHeight * previewJpgWidth / previewJpgHeight);
+                currentPictureTargetHeight = currentWindowHeight;
+                this.consoleLog("onVideoSelected(): Resizing to:" + currentPictureTargetWidth + "x" + currentPictureTargetHeight);
+                this.getVideosdisplayvideo().setSize({width:currentPictureTargetWidth, height:currentPictureTargetHeight});
             } else {
-                    currentPictureTargetWidth = currentWindowWidth;
+                currentPictureTargetWidth = currentWindowWidth;
             }
+            this.consoleLog("onVideoSelected(): Target Picture Size:" + currentPictureTargetWidth + "x" + currentPictureTargetHeight);
 
             //Launching Flowplayer
             this.consoleLog("onVideoSelected(): Preview Video File:" + selectedVideo[0].get("MP4"));
@@ -132,7 +136,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
             var currentPreviewJpg = currentURL + selectedVideo[0].get("JPG");
 
             var insertPlayer = "<div class=\"flowplayer\">";
-            insertPlayer = insertPlayer + "<video controls>";
+            insertPlayer = insertPlayer + "<video controls width=\"" + currentPictureTargetWidth + "\" height=\"" + currentPictureTargetHeight + "\">";
             insertPlayer = insertPlayer + "<source type=\"video/mp4\"  src=\"" + currentPreviewMp4 + "\">";
             insertPlayer = insertPlayer + "</video>";
             insertPlayer = insertPlayer + "</div>";
