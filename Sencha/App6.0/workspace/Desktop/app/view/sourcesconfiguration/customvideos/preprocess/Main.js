@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.preprocess.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 200}
+    , defaults: {labelWidth: 150}
     , items: [
         {xtype: "sourcesconfigurationcustomvideospreprocesscfgvideopreimagemagicktxt"}
         , {xtype: "sourcesconfigurationcustomvideospreprocesscfgvideopreimgtext"}
