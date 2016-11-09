@@ -9,6 +9,7 @@ Ext.require("Ext.chart.axis.Time");
 Ext.require("Ext.chart.series.Area");
 Ext.require("Ext.chart.series.Line")
 Ext.require("Ext.chart.interactions.ItemHighlight")
+Ext.require("Ext.chart.legend.Legend")
 
 Ext.require("WPAKD.util.ErrorHandling");
 Ext.require("direct.remotingprovider");
@@ -18,8 +19,8 @@ Ext.direct.Manager.addProvider(Ext_app_REMOTING_API);
 
 // Disable Aria Buttons
 // http://docs.sencha.com/extjs/6.0/upgrades_migrations/extjs_upgrade_guide.html#Button
-Ext.enableAriaButtons = false
-
+Ext.enableAriaButtons = false;
+Ext.setGlyphFontFamily('FontAwesome');
 Ext.application({
     name: "WPAKD",
 

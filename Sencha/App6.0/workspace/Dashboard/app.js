@@ -44,6 +44,7 @@ Ext.application({
         , "Ext.panel.Panel"
         , "Ext.Img"
         , "Ext.chart.CartesianChart"
+        , "Ext.chart.legend.Legend"
         , "Ext.chart.axis.Category"
         , "Ext.chart.axis.Numeric"
         , "Ext.chart.series.Line"

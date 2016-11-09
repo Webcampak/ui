@@ -22,6 +22,10 @@
      *
      */
     "frameworks": {
+        "ext62": {
+            "path":"ext62",
+            "version":"6.2.0.981"
+        },
         "ext": "ext",
         "ext601": "ext601"
         
