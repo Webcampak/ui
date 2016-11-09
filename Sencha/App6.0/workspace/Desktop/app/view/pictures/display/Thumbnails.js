@@ -21,9 +21,9 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
         var me = this;
 
         Ext.applyIf(me, {
-            items: [{
+            items: [{xtype: "container",flex: 1}, {
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb1",
@@ -49,7 +49,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                 }]
             }, {
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb2",
@@ -74,7 +74,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                 }]
             },	{
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb3",
@@ -99,7 +99,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                 }]
             },	{
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb4",
@@ -124,7 +124,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                 }]
             },	{
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb5",
@@ -149,7 +149,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                 }]
             },	{
                 xtype: "container",
-                flex: 1,
+                width: 105,
                 layout: {type: "vbox", align: "stretch"},
                 defaults: {frame: true},
                 itemId: "thumb6",
@@ -172,7 +172,7 @@ Ext.define("WPAKD.view.pictures.display.Thumbnails", {
                         }
                     }
                 }]
-            }]
+            }, {xtype: "container",flex: 1}]
         });
         me.callParent(arguments);
     }

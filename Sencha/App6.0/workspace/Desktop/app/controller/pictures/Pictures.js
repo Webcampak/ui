@@ -108,7 +108,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             , "picturesdisplayrefreshbutton":           {click:             this.onClickRefresh     }
             , "picturesdisplaydownloadbutton":          {click:             this.downloadPicture    }
             , "picturesdisplayemailbutton":             {click:             this.openSendEmail      }
-            , "picturesdisplaythumbnails": 		{"navaction" :      this.clickThumbnail,    scope : this}
+            , "picturesdisplaythumbnails": 		        {"navaction" :      this.clickThumbnail,    scope : this}
         });
         this.listen({
             controller: {
@@ -469,15 +469,26 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("date").hide();
         } else {
             var currentPictureDisplay = currentPicture.get("PICTURE");
+            var currentPictureWidth = parseInt(currentPicture.get("PICTUREWIDTH"));
+            var currentPictureHeight = parseInt(currentPicture.get("PICTUREHEIGHT"));
+            this.consoleLog("updateThumbnails(): Picture Size:" + currentPictureWidth + "x" + currentPictureHeight);
 
-            //Calculate ideal thumbnail width
-            var currentWindowThumbWidth = this.getPicturesdisplaythumbnails().getWidth();
-            var currentWindowThumbHeight = this.getPicturesdisplaythumbnails().getHeight();
-            this.consoleLog("updateThumbnails(): Thumbnail: Window Size:" + currentWindowThumbWidth + "x" + currentWindowThumbHeight);
+            if (currentPictureHeight > currentPictureWidth) {
+                var currentWindowThumbHeight = this.getPicturesdisplaythumbnails().getHeight() - 15;
+                var currentWindowThumbWidth = Math.round(currentWindowThumbHeight * currentPictureWidth / currentPictureHeight);
+                this.consoleLog("updateThumbnails(): Thumbnail: Target Thumb Size:" + currentWindowThumbWidth + "x" + currentWindowThumbHeight);
+                var targetThumbnailWidth = currentWindowThumbWidth;
+            } else {
+                //Calculate ideal thumbnail width
+                var currentWindowThumbWidth = this.getPicturesdisplaythumbnails().getWidth();
+                var currentWindowThumbHeight = this.getPicturesdisplaythumbnails().getHeight();
+                this.consoleLog("updateThumbnails(): Thumbnail: Window Size:" + currentWindowThumbWidth + "x" + currentWindowThumbHeight);
 
-            //Push Thumbnails values to Window
-            var targetThumbnailWidth = Math.floor(currentWindowThumbWidth / 6);
-            this.consoleLog("updateThumbnails(): Thumbnail: Target Thumbnail Width:" + targetThumbnailWidth);
+                //Push Thumbnails values to Window
+                var targetThumbnailWidth = Math.floor(currentWindowThumbWidth / 6);
+                this.consoleLog("updateThumbnails(): Thumbnail: Target Thumbnail Width:" + targetThumbnailWidth);
+            }
+
 
             //http://127.0.0.1/app_dev.php/dl/source1/pictures/20150620/20150620003006.jpg?width=10000
             var currentSourceId = this.getPicturesPictureStore().getProxy().extraParams.SOURCEID;
@@ -485,6 +496,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
 
             if (currentPicture.get("THUMB1") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB1") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb1").setWidth(targetThumbnailWidth);
                     var thumb1time = currentPicture.get("THUMB1");
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("date").update(thumb1time.substring(8, 10) + ":" + thumb1time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb1").getComponent("picture").show();
@@ -495,6 +507,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             }
             if (currentPicture.get("THUMB2") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB2") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb2").setWidth(targetThumbnailWidth);
                     var thumb2time = currentPicture.get("THUMB2");
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("date").update(thumb2time.substring(8, 10) + ":" + thumb2time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb2").getComponent("picture").show();
@@ -505,6 +518,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             }
             if (currentPicture.get("THUMB3") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB3") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb3").setWidth(targetThumbnailWidth);
                     var thumb3time = currentPicture.get("THUMB3");
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("date").update(thumb3time.substring(8, 10) + ":" + thumb3time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb3").getComponent("picture").show();
@@ -515,6 +529,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             }
             if (currentPicture.get("THUMB4") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB4") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb4").setWidth(targetThumbnailWidth);
                     var thumb4time = currentPicture.get("THUMB4");
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("date").update(thumb4time.substring(8, 10) + ":" + thumb4time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb4").getComponent("picture").show();
@@ -525,6 +540,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             }
             if (currentPicture.get("THUMB5") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB5") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb5").setWidth(targetThumbnailWidth);
                     var thumb5time = currentPicture.get("THUMB5");
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("date").update(thumb5time.substring(8, 10) + ":" + thumb5time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb5").getComponent("picture").show();
@@ -535,6 +551,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             }
             if (currentPicture.get("THUMB6") !== "") {
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("picture").setSrc(currentURL + currentPicture.get("THUMB6") + "?width=" + targetThumbnailWidth);
+                    this.getPicturesdisplaythumbnails().getComponent("thumb6").setWidth(targetThumbnailWidth);
                     var thumb6time = currentPicture.get("THUMB6");
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("date").update(thumb6time.substring(8, 10) + ":" + thumb6time.substring(10, 12));
                     this.getPicturesdisplaythumbnails().getComponent("thumb6").getComponent("picture").show();
