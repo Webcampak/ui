@@ -1070,6 +1070,7 @@ $include-wpakd-controller-accesscontrol-users-users: dynamic(true);;
 $include-wpakd-controller-alerts-alerts: dynamic(true);;
 $include-wpakd-controller-desktop-backgroundactivities: dynamic(true);;
 $include-wpakd-controller-desktop-serveravailability: dynamic(true);;
+$include-wpakd-controller-desktop-windowmanagement: dynamic(true);;
 $include-wpakd-controller-desktop-authentication-authentication: dynamic(true);;
 $include-wpakd-controller-desktop-authentication-changepassword: dynamic(true);;
 $include-wpakd-controller-desktop-authentication-usersettings: dynamic(true);;

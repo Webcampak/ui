@@ -460,6 +460,7 @@ Ext.define("WPAKD.controller.alerts.Alerts", {
             this.getDesktopmain().add(this.getAlertsmain());
             this.getAlertsmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbalerts").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getAlertsmain());
             this.loadFirstSource();
         } else {
             this.consoleLog("openAlerts(): getAlertsmain().setVisible(false)");

@@ -48,11 +48,9 @@ Ext.define("WPAKD.controller.desktop.BackgroundActivities", {
             if (scope.getDesktoptoolbarbottomloadingbutton() !== undefined) {
                 var databaseCalls = parseInt(Ext.direct.Manager.transactions.getCount() + scope.extAjaxCallCount);
                 if (databaseCalls === 0) {
-                    scope.getDesktoptoolbarbottomloadingbutton().setIconCls("icon-database_png");
                     scope.getDesktoptoolbarbottomloadingbutton().setText("");
                     scope.getDesktoptoolbarbottomloadingbutton().setTooltip();
                 } else {
-                    scope.getDesktoptoolbarbottomloadingbutton().setIconCls("icon-database_connect_png");
                     scope.getDesktoptoolbarbottomloadingbutton().setText("(" + databaseCalls + ")");
                     var tooltipContent = "<b>Currently processing: </b><br />";
                     Ext.direct.Manager.transactions.each(function (item) {

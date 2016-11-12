@@ -6,7 +6,8 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
     extend: "Ext.app.Controller",
 
     views: [
-        "desktop.toolbar.top.Taskbar"
+        "desktop.Main"
+        , "desktop.toolbar.top.Taskbar"
         , "sourcesconfiguration.Main"
         , "sourcesconfiguration.SourcesList"
         , "sourcesconfiguration.SourcesConfiguration"
@@ -433,7 +434,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
             this.getDesktopmain().add(this.getSourcesconfigurationmain());
             this.getSourcesconfigurationmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbsourcesconfiguration").setVisible(true);
-            //this.setVisibleElements();
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getSourcesconfigurationmain());
         } else {
             this.consoleLog("openSourcesConfiguration(): getSourcesconfigurationmain().setVisible(false)");
             this.getSourcesconfigurationmain().setVisible(false);
@@ -445,5 +446,6 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         this.consoleLog("closeSourcesConfiguration()");
         this.getDesktoptoolbartoptaskbar().getComponent("tbsourcesconfiguration").setVisible(false);
     }
+
 
 });

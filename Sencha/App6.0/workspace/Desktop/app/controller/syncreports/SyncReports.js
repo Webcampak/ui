@@ -605,6 +605,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
             this.getDesktopmain().add(this.getSyncreportsmain());
             this.getSyncreportsmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbsyncreports").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getSyncreportsmain());
             //this.setVisibleElements();
         } else {
             this.consoleLog("openSyncReports(): getSyncreportsmain().setVisible(false)");

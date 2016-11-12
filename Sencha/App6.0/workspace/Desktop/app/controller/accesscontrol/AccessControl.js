@@ -93,6 +93,7 @@ Ext.define("WPAKD.controller.accesscontrol.AccessControl", {
             this.getDesktopmain().add(this.getAccesscontrolmain());
             this.getAccesscontrolmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbaccesscontrol").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getAccesscontrolmain());
             Ext.getBody().unmask();
             this.refreshTotalCount();
         } else {

@@ -279,6 +279,7 @@ Ext.define("WPAKD.controller.videos.Videos", {
             this.getDesktopmain().add(this.getVideosmain());
             this.getVideosmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbvideos").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getVideosmain());
             this.selectFirstSource();
             //this.setVisibleElements();
         } else {

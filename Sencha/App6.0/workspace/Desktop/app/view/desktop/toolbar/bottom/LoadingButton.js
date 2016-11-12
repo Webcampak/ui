@@ -6,16 +6,7 @@ Ext.define("WPAKD.view.desktop.toolbar.bottom.LoadingButton", {
     extend: "Ext.button.Button"
     , alias : "widget.desktoptoolbarbottomloadingbutton"
 
-/*
-    config: {
-        glyph:0xf1d8 // fa-paper-plane
-        , style: "font-family:FontAwesome"
-    },
-*/
-    , glyph:0xf1d8 // fa-paper-plane
-    , style: "font-family:FontAwesome"
+    , glyph: 0xf1c0 // fa-paper-plane
     , disabled: false
     , hidden: false
-
-//    iconCls: "icon-zoom_png"
 });

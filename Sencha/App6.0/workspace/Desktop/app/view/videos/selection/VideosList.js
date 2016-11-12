@@ -48,11 +48,11 @@ Ext.define("WPAKD.view.videos.selection.VideosList", {
         //columns: [
         this.columns = [
         //{width: 5, sortable: false, dataIndex: "01", renderer: this.change},
-            {header: i18n.gettext("Name"),      dataIndex: "NAME",      sortable: true, flex: 1                             }
-            , {header: i18n.gettext("Format"),    dataIndex: "FORMAT",    sortable: true, width: 80                           }
-            , {header: i18n.gettext("Size"),      dataIndex: "SIZE",      sortable: true, width: 60, renderer: this.filesize  }
-            , {header: i18n.gettext("AVI"),       dataIndex: "AVI",       sortable: true, width: 50, renderer: this.download  }
-            , {header: i18n.gettext("MP4"),       dataIndex: "MP4",       sortable: true, width: 50, renderer: this.download  }
+            {header: i18n.gettext("Name"),      dataIndex: "NAME",      sortable: true, flex: 1, align: "left"              }
+            , {header: i18n.gettext("Format"),  dataIndex: "FORMAT",    sortable: true, width: 80, align: "left"                           }
+            , {header: i18n.gettext("Size"),    dataIndex: "SIZE",      sortable: true, width: 60, align: "left", renderer: this.filesize  }
+            , {header: i18n.gettext("AVI"),     dataIndex: "AVI",       sortable: true, width: 50, renderer: this.download  }
+            , {header: i18n.gettext("MP4"),     dataIndex: "MP4",       sortable: true, width: 50, renderer: this.download  }
         ];
         this.callParent(arguments);
     }

@@ -132,6 +132,7 @@ Ext.define("WPAKD.controller.xferreports.XferReports", {
             this.getDesktopmain().add(this.getXferreportsmain());
             this.getXferreportsmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbxferreports").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getXferreportsmain());
             //this.setVisibleElements();
         } else {
             this.consoleLog("openXferReports(): getXferreportsmain().setVisible(false)");

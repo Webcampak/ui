@@ -117,6 +117,7 @@ Ext.define("WPAKD.controller.stats.System", {
             this.getDesktopmain().add(this.getStatssystemmain());
             this.getStatssystemmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbstatssystem").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getStatssystemmain());
             //this.setVisibleElements();
         } else {
             this.consoleLog("openStatsSystem(): getStatssystemmain().setVisible(false)");

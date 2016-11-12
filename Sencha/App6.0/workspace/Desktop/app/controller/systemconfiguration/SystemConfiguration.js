@@ -347,6 +347,7 @@ Ext.define("WPAKD.controller.systemconfiguration.SystemConfiguration", {
             this.getDesktopmain().add(this.getSystemconfigurationmain());
             this.getSystemconfigurationmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbsystemconfiguration").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getSystemconfigurationmain());
             this.loadSystemConfiguration();
         } else {
             this.consoleLog("openSystemConfiguration(): getSystemconfigurationmain().setVisible(false)");

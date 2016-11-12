@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.desktop.toolbar.bottom.ExceptionButton", {
 
     , disabled: false
     , hidden: true
-    , glyph:0xf06a // exclamation-circle
+    , glyph: 0xf12a // exclamation-circle
     , style: "font-family:FontAwesome"
 
 //    iconCls: "icon-error_png"

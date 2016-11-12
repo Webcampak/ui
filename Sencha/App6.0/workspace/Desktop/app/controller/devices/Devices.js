@@ -125,6 +125,7 @@ Ext.define("WPAKD.controller.devices.Devices", {
             this.getDesktopmain().add(this.getDevicesmain());
             this.getDevicesmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbdevices").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getDevicesmain());
             this.devicesLoaded();
             //this.setVisibleElements();
         } else {

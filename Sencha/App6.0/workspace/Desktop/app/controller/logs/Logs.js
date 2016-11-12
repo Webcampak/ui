@@ -183,6 +183,7 @@ Ext.define("WPAKD.controller.logs.Logs", {
             this.getDesktopmain().add(this.getLogsmain());
             this.getLogsmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tblogs").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getLogsmain());
             //this.setVisibleElements();
         } else {
             this.consoleLog("openLogs(): getLogsmain().setVisible(false)");

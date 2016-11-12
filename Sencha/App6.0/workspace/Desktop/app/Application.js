@@ -21,6 +21,7 @@ Ext.define("WPAKD.Application", {
         //, "desktop.icons.Icons"
 
         , "desktop.BackgroundActivities"
+        , "desktop.WindowManagement"
         , "desktop.authentication.Authentication"
         , "desktop.authentication.ChangePassword"
         , "desktop.authentication.UserSettings"

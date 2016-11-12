@@ -25,9 +25,9 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.sensors.SensorsList", {
               else {return "";}
           }
         },
-        {text: i18n.gettext("Port"),    width: 60,  sortable: true, dataIndex: "PORT", allowBlank: false, 	field: {xtype: "numberfield", minValue: 0, maxValue: 20}},
-        {text: i18n.gettext("Legend"),  flex: 1,    sortable: true, dataIndex: "LEGEND",    field: {xtype: "textfield"}},
-        {text: i18n.gettext("Color"),   width: 80,  sortable: true, dataIndex: "COLOR",     field: {xtype: "textfield"}}
+        {text: i18n.gettext("Port"),    width: 60,  sortable: true, align: "left", dataIndex: "PORT",      allowBlank: false, 	field: {xtype: "numberfield", minValue: 0, maxValue: 20}},
+        {text: i18n.gettext("Legend"),  flex: 1,    sortable: true, align: "left", dataIndex: "LEGEND",    field: {xtype: "textfield"}},
+        {text: i18n.gettext("Color"),   width: 80,  sortable: true, align: "left", dataIndex: "COLOR",     field: {xtype: "textfield"}}
     ],
     selType: "rowmodel",
     plugins: [

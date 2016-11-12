@@ -661,6 +661,7 @@ Ext.define("WPAKD.controller.pictures.Pictures", {
             this.getDesktopmain().add(this.getPicturesmain());
             this.getPicturesmain().setVisible(true);
             this.getDesktoptoolbartoptaskbar().getComponent("tbpictures").setVisible(true);
+            this.fireEvent("WPAKD.controller.desktop.WindowManagement.adjustWindowSize", this.getPicturesmain());
             this.selectFirstSource();
             //this.setVisibleElements();
         } else {
