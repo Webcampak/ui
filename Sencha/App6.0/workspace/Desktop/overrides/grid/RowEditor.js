@@ -2,8 +2,8 @@
 //<debug>
 console.log(new Date().toLocaleTimeString() + ": Log: Load: WPAKD.overrides.RowEditor");
 //</debug>
-Ext.define('override', {
-    override: 'Ext.grid.RowEditor',
+Ext.define("override", {
+    override: "Ext.grid.RowEditor",
     afterRender: function() {
         var me = this,
             plugin = me.editingPlugin,
@@ -14,20 +14,20 @@ Ext.define('override', {
         // The scrollingViewEl is the TableView which scrolls
         me.scrollingView = grid.lockable ? grid.normalGrid.view : grid.view;
         me.scrollingViewEl = me.scrollingView.el;
-        me.scroller.on('scroll', me.onViewScroll, me);
+        me.scroller.on("scroll", me.onViewScroll, me);
         // Prevent from bubbling click events to the grid view
         me.mon(me.el, {
             click: Ext.emptyFn,
             stopPropagation: true
         });
         // Ensure that the editor width always matches the total header width
-        me.mon(grid, 'resize', me.onGridResize, me);
+        me.mon(grid, "resize", me.onGridResize, me);
         if (me.lockable) {
-            grid.lockedGrid.view.on('resize', 'onGridResize', me);
+            grid.lockedGrid.view.on("resize", "onGridResize", me);
         }
         me.el.swallowEvent([
-            'keypress',
-            'keydown'
+            "keypress",
+            "keydown"
         ]);
         me.initKeyNav();
         me.mon(plugin.view, {
@@ -38,7 +38,7 @@ Ext.define('override', {
         });
         me.syncAllFieldWidths();
         if (me.floatingButtons) {
-            me.body.dom.setAttribute('aria-owns', me.floatingButtons.id);
+            me.body.dom.setAttribute("aria-owns", me.floatingButtons.id);
         }
     }
 
