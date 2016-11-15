@@ -8,7 +8,7 @@ Ext.define("WPAKD.model.desktop.authentication.UserSettings", {
     idProperty : "ID",
 
     fields: [
-        { name: "ID",     type: "int"              }
+        { name: "ID",     type: "int"            }
         , { name: "CODE",     type: "string"     }
         , { name: "VALUE",     type: "string"    }
     ]

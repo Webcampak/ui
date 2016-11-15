@@ -63,6 +63,13 @@ Ext.define("WPAKD.controller.desktop.authentication.UserSettings", {
         record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTBUILD", 0, false, false, true);
         if (record) {
             this.getDesktoptoolbarbottombuild().setText(i18n.gettext("Build: ") + record.get("VALUE"));
+            var currentCoreVersion = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "VERSION_CORE", 0, false, false, true);
+            var currentUiVersion = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "VERSION_UI", 0, false, false, true);
+            var currentApiVersion = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "VERSION_API", 0, false, false, true);
+            var currentCliVersion = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "VERSION_CLI", 0, false, false, true);
+            if (currentCoreVersion && currentUiVersion && currentApiVersion && currentCliVersion) {
+                this.getDesktoptoolbarbottombuild().setTooltip("CORE: " + currentCoreVersion.get("VALUE") + "<br />UI: " + currentUiVersion.get("VALUE") + "<br />API: " + currentApiVersion.get("VALUE") + "<br />CLI: " + currentCliVersion.get("VALUE"));
+            }
         }
 
         record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CURRENTUSERNAME", 0, false, false, true);
