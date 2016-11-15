@@ -1890,6 +1890,7 @@ $include-wpakd-view-xferreports-main: dynamic(true);;
 $include-wpakd-view-xferreports-reportslist: dynamic(true);;
 $include-wpakd-view-xferreports-search: dynamic(true);;
 $include-wpakd-view-xferreports-toolbarrecords: dynamic(true);;
+$include-override: dynamic(true);;
 
 
 /* ======================== ETC ======================== */

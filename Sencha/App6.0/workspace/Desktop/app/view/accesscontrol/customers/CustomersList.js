@@ -8,9 +8,6 @@ Ext.define("WPAKD.view.accesscontrol.customers.CustomersList", {
 
     , store: "accesscontrol.customers.Customers"
 
-    , stateful: true
-    , stateId: "accesscontrolcustomerscustomerslist"
-
     , autoScroll: true
     , columns: [
         {text: i18n.gettext("CUS_ID"),              dataIndex: "CUS_ID",            align: "right",     width: 40,  sortable: true,     hidden: true                }

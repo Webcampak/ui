@@ -12,9 +12,6 @@ Ext.define("WPAKD.view.accesscontrol.Main", {
     width: 1000,
     height: 600,
 
-    stateful: true,
-    stateId: "accesscontrolmain",
-
     scroll: true,
     autoScroll: true,
     maximizable: true,
