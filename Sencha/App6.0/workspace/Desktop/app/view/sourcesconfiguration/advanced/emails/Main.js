@@ -19,7 +19,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Main", {
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
                 {width: 320, labelWidth: 250, xtype: "sourcesconfigurationadvancedemailscfgemailalertfailure"     }
-                , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes late (0 = never)"), labelSeparator: "", padding: "0 5 0 5"  }
+                , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes or iterations late (0 = never)"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
         }        
         , {
@@ -27,7 +27,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Main", {
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
                 {width: 320, labelWidth: 250,   xtype: "sourcesconfigurationadvancedemailscfgemailalertreminder"     }
-                , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes (0 = never)"), labelSeparator: "", padding: "0 5 0 5"  }
+                , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes or iterations (0 = never)"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
         }
         , {xtype: "sourcesconfigurationadvancedemailscfgemailalwaysnotify"}

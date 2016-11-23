@@ -7,7 +7,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemailschedulealer
     , alias: "widget.sourcesconfigurationadvancedemailscfgemailschedulealert"
 
     , fieldLabel: i18n.gettext("Schedule-based email alerts")
-    , boxLabel: i18n.gettext("Email alerts are sent based on a pre-configured alert schedule")
+    , boxLabel: i18n.gettext("Email alerts are sent based on a pre-configured alert schedule (using iterations)")
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {
