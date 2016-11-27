@@ -6,13 +6,13 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Main", {
     extend: "Ext.form.FieldSet"
     , alias: "widget.sourcesconfigurationadvancedemailsmain"
 
-    , title: i18n.gettext("Emails")
+    , title: i18n.gettext("General Email Configuration")
 
     , padding: 5
     , layout: "fit"
     , defaults: {labelWidth: 250}
     , items: [
-        {xtype: "sourcesconfigurationadvancedemailscfgemaildirectalert"}
+/*        {xtype: "sourcesconfigurationadvancedemailscfgemaildirectalert"}
         , {xtype: "sourcesconfigurationadvancedemailscfgemailschedulealert"}
         , {
             xtype: "container"
@@ -30,7 +30,8 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Main", {
                 , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes or iterations (0 = never)"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
         }
-        , {xtype: "sourcesconfigurationadvancedemailscfgemailalwaysnotify"}
+*/
+        {xtype: "sourcesconfigurationadvancedemailscfgemailalwaysnotify"}
     ]
 });
 
