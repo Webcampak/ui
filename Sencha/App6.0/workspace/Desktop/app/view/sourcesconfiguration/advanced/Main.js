@@ -15,7 +15,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.Main", {
         {xtype: "sourcesconfigurationadvancedemailsmain"  }
         , {xtype: "sourcesconfigurationadvancedtimemain"  }
         , {xtype: "sourcesconfigurationadvancedscheduleslotmain"  }
-        , {xtype: "sourcesconfigurationadvancedscheduledelaymain"  }
+//        , {xtype: "sourcesconfigurationadvancedscheduledelaymain"  }
     ]
 });
 

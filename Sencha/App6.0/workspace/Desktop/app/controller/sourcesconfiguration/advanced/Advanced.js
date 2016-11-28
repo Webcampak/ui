@@ -27,11 +27,12 @@ Ext.define("WPAKD.controller.sourcesconfiguration.advanced.Advanced", {
         , "sourcesconfiguration.advanced.scheduleslot.Cfgemailalertscheduleslot"
         , "sourcesconfiguration.advanced.scheduleslot.Cfgemailalertscheduleslotfailure"
         , "sourcesconfiguration.advanced.scheduleslot.Cfgemailalertscheduleslotreminder"
-
+/*
         , "sourcesconfiguration.advanced.scheduledelay.Main"
         , "sourcesconfiguration.advanced.scheduledelay.Cfgemailalertscheduledelay"
         , "sourcesconfiguration.advanced.scheduledelay.Cfgemailalertscheduledelayfailure"
         , "sourcesconfiguration.advanced.scheduledelay.Cfgemailalertscheduledelayreminder"
+*/
     ],
 
     stores: [
@@ -69,12 +70,12 @@ Ext.define("WPAKD.controller.sourcesconfiguration.advanced.Advanced", {
         , {ref: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslot",            selector: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslot"         }
         , {ref: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotfailure",     selector: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotfailure"  }
         , {ref: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotreminder",    selector: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotreminder" }
-
+/*
         , {ref: "sourcesconfigurationadvancedscheduledelaymain",                                selector: "sourcesconfigurationadvancedscheduledelaymain"                        }
         , {ref: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelay",          selector: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelay"         }
         , {ref: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayfailure",   selector: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayfailure"  }
         , {ref: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayreminder",  selector: "sourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayreminder" }
-
+*/
     ]
 
     , init: function() {
@@ -164,14 +165,14 @@ Ext.define("WPAKD.controller.sourcesconfiguration.advanced.Advanced", {
             } else {this.getSourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotfailure().setVisible(false);}
             if(configObj.hasOwnProperty("cfgemailalertscheduleslotreminder")){this.getSourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotreminder().setValue(configObj["cfgemailalertscheduleslotreminder"]);
             } else {this.getSourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotreminder().setVisible(false);}
-
+/*
             if(configObj.hasOwnProperty("cfgemailalertscheduledelay")){this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelay().setValue(configObj["cfgemailalertscheduledelay"]);
             } else {this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelay().setVisible(false);}
             if(configObj.hasOwnProperty("cfgemailalertscheduledelayfailure")){this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayfailure().setValue(configObj["cfgemailalertscheduledelayfailure"]);
             } else {this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayfailure().setVisible(false);}
             if(configObj.hasOwnProperty("cfgemailalertscheduledelayreminder")){this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayreminder().setValue(configObj["cfgemailalertscheduledelayreminder"]);
             } else {this.getSourcesconfigurationadvancedscheduledelaycfgemailalertscheduledelayreminder().setVisible(false);}
-
+*/
 
             var configObj = {};
             this.getSourcesconfigurationSectionCaptureStore().each(function (rec) {
