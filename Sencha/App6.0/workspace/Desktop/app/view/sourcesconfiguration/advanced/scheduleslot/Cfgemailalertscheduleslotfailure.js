@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.scheduleslot.Cfgemailalerts
     extend: "Ext.form.field.Number"
     , alias: "widget.sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotfailure"
 
-    , fieldLabel: i18n.gettext("Send an email if no capture for more than ")
+    , fieldLabel: i18n.gettext("Send an email if no capture for more than")
     , allowBlank: false
     , minValue:0
     , listeners : {

@@ -20,7 +20,15 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.scheduleslot.Main", {
                 {width: 320, labelWidth: 250, xtype: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotfailure"     }
                 , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("missing captures"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
-        }        
+        }
+        , {
+            xtype: "container"
+            , layout: {type:"hbox", align: "stretch", pack: "start"}
+            , items   : [
+                {width: 320, labelWidth: 250, xtype: "sourcesconfigurationadvancedscheduleslotcfgemailalertscheduleslotgrace"     }
+                , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes"), labelSeparator: "", padding: "0 5 0 5"  }
+            ]
+        }
         , {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}

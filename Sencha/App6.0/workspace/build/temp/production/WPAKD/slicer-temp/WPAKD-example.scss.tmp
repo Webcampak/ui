@@ -1443,6 +1443,7 @@ $include-wpakd-view-sourcesconfiguration-advanced-scheduledelay-cfgemailalertsch
 $include-wpakd-view-sourcesconfiguration-advanced-scheduledelay-main: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-advanced-scheduleslot-cfgemailalertscheduleslot: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-advanced-scheduleslot-cfgemailalertscheduleslotfailure: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-advanced-scheduleslot-cfgemailalertscheduleslotgrace: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-advanced-scheduleslot-cfgemailalertscheduleslotreminder: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-advanced-scheduleslot-main: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-advanced-time-cfgemailalerttime: dynamic(true);;
