@@ -161,7 +161,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
                 configName = rec.get("NAME");
                 configObj[configName] = true;
             });
-            if(!configObj.hasOwnProperty("email")){this.getSourcesconfigurationphidgetsemailsmain().setVisible(false);}
+            //if(!configObj.hasOwnProperty("email")){this.getSourcesconfigurationphidgetsemailsmain().setVisible(false);}
             if(!configObj.hasOwnProperty("phidget")){this.getSourcesconfigurationphidgetsphidgetmain().setVisible(false);}
 
             this.getSourcesconfigurationphidgetsmain().setDisabled(false);

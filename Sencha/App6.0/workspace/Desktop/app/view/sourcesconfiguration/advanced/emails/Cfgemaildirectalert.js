@@ -7,7 +7,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.emails.Cfgemaildirectalert"
     , alias: "widget.sourcesconfigurationadvancedemailscfgemaildirectalert"
 
     , fieldLabel: i18n.gettext("In-line email alert")
-    , boxLabel: i18n.gettext("Email alerts will be sent directly based on capture status")
+    , boxLabel: i18n.gettext("Email alerts will be sent directly based on capture status (using minutes)")
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {

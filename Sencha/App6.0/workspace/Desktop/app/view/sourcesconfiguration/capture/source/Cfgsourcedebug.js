@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.source.Cfgsourcedebug", {
     extend: "Ext.form.field.Checkbox"
     , alias: "widget.sourcesconfigurationcapturesourcecfgsourcedebug"
 
-    , fieldLabel: i18n.gettext("Debug")
+    , fieldLabel: i18n.gettext("Gphoto2 Debug")
     , uncheckedValue: "no"
     , inputValue: "yes"
 
