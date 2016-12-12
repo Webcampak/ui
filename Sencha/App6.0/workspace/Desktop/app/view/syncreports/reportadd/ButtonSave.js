@@ -6,6 +6,6 @@ Ext.define("WPAKD.view.syncreports.reportadd.ButtonSave", {
     extend: "Ext.button.Button"
     , alias : "widget.syncreportsreportaddbuttonsave"
 
-    , text: i18n.gettext("Save")
+    , text: i18n.gettext("Run")
     , glyph:0xf0c7 // fa-plus-square
 });
