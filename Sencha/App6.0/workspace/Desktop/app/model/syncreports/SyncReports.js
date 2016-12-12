@@ -22,7 +22,7 @@ Ext.define("WPAKD.model.syncreports.SyncReports", {
         , {name: "DST_SOURCEID",    type: "int"     }
         , {name: "DST_SOURCENAME",  type: "string"  }
         , {name: "DST_TYPE",        type: "string"  }
-        , {name: "DST_FTPSERVERID",   type: "int"     }
+        , {name: "DST_FTPSERVERID", type: "int"     }
         , {name: "DST_SIZE",        type: "int"     }
         
         , {name: "SRC_RESULT_FILES_COUNT_JPG",      type: "int"     }

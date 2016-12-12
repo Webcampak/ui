@@ -188,6 +188,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                 , DST_FTPSERVERID:  seletedReport.get("DST_FTPSERVERID")
             }]                    
         );
+        this.getSyncreportsSyncReportsStore().sync();
         this.getSyncreportsSyncReportsStore().on("endupdate",this.createReportSuccess,this,{single:true});
     }        
 
@@ -226,6 +227,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                         if(btn === "yes") {
                             scope.consoleLog("deleteReport: currentStore.remove(selection):");
                             currentStore.remove(seletedReport);
+                            currentStore.sync();
                             currentStore.load();
                         }
                     }
@@ -486,6 +488,7 @@ Ext.define("WPAKD.controller.syncreports.SyncReports", {
                     , DST_FTPSERVERID:    this.getSyncreportsreportadddestinationftpserverslist().getValue()
                 }]
             );
+            this.getSyncreportsSyncReportsStore().sync();
             this.getSyncreportsSyncReportsStore().on("endupdate",this.createReportSuccess,this,{single:true});
         }
     }    
