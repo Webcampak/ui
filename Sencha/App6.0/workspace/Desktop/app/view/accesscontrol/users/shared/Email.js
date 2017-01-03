@@ -7,7 +7,7 @@ Ext.define("WPAKD.view.accesscontrol.users.shared.Email", {
      
     alias : "widget.accesscontroluserssharedemail",
                   
-    fieldLabel: i18n.gettext("E-mail"),
+    fieldLabel: i18n.gettext("email"),
     allowBlank: false,
     vtype: "email",
     maxLength: 100,

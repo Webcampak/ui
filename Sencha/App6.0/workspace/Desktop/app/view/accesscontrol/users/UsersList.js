@@ -42,7 +42,7 @@ Ext.define("WPAKD.view.accesscontrol.users.UsersList", {
         }
         , {text: i18n.gettext("Firstname"), dataIndex: "FIRSTNAME",     align: "left",    flex: 1,     sortable: true,                          field: {xtype: "textfield"                 }    }
         , {text: i18n.gettext("Lastname"),  dataIndex: "LASTNAME",      align: "left",    flex: 1,     sortable: true,                          field: {xtype: "textfield"                 }    }
-        , {text: i18n.gettext("E-Mail"),    dataIndex: "EMAIL",         align: "left",    flex: 1,     sortable: true,                          field: {xtype: "textfield", vtype: "email" }    }
+        , {text: i18n.gettext("email"),    dataIndex: "EMAIL",         align: "left",    flex: 1,     sortable: true,                          field: {xtype: "textfield", vtype: "email" }    }
         , {text: i18n.gettext("Active"),    dataIndex: "ACTIVE_FLAG",   align: "left",    flex: 1,     sortable: true,
             field: {
                 xtype: "combobox"

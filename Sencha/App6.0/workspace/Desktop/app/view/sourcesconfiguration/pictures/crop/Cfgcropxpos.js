@@ -8,7 +8,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Cfgcropxpos", {
 
     , fieldLabel: i18n.gettext("X")
     , allowBlank: false
-    , minValue:0
+    , minValue: 0
     , listeners : {
         change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.pictures.Pictures.updateStoreValue", newValue, oldValue, "cfgcropxpos");

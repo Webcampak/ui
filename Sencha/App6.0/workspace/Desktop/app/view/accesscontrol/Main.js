@@ -27,7 +27,7 @@ Ext.define("WPAKD.view.accesscontrol.Main", {
         xtype: "tabpanel",
         items: [{
             title: i18n.gettext("Users"),
-            tooltip: i18n.gettext("Add/Edit/Delete users"),
+            tooltip: i18n.gettext("Add/Edit/Delete Users"),
             itemID: "usersTab",
             xtype: "accesscontrolusersmain",
             border: 0
