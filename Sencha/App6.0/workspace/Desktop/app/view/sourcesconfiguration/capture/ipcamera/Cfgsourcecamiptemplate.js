@@ -21,7 +21,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.ipcamera.Cfgsourcecamiptempl
                     {name : i18n.gettext("Date when file was save into /tmp/ directory"),                           value: "filedate"       }
                     , {name : i18n.gettext("Picture filename (Webcampak) - (YYYYMMDDHHMMSS.jpg)"),                  value: "webcampak"      }
                     , {name : i18n.gettext("Picture filename (Harbortronics) - (YYYYMMDD_HHMMSS.JPG)"),             value: "harbortronics"  }
-                    , {name : i18n.gettext("Picture filename (Harbortronics) - (IP_01_YYYYMMDDHHMMSS_TIMING.JPG)"), value: "tplink"         }
+                    , {name : i18n.gettext("Picture filename (TP-LINK) - (IP_01_YYYYMMDDHHMMSS_TIMING.JPG)"),       value: "tplink"         }
                     //, {name : i18n.gettext("Picture filename (Canon IP Camera) - (YYYYMMDDHHMMSSxxx.jpg)"),          value: "canonipcamera"  },
                     , {name : i18n.gettext("EXIF Metadata (date)"),                                                 value: "exif"           }
                 ]
