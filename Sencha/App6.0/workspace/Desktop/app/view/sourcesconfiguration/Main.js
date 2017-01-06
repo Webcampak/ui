@@ -11,8 +11,8 @@ Ext.define("WPAKD.view.sourcesconfiguration.Main", {
     , width: 1200
     , height: 700
 
-    , stateful: true
-    , stateId: "sourcesconfigurationmain"
+//    , stateful: true
+//    , stateId: "sourcesconfigurationmain"
 
     , scroll: true
     , autoScroll: true

@@ -346,6 +346,8 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
             , buttons: Ext.Msg.OK
             , icon: Ext.Msg.INFO
         });
+        // To remove the dirty flag, reload the module after everything has been saved
+        this.fireEvent("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.loadSettings");
     }
 
 

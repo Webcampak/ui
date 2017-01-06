@@ -66,7 +66,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
             "*": {
                 "WPAKD.controller.sourcesconfiguration.phidgets.Phidgets.updateStoreValue": this.updateStoreValue
             }
-            , "sourcesconfigurationcapturephidgetsensorslist":  {edit:    this.phidgetSensorsModified }
+            , "sourcesconfigurationphidgetssensorssensorslist":  {edit:    this.phidgetSensorsModified }
         });
         this.listen({
             controller: {
