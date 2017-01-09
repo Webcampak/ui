@@ -114,10 +114,18 @@ Ext.define("WPAKT.controller.dashboard.Status", {
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
                     scope.consoleLog("loadStatus(): Latency: " + latency + "ms");
-                    //var serverResonse = Ext.decode(response.responseText, true);
+                    var responseObj = Ext.JSON.decode(response.responseText, true);
+                    if (responseObj.success === false) {
+                        Ext.MessageBox.show({
+                            title: "Error",
+                            msg: responseObj.message,
+                            buttons: Ext.MessageBox.OK,
+                            icon: Ext.MessageBox.ERROR
+                        });
+                    }
                     scope.setStatus(response.responseText);
                     scope.setStatusLoading(false);
-                 },
+                },
                 failure: function(response, opts) {
                     var successTimestamp = new Date().getTime();
                     var latency = successTimestamp - initTimestamp;
