@@ -6,7 +6,6 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.watermark.Cfgwatermarkposit
     extend: "Ext.form.field.Number"
     , alias: "widget.sourcesconfigurationpostprodwatermarkcfgwatermarkpositiony"
 
-    , fieldLabel: i18n.gettext("Y")
     , allowBlank: false
     , minValue:0
     , listeners : {
