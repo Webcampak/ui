@@ -15,6 +15,8 @@ Ext.define("WPAKD.view.desktop.authentication.Main", {
     draggable: false,
     closable: false,
 
+    onEsc: Ext.emptyFn,
+    
     frame: true,
     defaults: {padding: "5 5 5 5"},
     //defaults: {margin: "0 5 5 5"},
