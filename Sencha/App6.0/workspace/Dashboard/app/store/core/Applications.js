@@ -15,7 +15,8 @@ Ext.define("WPAKT.store.core.Applications", {
             , totalProperty: "total"
         }
         , api:{
-            read:   "Applications.getApplications"
+            //read:   "Applications.getApplications"
+            read:   "Applications.getCurrentApplications"
         }
     }
 });

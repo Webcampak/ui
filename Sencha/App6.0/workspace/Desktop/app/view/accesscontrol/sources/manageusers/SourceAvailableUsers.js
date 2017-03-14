@@ -25,9 +25,9 @@ Ext.define("WPAKD.view.accesscontrol.sources.manageusers.SourceAvailableUsers", 
     columns: [
         {header: "USE_ID",      dataIndex: "USE_ID",    sortable: false,     width: 40, hidden: true    }
         , {header: "SOU_ID",    dataIndex: "SOU_ID",    sortable: false,     width: 40, hidden: true    }
-        , {header: i18n.gettext("Username"),      dataIndex: "USERNAME",    sortable: true,     flex: 0.8,   editor: "textfield"    }
-        , {header: i18n.gettext("Firstname"),     dataIndex: "FIRSTNAME",   sortable: true,     flex: 1,   editor: "textfield"    }
-        , {header: i18n.gettext("Lastname"),      dataIndex: "LASTNAME",    sortable: true,     flex: 1,     editor: "textfield"    }
+        , {header: i18n.gettext("Username"),      dataIndex: "USERNAME",    align: "left", sortable: true,     flex: 0.8,   editor: "textfield"    }
+        , {header: i18n.gettext("Firstname"),     dataIndex: "FIRSTNAME",   align: "left", sortable: true,     flex: 1,   editor: "textfield"    }
+        , {header: i18n.gettext("Lastname"),      dataIndex: "LASTNAME",    align: "left", sortable: true,     flex: 1,     editor: "textfield"    }
     ],
     selType: "rowmodel",
 

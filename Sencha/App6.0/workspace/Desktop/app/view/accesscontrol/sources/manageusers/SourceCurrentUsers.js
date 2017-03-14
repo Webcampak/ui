@@ -23,13 +23,13 @@ Ext.define("WPAKD.view.accesscontrol.sources.manageusers.SourceCurrentUsers", {
     store: "accesscontrol.sources.SourceCurrentUsers",
     autoScroll: true,
     columns: [
-        {header: "USE_ID",      dataIndex: "USE_ID",    sortable: false,     width: 40, hidden: true    }
-        , {header: "SOU_ID",    dataIndex: "SOU_ID",    sortable: false,     width: 40, hidden: true }
-        , {header: "USESOU_ID", dataIndex: "USESOU_ID", sortable: false,     width: 40, hidden: true }
-        , {header: i18n.gettext("Username"),      dataIndex: "USERNAME",    sortable: true,     flex: 0.8,  field: {xtype: "textfield", disabled: true }    }
-        , {header: i18n.gettext("Firstname"),     dataIndex: "FIRSTNAME",   sortable: true,     flex: 1,    field: {xtype: "textfield", disabled: true }    }
-        , {header: i18n.gettext("Lastname"),      dataIndex: "LASTNAME",    sortable: true,     flex: 1,    field: {xtype: "textfield", disabled: true }    }
-        , {header: i18n.gettext("Alerts"),        dataIndex: "ALERTS_FLAG", sortable: true,     flex: 1
+        {header: "USE_ID",      dataIndex: "USE_ID",    sortable: false,    width: 40, hidden: true    }
+        , {header: "SOU_ID",    dataIndex: "SOU_ID",    sortable: false,    width: 40, hidden: true }
+        , {header: "USESOU_ID", dataIndex: "USESOU_ID", sortable: false,    width: 40, hidden: true }
+        , {header: i18n.gettext("Username"),      dataIndex: "USERNAME",    align: "left", sortable: true,     flex: 0.8,  field: {xtype: "textfield", disabled: true }    }
+        , {header: i18n.gettext("Firstname"),     dataIndex: "FIRSTNAME",   align: "left", sortable: true,     flex: 1,    field: {xtype: "textfield", disabled: true }    }
+        , {header: i18n.gettext("Lastname"),      dataIndex: "LASTNAME",    align: "left", sortable: true,     flex: 1,    field: {xtype: "textfield", disabled: true }    }
+        , {header: i18n.gettext("Alerts"),        dataIndex: "ALERTS_FLAG", align: "left", sortable: true,     flex: 1
             , field: {
                 xtype: "combobox"
                 , store: Ext.create("Ext.data.Store", {

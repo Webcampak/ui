@@ -25,9 +25,9 @@ Ext.define("WPAKD.view.accesscontrol.users.managesources.UserCurrentSources", {
     columns: [
         {header: "USESOU_ID",                   dataIndex: "USESOU_ID",     sortable: false,    width: 40, hidden: true         }
         , {header: "SOU_ID",                    dataIndex: "SOU_ID",        sortable: false,    width: 40, hidden: true         }
-        , {header: i18n.gettext("Source ID"),   dataIndex: "SOURCEID",      sortable: true,     width: 70,   field: {xtype: "textfield", disabled: true }  }
-        , {header: i18n.gettext("Name"),        dataIndex: "NAME",          sortable: true,     flex: 1,   field: {xtype: "textfield", disabled: true }  }
-        , {header: i18n.gettext("Alerts"),      dataIndex: "ALERTS_FLAG",   sortable: true,     width: 70
+        , {header: i18n.gettext("Source ID"),   dataIndex: "SOURCEID",      sortable: false,    align: "left", width: 70,   field: {xtype: "textfield", disabled: true }  }
+        , {header: i18n.gettext("Name"),        dataIndex: "NAME",          sortable: false,    align: "left", flex: 1,   field: {xtype: "textfield", disabled: true }  }
+        , {header: i18n.gettext("Alerts"),      dataIndex: "ALERTS_FLAG",   sortable: false,    align: "left", width: 70
             , field: {
                 xtype: "combobox"
                 , store: Ext.create("Ext.data.Store", {
