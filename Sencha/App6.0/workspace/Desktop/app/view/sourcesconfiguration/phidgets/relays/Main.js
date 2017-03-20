@@ -10,7 +10,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.relays.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 270}
+    , defaults: {labelWidth: 320}
     , items: [
         {xtype: "sourcesconfigurationphidgetsrelayscfgphidgeterroractivate"}
         , {xtype: "sourcesconfigurationphidgetsrelayscfgphidgetfailure"}

@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.preprocess.Cfgvideoprer
     extend: "Ext.form.field.Text"
     , alias: "widget.sourcesconfigurationcustomvideospreprocesscfgvideopreresizeres"
 
-    , fieldLabel: i18n.gettext("Picture size (1920x1080)")
+    , fieldLabel: i18n.gettext("Picture size")
     , listeners : {
         change : function(scope, newValue, oldValue) {
             this.fireEvent("WPAKD.controller.sourcesconfiguration.customvideos.Videos.updateStoreValue", newValue, oldValue, "cfgvideopreresizeres");

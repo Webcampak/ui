@@ -11,32 +11,32 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.ftp.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 200}
+    , defaults: {labelWidth: 300}
     , items   : [{
         xtype: "container"
         , defaults: {padding: 2}
         , layout: {type:"hbox", align: "stretch", pack: "start"}
         , items   : [
-            {flex: 1,   xtype: "sourcesconfigurationpicturesftpcfgftpmainserverid"                 }
+            {flex: 1,   labelWidth: 300, xtype: "sourcesconfigurationpicturesftpcfgftpmainserverid"                 }
             , {width: 55, labelWidth: 35, xtype: "sourcesconfigurationpicturesftpcfgftpmainserverraw"}
-            , {width: 160, labelWidth: 110, xtype: "sourcesconfigurationpicturesftpcfgftpmainserverretry"   }
+            , {width: 200, labelWidth: 130, xtype: "sourcesconfigurationpicturesftpcfgftpmainserverretry"   }
         ]
     }, {
         xtype: "container"
         , defaults: {padding: 2}
         , layout: {type:"hbox", align: "stretch", pack: "start"}
         , items   : [
-            {flex: 1,   xtype: "sourcesconfigurationpicturesftpcfgftpsecondserverid"                        }
+            {flex: 1,   labelWidth: 300, xtype: "sourcesconfigurationpicturesftpcfgftpsecondserverid"                        }
             , {width: 55, labelWidth: 35, xtype: "sourcesconfigurationpicturesftpcfgftpsecondserverraw"     }
-            , {width: 160, labelWidth: 110, xtype: "sourcesconfigurationpicturesftpcfgftpsecondserverretry" }
+            , {width: 200, labelWidth: 130, xtype: "sourcesconfigurationpicturesftpcfgftpsecondserverretry" }
         ]
     }, {
         xtype: "container"
         , defaults: {padding: 2}
         , layout: {type:"hbox", align: "stretch", pack: "start"}
         , items   : [
-            {flex: 1,   labelWidth: 150, xtype: "sourcesconfigurationpicturesftpcfgftphotlinkserverid"       }
-            , {width: 160, labelWidth: 110, xtype: "sourcesconfigurationpicturesftpcfgftphotlinkserverretry" }
+            {flex: 1,   labelWidth: 300, xtype: "sourcesconfigurationpicturesftpcfgftphotlinkserverid"       }
+            , {width: 200, labelWidth: 130, xtype: "sourcesconfigurationpicturesftpcfgftphotlinkserverretry" }
         ]
     }]
 });

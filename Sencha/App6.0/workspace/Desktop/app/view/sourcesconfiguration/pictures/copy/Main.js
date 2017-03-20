@@ -11,13 +11,13 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.copy.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 200}
+    , defaults: {labelWidth: 300}
     , items   : [{
         xtype: "container"
         , defaults: {padding: 2}
         , layout: {type:"hbox", align: "stretch", pack: "start"}
         , items   : [
-            {flex: 1,   xtype: "sourcesconfigurationpicturescopycfgcopymainsourceid"                   }
+            {flex: 1,   labelWidth: 300, xtype: "sourcesconfigurationpicturescopycfgcopymainsourceid"                   }
             , {width: 55, labelWidth: 35, xtype: "sourcesconfigurationpicturescopycfgcopymainsourceraw"}
             , {width: 60, labelWidth: 40, xtype: "sourcesconfigurationpicturescopycfgcopymainenable"   }
         ]
@@ -26,7 +26,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.copy.Main", {
         , defaults: {padding: 2}
         , layout: {type:"hbox",	align: "stretch", pack: "start"}
         , items   : [
-            {flex: 1,   xtype: "sourcesconfigurationpicturescopycfgcopysecondsourceid"                      }
+            {flex: 1,   labelWidth: 300, xtype: "sourcesconfigurationpicturescopycfgcopysecondsourceid"                      }
             , {width: 55, labelWidth: 35, xtype: "sourcesconfigurationpicturescopycfgcopysecondsourceraw"   }
             , {width: 60, labelWidth: 40, xtype: "sourcesconfigurationpicturescopycfgcopysecondenable"      }
         ]

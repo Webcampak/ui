@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.rotate.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 150}
+    , defaults: {labelWidth: 200}
     , items: [
         {xtype: "sourcesconfigurationpicturesrotatecfgrotateactivate"}
         , {xtype: "sourcesconfigurationpicturesrotatecfgrotateangle"}

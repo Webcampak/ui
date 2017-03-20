@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.preprocess.Cfgvideoprer
     extend: "Ext.form.field.Checkbox"
     , alias: "widget.sourcesconfigurationcustomvideospreprocesscfgvideopreresize"
 
-    , fieldLabel: i18n.gettext("Resize picture before video creation")
+    , fieldLabel: i18n.gettext("Enable")
     , uncheckedValue: "no"
     , inputValue: "yes"
     , listeners : {

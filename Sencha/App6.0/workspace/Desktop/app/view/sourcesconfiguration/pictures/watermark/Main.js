@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 160}
+    , defaults: {labelWidth: 300}
     , items: [
         {xtype: "sourcesconfigurationpictureswatermarkcfgpicwatermarkactivate"}
         , {xtype: "sourcesconfigurationpictureswatermarkcfgpicwatermarkfile"}
@@ -20,6 +20,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.watermark.Main", {
         , {
             xtype: "fieldcontainer"
             , fieldLabel: i18n.gettext("Location of the watermark")
+            , labelWidth: 300
             , combineErrors: false
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items: [

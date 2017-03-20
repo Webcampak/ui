@@ -11,13 +11,13 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.archives.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 280}
+    , defaults: {labelWidth: 350}
     , items   : [
         {
             xtype: "container"
             , layout: {type:"hbox",	align: "stretch", pack: "start"}
             , items : [
-                {xtype: "sourcesconfigurationpicturesarchivescfgsavepictures", width: 300,	labelWidth: 280}
+                {xtype: "sourcesconfigurationpicturesarchivescfgsavepictures", width: 400,	labelWidth: 350}
                 , {
                     flex: 1
                     , xtype: "fieldcontainer"

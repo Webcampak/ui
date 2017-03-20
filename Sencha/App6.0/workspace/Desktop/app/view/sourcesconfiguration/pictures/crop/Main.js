@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 100}
+    , defaults: {labelWidth: 200}
     , items   : [{
         xtype: "sourcesconfigurationpicturescropcfgcropactivate"
     },	{
@@ -22,6 +22,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Main", {
             xtype: "fieldcontainer"
             , flex: 1
             , fieldLabel: i18n.gettext("Size of the area")
+            , labelWidth: 200
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items: [
                 {xtype : "sourcesconfigurationpicturescropcfgcropsizewidth", width: 80      }
@@ -32,7 +33,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.pictures.crop.Main", {
             xtype: "fieldcontainer"
             , flex: 1
             , fieldLabel: i18n.gettext("Location")
-            , labelWidth: 100
+            , labelWidth: 200
             , defaults: {labelWidth: 15, width: 90}
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items: [

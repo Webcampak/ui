@@ -29,6 +29,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.thumbnail.Main", {
             , items   : [{
                 xtype: "fieldcontainer"
                 , fieldLabel: i18n.gettext("Size of the area")
+                , labelWidth: 200
                 , combineErrors: false
                 , layout: {type:"hbox", pack: "start"}
                 , items: [
@@ -65,6 +66,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.postprod.thumbnail.Main", {
             , items   : [{
                 xtype: "fieldcontainer"
                 , fieldLabel: i18n.gettext("Size of the area")
+                , labelWidth: 200
                 , combineErrors: false
                 , layout: {type:"hbox", pack: "start"}
                 , items: [

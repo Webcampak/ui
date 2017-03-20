@@ -12,7 +12,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.capture.ipcamera.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 300}
+    , defaults: {labelWidth: 400}
     , items: [
         {xtype: "sourcesconfigurationcaptureipcameracfgsourcecamiptemplate"}
         , {xtype: "sourcesconfigurationcaptureipcameracfgsourcecamiplimiterotation"}

@@ -10,14 +10,14 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.time.Main", {
 
     , padding: 5
     , layout: "fit"
-    , defaults: {labelWidth: 250}
+    , defaults: {labelWidth: 300}
     , items: [
         {xtype: "sourcesconfigurationadvancedtimecfgemailalerttime"}
         , {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
-                {width: 320, labelWidth: 250, xtype: "sourcesconfigurationadvancedtimecfgemailalerttimefailure"     }
+                {width: 370, labelWidth: 300, xtype: "sourcesconfigurationadvancedtimecfgemailalerttimefailure"     }
                 , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
         }        
@@ -25,7 +25,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.advanced.time.Main", {
             xtype: "container"
             , layout: {type:"hbox", align: "stretch", pack: "start"}
             , items   : [
-                {width: 320, labelWidth: 250,   xtype: "sourcesconfigurationadvancedtimecfgemailalerttimereminder"     }
+                {width: 370, labelWidth: 300,   xtype: "sourcesconfigurationadvancedtimecfgemailalerttimereminder"     }
                 , {width: 140, labelWidth: 250,  xtype: "fieldcontainer", fieldLabel: i18n.gettext("minutes"), labelSeparator: "", padding: "0 5 0 5"  }
             ]
         }
