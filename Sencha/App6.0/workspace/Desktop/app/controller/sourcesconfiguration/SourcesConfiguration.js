@@ -46,6 +46,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         , "sourcesconfiguration.VideoPost"
         , "sourcesconfiguration.FTPServers"
         , "sourcesconfiguration.WatermarkFiles"
+        , "sourcesconfiguration.AudioFiles"
         , "sourcesconfiguration.Fonts"
         , "sourcesconfiguration.PhidgetSensors"
         , "sourcesconfiguration.PhidgetPorts"
@@ -73,6 +74,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
         , "sourcesconfiguration.VideoPost"
         , "sourcesconfiguration.FTPServers"
         , "sourcesconfiguration.WatermarkFiles"
+        , "sourcesconfiguration.AudioFiles"
         , "sourcesconfiguration.Fonts"
         , "sourcesconfiguration.PhidgetSensors"
         , "sourcesconfiguration.PhidgetPorts"
@@ -273,6 +275,7 @@ Ext.define("WPAKD.controller.sourcesconfiguration.SourcesConfiguration", {
             requiredStores.push({store: this.getSourcesconfigurationVideoPostStore(),       action: "REFRESH"});
             requiredStores.push({store: this.getSourcesconfigurationFTPServersStore(),      action: "REFRESH"});
             requiredStores.push({store: this.getSourcesconfigurationWatermarkFilesStore(),  action: "REFRESH"});
+            requiredStores.push({store: this.getSourcesconfigurationAudioFilesStore(),      action: "REFRESH"});
 
             this.fireEvent("WPAKD.controller.desktop.loading.Stores.beginLoading"
                 , "WEB_CFG_SOURCESCONFIG"

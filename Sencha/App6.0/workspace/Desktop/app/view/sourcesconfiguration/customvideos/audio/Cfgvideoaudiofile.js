@@ -6,7 +6,7 @@ Ext.define("WPAKD.view.sourcesconfiguration.customvideos.audio.Cfgvideoaudiofile
     extend: "Ext.form.ComboBox"
     , alias : "widget.sourcesconfigurationcustomvideosaudiocfgvideoaudiofile"
 
-    , store: "shared.PhidgetsPorts"
+    , store: "sourcesconfiguration.AudioFiles"
     , fieldLabel: i18n.gettext("Audio File")
     , valueField: "ID"
     , displayField: "NAME"
