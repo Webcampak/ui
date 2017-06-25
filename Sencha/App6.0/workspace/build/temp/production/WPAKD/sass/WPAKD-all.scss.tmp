@@ -1618,9 +1618,11 @@ $include-wpakd-view-sourcesconfiguration-phidgets-graphs-cfgftpphidgetserverid: 
 $include-wpakd-view-sourcesconfiguration-phidgets-graphs-cfgftpphidgetserverretry: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-phidgets-graphs-cfgphidgetsensorsgraph: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-phidgets-graphs-main: dynamic(true);;
-$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcameraport: dynamic(true);;
-$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgeterroractivate: dynamic(true);;
-$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetfailure: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcameraactivate: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcamerafailure: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcamerapause: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcamerarelayport: dynamic(true);;
+$include-wpakd-view-sourcesconfiguration-phidgets-relays-cfgphidgetcamerasensorport: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-phidgets-relays-main: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-phidgets-sensors-main: dynamic(true);;
 $include-wpakd-view-sourcesconfiguration-phidgets-sensors-phidgetsportslist: dynamic(true);;

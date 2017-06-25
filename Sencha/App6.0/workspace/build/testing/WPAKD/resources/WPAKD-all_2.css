@@ -1,3 +1,711 @@
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-panel-header-light-framed-collapsed-bottom {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 9px 9px 9px 9px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-panel-header-light-framed-collapsed-bottom-mc {
+    background-color: #fff;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-panel-header-light-framed-collapsed-bottom {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-panel-header-light-framed-collapsed-bottom-frameInfo {
+    font-family: dh-4-4-4-4-1-1-1-1-9-9-9-9;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-panel-header-light-framed-collapsed-bottom-tl {
+    background-position: 0 -8px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-panel-header-light-framed-collapsed-bottom-tr {
+    background-position: right -12px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-panel-header-light-framed-collapsed-bottom-bl {
+    background-position: 0 -16px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-panel-header-light-framed-collapsed-bottom-br {
+    background-position: right -20px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-panel-header-light-framed-collapsed-bottom-ml {
+    background-position: 0 bottom;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-panel-header-light-framed-collapsed-bottom-mr {
+    background-position: right bottom;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-panel-header-light-framed-collapsed-bottom-tc {
+    background-position: 0 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-panel-header-light-framed-collapsed-bottom-bc {
+    background-position: 0 -4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-panel-header-light-framed-collapsed-bottom-tr,
+.x-panel-header-light-framed-collapsed-bottom-br,
+.x-panel-header-light-framed-collapsed-bottom-mr {
+    padding-right: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-panel-header-light-framed-collapsed-bottom-tl,
+.x-panel-header-light-framed-collapsed-bottom-bl,
+.x-panel-header-light-framed-collapsed-bottom-ml {
+    padding-left: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-panel-header-light-framed-collapsed-bottom-tc {
+    height: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-panel-header-light-framed-collapsed-bottom-bc {
+    height: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-panel-header-light-framed-collapsed-bottom-tl,
+.x-panel-header-light-framed-collapsed-bottom-bl,
+.x-panel-header-light-framed-collapsed-bottom-tr,
+.x-panel-header-light-framed-collapsed-bottom-br,
+.x-panel-header-light-framed-collapsed-bottom-tc,
+.x-panel-header-light-framed-collapsed-bottom-bc,
+.x-panel-header-light-framed-collapsed-bottom-ml,
+.x-panel-header-light-framed-collapsed-bottom-mr {
+    background-image: url(images/panel-header/panel-header-light-framed-collapsed-bottom-corners.gif);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-panel-header-light-framed-collapsed-bottom-ml,
+.x-panel-header-light-framed-collapsed-bottom-mr {
+    background-image: url(images/panel-header/panel-header-light-framed-collapsed-bottom-sides.gif);
+    background-repeat: repeat-y;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-panel-header-light-framed-collapsed-bottom-mc {
+    padding: 6px 6px 6px 6px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-light-framed-collapsed-bottom:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, frame:4px 4px 4px 4px, corners:url(images/panel-header/panel-header-light-framed-collapsed-bottom-corners.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-bottom-sides.gif)" !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:187 */
+.x-panel-header-light-framed-collapsed-left {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 9px 9px 9px 9px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:237 */
+.x-panel-header-light-framed-collapsed-left-mc {
+    background-color: #fff;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:264 */
+.x-nbr .x-panel-header-light-framed-collapsed-left {
+    padding: 0 !important;
+    border-width: 0 !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:281 */
+.x-panel-header-light-framed-collapsed-left-frameInfo {
+    font-family: dh-4-4-4-4-1-1-1-1-9-9-9-9;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:347 */
+.x-panel-header-light-framed-collapsed-left-tl {
+    background-position: 0 -8px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:351 */
+.x-panel-header-light-framed-collapsed-left-tr {
+    background-position: right -12px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:355 */
+.x-panel-header-light-framed-collapsed-left-bl {
+    background-position: 0 -16px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:359 */
+.x-panel-header-light-framed-collapsed-left-br {
+    background-position: right -20px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:363 */
+.x-panel-header-light-framed-collapsed-left-ml {
+    background-position: left 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:371 */
+.x-panel-header-light-framed-collapsed-left-mr {
+    background-position: left 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:379 */
+.x-panel-header-light-framed-collapsed-left-tc {
+    background-position: 0 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:383 */
+.x-panel-header-light-framed-collapsed-left-bc {
+    background-position: 0 -4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:388 */
+.x-panel-header-light-framed-collapsed-left-tr,
+.x-panel-header-light-framed-collapsed-left-br,
+.x-panel-header-light-framed-collapsed-left-mr {
+    padding-right: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:394 */
+.x-panel-header-light-framed-collapsed-left-tl,
+.x-panel-header-light-framed-collapsed-left-bl,
+.x-panel-header-light-framed-collapsed-left-ml {
+    padding-left: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:400 */
+.x-panel-header-light-framed-collapsed-left-tc {
+    height: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:403 */
+.x-panel-header-light-framed-collapsed-left-bc {
+    height: 4px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:407 */
+.x-panel-header-light-framed-collapsed-left-tl,
+.x-panel-header-light-framed-collapsed-left-bl,
+.x-panel-header-light-framed-collapsed-left-tr,
+.x-panel-header-light-framed-collapsed-left-br,
+.x-panel-header-light-framed-collapsed-left-tc,
+.x-panel-header-light-framed-collapsed-left-bc,
+.x-panel-header-light-framed-collapsed-left-ml,
+.x-panel-header-light-framed-collapsed-left-mr {
+    background-image: url(images/panel-header/panel-header-light-framed-collapsed-left-corners.gif);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:453 */
+.x-panel-header-light-framed-collapsed-left-ml,
+.x-panel-header-light-framed-collapsed-left-mr {
+    background-image: url(images/panel-header/panel-header-light-framed-collapsed-left-sides.gif);
+    background-repeat: repeat-y;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/frame.scss:464 */
+.x-panel-header-light-framed-collapsed-left-mc {
+    padding: 6px 6px 6px 6px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/slicer.scss:83 */
+.x-cmd-slicer.x-panel-header-light-framed-collapsed-left:before {
+    /*<if slicer>*/
+    display: none;
+    content: "x-slicer:, frame:4px 4px 4px 4px, corners:url(images/panel-header/panel-header-light-framed-collapsed-left-corners.gif), sides:url(images/panel-header/panel-header-light-framed-collapsed-left-sides.gif)" !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:638 */
+.x-panel .x-panel-header-light-framed-top {
+    border-bottom-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:642 */
+.x-panel .x-panel-header-light-framed-right {
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:646 */
+.x-panel .x-panel-header-light-framed-bottom {
+    border-top-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:650 */
+.x-panel .x-panel-header-light-framed-left {
+    border-right-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:656 */
+.x-nbr .x-panel-header-light-framed-collapsed-top {
+    border-bottom-width: 0 !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:660 */
+.x-nbr .x-panel-header-light-framed-collapsed-right {
+    border-left-width: 0 !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:664 */
+.x-nbr .x-panel-header-light-framed-collapsed-bottom {
+    border-top-width: 0 !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:668 */
+.x-nbr .x-panel-header-light-framed-collapsed-left {
+    border-right-width: 0 !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:786 */
+.x-panel-header-light-framed-horizontal .x-tool-after-title {
+    margin: 0 0 0 6px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:796 */
+.x-panel-header-light-framed-horizontal .x-tool-before-title {
+    margin: 0 6px 0 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:808 */
+.x-panel-header-light-framed-vertical .x-tool-after-title {
+    margin: 6px 0 0 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:818 */
+.x-panel-header-light-framed-vertical .x-tool-before-title {
+    margin: 0 0 6px 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:830 */
+.x-panel-header-light-framed .x-tool-focus {
+    outline: 1px solid #157fcc;
+    outline-offset: 1px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:64 */
+.x-ie .x-panel-header-light-framed .x-tool-focus,
+.x-ie10p .x-panel-header-light-framed .x-tool-focus,
+.x-edge .x-panel-header-light-framed .x-tool-focus {
+    outline: none;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/css-outline.scss:40 */
+.x-ie .x-panel-header-light-framed .x-tool-focus:after,
+.x-ie10p .x-panel-header-light-framed .x-tool-focus:after,
+.x-edge .x-panel-header-light-framed .x-tool-focus:after {
+    position: absolute;
+    content: ' ';
+    top: -2px;
+    right: -2px;
+    bottom: -2px;
+    left: -2px;
+    border: 1px solid #157fcc;
+    pointer-events: none;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neutral/sass/src/panel/Panel.scss:859 */
+.x-panel-light-framed-resizable .x-panel-handle {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    opacity: 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:2 */
+.x-panel-light-framed-outer-border-l {
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:6 */
+.x-panel-light-framed-outer-border-b {
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:10 */
+.x-panel-light-framed-outer-border-bl {
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:16 */
+.x-panel-light-framed-outer-border-r {
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:20 */
+.x-panel-light-framed-outer-border-rl {
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:26 */
+.x-panel-light-framed-outer-border-rb {
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:32 */
+.x-panel-light-framed-outer-border-rbl {
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:40 */
+.x-panel-light-framed-outer-border-t {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:44 */
+.x-panel-light-framed-outer-border-tl {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:50 */
+.x-panel-light-framed-outer-border-tb {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:56 */
+.x-panel-light-framed-outer-border-tbl {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:64 */
+.x-panel-light-framed-outer-border-tr {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:70 */
+.x-panel-light-framed-outer-border-trl {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+    border-left-color: #fff !important;
+    border-left-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:78 */
+.x-panel-light-framed-outer-border-trb {
+    border-top-color: #fff !important;
+    border-top-width: 1px !important;
+    border-right-color: #fff !important;
+    border-right-width: 1px !important;
+    border-bottom-color: #fff !important;
+    border-bottom-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-base/sass/etc/mixins/border-management.scss:86 */
+.x-panel-light-framed-outer-border-trbl {
+    border-color: #fff !important;
+    border-width: 1px !important;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/form/field/HtmlEditor.scss:1 */
+.x-html-editor-container {
+    border: 1px solid;
+    border-color: #cfcfcf;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/grid/header/Container.scss:1 */
+.x-grid-header-ct {
+    border: 1px solid #cfcfcf;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/grid/column/Column.scss:6 */
+.x-column-header-trigger {
+    background-color: #eff6fb;
+    border-left: 1px solid #cfcfcf;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/grid/column/Column.scss:18 */
+.x-column-header-last {
+    border-right-width: 0;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/grid/column/Column.scss:20 */
+.x-column-header-last .x-column-header-over .x-column-header-trigger {
+    border-right: 1px solid #cfcfcf;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:1 */
+.x-resizable-handle {
+    background-repeat: no-repeat;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:6 */
+.x-resizable-handle-east-over,
+.x-resizable-handle-west-over {
+    background-position: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:11 */
+.x-resizable-handle-south-over,
+.x-resizable-handle-north-over {
+    background-position: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:16 */
+.x-resizable-handle-southeast-over {
+    background-position: -2px -2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:20 */
+.x-resizable-handle-northwest-over {
+    background-position: 2px 2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:24 */
+.x-resizable-handle-northeast-over {
+    background-position: -2px 2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:28 */
+.x-resizable-handle-southwest-over {
+    background-position: 2px -2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:33 */
+.x-resizable-pinned .x-resizable-handle-east,
+.x-resizable-pinned .x-resizable-handle-west {
+    background-position: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:38 */
+.x-resizable-pinned .x-resizable-handle-south,
+.x-resizable-pinned .x-resizable-handle-north {
+    background-position: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:43 */
+.x-resizable-pinned .x-resizable-handle-southeast {
+    background-position: -2px -2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:47 */
+.x-resizable-pinned .x-resizable-handle-northwest {
+    background-position: 2px 2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:51 */
+.x-resizable-pinned .x-resizable-handle-northeast {
+    background-position: -2px 2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/classic/theme-neptune/sass/src/resizer/Resizer.scss:55 */
+.x-resizable-pinned .x-resizable-handle-southwest {
+    background-position: 2px -2px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_path.scss:5 */
+@font-face {
+    /* FONT PATH
+ * -------------------------- */
+    /* FONT PATH
+ * -------------------------- */
+    font-family: 'FontAwesome';
+    src: url('font-awesome/fonts/fontawesome-webfont.eot?v=4.4.0');
+    src: url('font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0') format('embedded-opentype'), url('font-awesome/fonts/fontawesome-webfont.woff2?v=4.4.0') format('woff2'), url('font-awesome/fonts/fontawesome-webfont.woff?v=4.4.0') format('woff'), url('font-awesome/fonts/fontawesome-webfont.ttf?v=4.4.0') format('truetype'), url('font-awesome/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_core.scss:4 */
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_larger.scss:5 */
+.fa-lg {
+    /* makes the font 33% larger relative to the icon container */
+    font-size: 1.33333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_larger.scss:10 */
+.fa-2x {
+    font-size: 2em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_larger.scss:11 */
+.fa-3x {
+    font-size: 3em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_larger.scss:12 */
+.fa-4x {
+    font-size: 4em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_larger.scss:13 */
+.fa-5x {
+    font-size: 5em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_fixed-width.scss:3 */
+.fa-fw {
+    width: 1.28571em;
+    text-align: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_list.scss:4 */
+.fa-ul {
+    padding-left: 0;
+    margin-left: 2.14286em;
+    list-style-type: none;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_list.scss:8 */
+.fa-ul > li {
+    position: relative;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_list.scss:10 */
+.fa-li {
+    position: absolute;
+    left: -2.14286em;
+    width: 2.14286em;
+    top: 0.14286em;
+    text-align: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_list.scss:16 */
+.fa-li.fa-lg {
+    left: -1.85714em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:4 */
+.fa-border {
+    padding: 0.2em 0.25em 0.15em;
+    border: solid 0.08em #eee;
+    border-radius: 0.1em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:10 */
+.fa-pull-left {
+    float: left;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:11 */
+.fa-pull-right {
+    float: right;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:14 */
+.fa.fa-pull-left {
+    margin-right: 0.3em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:15 */
+.fa.fa-pull-right {
+    margin-left: 0.3em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:19 */
+.pull-right {
+    /* Deprecated as of 4.4.0 */
+    float: right;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:20 */
+.pull-left {
+    float: left;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:23 */
+.fa.pull-left {
+    margin-right: 0.3em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_bordered-pulled.scss:24 */
+.fa.pull-right {
+    margin-left: 0.3em;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:4 */
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:9 */
+.fa-pulse {
+    -webkit-animation: fa-spin 1s infinite steps(8);
+    animation: fa-spin 1s infinite steps(8);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:14 */
+@-webkit-keyframes fa-spin {
+    /* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:15 */
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    /* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:19 */
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:25 */
+@keyframes fa-spin {
+    /* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:26 */
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    /* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_animated.scss:30 */
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:4 */
+.fa-rotate-90 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:5 */
+.fa-rotate-180 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:6 */
+.fa-rotate-270 {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:8 */
+.fa-flip-horizontal {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0)";
+    -webkit-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:9 */
+.fa-flip-vertical {
+    -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+    -webkit-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_rotated-flipped.scss:14 */
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+    filter: none;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_stacked.scss:4 */
+.fa-stack {
+    position: relative;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: middle;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_stacked.scss:12 */
+.fa-stack-1x,
+.fa-stack-2x {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_stacked.scss:18 */
+.fa-stack-1x {
+    line-height: inherit;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_stacked.scss:19 */
+.fa-stack-2x {
+    font-size: 2em;
+}
 /* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/font-awesome/sass/etc/_stacked.scss:20 */
 .fa-inverse {
     color: #fff;
@@ -2437,49 +3145,90 @@
 .x-fa:before {
     font-family: FontAwesome !important;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:8 */
-.x-android-3 .x-surface-wrap,
-.x-android-3 .x-surface-wrap > * {
-    -webkit-perspective: 1;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/draw/Surface.scss:1 */
+.x-surface {
+    position: absolute;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:12 */
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/draw/Surface.scss:5 */
+.x-surface-canvas {
+    position: absolute;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/draw/Container.scss:1 */
 .x-draw-container {
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
-    -ms-user-select: none;
     cursor: default;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:17 */
-.x-draw-container .x-inner {
-    overflow: hidden;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:22 */
-.x-surface-canvas {
-    position: absolute;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:26 */
-.x-chart-image {
-    width: 100%;
-    height: auto;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:31 */
-.x-legend-container {
-    display: inline-block;
-    line-height: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:1 */
+.x-legend {
     background: #fff;
-    -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
-    -moz-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
-    box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+    outline: none;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:45 */
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:6 */
+.x-legend-horizontal {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:11 */
+.x-legend-horizontal .x-legend-item {
+    display: inline-block;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:18 */
+.x-legend-horizontal .x-legend-item:first-child {
+    border-left: 1px solid #ccc;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:24 */
+.x-legend-horizontal .x-legend-item:last-child {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:30 */
+.x-legend-horizontal.x-rtl .x-legend-item:first-child {
+    border-right: 1px solid #ccc;
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:35 */
+.x-legend-horizontal.x-rtl .x-legend-item:last-child {
+    border-right: none;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:43 */
+.x-legend-vertical {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:48 */
+.x-legend-vertical .x-legend-item {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:53 */
+.x-legend-vertical .x-legend-item:first-child {
+    border-top: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:59 */
+.x-legend-vertical .x-legend-item:last-child {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:66 */
+.x-legend-item-inactive {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    opacity: 0.3;
+}
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:70 */
 .x-legend-item {
     padding: 0.8em 1em 0.8em 1.8em;
     color: #333;
@@ -2495,12 +3244,11 @@
     text-overflow: ellipsis;
     position: relative;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:61 */
-.x-legend-inactive {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-    opacity: 0.3;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:86 */
+.x-rtl > * > .x-legend-item {
+    padding: 0.8em 1.8em 0.8em 1em;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:65 */
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:90 */
 .x-legend-item-marker {
     position: absolute;
     width: 0.8em;
@@ -2516,128 +3264,37 @@
     left: 0.7em;
     top: 0.85em;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:77 */
-.x-rtl > * > .x-legend-item {
-    padding: 0.8em 1.8em 0.8em 1em;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:81 */
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/legend/Legend.scss:102 */
 .x-rtl > * > * > .x-legend-item-marker {
     right: 0.7em;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:85 */
-.x-legend,
-.x-legend-panel {
-    background: #fff;
-    outline: none;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:1 */
+.x-legend-inner {
+    display: table;
+    text-align: center;
+    padding: 5px;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:90 */
-.x-legend.x-docked-top .x-legend-item,
-.x-legend.x-docked-bottom .x-legend-item,
-.x-legend-panel.x-docked-top .x-legend-item,
-.x-legend-panel.x-docked-bottom .x-legend-item {
-    border-left: 1px solid rgba(204, 204, 204, 0.5);
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:8 */
+.x-legend-horizontal .x-legend-inner {
+    min-width: 100%;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:92 */
-.x-legend.x-docked-top .x-legend-item:first-child,
-.x-legend.x-docked-bottom .x-legend-item:first-child,
-.x-legend-panel.x-docked-top .x-legend-item:first-child,
-.x-legend-panel.x-docked-bottom .x-legend-item:first-child {
-    border-left: none;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:14 */
+.x-legend-vertical .x-legend-inner {
+    min-height: 100%;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:97 */
-.x-legend.x-docked-top.x-rtl .x-legend-item:first-child,
-.x-legend.x-docked-bottom.x-rtl .x-legend-item:first-child,
-.x-legend-panel.x-docked-top.x-rtl .x-legend-item:first-child,
-.x-legend-panel.x-docked-bottom.x-rtl .x-legend-item:first-child {
-    border-left: 1px solid rgba(204, 204, 204, 0.5);
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:100 */
-.x-legend.x-docked-top.x-rtl .x-legend-item:last-child,
-.x-legend.x-docked-bottom.x-rtl .x-legend-item:last-child,
-.x-legend-panel.x-docked-top.x-rtl .x-legend-item:last-child,
-.x-legend-panel.x-docked-bottom.x-rtl .x-legend-item:last-child {
-    border-left: none;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:107 */
-.x-legend.x-docked-left .x-legend-item,
-.x-legend.x-docked-right .x-legend-item,
-.x-legend-panel.x-docked-left .x-legend-item,
-.x-legend-panel.x-docked-right .x-legend-item {
-    border-top: 1px solid rgba(204, 204, 204, 0.5);
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:109 */
-.x-legend.x-docked-left .x-legend-item:first-child,
-.x-legend.x-docked-right .x-legend-item:first-child,
-.x-legend-panel.x-docked-left .x-legend-item:first-child,
-.x-legend-panel.x-docked-right .x-legend-item:first-child {
-    border-top: none;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:113 */
-.x-legend.x-docked-left .x-legend-inner,
-.x-legend.x-docked-right .x-legend-inner,
-.x-legend-panel.x-docked-left .x-legend-inner,
-.x-legend-panel.x-docked-right .x-legend-inner {
-    display: -webkit-box;
-    -webkit-box-align: center;
-    -webkit-box-pack: center;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:121 */
-.x-legend.x-horizontal {
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/classic/sass/src/chart/legend/Legend.scss:19 */
+.x-legend-container {
+    display: table-cell;
+    vertical-align: middle;
     white-space: nowrap;
+    line-height: 0;
+    background: #fff;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+    -moz-box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
+    box-shadow: rgba(255, 255, 255, 0.6) 0 1px 1px;
 }
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:123 */
-.x-legend.x-horizontal .x-legend-item {
-    display: inline-block;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:128 */
-.x-chart-toolbar {
-    position: absolute;
-    z-index: 9;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-box;
-    display: box;
-    padding: 0.6em;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:134 */
-.x-chart-toolbar .x-button {
-    margin: 0.2em;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:138 */
-.x-chart-toolbar[data-side=left],
-.x-chart-toolbar[data-side=right] {
-    top: 0;
-    -webkit-box-orient: vertical;
-    -moz-box-orient: vertical;
-    -ms-box-orient: vertical;
-    box-orient: vertical;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:143 */
-.x-chart-toolbar[data-side=left] {
-    left: 0;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:147 */
-.x-chart-toolbar[data-side=right] {
-    right: 0;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:151 */
-.x-chart-toolbar[data-side=top],
-.x-chart-toolbar[data-side=bottom] {
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -ms-box-orient: horizontal;
-    box-orient: horizontal;
-    right: 0;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:156 */
-.x-chart-toolbar[data-side=top] {
-    top: 0;
-}
-/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/sass/src/chart/AbstractChart.scss:160 */
-.x-chart-toolbar[data-side=bottom] {
-    bottom: 0;
-    -webkit-box-orient: horizontal;
-    -moz-box-orient: horizontal;
-    -ms-box-orient: horizontal;
-    box-orient: horizontal;
+/* /home/webcampak/webcampak/apps/ui/Sencha/App6.0/workspace/ext/packages/charts/classic/sass/src/chart/AbstractChart.scss:1 */
+.x-chart-image {
+    width: 100%;
+    height: auto;
 }

@@ -14,9 +14,11 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
         , "sourcesconfiguration.phidgets.graphs.Cfgphidgetsensorsgraph"
 
         , "sourcesconfiguration.phidgets.relays.Main"
-        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcameraport"
-        , "sourcesconfiguration.phidgets.relays.Cfgphidgeterroractivate"
-        , "sourcesconfiguration.phidgets.relays.Cfgphidgetfailure"
+        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcamerarelayport"
+        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcameraactivate"
+        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcamerafailure"
+        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcamerapause"
+        , "sourcesconfiguration.phidgets.relays.Cfgphidgetcamerasensorport"
 
         , "sourcesconfiguration.phidgets.sensors.Main"
         , "sourcesconfiguration.phidgets.sensors.PhidgetsPortsList"
@@ -44,10 +46,12 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
     refs: [
         {ref: "sourcesconfigurationphidgetsmain",           selector: "sourcesconfigurationphidgetsmain"        }
 
-        , {ref: "sourcesconfigurationphidgetsrelaysmain",                       selector: "sourcesconfigurationphidgetsrelaysmain"                      }
-        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgeterroractivate",    selector: "sourcesconfigurationphidgetsrelayscfgphidgeterroractivate"   }
-        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetfailure",          selector: "sourcesconfigurationphidgetsrelayscfgphidgetfailure"         }
-        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcameraport",       selector: "sourcesconfigurationphidgetsrelayscfgphidgetcameraport"      }
+        , {ref: "sourcesconfigurationphidgetsrelaysmain",                        selector: "sourcesconfigurationphidgetsrelaysmain"                       }
+        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcameraactivate",    selector: "sourcesconfigurationphidgetsrelayscfgphidgetcameraactivate"   }
+        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcamerafailure",     selector: "sourcesconfigurationphidgetsrelayscfgphidgetcamerafailure"    }
+        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcamerarelayport",   selector: "sourcesconfigurationphidgetsrelayscfgphidgetcamerarelayport"  }
+        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcamerasensorport",  selector: "sourcesconfigurationphidgetsrelayscfgphidgetcamerasensorport" }
+        , {ref: "sourcesconfigurationphidgetsrelayscfgphidgetcamerapause",       selector: "sourcesconfigurationphidgetsrelayscfgphidgetcamerapause"      }
 
         , {ref: "sourcesconfigurationphidgetsgraphsmain",                       selector: "sourcesconfigurationphidgetsgraphsmain"                      }
         , {ref: "sourcesconfigurationphidgetsgraphscfgphidgetsensorsgraph",     selector: "sourcesconfigurationphidgetsgraphscfgphidgetsensorsgraph"    }
@@ -122,12 +126,16 @@ Ext.define("WPAKD.controller.sourcesconfiguration.phidgets.Phidgets", {
                 configObj[configName] = rec.get("VALUE");
             });
 
-            if(configObj.hasOwnProperty("cfgphidgeterroractivate")){this.getSourcesconfigurationphidgetsrelayscfgphidgeterroractivate().setValue(configObj["cfgphidgeterroractivate"]);
-            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgeterroractivate().setVisible(false);}
-            if(configObj.hasOwnProperty("cfgphidgetfailure")){this.getSourcesconfigurationphidgetsrelayscfgphidgetfailure().setValue(configObj["cfgphidgetfailure"]);
-            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetfailure().setVisible(false);}
-            if(configObj.hasOwnProperty("cfgphidgetcameraport")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcameraport().setValue(configObj["cfgphidgetcameraport"]);
-            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcameraport().setVisible(false);}
+            if(configObj.hasOwnProperty("cfgphidgetcameraactivate")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcameraactivate().setValue(configObj["cfgphidgetcameraactivate"]);
+            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcameraactivate().setVisible(false);}
+            if(configObj.hasOwnProperty("cfgphidgetcamerafailure")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerafailure().setValue(configObj["cfgphidgetcamerafailure"]);
+            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerafailure().setVisible(false);}
+            if(configObj.hasOwnProperty("cfgphidgetcamerarelayport")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerarelayport().setValue(configObj["cfgphidgetcamerarelayport"]);
+            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerarelayport().setVisible(false);}
+            if(configObj.hasOwnProperty("cfgphidgetcamerasensorport")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerasensorport().setValue(configObj["cfgphidgetcamerasensorport"]);
+            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerasensorport().setVisible(false);}
+            if(configObj.hasOwnProperty("cfgphidgetcamerapause")){this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerapause().setValue(configObj["cfgphidgetcamerapause"]);
+            } else {this.getSourcesconfigurationphidgetsrelayscfgphidgetcamerapause().setVisible(false);}
 
             if(configObj.hasOwnProperty("cfgphidgetsensorsgraph")){this.getSourcesconfigurationphidgetsgraphscfgphidgetsensorsgraph().setValue(configObj["cfgphidgetsensorsgraph"]);
             } else {this.getSourcesconfigurationphidgetsgraphscfgphidgetsensorsgraph().setVisible(false);}
