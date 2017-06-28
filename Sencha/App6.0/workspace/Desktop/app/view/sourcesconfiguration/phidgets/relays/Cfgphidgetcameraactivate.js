@@ -7,8 +7,9 @@ Ext.define("WPAKD.view.sourcesconfiguration.phidgets.relays.Cfgphidgetcameraacti
     , alias: "widget.sourcesconfigurationphidgetsrelayscfgphidgetcameraactivate"
 
     , fieldLabel: i18n.gettext("Activate")
-    , uncheckedValue: "off"
-    , inputValue: "on"
+    , uncheckedValue: "no"
+    , inputValue: "yes"
+
     , listeners : {
         change : function(scope, newValue, oldValue) {
             if (newValue === true) {newValue = "yes";} else {newValue = "no";}
