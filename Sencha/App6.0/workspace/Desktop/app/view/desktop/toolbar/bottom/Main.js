@@ -9,10 +9,9 @@ Ext.define("WPAKD.view.desktop.toolbar.bottom.Main", {
     dock: "bottom",
 
     config: {
-        layout: {type: "hbox", align : "stretch", pack  : "start"},
+        layout: { type: "hbox", align: "stretch", pack: "start" },
         items: [{
-            xtype: "tbtext",
-            text: i18n.gettext("<a href=\"http://www.webcampak.com\" target=\"_blank\">www.webcampak.com</a>")
+            xtype: "desktoptoolbarbottomlink"
         }, "->", {
             xtype: "desktoptoolbarbottomconnectionbutton"
         }, "-", {

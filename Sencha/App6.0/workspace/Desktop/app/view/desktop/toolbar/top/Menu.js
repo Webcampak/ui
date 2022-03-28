@@ -69,22 +69,7 @@ Ext.define("WPAKD.view.desktop.toolbar.top.Menu", {
             , itemId: "menuOpenWEB_DSP_LOGS"
             , glyph: 0xf03a
             , hidden: false
-        }, "-", {
-            text: i18n.gettext("Documentation")
-            , glyph: 0xf02d
-            , href: "http://www.webcampak.com/doc/"
-            , tooltip: i18n.gettext("Link to Webcampak documentation, available in English & French")
-        }, {
-            text: i18n.gettext("Blog")
-            , glyph: 0xf0ac
-            , href: "http://blog.webcampak.com"
-            , tooltip: i18n.gettext("Link to Webcampak.com blog")
-        }, {
-            text: i18n.gettext("About")
-            , glyph: 0xf0ac
-            , href: "http://www.webcampak.com"
-            , tooltip: i18n.gettext("Link to Webcampak.com website")
-        }]
+        }, "-"]
     }
 });
 
