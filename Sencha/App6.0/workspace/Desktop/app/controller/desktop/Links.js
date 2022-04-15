@@ -45,7 +45,7 @@ Ext.define("WPAKD.controller.desktop.Links", {
 
     , updateLinks: function () {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->Links: Controller updateLinks: function()");
-        record = this.getDesktopLinksStore().findRecord("LOCATION", "BOTTOM_RIGHT", 0, false, false, true);
+        record = this.getDesktopLinksStore().findRecord("LOCATION", "BOTTOM_LEFT", 0, false, false, true);
         if (record) {
             this.getDesktoptoolbarbottomlink().setText(record.get("NAME"));
             this.getDesktoptoolbarbottomlink().setHref(record.get("LINK"));

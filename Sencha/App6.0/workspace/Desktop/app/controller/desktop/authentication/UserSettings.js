@@ -21,39 +21,39 @@ Ext.define("WPAKD.controller.desktop.authentication.UserSettings", {
     ],
 
     refs: [
-        {ref: "desktoptoolbarbottomlogoffbutton",   selector: "desktoptoolbarbottomlogoffbutton"    }
-        , {ref: "desktoptoolbarbottombuild",        selector: "desktoptoolbarbottombuild"           }
-        , {ref: "desktopmain",                      selector: "desktopmain"                         }
+        { ref: "desktoptoolbarbottomlogoffbutton", selector: "desktoptoolbarbottomlogoffbutton" }
+        , { ref: "desktoptoolbarbottombuild", selector: "desktoptoolbarbottombuild" }
+        , { ref: "desktopmain", selector: "desktopmain" }
 
     ],
 
-    init: function() {
+    init: function () {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->UserSettings: Controller init: function()");
         this.control({
 
         });
 
         this.listen({
-             controller: {
-                  "*": {
-                      "WPAKD.controller.desktop.authentication.UserSettings.loadUserSettingsStore": this.loadUserSettingsStore
-                  }
-             }
+            controller: {
+                "*": {
+                    "WPAKD.controller.desktop.authentication.UserSettings.loadUserSettingsStore": this.loadUserSettingsStore
+                }
+            }
         });
     },
-    onLaunch: function() {
+    onLaunch: function () {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->UserSettings: Controller onLaunch: function()");
         //this.loadUserSettingsStore();
     },
 
-    loadUserSettingsStore: function() {
+    loadUserSettingsStore: function () {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->UserSettings: Controller loadUserSettingsStore: function()");
         Ext.getBody().mask("Setting up permissions and preferences ...");
         this.getDesktopAuthenticationUserSettingsStore().on("load", this.applyUserSettings, this, {single: true});
         this.getDesktopAuthenticationUserSettingsStore().load();
     },
 
-    applyUserSettings: function() {
+    applyUserSettings: function () {
         console.log(new Date().toLocaleTimeString() + ": Log: Controller->Desktop->UserSettings: Controller applyUserSettings: function()");
         var record = this.getDesktopAuthenticationUserSettingsStore().findRecord("CODE", "CHANGEPASSWORD", 0, false, false, true);
         if (record && record.get("VALUE") === "Y") {
